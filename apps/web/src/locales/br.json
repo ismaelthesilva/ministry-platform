@@ -1,0 +1,100 @@
+{
+  "navbar": {
+    "home": "Início",
+    "messages": "Mensagens",
+    "songs": "Canções",
+    "books": "Livros",
+    "about": "Sobre",
+    "contact": "Contato",
+    "subtitle": "Ministério",
+    "toggleLanguage": "Mudar para Inglês",
+    "toggleTheme": "Alternar tema"
+  },
+  "home": {
+    "hero": {
+      "title": "ISMAEL SILVA",
+      "subtitle": "MINISTÉRIO"
+    },
+    "messages": {
+      "title": "MENSAGENS",
+      "videos": [
+        {
+          "id": "Gk1NMp3g_b0",
+          "title": "O Incomparável Cristo",
+          "description": "Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje? A nossa vida é cheia de desafios e problemas, qual a vantagem que a fé em Jesus pode trazer para você hoje?"
+        },
+        {
+          "id": "EZ4LBnEZPlg",
+          "title": "O Caminho para a Felicidade",
+          "description": "Você quer ser feliz? Então, o que é felicidade segundo uma perspectiva bíblica? Descubra o caminho para a verdadeira e duradoura felicidade."
+        },
+        {
+          "id": "jf9Kogw6FU4",
+          "title": "O Incomparável Cristo",
+          "description": "Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje? A nossa vida é cheia de desafios e problemas, qual a vantagem que a fé em Jesus pode trazer para você hoje?"
+        }
+      ]
+    },
+    "books": {
+      "title": "LIVROS",
+      "items": [
+        {
+          "title": "eBook",
+          "subtitle": "Edição em Inglês",
+          "image": "/ministry-images/book-king.jpg",
+          "link": "https://www.amazon.com/dp/B082LX6ZWZ",
+          "buttonText": "Comprar no Amazon Kindle"
+        },
+        {
+          "title": "eBook & Livro Físico",
+          "subtitle": "Edição em Português",
+          "image": "/ministry-images/livro-rei.jpg",
+          "link": "https://www.amazon.com.br/dp/B082J64R4X",
+          "buttonText": "Comprar na Amazon"
+        }
+      ]
+    },
+    "songs": {
+      "title": "CANÇÕES ORIGINAIS",
+      "videos": [
+        {
+          "id": "TncbtUXcFRs",
+          "title": "O Toque que Cura",
+          "description": "Canção Original"
+        },
+        {
+          "id": "YI-vkMp2Gjk",
+          "title": "Virtuosa",
+          "description": "Canção Original"
+        },
+        {
+          "id": "mtK__QsG0bk",
+          "title": "O Teu Amor me salvou",
+          "description": "Canção Original"
+        }
+      ]
+    },
+    "about": {
+      "title": "SOBRE MIM",
+      "content": [
+        "Abraçar a fé cristã é tanto um profundo privilégio quanto uma pesada responsabilidade – uma chance de irradiar Jesus em nossas vidas diárias. Tenho vivido essas verdades desde que dediquei minha vida a Cristo há mais de 36 anos. São muitas estações, provações e testes, e uma jornada santa contínua.",
+        "Em parceria com Deus, essas estações são ordinárias, mas posso refletir sobre minha jornada com gratidão avassaladora por Sua obra transformadora. Olhando para o futuro, estou cheio de esperança, antecipando as bênçãos desdobráveis de Deus para mim e minha bela família.",
+        "O caminho da minha vida me levou ao Brasil e Nova Zelândia com minha amada esposa, Jandai. Juntos, estamos centrados em nossa fé cristã, apesar de vários caminhos de carreira, desde engenharia civil até empreendimentos empresariais em importação e exportação em países como Brasil e Argentina até consultoria em TI.",
+        "Seguindo o comando de Jesus em Mateus 28:19-20, estamos comprometidos em espalhar o evangelho e viver comprometidos com a promessa de estar conosco sempre.",
+        "Como Theodore Roosevelt sabiamente disse: 'As pessoas não se importam com o quanto você sabe até saberem o quanto você se importa.' Minha aspiração é incorporar minha gratidão consistentemente para honrar Jesus com excelência.",
+        "Em resumo, declaro: 'Deus é amor' (1 João 4:8). Meu compromisso inabalável é compartilhar esta Boa Nova ao longo da minha vida, tocando os corações de todos que encontro."
+      ]
+    },
+    "music": {
+      "title": "ÁLBUM MUSICAL",
+      "description": [
+        "Minha paixão pela música me levou a criar canções originais de adoração que expressam minha fé e devoção. Essas composições vêm de experiências pessoais e reflexões espirituais, criadas para elevar e inspirar outros em suas próprias jornadas de fé.",
+        "Ouça minhas canções originais nas principais plataformas de streaming. Cada peça representa um capítulo único em minha caminhada espiritual, compartilhando mensagens de esperança, redenção e amor infalível de Deus.",
+        "Clique nos links para ouvir minhas canções originais no Apple Music, Spotify e muitos outros!"
+      ]
+    },
+    "contact": {
+      "title": "ENTRE EM CONTATO"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "navbar": {
+    "home": "Home",
+    "messages": "Messages",
+    "songs": "Songs",
+    "books": "Books",
+    "about": "About",
+    "contact": "Contact",
+    "subtitle": "Ministry",
+    "toggleLanguage": "Switch to Portuguese",
+    "toggleTheme": "Toggle theme"
+  },
+  "home": {
+    "hero": {
+      "title": "ISMAEL SILVA",
+      "subtitle": "MINISTRY"
+    },
+    "messages": {
+      "title": "MESSAGES",
+      "videos": [
+        {
+          "id": "Gk1NMp3g_b0",
+          "title": "The Incomparable Christ",
+          "description": "Who is Jesus Christ? How important is Jesus to my life today? Our life is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
+        },
+        {
+          "id": "EZ4LBnEZPlg",
+          "title": "The way to Happiness",
+          "description": "Do you want to be happy? So, what is happiness according to a biblical perspective? Discover the path to true and lasting happiness."
+        },
+        {
+          "id": "jf9Kogw6FU4",
+          "title": "The Incomparable Christ (Portuguese)",
+          "description": "Who is Jesus Christ? What is the importance of Jesus in my life today? Our life is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
+        }
+      ]
+    },
+    "books": {
+      "title": "BOOKS",
+      "items": [
+        {
+          "title": "eBook",
+          "subtitle": "English Edition",
+          "image": "/ministry-images/book-king.jpg",
+          "link": "https://www.amazon.com/dp/B082LX6ZWZ",
+          "buttonText": "Buy on Amazon Kindle"
+        },
+        {
+          "title": "eBook & Paperback",
+          "subtitle": "Portuguese Edition",
+          "image": "/ministry-images/livro-rei.jpg",
+          "link": "https://www.amazon.com.br/dp/B082J64R4X",
+          "buttonText": "Buy on Amazon"
+        }
+      ]
+    },
+    "songs": {
+      "title": "ORIGINAL SONGS",
+      "videos": [
+        {
+          "id": "TncbtUXcFRs",
+          "title": "O Toque que Cura",
+          "description": "Original Song"
+        },
+        {
+          "id": "YI-vkMp2Gjk",
+          "title": "Virtuosa",
+          "description": "Original Song"
+        },
+        {
+          "id": "mtK__QsG0bk",
+          "title": "O Teu Amor me salvou",
+          "description": "Original Song"
+        }
+      ]
+    },
+    "about": {
+      "title": "ABOUT ME",
+      "content": [
+        "Embracing the Christian faith is both a profound privilege and a weighty responsibility – a chance to radiate Jesus in our daily lives. I've been living these truths since I dedicated my life to Christ over 36+ years. That's a lot of seasons, trials and tests, and one continuous holy journey.",
+        "Partnering with God, these seasons are ordinary yet may I reflect on my journey with overwhelming gratitude for His transformative work. Looking to the future, I'm filled with hope, anticipating God's unfolding blessings for me and my beautiful family.",
+        "My life's path led me to Brazil and New Zealand with my beloved wife, Jandai. Together, we're centered in our Christian faith despite various career paths from civil engineering to entrepreneurial ventures in import and export in countries like Brazil and Argentina to IT consulting.",
+        "Following Jesus's command in Matthew 28:19-20, we're committed to spreading the gospel and living committed to the promise to be with us always.",
+        "As Theodore Roosevelt wisely said, \"People don't care how much you know until they know how much you care.\" My aspiration is to embody my gratitude consistently to honor Jesus with excellence.",
+        "In summation, I declare, \"God is love\" (1 John 4:8). My unwavering commitment is to share this Good News throughout my life, touching the hearts of all I encounter."
+      ]
+    },
+    "music": {
+      "title": "MUSIC ALBUM",
+      "description": [
+        "My passion for music has led me to create original worship songs that express my faith and devotion. These compositions come from personal experiences and spiritual reflections, crafted to uplift and inspire others in their own faith journeys.",
+        "Listen to my original songs on popular streaming platforms. Each piece represents a unique chapter in my spiritual walk, sharing messages of hope, redemption, and God's unfailing love.",
+        "Click links to listen to my Original songs on Apple Music, Spotify and many others!"
+      ]
+    },
+    "contact": {
+      "title": "GET IN TOUCH"
+    }
+  }
+}
