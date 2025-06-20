@@ -1,0 +1,202 @@
+{
+  "revelation": {
+    "title": "Book of Revelation Study",
+    "subtitle": "A Chapter-by-Chapter, Verse-by-Verse Journey",
+    "description": "Dive deep into the prophetic visions of John and discover the profound truths of Christ's final revelation to humanity.",
+    "navigation": {
+      "totalChapters": "22 Chapters",
+      "studyProgress": "Study Progress",
+      "startStudy": "Start Study",
+      "continueStudy": "Continue Study",
+      "chapterOverview": "Chapter Overview",
+      "verseStudy": "Verse Study",
+      "keyThemes": "Key Themes",
+      "practicalApplication": "Practical Application",
+      "previousChapter": "Previous Chapter",
+      "nextChapter": "Next Chapter",
+      "backToOverview": "Back to Overview"
+    },
+    "chapters": {
+      "1": {
+        "title": "The Revelation of Jesus Christ",
+        "summary": "John receives the vision and messages to the seven churches begin",
+        "keyVerses": ["1:1", "1:7", "1:17-18"],
+        "themes": ["Divine Revelation", "Christ's Authority", "Comfort in Suffering"],
+        "verses": {
+          "1": {
+            "text": "The revelation from Jesus Christ, which God gave him to show his servants what must soon take place. He made it known by sending his angel to his servant John,",
+            "commentary": "This opening verse establishes the divine origin and purpose of the entire book. The word 'revelation' (apokalypsis) means 'unveiling' or 'disclosure.' This is not merely human speculation about the future, but a divine communication from Jesus Christ himself.",
+            "keyPoints": [
+              "Divine origin - directly from Jesus Christ",
+              "Purpose - to show future events to God's servants",
+              "Method - through angelic messenger to John",
+              "The events 'must soon take place' - indicating certainty and urgency"
+            ],
+            "application": "God desires to reveal His plans to His people. We should approach this book with reverence, expectation, and a heart ready to receive divine truth. As servants of God, we are intended recipients of this revelation."
+          },
+          "2": {
+            "text": "who testifies to everything he saw—that is, the word of God and the testimony of Jesus Christ.",
+            "commentary": "John serves as a faithful witness, emphasizing the reliability and completeness of what he records. He testifies to 'everything' he saw, holding nothing back. This testimony carries the weight of both God's word and Jesus Christ's direct witness.",
+            "keyPoints": [
+              "John as faithful and complete witness",
+              "Testimony includes both word of God and Jesus' witness",
+              "Nothing is omitted from the revelation",
+              "Dual authentication - divine word and Christ's testimony"
+            ],
+            "application": "We too are called to be faithful witnesses of what God has revealed to us. Like John, we should testify completely and accurately to God's truth, holding nothing back when sharing the Gospel."
+          },
+          "3": {
+            "text": "Blessed is the one who reads aloud the words of this prophecy, and blessed are those who hear it and take to heart what is written in it, because the time is near.",
+            "commentary": "This is the first of seven beatitudes in Revelation. It promises blessing for three actions: reading aloud, hearing, and taking to heart. The public reading suggests the book was meant for congregational worship. The nearness of time adds urgency to heeding its message.",
+            "keyPoints": [
+              "First beatitude - blessing promised",
+              "Three blessed actions: read, hear, obey",
+              "Designed for public worship setting",
+              "Urgency emphasized - 'the time is near'"
+            ],
+            "application": "God blesses those who engage seriously with His prophetic word. We should not just read or hear, but 'take to heart' - allow it to transform our lives. The nearness of Christ's return should motivate our obedience."
+          }
+        }
+      },
+      "2": {
+        "title": "Letters to Four Churches",
+        "summary": "Messages to Ephesus, Smyrna, Pergamum, and Thyatira",
+        "keyVerses": ["2:4", "2:10", "2:17"],
+        "themes": ["Church Evaluation", "Faithfulness", "Overcoming"],
+        "verses": {
+          "1": {
+            "text": "To the angel of the church in Ephesus write: These are the words of him who holds the seven stars in his right hand and walks among the seven golden lampstands.",
+            "commentary": "The first letter is addressed to the church in Ephesus, one of the major cities of Asia Minor. Christ presents himself as the one who holds the stars (the angels/pastors of the churches) and walks among the lampstands (the churches).",
+            "keyPoints": [
+              "Christ holds the stars (pastors/angels)",
+              "Christ walks among the churches",
+              "Constant divine oversight",
+              "Authority over church leaders"
+            ],
+            "application": "Christ is actively present in His church today, watching and caring for each congregation. Pastors are in His hands, and He personally oversees every local church."
+          }
+        }
+      },
+      "3": {
+        "title": "Letters to Three Churches",
+        "summary": "Messages to Sardis, Philadelphia, and Laodicea",
+        "keyVerses": ["3:1", "3:8", "3:20"],
+        "themes": ["Spiritual Life vs Death", "Open Doors", "Christ's Invitation"]
+      },
+      "4": {
+        "title": "The Throne Room of Heaven",
+        "summary": "John is taken up to heaven and sees the throne of God",
+        "keyVerses": ["4:2", "4:8", "4:11"],
+        "themes": ["Divine Majesty", "Worship", "Creation's Purpose"]
+      },
+      "5": {
+        "title": "The Lamb and the Scroll",
+        "summary": "The Lamb who was slain is worthy to open the sealed scroll",
+        "keyVerses": ["5:6", "5:9", "5:12"],
+        "themes": ["Christ's Worthiness", "Redemption", "Universal Worship"]
+      },
+      "6": {
+        "title": "The First Six Seals",
+        "summary": "The beginning of judgment as the first six seals are opened",
+        "keyVerses": ["6:1", "6:10", "6:17"],
+        "themes": ["Divine Judgment", "Martyrs' Cry", "God's Wrath"]
+      },
+      "7": {
+        "title": "The Sealed Saints",
+        "summary": "144,000 are sealed and the great multitude worships",
+        "keyVerses": ["7:3", "7:9", "7:17"],
+        "themes": ["Divine Protection", "Universal Salvation", "Comfort"]
+      },
+      "8": {
+        "title": "The Seventh Seal and First Four Trumpets",
+        "summary": "Silence in heaven and the first four trumpet judgments",
+        "keyVerses": ["8:1", "8:4", "8:13"],
+        "themes": ["Solemn Silence", "Prayers of Saints", "Escalating Judgment"]
+      },
+      "9": {
+        "title": "The Fifth and Sixth Trumpets",
+        "summary": "Demonic torment and a massive army from the east",
+        "keyVerses": ["9:4", "9:15", "9:20"],
+        "themes": ["Spiritual Warfare", "Unrepentant Hearts", "Demonic Activity"]
+      },
+      "10": {
+        "title": "The Angel and the Little Scroll",
+        "summary": "A mighty angel appears with a little scroll for John to eat",
+        "keyVerses": ["10:6", "10:9", "10:11"],
+        "themes": ["No More Delay", "Prophetic Commission", "Sweet and Bitter Truth"]
+      },
+      "11": {
+        "title": "The Two Witnesses",
+        "summary": "Two witnesses prophesy and are killed, then resurrected",
+        "keyVerses": ["11:3", "11:15", "11:18"],
+        "themes": ["Faithful Witness", "Christ's Kingdom", "Time of Judgment"]
+      },
+      "12": {
+        "title": "The Woman and the Dragon",
+        "summary": "The birth of the male child and war in heaven",
+        "keyVerses": ["12:1", "12:9", "12:11"],
+        "themes": ["Cosmic Conflict", "Satan's Defeat", "Victory Through Christ"]
+      },
+      "13": {
+        "title": "The Two Beasts",
+        "summary": "The beast from the sea and the beast from the earth",
+        "keyVerses": ["13:1", "13:16", "13:18"],
+        "themes": ["False Authority", "Deception", "The Mark of the Beast"]
+      },
+      "14": {
+        "title": "The Lamb and His Followers",
+        "summary": "144,000 with the Lamb and three angels with messages",
+        "keyVerses": ["14:1", "14:6", "14:13"],
+        "themes": ["Redemption", "Gospel Proclamation", "Eternal Rest"]
+      },
+      "15": {
+        "title": "Seven Angels with Seven Plagues",
+        "summary": "Preparation for the final judgments",
+        "keyVerses": ["15:1", "15:3", "15:8"],
+        "themes": ["Final Wrath", "Victory Song", "Divine Holiness"]
+      },
+      "16": {
+        "title": "The Seven Bowls of Wrath",
+        "summary": "The final series of judgments upon the earth",
+        "keyVerses": ["16:1", "16:9", "16:16"],
+        "themes": ["Complete Judgment", "Hardened Hearts", "Armageddon"]
+      },
+      "17": {
+        "title": "The Woman and the Beast",
+        "summary": "The great prostitute and her relationship with the beast",
+        "keyVerses": ["17:1", "17:14", "17:17"],
+        "themes": ["Religious Babylon", "Christ's Victory", "God's Sovereignty"]
+      },
+      "18": {
+        "title": "The Fall of Babylon",
+        "summary": "The complete destruction of Babylon the Great",
+        "keyVerses": ["18:2", "18:4", "18:20"],
+        "themes": ["Divine Judgment", "Call to Separation", "Heaven's Rejoicing"]
+      },
+      "19": {
+        "title": "Heaven's Celebration and Christ's Return",
+        "summary": "Worship in heaven and the second coming of Christ",
+        "keyVerses": ["19:1", "19:11", "19:16"],
+        "themes": ["Victory Celebration", "Faithful and True", "King of Kings"]
+      },
+      "20": {
+        "title": "The Thousand Years and Final Judgment",
+        "summary": "Satan bound, the millennium, and the great white throne",
+        "keyVerses": ["20:1", "20:6", "20:15"],
+        "themes": ["Satan's Binding", "First Resurrection", "Final Judgment"]
+      },
+      "21": {
+        "title": "The New Heaven and New Earth",
+        "summary": "All things made new and the New Jerusalem",
+        "keyVerses": ["21:1", "21:4", "21:22"],
+        "themes": ["New Creation", "No More Death", "God's Presence"]
+      },
+      "22": {
+        "title": "The River of Life and Final Words",
+        "summary": "The tree of life and Jesus' final promises",
+        "keyVerses": ["22:1", "22:12", "22:20"],
+        "themes": ["Eternal Life", "Imminent Return", "Come, Lord Jesus"]
+      }
+    }
+  }
+}

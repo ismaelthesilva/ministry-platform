@@ -1,0 +1,202 @@
+{
+  "revelation": {
+    "title": "Estudo do Livro de Apocalipse",
+    "subtitle": "Uma Jornada Capítulo por Capítulo, Versículo por Versículo",
+    "description": "Mergulhe profundamente nas visões proféticas de João e descubra as verdades profundas da revelação final de Cristo à humanidade.",
+    "navigation": {
+      "totalChapters": "22 Capítulos",
+      "studyProgress": "Progresso do Estudo",
+      "startStudy": "Iniciar Estudo",
+      "continueStudy": "Continuar Estudo",
+      "chapterOverview": "Visão Geral do Capítulo",
+      "verseStudy": "Estudo do Versículo",
+      "keyThemes": "Temas Principais",
+      "practicalApplication": "Aplicação Prática",
+      "previousChapter": "Capítulo Anterior",
+      "nextChapter": "Próximo Capítulo",
+      "backToOverview": "Voltar à Visão Geral"
+    },
+    "chapters": {
+      "1": {
+        "title": "A Revelação de Jesus Cristo",
+        "summary": "João recebe a visão e começam as mensagens às sete igrejas",
+        "keyVerses": ["1:1", "1:7", "1:17-18"],
+        "themes": ["Revelação Divina", "Autoridade de Cristo", "Conforto no Sofrimento"],
+        "verses": {
+          "1": {
+            "text": "A revelação de Jesus Cristo, que Deus lhe deu para mostrar aos seus servos o que deve acontecer em breve. Ele a tornou conhecida enviando o seu anjo ao seu servo João,",
+            "commentary": "Este versículo de abertura estabelece a origem divina e o propósito de todo o livro. A palavra 'revelação' (apokalypsis) significa 'desvelamento' ou 'revelação.'",
+            "keyPoints": [
+              "Origem divina - de Jesus Cristo",
+              "Propósito - mostrar eventos futuros",
+              "Método - através de mensageiro angelical",
+              "Os eventos 'devem acontecer em breve' - indicando certeza e urgência"
+            ],
+            "application": "Deus deseja revelar Seus planos ao Seu povo. Devemos abordar este livro com reverência, expectativa e um coração pronto para receber a verdade divina. Como servos de Deus, somos destinatários pretendidos desta revelação."
+          },
+          "2": {
+            "text": "que testifica de tudo o que viu, isto é, a palavra de Deus e o testemunho de Jesus Cristo.",
+            "commentary": "João serve como uma testemunha fiel, enfatizando a confiabilidade e completude do que ele registra. Ele testifica de 'tudo' o que viu, não omitindo nada. Este testemunho carrega o peso tanto da palavra de Deus quanto do testemunho direto de Jesus Cristo.",
+            "keyPoints": [
+              "João como testemunha fiel e completa",
+              "Testemunho inclui tanto a palavra de Deus quanto o testemunho de Jesus",
+              "Nada é omitido da revelação",
+              "Autenticação dupla - palavra divina e testemunho de Cristo"
+            ],
+            "application": "Nós também somos chamados a ser testemunhas fiéis do que Deus nos revelou. Como João, devemos testemunhar completa e precisamente a verdade de Deus, não omitindo nada ao compartilhar o Evangelho."
+          },
+          "3": {
+            "text": "Bem-aventurado aquele que lê, e os que ouvem as palavras desta profecia, e guardam as coisas que nela estão escritas; porque o tempo está próximo.",
+            "commentary": "Esta é a primeira das sete bem-aventuranças em Apocalipse. Ela promete bênção para três ações: ler em voz alta, ouvir e guardar. A leitura pública sugere que o livro foi destinado ao culto congregacional. A proximidade do tempo adiciona urgência ao atender sua mensagem.",
+            "keyPoints": [
+              "Primeira bem-aventurança - bênção prometida",
+              "Três ações abençoadas: ler, ouvir, obedecer",
+              "Projetado para ambiente de culto público",
+              "Urgência enfatizada - 'o tempo está próximo'"
+            ],
+            "application": "Deus abençoa aqueles que se envolvem seriamente com Sua palavra profética. Não devemos apenas ler ou ouvir, mas 'guardar' - permitir que transforme nossas vidas. A proximidade do retorno de Cristo deve motivar nossa obediência."
+          }
+        }
+      },
+      "2": {
+        "title": "Cartas a Quatro Igrejas",
+        "summary": "Mensagens para Éfeso, Esmirna, Pérgamo e Tiatira",
+        "keyVerses": ["2:4", "2:10", "2:17"],
+        "themes": ["Avaliação da Igreja", "Fidelidade", "Vencer"],
+        "verses": {
+          "1": {
+            "text": "Ao anjo da igreja que está em Éfeso escreve: Isto diz aquele que tem na sua destra as sete estrelas, que anda no meio dos sete castiçais de ouro:",
+            "commentary": "A primeira carta é dirigida à igreja de Éfeso, uma das principais cidades da Ásia Menor. Cristo se apresenta como aquele que segura as estrelas (os anjos/pastores das igrejas) e anda entre os castiçais (as igrejas).",
+            "keyPoints": [
+              "Cristo segura as estrelas (pastores/anjos)",
+              "Cristo anda entre as igrejas",
+              "Supervisão divina constante",
+              "Autoridade sobre os líderes da igreja"
+            ],
+            "application": "Cristo está ativamente presente em Sua igreja hoje, observando e cuidando de cada congregação. Os pastores estão em Suas mãos, e Ele supervisiona pessoalmente cada igreja local."
+          }
+        }
+      },
+      "3": {
+        "title": "Cartas a Três Igrejas",
+        "summary": "Mensagens para Sardo, Filadélfia e Laodicéia",
+        "keyVerses": ["3:1", "3:8", "3:20"],
+        "themes": ["Vida Espiritual vs Morte", "Portas Abertas", "Convite de Cristo"]
+      },
+      "4": {
+        "title": "A Sala do Trono do Céu",
+        "summary": "João é levado ao céu e vê o trono de Deus",
+        "keyVerses": ["4:2", "4:8", "4:11"],
+        "themes": ["Majestade Divina", "Adoração", "Propósito da Criação"]
+      },
+      "5": {
+        "title": "O Cordeiro e o Rolo",
+        "summary": "O Cordeiro que foi morto é digno de abrir o rolo selado",
+        "keyVerses": ["5:6", "5:9", "5:12"],
+        "themes": ["Dignidade de Cristo", "Redenção", "Adoração Universal"]
+      },
+      "6": {
+        "title": "Os Primeiros Seis Selos",
+        "summary": "O início do julgamento quando os primeiros seis selos são abertos",
+        "keyVerses": ["6:1", "6:10", "6:17"],
+        "themes": ["Julgamento Divino", "Clamor dos Mártires", "Ira de Deus"]
+      },
+      "7": {
+        "title": "Os Santos Selados",
+        "summary": "144.000 são selados e a grande multidão adora",
+        "keyVerses": ["7:3", "7:9", "7:17"],
+        "themes": ["Proteção Divina", "Salvação Universal", "Consolação"]
+      },
+      "8": {
+        "title": "O Sétimo Selo e as Primeiras Quatro Trombetas",
+        "summary": "Silêncio no céu e os primeiros quatro julgamentos das trombetas",
+        "keyVerses": ["8:1", "8:4", "8:13"],
+        "themes": ["Silêncio Solene", "Orações dos Santos", "Julgamento Crescente"]
+      },
+      "9": {
+        "title": "A Quinta e Sexta Trombetas",
+        "summary": "Tormento demoníaco e um exército massivo do oriente",
+        "keyVerses": ["9:4", "9:15", "9:20"],
+        "themes": ["Guerra Espiritual", "Corações Impenitentes", "Atividade Demoníaca"]
+      },
+      "10": {
+        "title": "O Anjo e o Pequeno Rolo",
+        "summary": "Um anjo poderoso aparece com um pequeno rolo para João comer",
+        "keyVerses": ["10:6", "10:9", "10:11"],
+        "themes": ["Não Há Mais Demora", "Comissão Profética", "Verdade Doce e Amarga"]
+      },
+      "11": {
+        "title": "As Duas Testemunhas",
+        "summary": "Duas testemunhas profetizam e são mortas, depois ressuscitadas",
+        "keyVerses": ["11:3", "11:15", "11:18"],
+        "themes": ["Testemunho Fiel", "Reino de Cristo", "Tempo de Julgamento"]
+      },
+      "12": {
+        "title": "A Mulher e o Dragão",
+        "summary": "O nascimento do filho varão e guerra no céu",
+        "keyVerses": ["12:1", "12:9", "12:11"],
+        "themes": ["Conflito Cósmico", "Derrota de Satanás", "Vitória Através de Cristo"]
+      },
+      "13": {
+        "title": "As Duas Bestas",
+        "summary": "A besta do mar e a besta da terra",
+        "keyVerses": ["13:1", "13:16", "13:18"],
+        "themes": ["Autoridade Falsa", "Engano", "A Marca da Besta"]
+      },
+      "14": {
+        "title": "O Cordeiro e Seus Seguidores",
+        "summary": "144.000 com o Cordeiro e três anjos com mensagens",
+        "keyVerses": ["14:1", "14:6", "14:13"],
+        "themes": ["Redenção", "Proclamação do Evangelho", "Descanso Eterno"]
+      },
+      "15": {
+        "title": "Sete Anjos com Sete Pragas",
+        "summary": "Preparação para os julgamentos finais",
+        "keyVerses": ["15:1", "15:3", "15:8"],
+        "themes": ["Ira Final", "Cântico da Vitória", "Santidade Divina"]
+      },
+      "16": {
+        "title": "As Sete Taças da Ira",
+        "summary": "A série final de julgamentos sobre a terra",
+        "keyVerses": ["16:1", "16:9", "16:16"],
+        "themes": ["Julgamento Completo", "Corações Endurecidos", "Armagedom"]
+      },
+      "17": {
+        "title": "A Mulher e a Besta",
+        "summary": "A grande prostituta e sua relação com a besta",
+        "keyVerses": ["17:1", "17:14", "17:17"],
+        "themes": ["Babilônia Religiosa", "Vitória de Cristo", "Soberania de Deus"]
+      },
+      "18": {
+        "title": "A Queda da Babilônia",
+        "summary": "A destruição completa da grande Babilônia",
+        "keyVerses": ["18:2", "18:4", "18:20"],
+        "themes": ["Julgamento Divino", "Chamado à Separação", "Regozijo do Céu"]
+      },
+      "19": {
+        "title": "Celebração do Céu e Retorno de Cristo",
+        "summary": "Adoração no céu e a segunda vinda de Cristo",
+        "keyVerses": ["19:1", "19:11", "19:16"],
+        "themes": ["Celebração da Vitória", "Fiel e Verdadeiro", "Rei dos Reis"]
+      },
+      "20": {
+        "title": "Os Mil Anos e Julgamento Final",
+        "summary": "Satanás amarrado, o milênio e o grande trono branco",
+        "keyVerses": ["20:1", "20:6", "20:15"],
+        "themes": ["Amarração de Satanás", "Primeira Ressurreição", "Julgamento Final"]
+      },
+      "21": {
+        "title": "O Novo Céu e Nova Terra",
+        "summary": "Todas as coisas feitas novas e a Nova Jerusalém",
+        "keyVerses": ["21:1", "21:4", "21:22"],
+        "themes": ["Nova Criação", "Não Mais Morte", "Presença de Deus"]
+      },
+      "22": {
+        "title": "O Rio da Vida e Palavras Finais",
+        "summary": "A árvore da vida e as promessas finais de Jesus",
+        "keyVerses": ["22:1", "22:12", "22:20"],
+        "themes": ["Vida Eterna", "Retorno Iminente", "Vem, Senhor Jesus"]
+      }
+    }
+  }
+}
