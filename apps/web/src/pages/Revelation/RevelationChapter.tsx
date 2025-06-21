@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import ChapterStats from '@/components/ChapterStats';
+import { getEnhancedChapterStats } from '@/utils/chapterUtils';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -13,7 +15,6 @@ import {
   MessageSquare, 
   Lightbulb,
   Heart,
-  Star,
   Eye,
   Target,
   CheckCircle
@@ -38,11 +39,17 @@ const RevelationChapter: React.FC = () => {
   
   const chapter = parseInt(chapterNumber || '1');
   
-  // Get chapter data from translations
-  const chapterData = tr(`revelation.chapters.${chapter}`);
-  const title = chapterData?.title || `Chapter ${chapter}`;
-  const summary = chapterData?.summary || 'Verse by verse study';
-  const themes = chapterData?.themes || [];
+  // Get chapter data from translations - handling type safety
+  const chapterData = tr(`revelation.chapters.${chapter}`) as unknown;
+  const title = (typeof chapterData === 'object' && chapterData && 'title' in chapterData && typeof chapterData.title === 'string') 
+    ? chapterData.title 
+    : `Chapter ${chapter}`;
+  const summary = (typeof chapterData === 'object' && chapterData && 'summary' in chapterData && typeof chapterData.summary === 'string') 
+    ? chapterData.summary 
+    : 'Verse by verse study';
+  const themes = (typeof chapterData === 'object' && chapterData && 'themes' in chapterData && Array.isArray(chapterData.themes)) 
+    ? chapterData.themes 
+    : [];
   
   // Sample verses - replace with actual data from translations
   const verses: Verse[] = [
@@ -50,11 +57,14 @@ const RevelationChapter: React.FC = () => {
       number: 1,
       text: tr(`revelation.chapters.${chapter}.verses.1.text`) || "The revelation from Jesus Christ, which God gave him to show his servants what must soon take place.",
       commentary: tr(`revelation.chapters.${chapter}.verses.1.commentary`) || "This opening verse establishes the divine origin and purpose of the entire book.",
-      keyPoints: tr(`revelation.chapters.${chapter}.verses.1.keyPoints`) || [
-        "Divine origin - from Jesus Christ",
-        "Purpose - to show future events", 
-        "Method - through angelic messenger"
-      ],
+      keyPoints: (() => {
+        const points = tr(`revelation.chapters.${chapter}.verses.1.keyPoints`);
+        return Array.isArray(points) ? points : [
+          "Divine origin - from Jesus Christ",
+          "Purpose - to show future events", 
+          "Method - through angelic messenger"
+        ];
+      })(),
       application: tr(`revelation.chapters.${chapter}.verses.1.application`) || "God desires to reveal His plans to His people.",
       greekNotes: "Ἀποκάλυψις (apokalypsis) - unveiling, revelation",
       crossReferences: ["Dan 2:28-29", "Rev 22:6", "Amos 3:7"]
@@ -63,13 +73,32 @@ const RevelationChapter: React.FC = () => {
       number: 2,
       text: tr(`revelation.chapters.${chapter}.verses.2.text`) || "who testifies to everything he saw—that is, the word of God and the testimony of Jesus Christ.",
       commentary: tr(`revelation.chapters.${chapter}.verses.2.commentary`) || "John serves as a faithful witness, emphasizing the reliability of what he records.",
-      keyPoints: tr(`revelation.chapters.${chapter}.verses.2.keyPoints`) || [
-        "John as faithful witness",
-        "Word of God's authority", 
-        "Jesus Christ's testimony"
-      ],
+      keyPoints: (() => {
+        const points = tr(`revelation.chapters.${chapter}.verses.2.keyPoints`);
+        return Array.isArray(points) ? points : [
+          "John as faithful witness",
+          "Word of God's authority", 
+          "Jesus Christ's testimony"
+        ];
+      })(),
       application: tr(`revelation.chapters.${chapter}.verses.2.application`) || "We too are called to be faithful witnesses.",
       crossReferences: ["John 19:35", "1 John 1:1-3", "John 21:24"]
+    },
+    {
+      number: 3,
+      text: tr(`revelation.chapters.${chapter}.verses.3.text`) || "Blessed is the one who reads aloud the words of this prophecy, and blessed are those who hear it and take to heart what is written in it, because the time is near.",
+      commentary: tr(`revelation.chapters.${chapter}.verses.3.commentary`) || "This is the first of seven beatitudes in Revelation. It promises blessing for three actions: reading aloud, hearing, and taking to heart.",
+      keyPoints: (() => {
+        const points = tr(`revelation.chapters.${chapter}.verses.3.keyPoints`);
+        return Array.isArray(points) ? points : [
+          "First beatitude - blessing promised",
+          "Three blessed actions: read, hear, obey",
+          "Designed for public worship setting",
+          "Urgency emphasized - 'the time is near'"
+        ];
+      })(),
+      application: tr(`revelation.chapters.${chapter}.verses.3.application`) || "God blesses those who engage seriously with His prophetic word.",
+      crossReferences: ["Rev 22:7", "Luke 11:28", "James 1:25"]
     }
   ];
 
@@ -89,6 +118,9 @@ const RevelationChapter: React.FC = () => {
   const currentVerse = verses.find(v => v.number === selectedVerse);
   const progress = (completedVerses.size / verses.length) * 100;
 
+  // Get enhanced chapter statistics
+  const chapterStats = getEnhancedChapterStats(chapter, verses, progress);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
@@ -100,7 +132,7 @@ const RevelationChapter: React.FC = () => {
               <Link to="/revelation">
                 <Button variant="outline" size="sm" className="hover:bg-blue-50">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  {tr('revelation.navigation.backToOverview')}
+                  {tr('revelation.navigation.backToOverview') || 'Back to Overview'}
                 </Button>
               </Link>
               <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
@@ -342,7 +374,7 @@ const RevelationChapter: React.FC = () => {
                                 <h4 className="font-semibold mb-2">Key Points</h4>
                                 <ul className="space-y-1">
                                   {verse.keyPoints.map((point, index) => (
-                                    <li key={index} className="flex items-start gap-2"></li>
+                                    <li key={index} className="flex items-start gap-2">
                                       <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                                       <span className="text-gray-700 dark:text-gray-300 text-sm">{point}</span>
                                     </li>
@@ -384,7 +416,7 @@ const RevelationChapter: React.FC = () => {
                     <ScrollArea className="h-[600px]">
                       <div className="space-y-6">
                         {verses.map((verse) => (
-                          <div key={verse.number} className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg"></div>
+                          <div key={verse.number} className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
                             <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
                               <Badge variant="outline">{verse.number}</Badge>
                               Personal Application
@@ -404,6 +436,19 @@ const RevelationChapter: React.FC = () => {
 
           {/* Enhanced Sidebar */}
           <div className="space-y-6">
+            
+            {/* Enhanced Chapter Statistics */}
+            <ChapterStats
+              chapterNumber={chapter}
+              scriptureWordCount={chapterStats.scriptureWords}
+              commentaryWordCount={chapterStats.commentaryWords}
+              verseCount={chapterStats.verseCount}
+              themes={chapterStats.themes}
+              crossReferences={chapterStats.crossReferences}
+              keyWords={chapterStats.keyWords}
+              difficultyLevel={chapterStats.difficulty}
+              studyProgress={Math.round(progress)}
+            />
             
             {/* Study Progress */}
             <Card>
@@ -430,7 +475,7 @@ const RevelationChapter: React.FC = () => {
             </Card>
             
             {/* Chapter Navigation */}
-            <Card></Card>
+            <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Chapter Navigation</CardTitle>
               </CardHeader>
@@ -455,20 +500,22 @@ const RevelationChapter: React.FC = () => {
             </Card>
 
             {/* Key Themes */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Key Themes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {themes.map((theme: string, index: number) => (
-                    <Badge key={index} variant="secondary">
-                      {theme}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            {themes.length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Themes</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {themes.map((theme: string, index: number) => (
+                      <Badge key={index} variant="secondary">
+                        {theme}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Quick Actions */}
             <Card>
@@ -483,7 +530,7 @@ const RevelationChapter: React.FC = () => {
                   </Button>
                 </Link>
                 <Button variant="ghost" className="w-full justify-start" onClick={() => setCompletedVerses(new Set())}>
-                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  <Target className="mr-2 h-4 w-4" />
                   Reset Progress
                 </Button>
               </CardContent>

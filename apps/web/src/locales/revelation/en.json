@@ -19,42 +19,115 @@
     "chapters": {
       "1": {
         "title": "The Revelation of Jesus Christ",
-        "summary": "John receives the vision and messages to the seven churches begin",
-        "keyVerses": ["1:1", "1:7", "1:17-18"],
-        "themes": ["Divine Revelation", "Christ's Authority", "Comfort in Suffering"],
-        "verses": {
+        "summary": "John receives the divine revelation and introduces the prophetic visions that will follow. This chapter establishes the authority, purpose, and blessed nature of the entire book.",
+        "keyVerses": ["1:1", "1:3", "1:7", "1:17-18"],
+        "themes": ["Divine Revelation", "Christ's Authority", "Faithful Witness", "Blessed Obedience", "Prophetic Urgency"],
+        "introduction": "The visions of this book are presented as an 'unveiling of hidden truths,' a revelation of God's sovereignty over the future, showing how He will bring an end to the apparent success of the forces of evil in this world",
+        "sections": {
           "1": {
-            "text": "The revelation from Jesus Christ, which God gave him to show his servants what must soon take place. He made it known by sending his angel to his servant John,",
-            "commentary": "This opening verse establishes the divine origin and purpose of the entire book. The word 'revelation' (apokalypsis) means 'unveiling' or 'disclosure.' This is not merely human speculation about the future, but a divine communication from Jesus Christ himself.",
-            "keyPoints": [
-              "Divine origin - directly from Jesus Christ",
-              "Purpose - to show future events to God's servants",
-              "Method - through angelic messenger to John",
-              "The events 'must soon take place' - indicating certainty and urgency"
-            ],
-            "application": "God desires to reveal His plans to His people. We should approach this book with reverence, expectation, and a heart ready to receive divine truth. As servants of God, we are intended recipients of this revelation."
+            "title": "Prologue: The Chain of Revelation (1:1-3)",
+            "content": "Revelation opens with a declaration of origin and purpose. Here, 'revelation' (ἀποκάλυψις, apokalypsis) literally means 'to remove the veil,' to highlight what was hidden and is now made explicit. This 'Revelation' is, therefore, more than a prophecy about the end; it is a revelation of Jesus himself, where He explains in detail the plan of redemption.",
+            "keyInsights": [
+              "The path of revelation is fourfold: God → Jesus → angel → John → churches",
+              "The verb 'show' (σημαίνω, sēmainō) indicates figurative and symbolic language",
+              "'Servants' (δοῦλος, doulos) broadens the scope: the entire community of faith",
+              "The 'things which must shortly take place' echo Daniel 2:28-30"
+            ]
           },
           "2": {
-            "text": "who testifies to everything he saw—that is, the word of God and the testimony of Jesus Christ.",
-            "commentary": "John serves as a faithful witness, emphasizing the reliability and completeness of what he records. He testifies to 'everything' he saw, holding nothing back. This testimony carries the weight of both God's word and Jesus Christ's direct witness.",
-            "keyPoints": [
-              "John as faithful and complete witness",
-              "Testimony includes both word of God and Jesus' witness",
-              "Nothing is omitted from the revelation",
-              "Dual authentication - divine word and Christ's testimony"
-            ],
-            "application": "We too are called to be faithful witnesses of what God has revealed to us. Like John, we should testify completely and accurately to God's truth, holding nothing back when sharing the Gospel."
+            "title": "Eyewitness: Word and Testimony (1:2)",
+            "content": "John presents himself as one who 'bore witness to the word of God, and to the testimony of Jesus Christ, to all things that he saw.' The term 'testimony' (μαρτυρία, martyria) refers to the prophetic mission and commitment to revealed truth, even in the face of persecution.",
+            "keyInsights": [
+              "The 'word of God' echoes Genesis 1 and John 1",
+              "The testimony of Jesus is the essence of the prophetic spirit (cf. 19:10)",
+              "John assumes the posture of a faithful messenger like the ancient prophets"
+            ]
           },
           "3": {
-            "text": "Blessed is the one who reads aloud the words of this prophecy, and blessed are those who hear it and take to heart what is written in it, because the time is near.",
-            "commentary": "This is the first of seven beatitudes in Revelation. It promises blessing for three actions: reading aloud, hearing, and taking to heart. The public reading suggests the book was meant for congregational worship. The nearness of time adds urgency to heeding its message.",
+            "title": "Beatitude of the Reader (1:3)",
+            "content": "Revelation begins with the first of seven beatitudes, highlighting the value of reading, hearing, and practicing the message. It is not enough to read superficially; it is necessary to listen carefully and obey, allowing the text to shape one's life.",
+            "keyInsights": [
+              "'Keep' is a recurring verb, indicating commitment to God's will",
+              "The blessing is for those who persevere, for 'the time is near'",
+              "The point is not speculation, but readiness and faithfulness"
+            ]
+          },
+          "4": {
+            "title": "Trinitarian Greeting and Doxology (1:4-6)",
+            "content": "The immediate recipient is 'the seven churches which are in Asia,' representing the totality of God's people of all times. The threefold greeting highlights the sovereign and saving work of the Trinity: the Father, the Spirit, and the Son act in perfect unity to redeem and sustain the people.",
+            "keyInsights": [
+              "Christ is presented in three titles: Faithful Witness, Firstborn from the dead, Ruler of kings",
+              "He 'loved us and washed us from our sins in His own blood'",
+              "He makes His people 'kings and priests' (Ex 19:6), called to service and witness"
+            ]
+          },
+          "5": {
+            "title": "Eschatological Announcement (1:7-8)",
+            "content": "'Behold, He is coming with clouds, and every eye will see Him...' The return of Christ will be universal, visible, and transformative, reversing all injustice and rejection. The phrase 'I am the Alpha and the Omega...' emphasizes God's absolute sovereignty over all history.",
+            "keyInsights": [
+              "Even 'those who pierced Him' will experience revelation and mourning",
+              "God is the beginning and the end, the Lord of time and destiny",
+              "Able to fulfill all His promises"
+            ]
+          },
+          "6": {
+            "title": "Christ in the Midst of the Golden Lampstands (1:9-20)",
+            "content": "John identifies with his readers as 'brother and companion in the tribulation and kingdom and patience.' The central vision presents Christ walking 'in the midst of the seven golden lampstands' (the churches), as the 'Son of Man,' clothed as High Priest and King.",
+            "symbolism": {
+              "head_hair": "Head and hair white: image of the 'Ancient of Days' (Dan 7:9)",
+              "eyes": "Eyes like a flame of fire: penetration and judgment (Dan 10:6)",
+              "feet": "Feet like fine brass: firmness, purity and victory over evil",
+              "voice": "Voice as the sound of many waters: majesty and divine power (Ezek 1:24)",
+              "stars": "Seven stars in His right hand: authority over the angels of the churches",
+              "sword": "Sharp two-edged sword: the divine Word, which judges and liberates",
+              "countenance": "Countenance like the sun: divine glory, messianic victory"
+            },
+            "keyInsights": [
+              "Christ declares He has 'the keys of Hades and of Death'",
+              "Total authority over human destiny",
+              "Christ reigns even in the midst of His church's suffering"
+            ]
+          }
+        },
+        "verses": {
+          "1": {
+            "text": "The Revelation of Jesus Christ, which God gave Him to show His servants—things which must shortly take place. And He sent and signified it by His angel to His servant John,",
+            "commentary": "Revelation opens with a declaration of origin and purpose. Here, 'revelation' (ἀποκάλυψις, apokalypsis) literally means 'to remove the veil,' to highlight what was hidden and is now made explicit. The term, which appears 18 times in the New Testament, always indicates a divine act of revelation.",
             "keyPoints": [
-              "First beatitude - blessing promised",
-              "Three blessed actions: read, hear, obey",
-              "Designed for public worship setting",
-              "Urgency emphasized - 'the time is near'"
+              "Divine origin - revelation of Jesus Christ which God gave Him",
+              "Purpose - to show His servants things which must shortly take place",
+              "Method - through angel sent to John",
+              "The term 'signified' (σημαίνω) indicates use of signs and symbols"
             ],
-            "application": "God blesses those who engage seriously with His prophetic word. We should not just read or hear, but 'take to heart' - allow it to transform our lives. The nearness of Christ's return should motivate our obedience."
+            "application": "This 'Revelation' is more than a prophecy about the end; it is a revelation of Jesus himself, where He explains in detail the plan of redemption. Therefore, many consider Revelation as the 'Fifth Gospel,' for in it all of God's promises converge and are fulfilled.",
+            "greekNotes": "ἀποκάλυψις (apokalypsis) - unveiling, revelation; σημαίνω (sēmainō) - to make known by signs",
+            "crossReferences": ["Luke 2:32", "Rom 16:25", "Dan 2:28-30"]
+          },
+          "2": {
+            "text": "who bore witness to the word of God, and to the testimony of Jesus Christ, to all things that he saw.",
+            "commentary": "John presents himself as one who 'bore witness to the word of God, and to the testimony of Jesus Christ, to all things that he saw.' The term 'testimony' (μαρτυρία, martyria) refers to the prophetic mission and commitment to revealed truth, even in the face of persecution.",
+            "keyPoints": [
+              "John as faithful and complete witness",
+              "Testimony includes both word of God and testimony of Jesus",
+              "Nothing is omitted from the revelation - 'all things that he saw'",
+              "The 'testimony of Jesus' is identified as the essence of the prophetic spirit (cf. 19:10)"
+            ],
+            "application": "The expression 'word of God' echoes Genesis 1 ('Let there be light') and John 1 ('In the beginning was the Word'), showing that revelation is creative and recreative. The central content is Christ, who acts as mediator and also as the theme of revelation.",
+            "greekNotes": "μαρτυρία (martyria) - testimony, witness; ἐμαρτύρησεν (emarturesen) - testified, bore witness",
+            "crossReferences": ["John 19:35", "1 John 1:1-3", "John 21:24", "Rev 19:10"]
+          },
+          "3": {
+            "text": "Blessed is he who reads and those who hear the words of this prophecy, and keep those things which are written in it; for the time is near.",
+            "commentary": "Revelation begins with the first of seven beatitudes, highlighting the value of reading, hearing, and practicing the message. It is not enough to read superficially; it is necessary to listen carefully and obey, allowing the text to shape one's life.",
+            "keyPoints": [
+              "First of seven beatitudes in Revelation",
+              "Three blessed actions: read, hear, and keep",
+              "Designed for public worship setting",
+              "Urgency emphasized - 'for the time is near'"
+            ],
+            "application": "'Keep' is a recurring verb throughout the book, indicating commitment to God's will even amid pressures. The blessing is for those who persevere, for 'the time is near': the point is not speculation, but readiness and faithfulness.",
+            "greekNotes": "μακάριος (makarios) - blessed, happy; τηρεῖν (terein) - to keep, observe, obey",
+            "crossReferences": ["Rev 22:7", "Luke 11:28", "James 1:25"]
           }
         }
       },

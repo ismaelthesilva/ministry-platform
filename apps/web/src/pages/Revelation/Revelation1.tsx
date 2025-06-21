@@ -1,62 +1,580 @@
-import React from 'react';
-import RevelationChapter from './RevelationChapter-simple';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { 
+  BookOpen, 
+  Clock, 
+  Star, 
+  ChevronDown,
+  ChevronUp,
+  Eye,
+  MessageSquare,
+  Heart,
+  Lightbulb,
+  Quote
+} from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+
+// Updated interfaces to match actual JSON structure
+interface GreekTerm {
+  term: string;
+  meaning: string;
+}
+
+interface ChristTitle {
+  title: string;
+  meaning: string;
+}
+
+interface ChristDescription {
+  feature: string;
+  meaning: string;
+  reference?: string;
+}
+
+interface Section {
+  title: string;
+  content: string;
+  keyPoints?: string[];
+  keyInsights?: string[];
+  greekTerms?: GreekTerm[];
+  theologicalInsights?: string[];
+  christTitles?: ChristTitle[];
+  christDescription?: ChristDescription[];
+  practicalApplication?: string;
+  crossReferences?: string[];
+  symbolism?: Record<string, string>;
+  response?: string;
+  authority?: string;
+  doxology?: string;
+  alphaOmega?: string;
+}
+
+interface Verse {
+  text: string;
+  commentary: string;
+  keyPoints: string[];
+  application: string;
+  greekNotes?: string;
+  crossReferences?: string[];
+}
+
+interface ChapterData {
+  title: string;
+  subtitle?: string;
+  summary: string;
+  themes: string[];
+  keyVerses: string[];
+  epigraph?: string;
+  sections: Record<string, Section>;
+  verses: Record<string, Verse>;
+  conclusion?: string;
+  references?: string[];
+}
 
 const Revelation1: React.FC = () => {
-  const verses = [
-    {
-      number: 1,
-      text: "The revelation from Jesus Christ, which God gave him to show his servants what must soon take place. He made it known by sending his angel to his servant John,",
-      commentary: "This opening verse establishes the divine origin and purpose of the entire book. The word 'revelation' (apokalypsis) means 'unveiling' or 'disclosure.' This is not merely human speculation about the future, but a divine communication from Jesus Christ himself.",
-      keyPoints: [
-        "Divine origin - directly from Jesus Christ",
-        "Purpose - to show future events to God's servants",
-        "Method - through angelic messenger to John",
-        "The events 'must soon take place' - indicating certainty and urgency"
-      ],
-      application: "God desires to reveal His plans to His people. We should approach this book with reverence, expectation, and a heart ready to receive divine truth. As servants of God, we are intended recipients of this revelation."
-    },
-    {
-      number: 2,
-      text: "who testifies to everything he saw—that is, the word of God and the testimony of Jesus Christ.",
-      commentary: "John serves as a faithful witness, emphasizing the reliability and completeness of what he records. He testifies to 'everything' he saw, holding nothing back. This testimony carries the weight of both God's word and Jesus Christ's direct witness.",
-      keyPoints: [
-        "John as faithful and complete witness",
-        "Testimony includes both word of God and Jesus' witness",
-        "Nothing is omitted from the revelation",
-        "Dual authentication - divine word and Christ's testimony"
-      ],
-      application: "We too are called to be faithful witnesses of what God has revealed to us. Like John, we should testify completely and accurately to God's truth, holding nothing back when sharing the Gospel."
-    },
-    {
-      number: 3,
-      text: "Blessed is the one who reads aloud the words of this prophecy, and blessed are those who hear it and take to heart what is written in it, because the time is near.",
-      commentary: "This is the first of seven beatitudes in Revelation. It promises blessing for three actions: reading aloud, hearing, and taking to heart. The public reading suggests the book was meant for congregational worship. The nearness of time adds urgency to heeding its message.",
-      keyPoints: [
-        "First beatitude - blessing promised",
-        "Three blessed actions: read, hear, obey",
-        "Designed for public worship setting",
-        "Urgency emphasized - 'the time is near'"
-      ],
-      application: "God blesses those who engage seriously with His prophetic word. We should not just read or hear, but 'take to heart' - allow it to transform our lives. The nearness of Christ's return should motivate our obedience."
-    }
-  ];
+  const navigate = useNavigate();
+  const { tr, language } = useLanguage(); // Get both translation function and current language
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
-  const themes = [
-    "Divine Revelation",
-    "Christ's Authority", 
-    "Faithful Witness",
-    "Blessed Obedience",
-    "Prophetic Urgency"
-  ];
+  // Get chapter data from translations - this now works for both EN and PT
+  const chapterData = tr('revelation.chapters.1') as unknown as ChapterData;
+  
+  // Safe property access with fallbacks
+  const title = chapterData?.title || (language === 'br' ? 'Apocalipse 1' : 'Revelation 1');
+  const subtitle = chapterData?.subtitle || '';
+  const summary = chapterData?.summary || (language === 'br' ? 'João recebe a revelação divina' : 'John receives the divine revelation');
+  const themes = chapterData?.themes || [];
+  const keyVerses = chapterData?.keyVerses || [];
+  const epigraph = chapterData?.epigraph || '';
+  const sections = chapterData?.sections || {};
+  const verses = chapterData?.verses || {};
+
+  const handleStartStudy = () => {
+    navigate('/revelation/1');
+  };
+
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionId]: !prev[sectionId]
+    }));
+  };
+
+  // Localized text based on current language
+  const getText = (enText: string, ptText: string) => {
+    return language === 'br' ? ptText : enText;
+  };
 
   return (
-    <RevelationChapter
-      chapterNumber={1}
-      title="The Revelation of Jesus Christ"
-      summary="John receives the divine revelation and introduces the prophetic visions that will follow. This chapter establishes the authority, purpose, and blessed nature of the entire book."
-      verses={verses}
-      themes={themes}
-    />
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-8">
+      <div className="max-w-5xl mx-auto">
+        
+        {/* Header Card */}
+        <Card className="mb-8 border-l-4 border-l-blue-600">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <CardTitle className="text-3xl text-gray-800 dark:text-white flex items-center gap-3 mb-2">
+                  <BookOpen className="h-8 w-8 text-blue-600" />
+                  {title}
+                </CardTitle>
+                {subtitle && (
+                  <div className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-2">
+                    {subtitle}
+                  </div>
+                )}
+                <CardDescription className="text-lg text-gray-600 dark:text-gray-300">
+                  {summary}
+                </CardDescription>
+              </div>
+              <div className="flex flex-col items-end gap-3">
+                <Button onClick={handleStartStudy} className="bg-blue-600 hover:bg-blue-700">
+                  <Eye className="mr-2 h-4 w-4" />
+                  {getText('Start Complete Study', 'Iniciar Estudo Completo')}
+                </Button>
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <Clock className="h-4 w-4" />
+                  {getText('~16 min study', '~16 min de estudo')}
+                </div>
+              </div>
+            </div>
+
+            {/* Epigraph */}
+            {epigraph && (
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-l-blue-500">
+                <Quote className="h-5 w-5 text-blue-600 mb-2" />
+                <p className="text-gray-700 dark:text-gray-300 italic text-sm leading-relaxed">
+                  {epigraph}
+                </p>
+              </div>
+            )}
+
+            {/* Themes and Key Verses */}
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                  <Star className="h-4 w-4 text-yellow-500" />
+                  {getText('Key Themes', 'Temas Principais')}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {themes.map((theme: string, index: number) => (
+                    <Badge key={index} variant="secondary" className="bg-blue-100 text-blue-800 border-blue-200">
+                      {theme}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                  <BookOpen className="h-4 w-4 text-green-500" />
+                  {getText('Key Verses', 'Versículos-Chave')}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {keyVerses.map((verse: string, index: number) => (
+                    <Badge key={index} variant="outline" className="border-green-200 text-green-700">
+                      {verse}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </CardHeader>
+        </Card>
+
+        {/* Commentary Sections */}
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+            <MessageSquare className="h-6 w-6 text-purple-600" />
+            {getText('Detailed Commentary', 'Comentário Detalhado')}
+          </h2>
+
+          {Object.entries(sections).map(([sectionId, section]: [string, Section]) => (
+            <Card key={sectionId} className="overflow-hidden">
+              <CardHeader 
+                className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                onClick={() => toggleSection(sectionId)}
+              >
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <div className="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                      <span className="text-purple-600 font-bold text-sm">{sectionId}</span>
+                    </div>
+                    {section.title}
+                  </CardTitle>
+                  {expandedSections[sectionId] ? 
+                    <ChevronUp className="h-5 w-5 text-gray-500" /> : 
+                    <ChevronDown className="h-5 w-5 text-gray-500" />
+                  }
+                </div>
+              </CardHeader>
+              
+              {expandedSections[sectionId] && (
+                <CardContent className="space-y-4">
+                  
+                  {/* Main Content */}
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {section.content}
+                  </p>
+
+                  {/* Key Insights */}
+                  {section.keyInsights && section.keyInsights.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2 flex items-center gap-2">
+                        <Lightbulb className="h-4 w-4 text-yellow-500" />
+                        {getText('Key Insights', 'Pontos-Chave')}
+                      </h4>
+                      <ul className="space-y-1 ml-4">
+                        {section.keyInsights.map((insight: string, index: number) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-700 dark:text-gray-300 text-sm">{insight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Key Points */}
+                  {section.keyPoints && section.keyPoints.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2 flex items-center gap-2">
+                        <Lightbulb className="h-4 w-4 text-yellow-500" />
+                        {getText('Key Points', 'Pontos Principais')}
+                      </h4>
+                      <ul className="space-y-1 ml-4">
+                        {section.keyPoints.map((point: string, index: number) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-700 dark:text-gray-300 text-sm">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Greek Terms */}
+                  {section.greekTerms && section.greekTerms.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2">
+                        {getText('Greek Terms', 'Termos Gregos')}
+                      </h4>
+                      <div className="space-y-2">
+                        {section.greekTerms.map((term: GreekTerm, index: number) => (
+                          <div key={index} className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+                            <span className="font-medium text-purple-700 dark:text-purple-300">
+                              {term.term}
+                            </span>
+                            <span className="text-gray-600 dark:text-gray-400 ml-2">
+                              - {term.meaning}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Theological Insights */}
+                  {section.theologicalInsights && section.theologicalInsights.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2">
+                        {getText('Theological Insights', 'Insights Teológicos')}
+                      </h4>
+                      <ul className="space-y-1 ml-4">
+                        {section.theologicalInsights.map((insight: string, index: number) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <Star className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700 dark:text-gray-300 text-sm">{insight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Christ Titles */}
+                  {section.christTitles && section.christTitles.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2">
+                        {getText('Titles of Christ', 'Títulos de Cristo')}
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        {section.christTitles.map((title: ChristTitle, index: number) => (
+                          <div key={index} className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+                            <div className="font-medium text-green-700 dark:text-green-300">
+                              {title.title}
+                            </div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">
+                              {title.meaning}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Christ Description */}
+                  {section.christDescription && section.christDescription.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2">
+                        {getText('Description of Christ', 'Descrição de Cristo')}
+                      </h4>
+                      <div className="space-y-3">
+                        {section.christDescription.map((desc: ChristDescription, index: number) => (
+                          <div key={index} className="border-l-4 border-l-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-r-lg">
+                            <div className="font-medium text-yellow-800 dark:text-yellow-300">
+                              {desc.feature}
+                            </div>
+                            <div className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                              {desc.meaning}
+                            </div>
+                            {desc.reference && (
+                              <Badge variant="outline" className="mt-2 text-xs">
+                                {desc.reference}
+                              </Badge>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Alpha and Omega */}
+                  {section.alphaOmega && (
+                    <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">
+                        {getText('Alpha and Omega', 'Alfa e Ômega')}
+                      </h4>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        {section.alphaOmega}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Doxology */}
+                  {section.doxology && (
+                    <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">
+                        {getText('Doxology', 'Doxologia')}
+                      </h4>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        {section.doxology}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Symbolism */}
+                  {section.symbolism && Object.keys(section.symbolism).length > 0 && (
+                    <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">
+                        {getText('Symbolism', 'Simbolismo')}
+                      </h4>
+                      <div className="space-y-2 text-sm">
+                        {Object.entries(section.symbolism).map(([key, value]) => (
+                          <p key={key}><strong>{key.replace('_', ' ')}:</strong> {value}</p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Response */}
+                  {section.response && (
+                    <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">
+                        {getText('Response', 'Resposta')}
+                      </h4>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        {section.response}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Authority */}
+                  {section.authority && (
+                    <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">
+                        {getText('Authority', 'Autoridade')}
+                      </h4>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        {section.authority}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Practical Application */}
+                  {section.practicalApplication && (
+                    <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2 flex items-center gap-2">
+                        <Heart className="h-4 w-4 text-green-600" />
+                        {getText('Practical Application', 'Aplicação Prática')}
+                      </h4>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        {section.practicalApplication}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Cross References */}
+                  {section.crossReferences && section.crossReferences.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold mb-2">
+                        {getText('Cross References', 'Referências Cruzadas')}
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {section.crossReferences.map((ref: string, index: number) => (
+                          <Badge key={index} variant="secondary" className="text-xs">
+                            {ref}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              )}
+            </Card>
+          ))}
+        </div>
+
+        {/* Key Verses Detail */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+            <BookOpen className="h-6 w-6 text-blue-600" />
+            {getText('Verse by Verse Study', 'Estudo Versículo por Versículo')}
+          </h2>
+          
+          <div className="space-y-4">
+            {Object.entries(verses).map(([verseNum, verse]: [string, Verse]) => (
+              <Card key={verseNum} className="border-l-4 border-l-blue-500">
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    
+                    {/* Verse Header */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <Badge className="bg-blue-600">
+                        {getText(`Verse ${verseNum}`, `Versículo ${verseNum}`)}
+                      </Badge>
+                      {verse.crossReferences && verse.crossReferences.length > 0 && (
+                        <div className="flex gap-1">
+                          {verse.crossReferences.slice(0, 3).map((ref: string, index: number) => (
+                            <Badge key={index} variant="outline" className="text-xs">
+                              {ref}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    
+                    {/* Scripture Text */}
+                    <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                      <p className="text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
+                        "{verse.text}"
+                      </p>
+                    </div>
+                    
+                    {/* Commentary */}
+                    <div>
+                      <h4 className="font-semibold mb-2">
+                        {getText('Commentary', 'Comentário')}
+                      </h4>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        {verse.commentary}
+                      </p>
+                    </div>
+                    
+                    {/* Key Points */}
+                    {verse.keyPoints && verse.keyPoints.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          {getText('Key Points', 'Pontos-Chave')}
+                        </h4>
+                        <ul className="space-y-1">
+                          {verse.keyPoints.map((point: string, index: number) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-700 dark:text-gray-300 text-sm">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Greek Notes */}
+                    {verse.greekNotes && (
+                      <div className="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+                        <h4 className="font-semibold mb-2">
+                          {getText('Greek Notes', 'Notas do Grego')}
+                        </h4>
+                        <p className="text-purple-700 dark:text-purple-300 text-sm italic">
+                          {verse.greekNotes}
+                        </p>
+                      </div>
+                    )}
+                    
+                    {/* Application */}
+                    {verse.application && (
+                      <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+                        <h4 className="font-semibold mb-2 flex items-center gap-2">
+                          <Heart className="h-4 w-4 text-green-600" />
+                          {getText('Application', 'Aplicação')}
+                        </h4>
+                        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                          {verse.application}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Conclusion */}
+        {chapterData?.conclusion && (
+          <Card className="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
+            <CardHeader>
+              <CardTitle className="text-xl">
+                {getText('Conclusion', 'Conclusão')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {chapterData.conclusion}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* References */}
+        {chapterData?.references && chapterData.references.length > 0 && (
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle className="text-lg">
+                {getText('Bibliographic References', 'Referências Bibliográficas')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-1">
+                {chapterData.references.map((ref: string, index: number) => (
+                  <li key={index} className="text-sm text-gray-600 dark:text-gray-400">
+                    • {ref}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Action Button */}
+        <div className="mt-8 text-center">
+          <Button onClick={handleStartStudy} size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Eye className="mr-2 h-5 w-5" />
+            {getText('Start Complete Interactive Study', 'Começar Estudo Interativo Completo')}
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 
