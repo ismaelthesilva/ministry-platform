@@ -75,18 +75,18 @@ const LanguageSwitcher: React.FC = () => {
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLanguage();
+  const { tr } = useLanguage(); // Changed from { t } to { tr }
 
   const isActive = (path: string) => location.pathname === path;
 
   const navigationItems = [
-    { name: t('navbar.home'), href: '/', icon: <Heart className="h-4 w-4" /> },
-    { name: t('navbar.messages'), href: '#messages', icon: <MessageSquare className="h-4 w-4" /> },
-    { name: t('navbar.songs'), href: '#songs', icon: <Music className="h-4 w-4" /> },
-    { name: t('navbar.books'), href: '#books', icon: <Book className="h-4 w-4" /> },
-    { name: t('navbar.revelation'), href: '/revelation', icon: <Book className="h-4 w-4" /> },
-    { name: t('navbar.about'), href: '#about', icon: <User className="h-4 w-4" /> },
-    { name: t('navbar.contact'), href: '#contact', icon: <Heart className="h-4 w-4" /> },
+    { name: tr('navbar.home', 'Home'), href: '/', icon: <Heart className="h-4 w-4" /> },
+    { name: tr('navbar.messages', 'Messages'), href: '#messages', icon: <MessageSquare className="h-4 w-4" /> },
+    { name: tr('navbar.songs', 'Songs'), href: '#songs', icon: <Music className="h-4 w-4" /> },
+    { name: tr('navbar.books', 'Books'), href: '#books', icon: <Book className="h-4 w-4" /> },
+    { name: tr('navbar.revelation', 'Revelation'), href: '/revelation', icon: <Book className="h-4 w-4" /> },
+    { name: tr('navbar.about', 'About'), href: '#about', icon: <User className="h-4 w-4" /> },
+    { name: tr('navbar.contact', 'Contact'), href: '#contact', icon: <Heart className="h-4 w-4" /> },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -113,15 +113,19 @@ const Navbar: React.FC = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <Heart className="h-5 w-5 text-white" />
+            <div className="w-10 h-10 relative">
+              <img 
+                src="/logo-ministry1.png" 
+                alt="Ismael Silva Ministry Logo" 
+                className="w-full h-full object-contain bg-white/10"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-gray-900 dark:text-white text-sm">
                 ISMAEL SILVA
               </span>
               <span className="text-xs text-gray-600 dark:text-gray-400">
-                {t('navbar.subtitle')}
+                {tr('navbar.subtitle', 'Ministry & Music')}
               </span>
             </div>
           </Link>
