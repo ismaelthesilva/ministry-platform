@@ -114,5 +114,36 @@
     "footer": {
       "message": "Until He comes again"
     }
+  },
+  "common": {
+    "underResearch": "Under Research",
+    "info": "Information"
+  },
+  "revelation": {
+    "title": "Revelation",
+    "chapter": "Chapter",
+    "index": "Index",
+    "backToIndex": "Back to Revelation Index",
+    "coming": {
+      "soon": "Coming Soon"
+    },
+    "notify": {
+      "title": "Get Notified",
+      "message": "Check back regularly for updates, or follow our ministry for notifications when new studies are published."
+    },
+    "research": {
+      "title": "Study in Progress",
+      "subtitle": "Preparing comprehensive biblical analysis",
+      "message": "This chapter is currently under deep theological research and study. I am preparing a comprehensive analysis that will include:",
+      "verse": "Verse-by-verse exposition",
+      "greek": "Original Greek text analysis",
+      "historical": "Historical and cultural context",
+      "practical": "Practical applications for today",
+      "prophecy": "Prophetic significance and interpretation",
+      "quote": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness."
+    },
+    "preparation": {
+      "message": "This study is being carefully prepared with prayer and thorough research to provide the most accurate and spiritually enriching content possible."
+    }
   }
 }

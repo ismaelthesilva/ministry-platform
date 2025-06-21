@@ -14,6 +14,7 @@ interface LanguageContextType {
   setLanguage: (lang: string) => void;
   t: (key: string, fallback?: string) => string;
   tr: (key: string, fallback?: string) => string; // Always return string for React compatibility
+  trObj: (key: string, fallback?: unknown) => unknown; // Return objects for complex data structures
 }
 
 // Define the translations type
@@ -110,11 +111,36 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     }
   };
 
+  // Revelation translation function that returns objects
+  const trObj = (key: string, fallback?: unknown): unknown => {
+    try {
+      const keys = key.split('.');
+      let value: unknown = revelationTranslations[language];
+      
+      for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+          value = (value as Record<string, unknown>)[k];
+        } else {
+          // Key not found, return fallback or undefined
+          console.warn(`Revelation translation key not found: ${key} for language: ${language}`);
+          return fallback;
+        }
+      }
+      
+      // Return the found value (could be string, object, etc.) or fallback
+      return value !== null && value !== undefined ? value : fallback;
+    } catch (error) {
+      console.error('Revelation translation error for key:', key, error);
+      return fallback;
+    }
+  };
+
   const contextValue: LanguageContextType = {
     language,
     setLanguage,
     t,
     tr,
+    trObj,
   };
 
   return (

@@ -9,7 +9,7 @@
       "startStudy": "Iniciar Estudo",
       "continueStudy": "Continuar Estudo",
       "chapterOverview": "Visão Geral do Capítulo",
-      "verseStudy": "Estudo do Versículo",
+      "verseStudy": "Estudo dos Versículos",
       "keyThemes": "Temas Principais",
       "practicalApplication": "Aplicação Prática",
       "previousChapter": "Capítulo Anterior",
@@ -19,216 +19,256 @@
     "chapters": {
       "1": {
         "title": "A Revelação de Jesus Cristo",
-        "subtitle": "Comentário Exegético e Devocional",
-        "summary": "João recebe a revelação divina e vê Cristo glorificado no meio dos candeeiros de ouro",
-        "keyVerses": ["1:1", "1:7", "1:17-18"],
-        "themes": [
-          "Revelação Divina",
-          "Autoridade de Cristo", 
-          "Testemunho Fiel",
-          "Segunda Vinda",
-          "Cristo no Meio das Igrejas"
-        ],
-        "epigraph": "As visões deste livro são apresentadas como um 'desvelar de verdades ocultas', uma revelação da soberania de Deus sobre o futuro, mostrando como Ele trará o fim do aparente sucesso das forças do mal neste mundo (Osborne, 2002).",
+        "summary": "João recebe a revelação divina e introduz as visões proféticas que se seguirão. Este capítulo estabelece a autoridade, propósito e natureza abençoada de todo o livro.",
+        "keyVerses": ["1:1", "1:3", "1:7", "1:17-18"],
+        "themes": ["Revelação Divina", "Autoridade de Cristo", "Testemunha Fiel", "Obediência Abençoada", "Urgência Profética"],
+        "introduction": "As visões deste livro são apresentadas como um 'desvelamento de verdades ocultas', uma revelação da soberania de Deus sobre o futuro, mostrando como Ele trará um fim ao aparente sucesso das forças do mal neste mundo",
         "sections": {
           "1": {
-            "title": "Prólogo: A Corrente da Revelação (1:1-3)",
-            "content": "O Apocalipse abre com uma declaração de origem e propósito: 'Revelação de Jesus Cristo, que Deus lhe deu para mostrar aos seus servos as coisas que em breve devem acontecer...' (1:1). Aqui, 'revelação' (ἀποκάλυψις, apokalypsis) significa literalmente 'tirar o véu', destacar aquilo que estava oculto e agora é explicitado (Stefanovic, 2009, 53-54).",
-            "keyPoints": [
-              "O termo 'revelação' aparece 18 vezes no Novo Testamento",
-              "Indica sempre um ato divino de revelação",
-              "É mais que uma profecia sobre o fim - é revelação do próprio Jesus",
-              "Muitos consideram o 'Quinto Evangelho' onde todas as promessas convergem"
-            ],
-            "greekTerms": [
-              {
-                "term": "ἀποκάλυψις (apokalypsis)",
-                "meaning": "tirar o véu, revelação"
-              },
-              {
-                "term": "σημαίνω (sēmainō)", 
-                "meaning": "dar a conhecer por meio de sinais e símbolos"
-              },
-              {
-                "term": "δοῦλος (doulos)",
-                "meaning": "servos, escravos - toda a comunidade da fé"
-              }
-            ],
-            "theologicalInsights": [
-              "O caminho da revelação é quadripartido: Deus → Jesus → anjo → João → igrejas",
-              "O livro é repleto de linguagem figurada como os profetas do AT",
-              "As 'coisas que em breve devem acontecer' ecoam Daniel 2:28-30",
-              "O tempo do fim começou com a obra de Cristo"
+            "title": "Prólogo: A Cadeia da Revelação (1:1-3)",
+            "content": "Apocalipse abre com uma declaração de origem e propósito. Aqui, 'revelação' (ἀποκάλυψις, apokalypsis) significa literalmente 'remover o véu', destacar o que estava oculto e agora é tornado explícito. Esta 'Revelação' é, portanto, mais que uma profecia sobre o fim; é uma revelação do próprio Jesus, onde Ele explica em detalhes o plano da redenção.",
+            "keyInsights": [
+              "O caminho da revelação é quádruplo: Deus → Jesus → anjo → João → igrejas",
+              "O verbo 'mostrar' (σημαίνω, sēmainō) indica linguagem figurativa e simbólica",
+              "'Servos' (δοῦλος, doulos) amplia o escopo: toda a comunidade da fé",
+              "As 'coisas que brevemente devem acontecer' ecoam Daniel 2:28-30"
             ]
           },
           "2": {
             "title": "Testemunha Ocular: Palavra e Testemunho (1:2)",
-            "content": "João se apresenta como aquele que 'atestou a palavra de Deus e o testemunho de Jesus Cristo, quanto a tudo o que viu.' O termo 'testemunho' (μαρτυρία, martyria) remete à missão profética e ao compromisso com a verdade revelada, mesmo diante da perseguição.",
-            "keyPoints": [
-              "João assume postura de mensageiro fiel como os antigos profetas",
-              "O 'testemunho de Jesus' é a essência do espírito profético (19:10)",
+            "content": "João se apresenta como aquele que 'testificou da palavra de Deus, e do testemunho de Jesus Cristo, e de tudo o que viu'. O termo 'testemunho' (μαρτυρία, martyria) refere-se à missão profética e ao compromisso com a verdade revelada, mesmo diante da perseguição.",
+            "keyInsights": [
               "A 'palavra de Deus' ecoa Gênesis 1 e João 1",
-              "A revelação é criadora e recriadora"
-            ],
-            "greekTerms": [
-              {
-                "term": "μαρτυρία (martyria)",
-                "meaning": "testemunho, especialmente diante da perseguição"
-              }
+              "O testemunho de Jesus é a essência do espírito profético (cf. 19:10)",
+              "João assume a postura de um mensageiro fiel como os antigos profetas"
             ]
           },
           "3": {
-            "title": "Bem-Aventurança do Leitor (1:3)",
-            "content": "'Bem-aventurados aqueles que leem e aqueles que ouvem as palavras da profecia e guardam as coisas nela escritas, pois o tempo está próximo.' O Apocalipse inicia com a primeira de sete bem-aventuranças, colocando em destaque o valor da leitura, audição e prática da mensagem.",
-            "keyPoints": [
-              "Primeira de sete bem-aventuranças do Apocalipse",
-              "Não basta ler superficialmente - é necessário ouvir e obedecer",
-              "'Guardar' é verbo recorrente - indica compromisso com a vontade de Deus",
-              "A bênção é para quem persevera em fidelidade"
-            ],
-            "practicalApplication": "O ponto não é especulação sobre o tempo, mas prontidão e fidelidade. Permita que o texto molde sua vida através da leitura atenta, audição cuidadosa e obediência prática."
+            "title": "Bem-aventurança do Leitor (1:3)",
+            "content": "Apocalipse inicia com a primeira de sete bem-aventuranças, destacando o valor de ler, ouvir e praticar a mensagem. Não basta ler superficialmente; é necessário ouvir atentamente e obedecer, permitindo que o texto molde a vida.",
+            "keyInsights": [
+              "'Guardar' é um verbo recorrente, indicando compromisso com a vontade de Deus",
+              "A bênção é para aqueles que perseveram, pois 'o tempo está próximo'",
+              "O ponto não é especulação, mas prontidão e fidelidade"
+            ]
           },
           "4": {
             "title": "Saudação Trinitária e Doxologia (1:4-6)",
-            "content": "O destinatário imediato são 'as sete igrejas que se encontram na Ásia', representando a totalidade do povo de Deus de todos os tempos. 'Graça e paz' vêm do Deus eterno, dos 'sete Espíritos' (Espírito Santo em plenitude) e de Jesus Cristo.",
-            "keyPoints": [
-              "Sete igrejas representam a totalidade do povo de Deus",
-              "Tríplice saudação destaca o agir soberano da Trindade",
-              "Cristo apresentado em três títulos fundamentais",
-              "Libertação é tanto perdão quanto transformação"
-            ],
-            "christTitles": [
-              {
-                "title": "Fiel Testemunha",
-                "meaning": "Cumpriu sua missão até a morte"
-              },
-              {
-                "title": "Primogênito dos Mortos", 
-                "meaning": "Pioneiro da ressurreição"
-              },
-              {
-                "title": "Soberano dos Reis da Terra",
-                "meaning": "Senhor da história e dos poderes humanos"
-              }
-            ],
-            "doxology": "Cristo 'nos ama e, pelo seu sangue, nos libertou dos nossos pecados' e fez de Seu povo 'reino e sacerdotes' (Êx 19:6), chamados ao serviço e testemunho, não à dominação."
+            "content": "O destinatário imediato são 'as sete igrejas que estão na Ásia', representando a totalidade do povo de Deus de todos os tempos. A saudação tríplice destaca a obra soberana e salvadora da Trindade: o Pai, o Espírito e o Filho agem em perfeita unidade para redimir e sustentar o povo.",
+            "keyInsights": [
+              "Cristo é apresentado em três títulos: Testemunha Fiel, Primogênito dos mortos, Soberano dos reis",
+              "Ele 'nos amou e nos lavou dos nossos pecados no seu próprio sangue'",
+              "Ele faz seu povo 'reis e sacerdotes' (Êx 19:6), chamados ao serviço e testemunho"
+            ]
           },
           "5": {
             "title": "Anúncio Escatológico (1:7-8)",
-            "content": "'Eis que vem com as nuvens, e todo olho o verá...' (Dn 7:13; Mt 26:64). O retorno de Cristo será universal, visível e transformador, revertendo toda injustiça e rejeição. Até mesmo 'os que o traspassaram' experimentarão a revelação e lamento.",
-            "keyPoints": [
-              "O retorno será universal, visível e transformador",
-              "Inversão dramática das relações históricas",
-              "Deus é soberano sobre toda a história",
-              "Ele é o início e o fim, Senhor do tempo e destino"
-            ],
-            "crossReferences": ["Dn 7:13", "Mt 26:64", "Zac 12:10", "Jo 19:37"],
-            "alphaOmega": "'Eu sou o Alfa e Ômega...' (1:8) enfatiza a soberania absoluta de Deus sobre toda a história. Ele é capaz de cumprir todas as Suas promessas."
+            "content": "'Eis que vem com as nuvens, e todo olho o verá...' A volta de Cristo será universal, visível e transformadora, revertendo toda injustiça e rejeição. A frase 'Eu sou o Alfa e o Ômega...' enfatiza a absoluta soberania de Deus sobre toda a história.",
+            "keyInsights": [
+              "Até mesmo 'aqueles que o traspassaram' experimentarão revelação e lamento",
+              "Deus é o princípio e o fim, o Senhor do tempo e do destino",
+              "Capaz de cumprir todas as suas promessas"
+            ]
           },
           "6": {
-            "title": "Cristo no Meio dos Candeeiros de Ouro (1:9-20)",
-            "content": "João se identifica com seus leitores como 'irmão e companheiro na tribulação, no reino e na perseverança'. O caminho do discípulo é marcado por resistência, fidelidade e esperança em meio às adversidades. Patmos, ilha de exílio, torna-se o palco da revelação.",
-            "setting": {
-              "place": "Patmos, ilha de exílio",
-              "time": "No dia do Senhor",
-              "experience": "Arrebatado em espírito",
-              "sound": "Voz como trombeta - linguagem de teofania"
+            "title": "Cristo no Meio dos Castiçais de Ouro (1:9-20)",
+            "content": "João se identifica com seus leitores como 'irmão e companheiro na aflição e no reino e paciência'. A visão central apresenta Cristo caminhando 'no meio dos sete castiçais de ouro' (as igrejas), como o 'Filho do Homem', vestido como Sumo Sacerdote e Rei.",
+            "symbolism": {
+              "head_hair": "Cabeça e cabelos brancos: imagem do 'Ancião de Dias' (Dn 7:9)",
+              "eyes": "Olhos como chama de fogo: penetração e julgamento (Dn 10:6)",
+              "feet": "Pés como latão fino: firmeza, pureza e vitória sobre o mal",
+              "voice": "Voz como som de muitas águas: majestade e poder divino (Ez 1:24)",
+              "stars": "Sete estrelas na sua destra: autoridade sobre os anjos das igrejas",
+              "sword": "Espada aguda de dois gumes: a Palavra divina, que julga e liberta",
+              "countenance": "Rosto como o sol: glória divina, vitória messiânica"
             },
-            "vision": {
-              "location": "Cristo caminhando no meio dos candeeiros de ouro (as igrejas)",
-              "identity": "Filho do Homem (Dn 7:13; 10:5-6)",
-              "role": "Sumo Sacerdote e Rei, supervisionando sua igreja"
-            },
-            "christDescription": [
-              {
-                "feature": "Cabeça e cabelos brancos",
-                "meaning": "Imagem do 'Ancião de Dias' (Dn 7:9), unificando Pai e Filho",
-                "reference": "Dn 7:9"
-              },
-              {
-                "feature": "Olhos como chama de fogo", 
-                "meaning": "Penetração e julgamento",
-                "reference": "Dn 10:6"
-              },
-              {
-                "feature": "Pés de bronze polido",
-                "meaning": "Firmeza, pureza e vitória sobre o mal",
-                "reference": "Dn 3"
-              },
-              {
-                "feature": "Voz como de muitas águas",
-                "meaning": "Majestade e poder divinos",
-                "reference": "Ez 1:24"
-              },
-              {
-                "feature": "Sete estrelas na mão direita",
-                "meaning": "Autoridade sobre os anjos das igrejas", 
-                "reference": "Dn 12:1-7"
-              },
-              {
-                "feature": "Espada afiada de dois gumes",
-                "meaning": "A Palavra divina, que julga e liberta",
-                "reference": "Is 11:4; 49:2; Heb 4:12"
-              },
-              {
-                "feature": "Rosto brilhante como o sol",
-                "meaning": "Glória divina, vitória messiânica",
-                "reference": "Jz 5:31; Mt 17:2"
-              }
-            ],
-            "response": "Diante desta visão, João cai como morto, mas Cristo o ergue: 'Não temas; eu sou o primeiro e o último', expressão de Isaías agora atribuída ao próprio Cristo, reafirmando Sua divindade e soberania.",
-            "authority": "Cristo declara possuir 'as chaves da morte e do inferno', autoridade total sobre o destino humano. O mistério das sete estrelas e candeeiros é revelado: Cristo reina mesmo em meio ao sofrimento de Sua igreja."
+            "keyInsights": [
+              "Cristo declara ter 'as chaves da morte e do inferno'",
+              "Autoridade total sobre o destino humano",
+              "Cristo reina mesmo no meio do sofrimento da sua igreja"
+            ]
           }
         },
         "verses": {
           "1": {
-            "text": "Revelação de Jesus Cristo, que Deus lhe deu para mostrar aos seus servos as coisas que em breve devem acontecer e que ele, enviando por intermédio do seu anjo, notificou ao seu servo João,",
-            "commentary": "Este versículo de abertura estabelece a origem divina e o propósito de todo o livro. A palavra 'revelação' (apokalypsis) significa 'desvelamento' ou 'revelação.' O caminho da revelação é quadripartido: Deus → Jesus → anjo → João → igrejas.",
+            "text": "Revelação de Jesus Cristo, a qual Deus lhe deu, para mostrar aos seus servos as coisas que brevemente devem acontecer; e pelo seu anjo as enviou, e as notificou a João seu servo;",
+            "commentary": "Apocalipse abre com uma declaração de origem e propósito. Aqui, 'revelação' (ἀποκάλυψις, apokalypsis) significa literalmente 'remover o véu', destacar o que estava oculto e agora é tornado explícito. O termo, que aparece 18 vezes no Novo Testamento, sempre indica um ato divino de revelação.",
             "keyPoints": [
-              "Origem divina - de Jesus Cristo",
-              "Propósito - mostrar eventos futuros aos servos",
-              "Método - através de mensageiro angelical",
-              "Destino - comunidade da fé (servos)"
+              "Origem divina - revelação de Jesus Cristo que Deus lhe deu",
+              "Propósito - mostrar aos seus servos as coisas que brevemente devem acontecer",
+              "Método - através do anjo enviado a João",
+              "O termo 'notificou' (σημαίνω) indica uso de sinais e símbolos"
             ],
-            "application": "Deus deseja revelar Seus planos ao Seu povo. Devemos abordar este livro com reverência e expectativa, reconhecendo sua origem divina.",
-            "greekNotes": "ἀποκάλυψις (apokalypsis) - tirar o véu, revelação; σημαίνω (sēmainō) - dar a conhecer por sinais",
-            "crossReferences": ["Lc 2:32", "Rm 16:25", "Dn 2:28-30"]
+            "application": "Esta 'Revelação' é mais que uma profecia sobre o fim; é uma revelação do próprio Jesus, onde Ele explica em detalhes o plano da redenção. Portanto, muitos consideram Apocalipse como o 'Quinto Evangelho', pois nele todas as promessas de Deus convergem e se cumprem.",
+            "greekNotes": "ἀποκάλυψις (apokalypsis) - desvelamento, revelação; σημαίνω (sēmainō) - dar a conhecer por sinais",
+            "crossReferences": ["Lucas 2:32", "Rom 16:25", "Dan 2:28-30"]
           },
           "2": {
-            "text": "o qual atestou a palavra de Deus e o testemunho de Jesus Cristo, quanto a tudo o que viu.",
-            "commentary": "João serve como uma testemunha fiel, enfatizando a confiabilidade do que ele registra. O 'testemunho de Jesus' é identificado como a essência do espírito profético.",
+            "text": "O qual testificou da palavra de Deus, e do testemunho de Jesus Cristo, e de tudo o que tem visto.",
+            "commentary": "João se apresenta como aquele que 'testificou da palavra de Deus, e do testemunho de Jesus Cristo, e de tudo o que viu'. O termo 'testemunho' (μαρτυρία, martyria) refere-se à missão profética e ao compromisso com a verdade revelada, mesmo diante da perseguição.",
             "keyPoints": [
-              "João como testemunha fiel e ocular",
-              "Autoridade da Palavra de Deus confirmada",
-              "Testemunho de Jesus Cristo como centro",
-              "Compromisso com a verdade revelada"
+              "João como testemunha fiel e completa",
+              "Testemunho inclui tanto a palavra de Deus quanto o testemunho de Jesus",
+              "Nada é omitido da revelação - 'tudo o que viu'",
+              "O 'testemunho de Jesus' é identificado como a essência do espírito profético (cf. 19:10)"
             ],
-            "application": "Nós também somos chamados a ser testemunhas fiéis do que Deus nos revelou, mantendo compromisso com a verdade mesmo diante das dificuldades.",
-            "greekNotes": "μαρτυρία (martyria) - testemunho, especialmente diante da perseguição",
-            "crossReferences": ["Jo 19:35", "1Jo 1:1-3", "Jo 21:24", "Ap 19:10"]
+            "application": "A expressão 'palavra de Deus' ecoa Gênesis 1 ('Haja luz') e João 1 ('No princípio era o Verbo'), mostrando que a revelação é criativa e recriativa. O conteúdo central é Cristo, que atua como mediador e também como tema da revelação.",
+            "greekNotes": "μαρτυρία (martyria) - testemunho, testemunha; ἐμαρτύρησεν (emarturesen) - testificou, deu testemunho",
+            "crossReferences": ["João 19:35", "1 João 1:1-3", "João 21:24", "Apoc 19:10"]
           },
           "3": {
-            "text": "Bem-aventurados aqueles que leem e aqueles que ouvem as palavras da profecia e guardam as coisas nela escritas, pois o tempo está próximo.",
-            "commentary": "A primeira de sete bem-aventuranças do Apocalipse enfatiza não apenas a leitura, mas a audição atenta e a prática obediente da mensagem revelada.",
+            "text": "Bem-aventurado aquele que lê, e os que ouvem as palavras desta profecia, e guardam as coisas que nela estão escritas; porque o tempo está próximo.",
+            "commentary": "Apocalipse inicia com a primeira de sete bem-aventuranças, destacando o valor de ler, ouvir e praticar a mensagem. Não basta ler superficialmente; é necessário ouvir atentamente e obedecer, permitindo que o texto molde a vida.",
             "keyPoints": [
-              "Primeira bem-aventurança de sete no Apocalipse",
-              "Tríplice ação: ler, ouvir e guardar",
-              "'Guardar' indica compromisso prático",
-              "Urgência escatológica: 'o tempo está próximo'"
+              "Primeira de sete bem-aventuranças no Apocalipse",
+              "Três ações abençoadas: ler, ouvir e guardar",
+              "Projetado para ambiente de adoração pública",
+              "Urgência enfatizada - 'porque o tempo está próximo'"
             ],
-            "application": "A bênção vem através do engajamento ativo com a Palavra: leitura cuidadosa, audição atenta e obediência prática que transforma a vida.",
-            "crossReferences": ["Ap 22:7", "Lc 11:28", "Tg 1:22-25"]
+            "application": "'Guardar' é um verbo recorrente em todo o livro, indicando compromisso com a vontade de Deus mesmo em meio às pressões. A bênção é para aqueles que perseveram, pois 'o tempo está próximo': o ponto não é especulação, mas prontidão e fidelidade.",
+            "greekNotes": "μακάριος (makarios) - bem-aventurado, feliz; τηρεῖν (terein) - guardar, observar, obedecer",
+            "crossReferences": ["Apoc 22:7", "Lucas 11:28", "Tiago 1:25"]
           }
-        },
-        "patristic": "Vários pais da igreja, como Justino Mártir, Irineu, Tertuliano e Clemente de Alexandria, confirmaram a autoria joanina e interpretaram Apocalipse 1 como revelação messiânica e escatológica, centrada na soberania de Cristo.",
-        "conclusion": "O primeiro capítulo do Apocalipse apresenta Jesus Cristo como o centro da história e da esperança cristã. Ele é o revelador, o redentor, o juiz e o soberano, que caminha em meio à Sua igreja, fortalecendo, corrigindo e guiando. A mensagem é clara: não há poder na história que escape ao domínio de Cristo.",
-        "references": [
-          "Beale, G. K., The Book of Revelation, Eerdmans, 1998",
-          "Beale, G. K., Revelation: A Shorter Commentary, Eerdmans, 2015", 
-          "Tonstad, S. K., Revelation (Paideia), Baker Academic, 2019",
-          "Osborne, G. R., Revelation (Baker Exegetical Commentary), Baker Academic, 2002",
-          "Stefanovic, R., Revelation of Jesus Christ (2nd Edition), Andrews University Press, 2009"
-        ]
+        }
+      },
+      "2": {
+        "title": "Cartas às Quatro Igrejas",
+        "summary": "Mensagens para Éfeso, Esmirna, Pérgamo e Tiatira",
+        "keyVerses": ["2:4", "2:10", "2:17"],
+        "themes": ["Avaliação da Igreja", "Fidelidade", "Vencer"],
+        "verses": {
+          "1": {
+            "text": "Ao anjo da igreja que está em Éfeso escreve: Isto diz aquele que tem na sua destra as sete estrelas, que anda no meio dos sete castiçais de ouro:",
+            "commentary": "A primeira carta é dirigida à igreja em Éfeso, uma das principais cidades da Ásia Menor. Cristo se apresenta como aquele que tem as estrelas (os anjos/pastores das igrejas) e anda no meio dos castiçais (as igrejas).",
+            "keyPoints": [
+              "Cristo tem as estrelas (pastores/anjos)",
+              "Cristo anda no meio das igrejas",
+              "Supervisão divina constante",
+              "Autoridade sobre os líderes da igreja"
+            ],
+            "application": "Cristo está ativamente presente em Sua igreja hoje, observando e cuidando de cada congregação. Os pastores estão em Suas mãos, e Ele pessoalmente supervisiona cada igreja local."
+          }
+        }
+      },
+      "3": {
+        "title": "Cartas às Três Igrejas",
+        "summary": "Mensagens para Sardes, Filadélfia e Laodicéia",
+        "keyVerses": ["3:1", "3:8", "3:20"],
+        "themes": ["Vida Espiritual vs Morte", "Portas Abertas", "Convite de Cristo"]
+      },
+      "4": {
+        "title": "A Sala do Trono do Céu",
+        "summary": "João é levado ao céu e vê o trono de Deus",
+        "keyVerses": ["4:2", "4:8", "4:11"],
+        "themes": ["Majestade Divina", "Adoração", "Propósito da Criação"]
+      },
+      "5": {
+        "title": "O Cordeiro e o Livro",
+        "summary": "O Cordeiro que foi morto é digno de abrir o livro selado",
+        "keyVerses": ["5:6", "5:9", "5:12"],
+        "themes": ["Dignidade de Cristo", "Redenção", "Adoração Universal"]
+      },
+      "6": {
+        "title": "Os Primeiros Seis Selos",
+        "summary": "O início do julgamento quando os primeiros seis selos são abertos",
+        "keyVerses": ["6:1", "6:10", "6:17"],
+        "themes": ["Julgamento Divino", "Clamor dos Mártires", "Ira de Deus"]
+      },
+      "7": {
+        "title": "Os Santos Selados",
+        "summary": "144.000 são selados e a grande multidão adora",
+        "keyVerses": ["7:3", "7:9", "7:17"],
+        "themes": ["Proteção Divina", "Salvação Universal", "Consolo"]
+      },
+      "8": {
+        "title": "O Sétimo Selo e as Primeiras Quatro Trombetas",
+        "summary": "Silêncio no céu e os primeiros quatro julgamentos das trombetas",
+        "keyVerses": ["8:1", "8:4", "8:13"],
+        "themes": ["Silêncio Solene", "Orações dos Santos", "Julgamento Crescente"]
+      },
+      "9": {
+        "title": "A Quinta e Sexta Trombetas",
+        "summary": "Tormento demoníaco e um exército massivo do oriente",
+        "keyVerses": ["9:4", "9:15", "9:20"],
+        "themes": ["Guerra Espiritual", "Corações Não Arrependidos", "Atividade Demoníaca"]
+      },
+      "10": {
+        "title": "O Anjo e o Livrinho",
+        "summary": "Um anjo poderoso aparece com um livrinho para João comer",
+        "keyVerses": ["10:6", "10:9", "10:11"],
+        "themes": ["Não Mais Demora", "Comissão Profética", "Verdade Doce e Amarga"]
+      },
+      "11": {
+        "title": "As Duas Testemunhas",
+        "summary": "Duas testemunhas profetizam e são mortas, depois ressuscitadas",
+        "keyVerses": ["11:3", "11:15", "11:18"],
+        "themes": ["Testemunho Fiel", "Reino de Cristo", "Tempo de Julgamento"]
+      },
+      "12": {
+        "title": "A Mulher e o Dragão",
+        "summary": "O nascimento do filho varão e guerra no céu",
+        "keyVerses": ["12:1", "12:9", "12:11"],
+        "themes": ["Conflito Cósmico", "Derrota de Satanás", "Vitória Através de Cristo"]
+      },
+      "13": {
+        "title": "As Duas Bestas",
+        "summary": "A besta do mar e a besta da terra",
+        "keyVerses": ["13:1", "13:16", "13:18"],
+        "themes": ["Autoridade Falsa", "Engano", "A Marca da Besta"]
+      },
+      "14": {
+        "title": "O Cordeiro e Seus Seguidores",
+        "summary": "144.000 com o Cordeiro e três anjos com mensagens",
+        "keyVerses": ["14:1", "14:6", "14:13"],
+        "themes": ["Redenção", "Proclamação do Evangelho", "Descanso Eterno"]
+      },
+      "15": {
+        "title": "Sete Anjos com Sete Pragas",
+        "summary": "Preparação para os julgamentos finais",
+        "keyVerses": ["15:1", "15:3", "15:8"],
+        "themes": ["Ira Final", "Cântico de Vitória", "Santidade Divina"]
+      },
+      "16": {
+        "title": "As Sete Taças da Ira",
+        "summary": "A série final de julgamentos sobre a terra",
+        "keyVerses": ["16:1", "16:9", "16:16"],
+        "themes": ["Julgamento Completo", "Corações Endurecidos", "Armagedom"]
+      },
+      "17": {
+        "title": "A Mulher e a Besta",
+        "summary": "A grande prostituta e sua relação com a besta",
+        "keyVerses": ["17:1", "17:14", "17:17"],
+        "themes": ["Babilônia Religiosa", "Vitória de Cristo", "Soberania de Deus"]
+      },
+      "18": {
+        "title": "A Queda da Babilônia",
+        "summary": "A destruição completa da grande Babilônia",
+        "keyVerses": ["18:2", "18:4", "18:20"],
+        "themes": ["Julgamento Divino", "Chamado à Separação", "Regozijo do Céu"]
+      },
+      "19": {
+        "title": "Celebração do Céu e a Volta de Cristo",
+        "summary": "Adoração no céu e a segunda vinda de Cristo",
+        "keyVerses": ["19:1", "19:11", "19:16"],
+        "themes": ["Celebração da Vitória", "Fiel e Verdadeiro", "Rei dos Reis"]
+      },
+      "20": {
+        "title": "Os Mil Anos e o Julgamento Final",
+        "summary": "Satanás aprisionado, o milênio e o grande trono branco",
+        "keyVerses": ["20:1", "20:6", "20:15"],
+        "themes": ["Prisão de Satanás", "Primeira Ressurreição", "Julgamento Final"]
+      },
+      "21": {
+        "title": "O Novo Céu e a Nova Terra",
+        "summary": "Todas as coisas feitas novas e a Nova Jerusalém",
+        "keyVerses": ["21:1", "21:4", "21:22"],
+        "themes": ["Nova Criação", "Não Mais Morte", "Presença de Deus"]
+      },
+      "22": {
+        "title": "O Rio da Vida e Palavras Finais",
+        "summary": "A árvore da vida e as promessas finais de Jesus",
+        "keyVerses": ["22:1", "22:12", "22:20"],
+        "themes": ["Vida Eterna", "Retorno Iminente", "Vem, Senhor Jesus"]
       }
     }
   }

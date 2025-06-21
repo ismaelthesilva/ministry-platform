@@ -76,11 +76,11 @@ interface ChapterData {
 
 const Revelation1: React.FC = () => {
   const navigate = useNavigate();
-  const { tr, language } = useLanguage(); // Get both translation function and current language
+  const { trObj, language } = useLanguage(); // Get translation function and current language
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
-  // Get chapter data from translations - this now works for both EN and PT
-  const chapterData = tr('revelation.chapters.1') as unknown as ChapterData;
+  // Get chapter data from translations using trObj for complex objects
+  const chapterData = trObj('revelation.chapters.1') as ChapterData;
   
   // Safe property access with fallbacks
   const title = chapterData?.title || (language === 'br' ? 'Apocalipse 1' : 'Revelation 1');

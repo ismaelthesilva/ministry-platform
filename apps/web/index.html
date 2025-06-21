@@ -5,6 +5,52 @@
     <link rel="icon" type="image/svg+xml" href="/logo-ministry1.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pr. Ismael Silva</title>
+    <script>
+      // Theme initialization to prevent flash
+      (function() {
+        function getSystemTheme() {
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function getStoredTheme() {
+          try {
+            return localStorage.getItem('theme') || 'system';
+          } catch {
+            return 'system';
+          }
+        }
+
+        function getEffectiveTheme(theme) {
+          if (theme === 'system') {
+            return getSystemTheme();
+          }
+          return theme;
+        }
+
+        function applyTheme(theme) {
+          const root = document.documentElement;
+          
+          if (theme === 'dark') {
+            root.classList.add('dark');
+          } else {
+            root.classList.remove('dark');
+          }
+        }
+
+        // Initialize theme immediately
+        const storedTheme = getStoredTheme();
+        const effectiveTheme = getEffectiveTheme(storedTheme);
+        applyTheme(effectiveTheme);
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          const currentStored = getStoredTheme();
+          if (currentStored === 'system') {
+            applyTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

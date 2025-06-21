@@ -14,44 +14,46 @@ import {
   User
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { initializeTheme, toggleTheme, getStoredTheme } from "@/lib/theme";
 
 const DarkModeToggle: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }
+    // Initialize theme and get current state
+    const currentTheme = initializeTheme();
+    setIsDarkMode(currentTheme === 'dark');
+
+    // Listen for system theme changes if using system preference
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemChange = (e: MediaQueryListEvent) => {
+      const stored = getStoredTheme();
+      if (stored === 'system') {
+        setIsDarkMode(e.matches);
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleSystemChange);
+    return () => mediaQuery.removeEventListener('change', handleSystemChange);
   }, []);
 
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    
-    if (newMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+  const handleToggle = () => {
+    const newTheme = toggleTheme();
+    setIsDarkMode(newTheme === 'dark');
   };
 
   return (
     <Button
       variant="ghost"
       size="icon"
-      onClick={toggleDarkMode}
+      onClick={handleToggle}
       className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+      title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDarkMode ? (
         <Sun className="h-5 w-5 text-yellow-500" />
       ) : (
-        <Moon className="h-5 w-5 text-gray-700" />
+        <Moon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
       )}
     </Button>
   );
@@ -75,18 +77,18 @@ const LanguageSwitcher: React.FC = () => {
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { tr } = useLanguage(); // Changed from { t } to { tr }
+  const { t } = useLanguage(); // Using main translation function for navbar
 
   const isActive = (path: string) => location.pathname === path;
 
   const navigationItems = [
-    { name: tr('navbar.home', 'Home'), href: '/', icon: <Heart className="h-4 w-4" /> },
-    { name: tr('navbar.messages', 'Messages'), href: '#messages', icon: <MessageSquare className="h-4 w-4" /> },
-    { name: tr('navbar.songs', 'Songs'), href: '#songs', icon: <Music className="h-4 w-4" /> },
-    { name: tr('navbar.books', 'Books'), href: '#books', icon: <Book className="h-4 w-4" /> },
-    { name: tr('navbar.revelation', 'Revelation'), href: '/revelation', icon: <Book className="h-4 w-4" /> },
-    { name: tr('navbar.about', 'About'), href: '#about', icon: <User className="h-4 w-4" /> },
-    { name: tr('navbar.contact', 'Contact'), href: '#contact', icon: <Heart className="h-4 w-4" /> },
+    { name: t('navbar.home', 'Home'), href: '/', icon: <Heart className="h-4 w-4" /> },
+    { name: t('navbar.messages', 'Messages'), href: '#messages', icon: <MessageSquare className="h-4 w-4" /> },
+    { name: t('navbar.songs', 'Songs'), href: '#songs', icon: <Music className="h-4 w-4" /> },
+    { name: t('navbar.books', 'Books'), href: '#books', icon: <Book className="h-4 w-4" /> },
+    { name: t('navbar.revelation', 'Revelation'), href: '/revelation', icon: <Book className="h-4 w-4" /> },
+    { name: t('navbar.about', 'About'), href: '#about', icon: <User className="h-4 w-4" /> },
+    { name: t('navbar.contact', 'Contact'), href: '#contact', icon: <Heart className="h-4 w-4" /> },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -125,7 +127,7 @@ const Navbar: React.FC = () => {
                 ISMAEL SILVA
               </span>
               <span className="text-xs text-gray-600 dark:text-gray-400">
-                {tr('navbar.subtitle', 'Ministry & Music')}
+                {t('navbar.subtitle', 'Ministry & Music')}
               </span>
             </div>
           </Link>

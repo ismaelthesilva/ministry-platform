@@ -114,5 +114,36 @@
     "footer": {
       "message": "Até que Ele venha novamente"
     }
+  },
+  "common": {
+    "underResearch": "Em Pesquisa",
+    "info": "Informação"
+  },
+  "revelation": {
+    "title": "Apocalipse",
+    "chapter": "Capítulo",
+    "index": "Índice",
+    "backToIndex": "Voltar ao Índice do Apocalipse",
+    "coming": {
+      "soon": "Em Breve"
+    },
+    "notify": {
+      "title": "Seja Notificado",
+      "message": "Volte regularmente para atualizações, ou siga nosso ministério para notificações quando novos estudos forem publicados."
+    },
+    "research": {
+      "title": "Estudo em Andamento",
+      "subtitle": "Preparando análise bíblica abrangente",
+      "message": "Este capítulo está atualmente sob profunda pesquisa teológica e estudo. Estou preparando uma análise abrangente que incluirá:",
+      "verse": "Exposição versículo por versículo",
+      "greek": "Análise do texto grego original",
+      "historical": "Contexto histórico e cultural",
+      "practical": "Aplicações práticas para hoje",
+      "prophecy": "Significado profético e interpretação",
+      "quote": "Toda Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça."
+    },
+    "preparation": {
+      "message": "Este estudo está sendo cuidadosamente preparado com oração e pesquisa minuciosa para fornecer o conteúdo mais preciso e espiritualmente enriquecedor possível."
+    }
   }
 }
