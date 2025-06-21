@@ -14,10 +14,15 @@
   "home": {
     "hero": {
       "title": "ISMAEL SILVA",
-      "subtitle": "MINISTRY"
+      "subtitle": "MINISTRY",
+      "tagline": "The Way to Happiness",
+      "cta": "Begin Your Journey",
+      "scroll": "Discover More Below"
     },
     "messages": {
-      "title": "MESSAGES",
+      "title": "DIVINE MESSAGES",
+      "subtitle": "Discover the eternal truths that prepare us for His glorious return",
+      "label": "Divine Message",
       "videos": [
         {
           "id": "Gk1NMp3g_b0",
@@ -37,7 +42,9 @@
       ]
     },
     "books": {
-      "title": "BOOKS",
+      "title": "SACRED LITERATURE",
+      "subtitle": "Sacred writings that illuminate the path to eternal truth and divine understanding",
+      "label": "Sacred Literature",
       "items": [
         {
           "title": "eBook",
@@ -56,7 +63,9 @@
       ]
     },
     "songs": {
-      "title": "ORIGINAL SONGS",
+      "title": "HEAVENLY MELODIES",
+      "subtitle": "Heavenly melodies that lift the soul and prepare hearts for worship in His presence",
+      "label": "Worship Song",
       "videos": [
         {
           "id": "TncbtUXcFRs",
@@ -76,7 +85,10 @@
       ]
     },
     "about": {
-      "title": "ABOUT ME",
+      "title": "HEART OF GRACE",
+      "subtitle": "A heart surrendered to serve, a life devoted to sharing His love and grace with the world",
+      "mission": "Global Mission",
+      "missionText": "Spreading the love of Christ across nations, preparing hearts for His glorious return through the power of His Word and the demonstration of His grace.",
       "content": [
         "Embracing the Christian faith is both a profound privilege and a weighty responsibility – a chance to radiate Jesus in our daily lives. I've been living these truths since I dedicated my life to Christ over 36+ years. That's a lot of seasons, trials and tests, and one continuous holy journey.",
         "Partnering with God, these seasons are ordinary yet may I reflect on my journey with overwhelming gratitude for His transformative work. Looking to the future, I'm filled with hope, anticipating God's unfolding blessings for me and my beautiful family.",
@@ -87,7 +99,7 @@
       ]
     },
     "music": {
-      "title": "MUSIC ALBUM",
+      "title": "DIVINE HARMONY",
       "description": [
         "My passion for music has led me to create original worship songs that express my faith and devotion. These compositions come from personal experiences and spiritual reflections, crafted to uplift and inspire others in their own faith journeys.",
         "Listen to my original songs on popular streaming platforms. Each piece represents a unique chapter in my spiritual walk, sharing messages of hope, redemption, and God's unfailing love.",
@@ -95,7 +107,12 @@
       ]
     },
     "contact": {
-      "title": "GET IN TOUCH"
+      "title": "DIVINE CONNECTION",
+      "subtitle": "Connect with us as we journey together toward His eternal kingdom",
+      "message": "\"Come, Lord Jesus!\" - Revelation 22:20"
+    },
+    "footer": {
+      "message": "Until He comes again"
     }
   }
 }

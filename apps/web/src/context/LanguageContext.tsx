@@ -13,7 +13,7 @@ interface LanguageContextType {
   language: string;
   setLanguage: (lang: string) => void;
   t: (key: string, fallback?: string) => string;
-  tr: (key: string, fallback?: string) => unknown; // Revelation translations - can return objects
+  tr: (key: string, fallback?: string) => string | unknown; // Revelation translations - can return objects or strings
 }
 
 // Define the translations type
@@ -80,7 +80,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   // Revelation translation function
-  const tr = (key: string, fallback?: string): unknown => {
+  const tr = (key: string, fallback?: string): string | unknown => {
     try {
       const keys = key.split('.');
       let value: unknown = revelationTranslations[language];
@@ -89,13 +89,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         if (value && typeof value === 'object' && k in value) {
           value = (value as Record<string, unknown>)[k];
         } else {
-          // Key not found, return fallback or key
+          // Key not found, return fallback or key as string
           console.warn(`Revelation translation key not found: ${key} for language: ${language}`);
           return fallback || key;
         }
       }
       
-      // Return the found value (can be string or object)
+      // Return the found value (can be string or object) or fallback
       return value || fallback || key;
     } catch (error) {
       console.error('Revelation translation error for key:', key, error);

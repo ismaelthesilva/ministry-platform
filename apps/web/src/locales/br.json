@@ -14,10 +14,15 @@
   "home": {
     "hero": {
       "title": "ISMAEL SILVA",
-      "subtitle": "MINISTÉRIO"
+      "subtitle": "MINISTÉRIO",
+      "tagline": "O Caminho para a Felicidade",
+      "cta": "Inicie Sua Jornada",
+      "scroll": "Descubra Mais Abaixo"
     },
     "messages": {
-      "title": "MENSAGENS",
+      "title": "MENSAGENS DIVINAS",
+      "subtitle": "Descubra as verdades eternas que nos preparam para Sua volta gloriosa",
+      "label": "Mensagem Divina",
       "videos": [
         {
           "id": "Gk1NMp3g_b0",
@@ -37,7 +42,9 @@
       ]
     },
     "books": {
-      "title": "LIVROS",
+      "title": "LITERATURA SAGRADA",
+      "subtitle": "Escritos sagrados que iluminam o caminho para a verdade eterna e entendimento divino",
+      "label": "Literatura Sagrada",
       "items": [
         {
           "title": "eBook",
@@ -56,7 +63,9 @@
       ]
     },
     "songs": {
-      "title": "CANÇÕES ORIGINAIS",
+      "title": "MELODIAS CELESTIAIS",
+      "subtitle": "Melodias celestiais que elevam a alma e preparam corações para adoração em Sua presença",
+      "label": "Canção de Adoração",
       "videos": [
         {
           "id": "TncbtUXcFRs",
@@ -76,7 +85,10 @@
       ]
     },
     "about": {
-      "title": "SOBRE MIM",
+      "title": "CORAÇÃO DE GRAÇA",
+      "subtitle": "Um coração rendido para servir, uma vida devotada a compartilhar Seu amor e graça com o mundo",
+      "mission": "Missão Global",
+      "missionText": "Espalhando o amor de Cristo através das nações, preparando corações para Sua volta gloriosa através do poder de Sua Palavra e demonstração de Sua graça.",
       "content": [
         "Abraçar a fé cristã é tanto um profundo privilégio quanto uma pesada responsabilidade – uma chance de irradiar Jesus em nossas vidas diárias. Tenho vivido essas verdades desde que dediquei minha vida a Cristo há mais de 36 anos. São muitas estações, provações e testes, e uma jornada santa contínua.",
         "Em parceria com Deus, essas estações são ordinárias, mas posso refletir sobre minha jornada com gratidão avassaladora por Sua obra transformadora. Olhando para o futuro, estou cheio de esperança, antecipando as bênçãos desdobráveis de Deus para mim e minha bela família.",
@@ -87,7 +99,7 @@
       ]
     },
     "music": {
-      "title": "ÁLBUM MUSICAL",
+      "title": "HARMONIA DIVINA",
       "description": [
         "Minha paixão pela música me levou a criar canções originais de adoração que expressam minha fé e devoção. Essas composições vêm de experiências pessoais e reflexões espirituais, criadas para elevar e inspirar outros em suas próprias jornadas de fé.",
         "Ouça minhas canções originais nas principais plataformas de streaming. Cada peça representa um capítulo único em minha caminhada espiritual, compartilhando mensagens de esperança, redenção e amor infalível de Deus.",
@@ -95,7 +107,12 @@
       ]
     },
     "contact": {
-      "title": "ENTRE EM CONTATO"
+      "title": "CONEXÃO DIVINA",
+      "subtitle": "Conecte-se conosco enquanto caminhamos juntos rumo ao Seu reino eterno",
+      "message": "\"Vem, Senhor Jesus!\" - Apocalipse 22:20"
+    },
+    "footer": {
+      "message": "Até que Ele venha novamente"
     }
   }
 }
