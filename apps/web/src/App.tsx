@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
+
+{/* Pages with Navbar */}
 import Home from './pages/Home';
-import FitnessBR from './pages/landingPages/forms/FitnessBR';
 import Revelation from './pages/Revelation';
 import Revelation1 from './pages/Revelation/Revelation1';
 import Revelation2 from './pages/Revelation/Revelation2';
@@ -27,6 +28,10 @@ import Revelation19 from './pages/Revelation/Revelation19';
 import Revelation20 from './pages/Revelation/Revelation20';
 import Revelation21 from './pages/Revelation/Revelation21';
 import Revelation22 from './pages/Revelation/Revelation22';
+
+{/* Pages without Navbar */}
+import FitnessBR from './pages/landingPages/forms/FitnessBR';
+import Anglican from './pages/landingPages/anglican/nwayouth';
 
 
 const LayoutWithNavbar: React.FC = () => {
@@ -78,6 +83,7 @@ function App() {
           {/* Pages without Navbar */}
           <Route element={<LayoutWithoutNavbar />}>
             <Route path="/fitnessbr" element={<FitnessBR />} />
+            <Route path="/nwayouth" element={<Anglican />} />
           </Route>
         </Routes>
       </Router>
