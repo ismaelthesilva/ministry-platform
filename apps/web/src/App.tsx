@@ -32,7 +32,7 @@ import Revelation22 from './pages/Revelation/Revelation22';
 {/* Pages without Navbar */}
 import FitnessBR from './pages/landingPages/forms/FitnessBR';
 import Anglican from './pages/landingPages/anglican/nwayouth';
-
+import NwaReportTerm2 from './pages/landingPages/anglican/nwa-report-term2';
 
 const LayoutWithNavbar: React.FC = () => {
   return (
@@ -84,6 +84,7 @@ function App() {
           <Route element={<LayoutWithoutNavbar />}>
             <Route path="/fitnessbr" element={<FitnessBR />} />
             <Route path="/nwayouth" element={<Anglican />} />
+            <Route path="/nwa-report-term2" element={<NwaReportTerm2 />} />
           </Route>
         </Routes>
       </Router>

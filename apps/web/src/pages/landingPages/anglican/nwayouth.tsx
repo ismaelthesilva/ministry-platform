@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Youtube, Users, Sparkles, Music, Smile } from 'lucide-react';
+import { Link, useLocation } from "react-router-dom";
 
 const featuredVideo = {
   title: 'Welcome to NWAY Youth!',
@@ -13,7 +14,7 @@ const featuredVideo = {
 const moreVideos = [
   {
     title: 'Youth Worship Night',
-    url: 'https://www.youtube.com/embed/ysz5S6PUM-U',
+    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     description: 'Experience the energy and passion of our youth worship.'
   },
   {
@@ -28,9 +29,42 @@ const moreVideos = [
   }
 ];
 
+const navLinks = [
+  { label: "Home", to: "/nwayouth" },
+  { label: "Pastoral", to: "/nwa-pastoral" },
+  { label: "Reports", to: "/nwa-report-term2" },
+];
+
 const YouthPage: React.FC = () => {
+  const location = useLocation();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex flex-col items-center py-8">
+      {/* Navbar */}
+      <nav className="w-full max-w-5xl mb-8">
+        <Card className="flex flex-row items-center justify-center gap-4 py-3 px-4 bg-white/90 dark:bg-gray-900/90 shadow-md border-0">
+          {navLinks.map((link) => {
+            const isActive =
+              (link.to === "/landingPages/anglican/nwayouth" && location.pathname === link.to) ||
+              (link.to !== "/landingPages/anglican/nwayouth" && location.pathname.startsWith(link.to));
+            return (
+              <Link key={link.label} to={link.to}>
+                <Button
+                  variant={isActive ? "default" : "ghost"}
+                  className={`text-base font-semibold px-4 ${
+                    isActive
+                      ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow"
+                      : "text-gray-700 dark:text-gray-200"
+                  }`}
+                >
+                  {link.label}
+                </Button>
+              </Link>
+            );
+          })}
+        </Card>
+      </nav>
+
       {/* Hero Section */}
       <div className="text-center mb-10">
         <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full mb-6 shadow-lg">
@@ -112,7 +146,7 @@ const YouthPage: React.FC = () => {
       </Card>
 
       {/* Community Section */}
-      <div className="text-center mt-8">
+      <div className="text-center mt-8 mb-16">
         <Users className="h-8 w-8 mx-auto text-purple-500 mb-2" />
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Connect. Grow. Lead.</h2>
         <p className="text-gray-700 dark:text-gray-300 max-w-xl mx-auto mb-4">
