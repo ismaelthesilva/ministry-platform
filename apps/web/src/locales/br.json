@@ -20,7 +20,7 @@
       "scroll": "Descubra Mais Abaixo"
     },
     "messages": {
-      "title": "MENSAGENS DIVINAS",
+      "title": "MENSAGENS",
       "subtitle": "Descubra as verdades eternas que nos preparam para Sua volta gloriosa",
       "label": "Mensagem Divina",
       "videos": [
@@ -42,9 +42,9 @@
       ]
     },
     "books": {
-      "title": "LITERATURA SAGRADA",
+      "title": "LIVROS ",
       "subtitle": "Escritos sagrados que iluminam o caminho para a verdade eterna e entendimento divino",
-      "label": "Literatura Sagrada",
+      "label": "Livros",
       "items": [
         {
           "title": "eBook",
@@ -63,7 +63,7 @@
       ]
     },
     "songs": {
-      "title": "MELODIAS CELESTIAIS",
+      "title": "COMPOSIÇÕES ORIGINAIS",
       "subtitle": "Melodias celestiais que elevam a alma e preparam corações para adoração em Sua presença",
       "label": "Canção de Adoração",
       "videos": [
@@ -89,17 +89,22 @@
       "subtitle": "Um coração rendido para servir, uma vida devotada a compartilhar Seu amor e graça com o mundo",
       "mission": "Missão Global",
       "missionText": "Espalhando o amor de Cristo através das nações, preparando corações para Sua volta gloriosa através do poder de Sua Palavra e demonstração de Sua graça.",
+      "missionScripture": "E este evangelho do reino será pregado em todo o mundo, em testemunho a todas as nações, e então virá o fim.",
+      "missionScriptureRef": "Mateus 24:14",
+      "godIsLoveTitle": "Deus é Amor",
+      "godIsLoveScripture": "Nós amamos porque Ele nos amou primeiro",
+      "godIsLoveScriptureRef": "1 João 4:19",
       "content": [
         "Abraçar a fé cristã é tanto um profundo privilégio quanto uma pesada responsabilidade – uma chance de irradiar Jesus em nossas vidas diárias. Tenho vivido essas verdades desde que dediquei minha vida a Cristo há mais de 36 anos. São muitas estações, provações e testes, e uma jornada santa contínua.",
         "Em parceria com Deus, essas estações são ordinárias, mas posso refletir sobre minha jornada com gratidão avassaladora por Sua obra transformadora. Olhando para o futuro, estou cheio de esperança, antecipando as bênçãos desdobráveis de Deus para mim e minha bela família.",
-        "O caminho da minha vida me levou ao Brasil e Nova Zelândia com minha amada esposa, Jandai. Juntos, estamos centrados em nossa fé cristã, apesar de vários caminhos de carreira, desde engenharia civil até empreendimentos empresariais em importação e exportação em países como Brasil e Argentina até consultoria em TI.",
+        "O caminho da minha vida me levou ao Brasil e Nova Zelândia com minha amada esposa, Jackie. Juntos, estamos centrados em nossa fé cristã, apesar de vários caminhos de carreira, desde engenharia civil até empreendimentos empresariais em importação e exportação em países como Brasil e Argentina até consultoria em TI.",
         "Seguindo o comando de Jesus em Mateus 28:19-20, estamos comprometidos em espalhar o evangelho e viver comprometidos com a promessa de estar conosco sempre.",
         "Como Theodore Roosevelt sabiamente disse: 'As pessoas não se importam com o quanto você sabe até saberem o quanto você se importa.' Minha aspiração é incorporar minha gratidão consistentemente para honrar Jesus com excelência.",
         "Em resumo, declaro: 'Deus é amor' (1 João 4:8). Meu compromisso inabalável é compartilhar esta Boa Nova ao longo da minha vida, tocando os corações de todos que encontro."
       ]
     },
     "music": {
-      "title": "HARMONIA DIVINA",
+      "title": "HARMONIA",
       "description": [
         "Minha paixão pela música me levou a criar canções originais de adoração que expressam minha fé e devoção. Essas composições vêm de experiências pessoais e reflexões espirituais, criadas para elevar e inspirar outros em suas próprias jornadas de fé.",
         "Ouça minhas canções originais nas principais plataformas de streaming. Cada peça representa um capítulo único em minha caminhada espiritual, compartilhando mensagens de esperança, redenção e amor infalível de Deus.",
@@ -107,7 +112,7 @@
       ]
     },
     "contact": {
-      "title": "CONEXÃO DIVINA",
+      "title": "CONEXÃO",
       "subtitle": "Conecte-se conosco enquanto caminhamos juntos rumo ao Seu reino eterno",
       "message": "\"Vem, Senhor Jesus!\" - Apocalipse 22:20"
     },

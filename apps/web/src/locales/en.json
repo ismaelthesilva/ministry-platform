@@ -20,9 +20,9 @@
       "scroll": "Discover More Below"
     },
     "messages": {
-      "title": "DIVINE MESSAGES",
+      "title": "MESSAGES",
       "subtitle": "Discover the eternal truths that prepare us for His glorious return",
-      "label": "Divine Message",
+      "label": "Message",
       "videos": [
         {
           "id": "Gk1NMp3g_b0",
@@ -42,9 +42,9 @@
       ]
     },
     "books": {
-      "title": "SACRED LITERATURE",
-      "subtitle": "Sacred writings that illuminate the path to eternal truth and divine understanding",
-      "label": "Sacred Literature",
+      "title": "ORIGINAL BOOKS",
+      "subtitle": "Original writings that illuminate the path to eternal truth and divine understanding",
+      "label": "Original Books",
       "items": [
         {
           "title": "eBook",
@@ -63,7 +63,7 @@
       ]
     },
     "songs": {
-      "title": "HEAVENLY MELODIES",
+      "title": "ORIGINAL SONGS",
       "subtitle": "Heavenly melodies that lift the soul and prepare hearts for worship in His presence",
       "label": "Worship Song",
       "videos": [
@@ -89,17 +89,22 @@
       "subtitle": "A heart surrendered to serve, a life devoted to sharing His love and grace with the world",
       "mission": "Global Mission",
       "missionText": "Spreading the love of Christ across nations, preparing hearts for His glorious return through the power of His Word and the demonstration of His grace.",
+      "missionScripture": "And this gospel of the kingdom will be preached in all the world as a witness to all nations, and then the end will come.",
+      "missionScriptureRef": "Matthew 24:14",
+      "godIsLoveTitle": "God is Love",
+      "godIsLoveScripture": "We love because He first loved us",
+      "godIsLoveScriptureRef": "1 John 4:19",
       "content": [
         "Embracing the Christian faith is both a profound privilege and a weighty responsibility – a chance to radiate Jesus in our daily lives. I've been living these truths since I dedicated my life to Christ over 36+ years. That's a lot of seasons, trials and tests, and one continuous holy journey.",
         "Partnering with God, these seasons are ordinary yet may I reflect on my journey with overwhelming gratitude for His transformative work. Looking to the future, I'm filled with hope, anticipating God's unfolding blessings for me and my beautiful family.",
-        "My life's path led me to Brazil and New Zealand with my beloved wife, Jandai. Together, we're centered in our Christian faith despite various career paths from civil engineering to entrepreneurial ventures in import and export in countries like Brazil and Argentina to IT consulting.",
+        "My life's path led me to Brazil and New Zealand with my beloved wife, Jackie. Together, we're centered in our Christian faith despite various career paths from civil engineering to entrepreneurial ventures in import and export in countries like Brazil and Argentina to IT consulting.",
         "Following Jesus's command in Matthew 28:19-20, we're committed to spreading the gospel and living committed to the promise to be with us always.",
         "As Theodore Roosevelt wisely said, \"People don't care how much you know until they know how much you care.\" My aspiration is to embody my gratitude consistently to honor Jesus with excellence.",
         "In summation, I declare, \"God is love\" (1 John 4:8). My unwavering commitment is to share this Good News throughout my life, touching the hearts of all I encounter."
       ]
     },
     "music": {
-      "title": "DIVINE HARMONY",
+      "title": "HARMONY",
       "description": [
         "My passion for music has led me to create original worship songs that express my faith and devotion. These compositions come from personal experiences and spiritual reflections, crafted to uplift and inspire others in their own faith journeys.",
         "Listen to my original songs on popular streaming platforms. Each piece represents a unique chapter in my spiritual walk, sharing messages of hope, redemption, and God's unfailing love.",
@@ -107,7 +112,7 @@
       ]
     },
     "contact": {
-      "title": "DIVINE CONNECTION",
+      "title": "CONNECTION",
       "subtitle": "Connect with us as we journey together toward His eternal kingdom",
       "message": "\"Come, Lord Jesus!\" - Revelation 22:20"
     },

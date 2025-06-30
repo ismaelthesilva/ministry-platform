@@ -49,7 +49,7 @@ const Revelation: React.FC = () => {
               <div className="flex items-center justify-center">
                 <Clock className="h-8 w-8 text-green-600 mb-2" />
               </div>
-              <CardTitle className="text-2xl font-bold">405</CardTitle>
+              <CardTitle className="text-2xl font-bold">404</CardTitle>
               <CardDescription>Verses</CardDescription>
             </CardHeader>
           </Card>

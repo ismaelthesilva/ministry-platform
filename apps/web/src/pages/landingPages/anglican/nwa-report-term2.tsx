@@ -80,9 +80,20 @@ const NwaReportTerm2: React.FC = () => (
 					Term 2 Youth Report
 				</Badge>
 				<p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mt-4">
-					From eFest to youth nights, this term was packed with joy, learning, and
-					moments where God’s love shone brightly.
+				From eFest to youth nights, this term was packed with joy, learning, and
+				moments where God’s love shone brightly.
 				</p>
+				<div className="flex justify-center my-6">
+				<div className="w-full max-w-xl aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+					<iframe
+					src="https://www.youtube.com/embed/EayMrraTQa4?si=Cwwv0ePfUHIHqsDD" // Replace with your actual video URL
+					title="Term 2 Youth Highlights"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
+					className="w-full h-64 md:h-80 rounded-lg border-none"
+					/>
+				</div>
+				</div>
 			</div>
 
 			{/* Stats Section */}
@@ -94,6 +105,7 @@ const NwaReportTerm2: React.FC = () => (
 					>
 						<div
 							className={`flex items-center justify-center w-16 h-16 rounded-full ${stat.color} shadow`}
+							style={{ minWidth: '4rem', minHeight: '4rem', marginLeft: '1rem', marginRight: '0.5rem' }}
 						>
 							{stat.icon}
 						</div>
