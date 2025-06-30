@@ -6,25 +6,25 @@ import { Youtube, Users, Sparkles, Music, Smile } from 'lucide-react';
 import { Link, useLocation } from "react-router-dom";
 
 const featuredVideo = {
-  title: 'Welcome to NWAY Youth!',
-  url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with your featured video
+  title: 'Welcome to NWA Youth!',
+  url: 'https://www.youtube.com/embed/EayMrraTQa4?si=Cwwv0ePfUHIHqsDD', // Replace with your featured video
   description: 'A place for youth to connect, grow, and shine for Jesus!'
 };
 
 const moreVideos = [
   {
     title: 'Youth Worship Night',
-    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/embed/EayMrraTQa4?si=Cwwv0ePfUHIHqsDD',
     description: 'Experience the energy and passion of our youth worship.'
   },
   {
     title: 'Testimony: Changed Lives',
-    url: 'https://www.youtube.com/embed/1w7OgIMMRc4',
+    url: 'https://www.youtube.com/embed/EayMrraTQa4?si=Cwwv0ePfUHIHqsDD',
     description: 'Hear how God is moving among our youth.'
   },
   {
     title: 'Fun & Fellowship',
-    url: 'https://www.youtube.com/embed/ScMzIvxBSi4',
+    url: 'https://www.youtube.com/embed/EayMrraTQa4?si=Cwwv0ePfUHIHqsDD',
     description: 'See highlights from our latest youth events!'
   }
 ];
@@ -71,7 +71,7 @@ const YouthPage: React.FC = () => {
           <Sparkles className="h-10 w-10 text-white" />
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-2 tracking-tight">
-          NWAY <span className="text-pink-600">Youth</span>
+          NWA <span className="text-pink-600">Youth</span>
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 max-w-xl mx-auto">
           Where faith, fun, and friendship meet! Join us for worship, real talk, and unforgettable moments.
@@ -150,7 +150,7 @@ const YouthPage: React.FC = () => {
         <Users className="h-8 w-8 mx-auto text-purple-500 mb-2" />
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Connect. Grow. Lead.</h2>
         <p className="text-gray-700 dark:text-gray-300 max-w-xl mx-auto mb-4">
-          NWAY Youth is a community where you belong. Bring your friends, share your story, and discover your purpose in Christ. We can’t wait to meet you!
+          NWA Youth is a community where you belong. Bring your friends, share your story, and discover your purpose in Christ. We can’t wait to meet you!
         </p>
         <Button variant="outline" className="border-pink-400 text-pink-600 hover:bg-pink-50 dark:hover:bg-pink-900">
           Contact Youth Leaders
