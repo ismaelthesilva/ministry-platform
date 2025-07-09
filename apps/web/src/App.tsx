@@ -33,6 +33,8 @@ import Revelation22 from './pages/Revelation/Revelation22';
 import FitnessBR from './pages/landingPages/forms/FitnessBR';
 import Anglican from './pages/landingPages/anglican/nwayouth';
 import NwaReportTerm2 from './pages/landingPages/anglican/nwa-report-term2';
+import NWAPastoralPage from './pages/landingPages/anglican/nwa-pastoral';
+import NWAResourcesPage from './pages/landingPages/anglican/nwa-resources';
 
 const LayoutWithNavbar: React.FC = () => {
   return (
@@ -85,6 +87,8 @@ function App() {
             <Route path="/fitnessbr" element={<FitnessBR />} />
             <Route path="/nwayouth" element={<Anglican />} />
             <Route path="/nwa-report-term2" element={<NwaReportTerm2 />} />
+            <Route path="/nwa-pastoral" element={<NWAPastoralPage />} />
+            <Route path="/nwa-resources" element={<NWAResourcesPage />} />
           </Route>
         </Routes>
       </Router>

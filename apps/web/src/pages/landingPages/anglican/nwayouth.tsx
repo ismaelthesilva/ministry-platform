@@ -33,6 +33,7 @@ const navLinks = [
   { label: "Home", to: "/nwayouth" },
   { label: "Pastoral", to: "/nwa-pastoral" },
   { label: "Reports", to: "/nwa-report-term2" },
+  { label: "Resources", to: "/nwa-resources" },
 ];
 
 const YouthPage: React.FC = () => {
