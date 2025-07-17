@@ -6,7 +6,7 @@ const NWAResourcesPage = () => {
     {
       title: "Roster Term 3",
       description: "The Gates of the Soul - Ministry Schedule",
-      url: "/nwayouth-resources/S5-TheGatesoftheSoul.pdf",
+      url: "/nwayouth-resources/roster-term3.pdf",
       icon: "📄",
       type: "PDF Document",
       color: "bg-gradient-to-r from-red-500 to-pink-500",
