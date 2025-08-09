@@ -25,7 +25,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext';
 
 interface Video {
-  id: string;
+  link: string;
   title: string;
   description: string;
 }
@@ -41,20 +41,27 @@ interface Book {
 const Home: React.FC = () => {
   const { t } = useLanguage();
 
+  // Helper function to extract YouTube video ID from URL
+  const getYouTubeVideoId = (url: string): string => {
+    const regex = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/;
+    const match = url.match(regex);
+    return match ? match[1] : '';
+  };
+
   // Define the data directly since the translation system expects simple strings
   const messages: Video[] = [
     {
-      id: "Gk1NMp3g_b0",
+      link: "https://www.youtube.com/watch?v=Gk1NMp3g_b0",
       title: t('home.messages.videos.0.title', 'The Incomparable Christ'),
       description: t('home.messages.videos.0.description', 'Who is Jesus Christ? How important is Jesus to my life today?')
     },
     {
-      id: "EZ4LBnEZPlg", 
+      link: "https://www.youtube.com/watch?v=EZ4LBnEZPlg",
       title: t('home.messages.videos.1.title', 'The way to Happiness'),
       description: t('home.messages.videos.1.description', 'Do you want to be happy? Discover the path to true happiness.')
     },
     {
-      id: "jf9Kogw6FU4",
+      link: "https://www.youtube.com/watch?v=jf9Kogw6FU4",
       title: t('home.messages.videos.2.title', 'O Incomparável Cristo'),
       description: t('home.messages.videos.2.description', 'Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje?')
     }
@@ -79,17 +86,17 @@ const Home: React.FC = () => {
 
   const songs: Video[] = [
     {
-      id: "TncbtUXcFRs",
+      link: "https://www.youtube.com/watch?v=TncbtUXcFRs",
       title: t('home.songs.videos.0.title', 'O Toque que Cura'),
       description: t('home.songs.videos.0.description', 'Original Song')
     },
     {
-      id: "YI-vkMp2Gjk",
+      link: "https://www.youtube.com/watch?v=YI-vkMp2Gjk",
       title: t('home.songs.videos.1.title', 'Virtuosa'),
       description: t('home.songs.videos.1.description', 'Original Song')
     },
     {
-      id: "mtK__QsG0bk",
+      link: "https://www.youtube.com/watch?v=mtK__QsG0bk",
       title: t('home.songs.videos.2.title', 'O Teu Amor me salvou'),
       description: t('home.songs.videos.2.description', 'Original Song')
     }
@@ -277,19 +284,14 @@ const Home: React.FC = () => {
                 {/* Video Container with Enhanced Overlay */}
                 <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
                   <iframe 
-                    className="w-full h-full transition-transform duration-500 group-hover:scale-110"
-                    src={`https://www.youtube.com/embed/${video.id}`}
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(video.link)}?enablejsapi=1&origin=${window.location.origin}&rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
                     title={video.title}
                     frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
                   />
-                  {/* Divine Play Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 animate-divine-pulse">
-                      <Play className="h-12 w-12 text-white" />
-                    </div>
-                  </div>
                 </div>
                 
                 {/* Enhanced Content */}
@@ -440,19 +442,14 @@ const Home: React.FC = () => {
                 {/* Video Container with Musical Overlay */}
                 <div className="relative aspect-video w-full overflow-hidden">
                   <iframe 
-                    className="w-full h-full transition-transform duration-300 group-hover:scale-105"
-                    src={`https://www.youtube.com/embed/${song.id}`}
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(song.link)}?enablejsapi=1&origin=${window.location.origin}&rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
                     title={song.title}
                     frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
                   />
-                  {/* Musical Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-pink-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 animate-pulse">
-                      <Music className="h-8 w-8 text-white" />
-                    </div>
-                  </div>
                 </div>
                 
                 {/* Content */}
