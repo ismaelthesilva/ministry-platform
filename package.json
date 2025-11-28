@@ -1,17 +1,23 @@
 {
-  "name": "jackie-platform",
+  "name": "ministry-platform",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --filter=!db",
-    "lint": "turbo run lint",
-    "test": "turbo run test"
+    "dev": "cd apps/web && npm run dev",
+    "dev:vite": "cd apps/vite && npm run dev",
+    "build": "cd apps/web && npm run build",
+    "build:vite": "cd apps/vite && npm run build",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "lint:check": "npm run lint:check --workspaces --if-present",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
-    "turbo": "^1.0.0"
+    "prettier": "^3.7.1"
   }
 }
