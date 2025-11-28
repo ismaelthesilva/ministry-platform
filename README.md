@@ -7,7 +7,7 @@ This is a monorepo setup using Turborepo that includes two applications: a web a
 ```
 my-turborepo
 ├── apps
-│   ├── web          # Web application using Vite
+│   ├── vite         # Web application using Vite
 │   └── admin        # Admin application using Next.js
 ├── packages
 │   ├── database     # Database package with Prisma setup
@@ -23,20 +23,22 @@ my-turborepo
 To get started with the project, follow these steps:
 
 1. **Clone the repository:**
+
    ```
    git clone <repository-url>
    cd my-turborepo
    ```
 
 2. **Install dependencies:**
+
    ```
    npm install
    ```
 
 3. **Run the applications:**
-   - For the web application:
+   - For the vite application:
      ```
-     cd apps/web
+     cd apps/vite
      npm run dev
      ```
    - For the admin application:
@@ -56,4 +58,5 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## License
 
 This project is licensed under the MIT License.# jackie-platform
+
 # ministry-platform
