@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardContent,
@@ -21,8 +22,9 @@ import {
   Star,
   Sparkles,
 } from "lucide-react";
+import Link from "next/link";
 
-const NWAResourcesPage = () => {
+export default function Page() {
   const resources = [
     {
       title: "Roster Term 3",
@@ -47,7 +49,7 @@ const NWAResourcesPage = () => {
     {
       title: "Season 6: The Unlikely Ones",
       description:
-        "Youth Study Guide exploring God's work through unexpected people",
+        "Youth Study Guide exploring God&apos;s work through unexpected people",
       url: "/nwayouth-resources/Season-6-The-Unlikely-Ones.pdf",
       icon: BookOpen,
       type: "Study Guide",
@@ -113,15 +115,16 @@ const NWAResourcesPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900 relative">
       {/* Back Button */}
       <div className="fixed top-6 left-6 z-50">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => (window.location.href = "/nwayouth")}
-          className="bg-white/90 backdrop-blur-sm border-indigo-200 hover:bg-indigo-50 hover:border-indigo-300 transition-all duration-300 shadow-lg hover:shadow-xl"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to NWA Youth
-        </Button>
+        <Link href="/anglican/nwayouth">
+          <Button
+            variant="outline"
+            size="sm"
+            className="bg-white/90 backdrop-blur-sm border-indigo-200 hover:bg-indigo-50 hover:border-indigo-300 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to NWA Youth
+          </Button>
+        </Link>
       </div>
 
       {/* Floating decorative elements */}
@@ -425,7 +428,7 @@ const NWAResourcesPage = () => {
               transform: translateY(0);
             }
           }
-          
+
           @keyframes slideInUp {
             from {
               opacity: 0;
@@ -441,6 +444,4 @@ const NWAResourcesPage = () => {
       />
     </div>
   );
-};
-
-export default NWAResourcesPage;
+}

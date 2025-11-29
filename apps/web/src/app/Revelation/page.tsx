@@ -11,12 +11,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Clock, Target, Star } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import Navbar from "../../components/Navbar";
 
 export default function RevelationPage() {
   const { tr } = useLanguage();
   const chapters = Array.from({ length: 22 }, (_, i) => i + 1);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <Navbar />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mb-6">

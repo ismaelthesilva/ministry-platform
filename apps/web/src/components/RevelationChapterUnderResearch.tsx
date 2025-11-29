@@ -6,11 +6,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+} from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 import { BookOpen, Search, ArrowLeft, Construction, Book } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 interface RevelationChapterUnderResearchProps {
   chapterNumber: number;
