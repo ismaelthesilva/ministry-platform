@@ -28,6 +28,7 @@ import {
   Shield,
   Sparkles,
 } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 interface Video {
   link: string;
@@ -51,14 +52,6 @@ export default function Page() {
     const regex = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/;
     const match = url.match(regex);
     return match ? match[1] : "";
-  };
-
-  // Get origin for iframe src (avoid SSR window usage)
-  const getOrigin = () => {
-    if (typeof window !== "undefined") {
-      return window.location.origin;
-    }
-    return "";
   };
   // Define the data directly since the translation system expects simple strings
   const messages: Video[] = [
@@ -167,6 +160,8 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-heavenly relative overflow-hidden">
+      <Navbar />
+
       {/* Floating Call-to-Action Button */}
       <div className="fixed bottom-8 right-8 z-50">
         <Button
@@ -359,7 +354,7 @@ export default function Page() {
                 <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
                   <iframe
                     className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(video.link)}?enablejsapi=1&origin=${window.location.origin}&rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
+                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(video.link)}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
                     title={video.title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -551,7 +546,7 @@ export default function Page() {
                 <div className="relative aspect-video w-full overflow-hidden">
                   <iframe
                     className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(song.link)}?enablejsapi=1&origin=${window.location.origin}&rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
+                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(song.link)}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
                     title={song.title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

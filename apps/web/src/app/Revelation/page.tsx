@@ -69,7 +69,7 @@ export default function RevelationPage() {
             {chapters.map((chapterNum) => (
               <Link
                 key={chapterNum}
-                href={`/Revelation/chapters/${chapterNum}`}
+                href={`/Revelation/Revelation${chapterNum}`}
                 className="group"
               >
                 <Card className="h-full hover:shadow-lg transition-all duration-300 group-hover:scale-105 border-2 hover:border-blue-300">
@@ -109,7 +109,7 @@ export default function RevelationPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Link href="/Revelation/chapters/1">
+              <Link href="/Revelation/Revelation1">
                 <Button
                   size="lg"
                   variant="secondary"

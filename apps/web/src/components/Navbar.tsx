@@ -71,9 +71,36 @@ const LanguageSwitcher: React.FC = () => {
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
   const { t } = useLanguage();
-  const isActive = (path: string) => pathname === path;
+
+  useEffect(() => {
+    const updateActive = () => {
+      const path = pathname;
+      const hash = window.location.hash;
+      if (path === "/") {
+        if (hash === "" || hash === "#") {
+          setActiveSection("home");
+        } else {
+          setActiveSection(hash.substring(1)); // remove #
+        }
+      } else if (path === "/Revelation") {
+        setActiveSection("revelation");
+      } else {
+        setActiveSection("");
+      }
+    };
+    updateActive();
+    window.addEventListener("hashchange", updateActive);
+    return () => window.removeEventListener("hashchange", updateActive);
+  }, [pathname]);
+
+  const isActive = (path: string) => {
+    if (path === "/") return activeSection === "home";
+    if (path.startsWith("/#")) return activeSection === path.substring(2);
+    return pathname === path;
+  };
   const navigationItems = [
     {
       name: t("navbar.home", "Home"),
@@ -82,32 +109,32 @@ const Navbar: React.FC = () => {
     },
     {
       name: t("navbar.messages", "Messages"),
-      href: "#messages",
+      href: "/#messages",
       icon: <MessageSquare className="h-4 w-4" />,
     },
     {
       name: t("navbar.songs", "Songs"),
-      href: "#songs",
+      href: "/#songs",
       icon: <Music className="h-4 w-4" />,
     },
     {
       name: t("navbar.books", "Books"),
-      href: "#books",
+      href: "/#books",
       icon: <Book className="h-4 w-4" />,
     },
     {
       name: t("navbar.revelation", "Revelation"),
-      href: "/revelation",
+      href: "/Revelation",
       icon: <Book className="h-4 w-4" />,
     },
     {
       name: t("navbar.about", "About"),
-      href: "#about",
+      href: "/#about",
       icon: <User className="h-4 w-4" />,
     },
     {
       name: t("navbar.contact", "Contact"),
-      href: "#contact",
+      href: "/#contact",
       icon: <Heart className="h-4 w-4" />,
     },
   ];
@@ -120,8 +147,9 @@ const Navbar: React.FC = () => {
     }
   };
   const handleNavClick = (href: string) => {
-    if (href.startsWith("#")) {
-      scrollToSection(href);
+    if (href.includes("#")) {
+      const hash = href.split("#")[1];
+      scrollToSection("#" + hash);
     }
     setIsOpen(false);
   };
@@ -150,7 +178,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             {navigationItems.map((item) =>
-              item.href.startsWith("#") ? (
+              item.href.includes("#") ? (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
@@ -198,7 +226,7 @@ const Navbar: React.FC = () => {
               <SheetContent side="right" className="w-72">
                 <div className="flex flex-col space-y-1 mt-8">
                   {navigationItems.map((item) =>
-                    item.href.startsWith("#") ? (
+                    item.href.includes("#") ? (
                       <button
                         key={item.name}
                         onClick={() => handleNavClick(item.href)}
