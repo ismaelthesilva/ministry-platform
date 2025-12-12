@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   BookOpen,
   Clock,
@@ -18,6 +20,7 @@ import {
   Heart,
   Lightbulb,
   Quote,
+  ArrowLeft,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -112,6 +115,17 @@ const Revelation1: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-8">
       <div className="max-w-5xl mx-auto">
+        {/* Back to Index Button */}
+        <Link href="/Revelation">
+          <Button variant="outline" className="mb-6 flex items-center gap-2">
+            <ArrowLeft className="h-4 w-4" />
+            {getText(
+              "Back to Revelation Index",
+              "Voltar ao Índice de Apocalipse"
+            )}
+          </Button>
+        </Link>
+
         <Card className="mb-8 border-l-4 border-l-blue-600">
           <CardHeader>
             <div className="flex items-center justify-between">

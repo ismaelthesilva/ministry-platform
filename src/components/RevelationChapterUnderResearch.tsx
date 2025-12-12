@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Card,
@@ -19,23 +20,26 @@ interface RevelationChapterUnderResearchProps {
 const RevelationChapterUnderResearch: React.FC<
   RevelationChapterUnderResearchProps
 > = ({ chapterNumber }) => {
+  const { t, language } = useLanguage();
   const router = useRouter();
-  const { t } = useLanguage();
+
+  const getText = (enText: string, ptText: string) => {
+    return language === "br" ? ptText : enText;
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
-        {/* Navigation */}
-        <div className="mb-8">
-          <Button
-            variant="ghost"
-            onClick={() => router.push("/Revelation")}
-            className="mb-4"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            {t("revelation.backToIndex", "Back to Revelation Index")}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-8">
+      <div className="max-w-4xl mx-auto">
+        {/* Back to Index Button */}
+        <Link href="/Revelation">
+          <Button variant="outline" className="mb-6 flex items-center gap-2">
+            <ArrowLeft className="h-4 w-4" />
+            {getText(
+              "Back to Revelation Index",
+              "Voltar ao Índice de Apocalipse"
+            )}
           </Button>
-        </div>
+        </Link>
 
         {/* Header */}
         <div className="text-center mb-12">
@@ -109,12 +113,12 @@ const RevelationChapterUnderResearch: React.FC<
                 </ul>
                 <div className="mt-6 p-4 bg-white dark:bg-orange-900/30 rounded-lg border border-orange-200 dark:border-orange-700">
                   <p className="text-sm text-orange-800 dark:text-orange-300 italic">
-                    "
+                    &ldquo;
                     {t(
                       "revelation.research.quote",
                       "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness."
                     )}
-                    " - 2 Timothy 3:16
+                    &rdquo; - 2 Timothy 3:16
                   </p>
                 </div>
               </div>
