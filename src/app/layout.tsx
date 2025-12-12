@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
   title: "Ismael Silva Ministry | Biblical Studies & Revelation Research",
   description:
     "Comprehensive biblical studies, Revelation chapter-by-chapter analysis, and ministry resources in English and Portuguese.",
@@ -30,8 +33,12 @@ export const metadata: Metadata = {
   publisher: "Ismael Silva Ministry",
 
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/logo-ministry1.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo-512.png", sizes: "192x192", type: "image/png" },
+    ],
     apple: "/logo-ministry1.png",
+    shortcut: "/logo-ministry1.png",
   },
 
   // Open Graph (Facebook, LinkedIn)
@@ -46,7 +53,7 @@ export const metadata: Metadata = {
       {
         url: "/logo-ministry1.png",
         width: 1200,
-        height: 1200, // Square dimensions
+        height: 1200,
         alt: "Ismael Silva Ministry",
       },
     ],
@@ -57,8 +64,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ismael Silva Ministry",
     description: "Biblical studies and Revelation research",
-    images: ["/ministry-images/logo-ministry1.png"], // Use your existing logo
-    creator: "@yourtwitterhandle",
+    images: ["/logo-ministry1.png"],
+    creator: "@ismaethesilva",
   },
 
   // Additional SEO
@@ -75,7 +82,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "your-google-verification-code", // Add after creating Google Search Console
+    google: "RIy2jTk9tPYJDn6IDjhGPR2Z-isCnyB8wt8jyvN7qbg",
   },
 };
 
