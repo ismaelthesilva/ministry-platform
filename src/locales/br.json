@@ -150,5 +150,28 @@
     "preparation": {
       "message": "Este estudo está sendo cuidadosamente preparado com oração e pesquisa minuciosa para fornecer o conteúdo mais preciso e espiritualmente enriquecedor possível."
     }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Adoraríamos ouvir de você. Envie-nos uma mensagem e responderemos o mais breve possível.",
+    "email": "Email",
+    "phone": "Telefone",
+    "phoneNumber": "Disponível mediante solicitação",
+    "location": "Localização",
+    "address": "Servindo comunidades em todo o mundo",
+    "name": "Nome Completo",
+    "namePlaceholder": "João Silva",
+    "emailLabel": "Endereço de Email",
+    "emailPlaceholder": "joao@exemplo.com",
+    "phoneLabel": "Número de Telefone",
+    "phonePlaceholder": "+55 (11) 00000-0000",
+    "subject": "Assunto",
+    "subjectPlaceholder": "Como podemos ajudar?",
+    "message": "Mensagem",
+    "messagePlaceholder": "Conte-nos mais sobre sua solicitação...",
+    "send": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso! Entraremos em contato em breve.",
+    "error": "Falha ao enviar mensagem. Por favor, tente novamente."
   }
 }

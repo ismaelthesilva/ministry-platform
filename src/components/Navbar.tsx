@@ -15,6 +15,7 @@ import {
   MessageSquare,
   Heart,
   User,
+  Mail,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { initializeTheme, toggleTheme, getStoredTheme } from "../lib/theme";
@@ -134,8 +135,8 @@ const Navbar: React.FC = () => {
     },
     {
       name: t("navbar.contact", "Contact"),
-      href: "/#contact",
-      icon: <Heart className="h-4 w-4" />,
+      href: "/contact",
+      icon: <Mail className="h-4 w-4" />,
     },
   ];
   const scrollToSection = (sectionId: string) => {

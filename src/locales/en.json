@@ -150,5 +150,28 @@
     "preparation": {
       "message": "This study is being carefully prepared with prayer and thorough research to provide the most accurate and spiritually enriching content possible."
     }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "email": "Email",
+    "phone": "Phone",
+    "phoneNumber": "Available upon request",
+    "location": "Location",
+    "address": "Serving communities worldwide",
+    "name": "Full Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "john@example.com",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+1 (555) 000-0000",
+    "subject": "Subject",
+    "subjectPlaceholder": "How can we help?",
+    "message": "Message",
+    "messagePlaceholder": "Tell us more about your inquiry...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "Failed to send message. Please try again."
   }
 }
