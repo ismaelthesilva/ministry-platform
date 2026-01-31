@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Adicione isso ao seu model User existente
+model User {
+  id String @id @default(cuid())
+  // ... seus campos existentes (email, name, etc)
+  
+  // Novos campos para o Tracker
+  country       String?
+  phone         String?
+  religion      String?
+  age           Int?
+  favBook       String?
+  favVerse      String?
+  
+  // Relacionamento com o plano escolhido
+  selectedPlanId String?
+  progress       UserProgress[]
+}
+
+model Plan {
+  id          String         @id @default(cuid())
+  slug        String         @unique // 'bible-only', 'prophetic', 'classical'
+  title       String
+  description String?
+  readings    DailyReading[]
+}
+
+model DailyReading {
+  id          String   @id @default(cuid())
+  planId      String
+  plan        Plan     @relation(fields: [planId], references: [id])
+  
+  dayNumber   Int      // 1 a 366
+  dateDisplay String   // ex: "1 de Janeiro"
+  
+  // Conteúdo Unificado
+  bibleTextMain    String   // O texto principal (História)
+  bibleTextDevo    String?  // Texto devocional (Salmos/Sabedoria - usado no plano Profético)
+  
+  // Campos de Comentário (EGW ou Clássicos)
+  commentaryAuthor String?  // "Ellen G. White" ou "Santo Agostinho"
+  commentaryWork   String?  // "Patriarcas e Profetas" ou "Confissões"
+  commentaryRef    String?  // Capítulo ou Referência
+  topic            String?  // Tema do dia
+
+  progress    UserProgress[]
+
+  @@index([planId, dayNumber])
+}
+
+model UserProgress {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  readingId String
+  reading   DailyReading @relation(fields: [readingId], references: [id])
+
+  completedAt DateTime @default(now())
+
+  @@unique([userId, readingId])
+}
