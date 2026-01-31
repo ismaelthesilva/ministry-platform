@@ -2,6 +2,7 @@
 // ...existing code...
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -24,7 +25,7 @@ const DarkModeToggle: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
     const currentTheme = initializeTheme();
-    setIsDarkMode(currentTheme === "dark");
+    Promise.resolve().then(() => setIsDarkMode(currentTheme === "dark"));
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleSystemChange = (e: MediaQueryListEvent) => {
       const stored = getStoredTheme();
@@ -144,6 +145,12 @@ const Navbar: React.FC = () => {
       const element = document.querySelector(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
+        try {
+          window.history.replaceState(null, "", sectionId);
+        } catch {
+          /* ignore */
+        }
+        setActiveSection(sectionId.substring(1));
       }
     }
   };
@@ -154,6 +161,34 @@ const Navbar: React.FC = () => {
     }
     setIsOpen(false);
   };
+  // Observe sections on the homepage to update active nav item while scrolling
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (pathname !== "/") return;
+
+    const ids = ["messages", "songs", "books", "about"];
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            try {
+              window.history.replaceState(null, "", `#${entry.target.id}`);
+            } catch {}
+          }
+        });
+      },
+      { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0 },
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [pathname]);
   return (
     <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,10 +196,13 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 relative">
-              <img
+              <Image
                 src="/logo-ministry1.png"
                 alt="Ismael Silva Ministry Logo"
-                className="w-full h-full object-contain bg-white/10"
+                fill
+                className="object-contain bg-white/10"
+                sizes="40px"
+                priority
               />
             </div>
             <div className="flex flex-col">
@@ -186,7 +224,7 @@ const Navbar: React.FC = () => {
                   className={cn(
                     "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                     "hover:bg-gray-100 dark:hover:bg-gray-800",
-                    "text-gray-700 dark:text-gray-300"
+                    "text-gray-700 dark:text-gray-300",
                   )}
                 >
                   {item.icon}
@@ -201,13 +239,13 @@ const Navbar: React.FC = () => {
                     "hover:bg-gray-100 dark:hover:bg-gray-800",
                     isActive(item.href)
                       ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
-                      : "text-gray-700 dark:text-gray-300"
+                      : "text-gray-700 dark:text-gray-300",
                   )}
                 >
                   {item.icon}
                   <span>{item.name}</span>
                 </Link>
-              )
+              ),
             )}
             <div className="flex items-center space-x-2 ml-4">
               <LanguageSwitcher />
@@ -244,13 +282,13 @@ const Navbar: React.FC = () => {
                         className={cn(
                           "flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800",
                           isActive(item.href) &&
-                            "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
+                            "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
                         )}
                       >
                         {item.icon}
                         <span className="font-medium">{item.name}</span>
                       </Link>
-                    )
+                    ),
                   )}
                 </div>
               </SheetContent>

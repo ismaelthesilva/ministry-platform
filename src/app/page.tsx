@@ -7,9 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import {
-  ExternalLink,
   Music,
   Heart,
   Mail,
@@ -18,17 +18,17 @@ import {
   BookOpen,
   Star,
   Crown,
-  Zap,
-  Globe,
-  MessageCircle,
   Play,
-  Download,
   ChevronDown,
   Cross,
   Shield,
   Sparkles,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Messages from "@/components/home/Messages";
+import Books from "@/components/home/Books";
+import Songs from "@/components/home/Songs";
+import About from "@/components/home/About";
 
 interface Video {
   link: string;
@@ -60,7 +60,7 @@ export default function Page() {
       title: t("home.messages.videos.0.title", "The Incomparable Christ"),
       description: t(
         "home.messages.videos.0.description",
-        "Who is Jesus Christ? How important is Jesus to my life today?"
+        "Who is Jesus Christ? How important is Jesus to my life today?",
       ),
     },
     {
@@ -68,7 +68,7 @@ export default function Page() {
       title: t("home.messages.videos.1.title", "The way to Happiness"),
       description: t(
         "home.messages.videos.1.description",
-        "Do you want to be happy? Discover the path to true happiness."
+        "Do you want to be happy? Discover the path to true happiness.",
       ),
     },
     {
@@ -76,7 +76,7 @@ export default function Page() {
       title: t("home.messages.videos.2.title", "O Incomparável Cristo"),
       description: t(
         "home.messages.videos.2.description",
-        "Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje?"
+        "Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje?",
       ),
     },
   ];
@@ -119,42 +119,42 @@ export default function Page() {
   const aboutContent: string[] = [
     t(
       "home.about.content.0",
-      "Embracing the Christian faith is both a profound privilege and a weighty responsibility..."
+      "Embracing the Christian faith is both a profound privilege and a weighty responsibility...",
     ),
     t(
       "home.about.content.1",
-      "Partnering with God, these seasons are ordinary yet may I reflect on my journey..."
+      "Partnering with God, these seasons are ordinary yet may I reflect on my journey...",
     ),
     t(
       "home.about.content.2",
-      "My life's path led me to Brazil and New Zealand with my beloved wife, Jandai..."
+      "My life's path led me to Brazil and New Zealand with my beloved wife, Jandai...",
     ),
     t(
       "home.about.content.3",
-      "Following Jesus's command in Matthew 28:19-20, we're committed to spreading the gospel..."
+      "Following Jesus's command in Matthew 28:19-20, we're committed to spreading the gospel...",
     ),
     t(
       "home.about.content.4",
-      'As Theodore Roosevelt wisely said, "People don\'t care how much you know..."'
+      'As Theodore Roosevelt wisely said, "People don\'t care how much you know..."',
     ),
     t(
       "home.about.content.5",
-      'In summation, I declare, "God is love" (1 John 4:8)...'
+      'In summation, I declare, "God is love" (1 John 4:8)...',
     ),
   ];
 
   const musicDescription: string[] = [
     t(
       "home.music.description.0",
-      "My passion for music has led me to create original worship songs..."
+      "My passion for music has led me to create original worship songs...",
     ),
     t(
       "home.music.description.1",
-      "Listen to my original songs on popular streaming platforms..."
+      "Listen to my original songs on popular streaming platforms...",
     ),
     t(
       "home.music.description.2",
-      "Click links to listen to my Original songs on Apple Music, Spotify and many others!"
+      "Click links to listen to my Original songs on Apple Music, Spotify and many others!",
     ),
   ];
 
@@ -207,10 +207,13 @@ export default function Page() {
       <section className="relative h-screen overflow-hidden">
         {/* Background Image with Enhanced Divine Overlay */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/ministry-images/header-felicidade.png"
             alt="Ministry Header"
+            fill
+            priority
             className="w-full h-full object-cover object-center scale-105 animate-[zoom_20s_ease-in-out_infinite_alternate]"
+            sizes="100vw"
           />
           {/* Multiple Divine Light Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-purple-900/60 to-black/70"></div>
@@ -293,433 +296,15 @@ export default function Page() {
             </div>
           </div>
         </div>
-
-        {/* Enhanced Bottom Fade with Divine Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-50 via-blue-50/50 to-transparent"></div>
       </section>
 
-      {/* Messages Section - Enhanced with Divine Proclamation Theme */}
-      <section
-        id="messages"
-        className="py-24 bg-gradient-to-b from-white via-blue-50 to-purple-50 relative"
-      >
-        {/* Divine Background Pattern */}
-        <div className="absolute inset-0 bg-grace-aura opacity-30"></div>
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
+      <Messages messages={messages} getYouTubeVideoId={getYouTubeVideoId} />
 
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Enhanced Section Header */}
-          <div className="text-center mb-20">
-            <div className="relative mb-8">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-2xl animate-divine-pulse">
-                <MessageCircle className="h-10 w-10 text-white" />
-              </div>
-              {/* Radiating Divine Light */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse scale-150"></div>
-            </div>
+      <Songs songs={songs} getYouTubeVideoId={getYouTubeVideoId} />
 
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-blue-600 to-purple-600 text-divine-glow">
-              {t("home.messages.title")}
-            </h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-              {t("home.messages.subtitle")}
-            </p>
+      <Books books={books} />
 
-            {/* Divine Separator */}
-            <div className="flex items-center justify-center mt-8 space-x-4">
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-blue-400"></div>
-              <Star className="h-6 w-6 text-blue-500 animate-pulse" />
-              <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-purple-400"></div>
-            </div>
-          </div>
-
-          {/* Enhanced Messages Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-            {messages.map((video: Video, index: number) => (
-              <Card
-                key={index}
-                className="group card-divine overflow-hidden bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 relative"
-              >
-                {/* Divine Glow Border Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-blue-400/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-
-                {/* Video Container with Enhanced Overlay */}
-                <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
-                  <iframe
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(video.link)}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
-                    title={video.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  />
-                </div>
-
-                {/* Enhanced Content */}
-                <CardHeader className="p-8 relative">
-                  <CardTitle className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-4 leading-tight">
-                    {video.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed text-lg mb-6">
-                    {video.description}
-                  </CardDescription>
-
-                  {/* Divine Badge with Enhanced Styling */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-blue-500">
-                      <Star className="h-5 w-5 mr-3 animate-pulse" />
-                      <span className="text-sm font-semibold tracking-wide uppercase">
-                        {t("home.messages.label")}
-                      </span>
-                    </div>
-                    <Cross className="h-5 w-5 text-blue-300 animate-grace-glow" />
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <p className="text-gray-600 text-lg mb-6 italic">
-              "Faith comes by hearing, and hearing by the word of God" - Romans
-              10:17
-            </p>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300">
-              <Youtube className="h-5 w-5 mr-2" />
-              Watch More Messages
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Books Section - Enhanced with Sacred Literature Theme */}
-      <section
-        id="books"
-        className="py-20 bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden"
-      >
-        {/* Divine Light Background */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-300/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6 shadow-xl">
-              <BookOpen className="h-8 w-8 text-white" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-              {t("home.books.title")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              {t(
-                "home.books.subtitle",
-                "Sacred writings that illuminate the path to eternal truth and divine understanding"
-              )}
-            </p>
-          </div>
-
-          {/* Books Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {books.map((book: Book, index: number) => (
-              <Card
-                key={index}
-                className="group relative overflow-hidden bg-white/90 backdrop-blur-sm border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3"
-              >
-                {/* Divine Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 via-transparent to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="relative p-8 flex flex-col items-center text-center">
-                  {/* Book Image with Enhanced Styling */}
-                  <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-purple-400/30 rounded-2xl blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                    <a
-                      href={book.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative block transform transition-transform duration-500 hover:scale-110"
-                    >
-                      <img
-                        src={book.image}
-                        alt={book.title}
-                        className="w-40 md:w-48 h-auto shadow-2xl rounded-lg border-4 border-white/50"
-                      />
-                      {/* Overlay on Hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                          <ExternalLink className="h-6 w-6 text-white" />
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-
-                  {/* Book Info */}
-                  <CardHeader className="text-center p-0 mb-6">
-                    <CardTitle className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300">
-                      {book.title}
-                    </CardTitle>
-                    <CardDescription className="text-lg text-gray-600 font-medium">
-                      {book.subtitle}
-                    </CardDescription>
-                  </CardHeader>
-
-                  {/* CTA Button */}
-                  <Button
-                    asChild
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 text-lg font-semibold shadow-xl border-0 transform group-hover:scale-105 transition-all duration-300"
-                  >
-                    <a
-                      href={book.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center"
-                    >
-                      <Download className="h-5 w-5 mr-2" />
-                      {book.buttonText}
-                    </a>
-                  </Button>
-
-                  {/* Divine Badge */}
-                  <div className="mt-4 flex items-center text-purple-500">
-                    <Crown className="h-4 w-4 mr-2" />
-                    <span className="text-sm font-medium">
-                      {t("home.books.label", "Sacred Literature")}
-                    </span>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Original Songs Section - Enhanced with Heavenly Music Theme */}
-      <section
-        id="songs"
-        className="py-20 bg-gradient-to-b from-purple-50 to-white relative"
-      >
-        {/* Musical Note Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ec4899' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full mb-6 shadow-xl">
-              <Music className="h-8 w-8 text-white" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
-              {t("home.songs.title")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              {t(
-                "home.songs.subtitle",
-                "Heavenly melodies that lift the soul and prepare hearts for worship in His presence"
-              )}
-            </p>
-          </div>
-
-          {/* Songs Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {songs.map((song: Video, index: number) => (
-              <Card
-                key={index}
-                className="group overflow-hidden bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              >
-                {/* Video Container with Musical Overlay */}
-                <div className="relative aspect-video w-full overflow-hidden">
-                  <iframe
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${getYouTubeVideoId(song.link)}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
-                    title={song.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  />
-                </div>
-
-                {/* Content */}
-                <CardHeader className="p-6">
-                  <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-pink-600 transition-colors duration-300 mb-3">
-                    {song.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 flex items-center mb-3">
-                    <Music className="h-4 w-4 mr-2 text-pink-500" />
-                    {song.description}
-                  </CardDescription>
-
-                  {/* Musical Badge */}
-                  <div className="flex items-center text-pink-500">
-                    <Zap className="h-4 w-4 mr-2" />
-                    <span className="text-sm font-medium">
-                      {t("home.songs.label", "Worship Song")}
-                    </span>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Me Section - Enhanced with Love, Grace and Servant Heart Theme */}
-      <section
-        className="py-24 bg-gradient-to-b from-white via-green-50 to-blue-50 relative"
-        id="about"
-      >
-        {/* Background Elements of Grace */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 right-0 w-80 h-80 bg-green-200/20 rounded-full blur-3xl animate-grace-glow"></div>
-          <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl animate-breathe"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl animate-divine-pulse"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="relative mb-8">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-full shadow-2xl animate-grace-glow">
-                <Heart className="h-10 w-10 text-white" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400/30 to-teal-400/30 rounded-full blur-xl animate-pulse scale-150"></div>
-            </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-teal-600 to-blue-600 text-grace-shadow">
-              {t("home.about.title")}
-            </h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-              {t("home.about.subtitle")}
-            </p>
-            <div className="flex items-center justify-center mt-8 space-x-4">
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-green-400"></div>
-              <Heart className="h-6 w-6 text-green-500 animate-pulse" />
-              <div className="w-8 h-0.5 bg-green-400"></div>
-              <Cross className="h-6 w-6 text-teal-500 animate-grace-glow" />
-              <div className="w-8 h-0.5 bg-teal-400"></div>
-              <Heart className="h-6 w-6 text-teal-500 animate-pulse" />
-              <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-teal-400"></div>
-            </div>
-          </div>
-
-          {/* 2x2 Grid: Photo (top left), First Paragraph (top right), Rest (bottom full row) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start mb-12">
-            {/* Photo */}
-            <div className="flex justify-center">
-              <div className="relative group w-80">
-                <div className="absolute -top-8 -left-8 w-full h-full bg-gradient-to-br from-green-400/30 to-teal-400/30 rounded-3xl blur-2xl animate-grace-glow"></div>
-                <div className="absolute -top-4 -left-4 w-full h-full bg-green-600/60 rounded-2xl shadow-2xl"></div>
-                <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-br from-green-500/40 to-teal-500/40 rounded-2xl blur-lg"></div>
-                <div className="relative overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
-                  <img
-                    src="/ministry-images/ismael-profile20.jpg"
-                    alt="Ismael Silva"
-                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 via-transparent to-transparent"></div>
-                </div>
-                <div className="absolute -top-6 -right-6 bg-yellow-400 rounded-full p-4 shadow-xl animate-divine-pulse">
-                  <Star className="h-8 w-8 text-white" />
-                </div>
-                <div className="absolute -bottom-4 -left-4 bg-teal-500 rounded-full p-3 shadow-xl animate-grace-glow">
-                  <Heart className="h-6 w-6 text-white" />
-                </div>
-              </div>
-            </div>
-            {/* First Paragraph */}
-            <div className="flex items-center">
-              <div className="group relative w-full">
-                <div className="absolute -left-4 top-2 w-1 h-full bg-gradient-to-b from-green-400 to-teal-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <p className="text-gray-700 leading-relaxed text-lg group-hover:text-gray-900 transition-all duration-300 p-6 rounded-xl hover:bg-white/60 hover:shadow-lg border border-transparent hover:border-green-200/50">
-                  {aboutContent[0]}
-                </p>
-              </div>
-            </div>
-            {/* Bottom Full Row: Rest of the paragraphs */}
-            <div className="lg:col-span-2">
-              <div className="space-y-0">
-                {aboutContent
-                  .slice(1)
-                  .map((paragraph: string, index: number) => (
-                    <div key={index} className="group relative">
-                      <div className="absolute -left-4 top-2 w-1 h-full bg-gradient-to-b from-green-400 to-teal-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <p className="text-gray-700 leading-relaxed text-lg group-hover:text-gray-900 transition-all duration-300 p-6 rounded-xl hover:bg-white/60 hover:shadow-lg border border-transparent hover:border-green-200/50">
-                        {paragraph}
-                      </p>
-                    </div>
-                  ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Global Mission - Full Row */}
-          <div className="max-w-6xl mx-auto mb-8">
-            <div className="p-8 bg-gradient-to-br from-green-50 via-teal-50 to-blue-50 rounded-3xl border border-green-200/50 shadow-xl relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-4 right-4">
-                  <Globe className="h-16 w-16 text-green-500 animate-breathe" />
-                </div>
-                <div className="absolute bottom-4 left-4">
-                  <Heart className="h-12 w-12 text-teal-500 animate-pulse" />
-                </div>
-              </div>
-              <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="bg-gradient-to-r from-green-500 to-teal-500 p-3 rounded-full mr-4 shadow-lg">
-                    <Globe className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-green-800">
-                    {t("home.about.mission")}
-                  </h3>
-                </div>
-                <p className="text-green-700 leading-relaxed text-lg mb-6">
-                  {t("home.about.missionText")}
-                </p>
-                <div className="border-l-4 border-green-400 pl-6 bg-white/50 p-4 rounded-r-lg">
-                  <p className="text-green-800 italic font-medium">
-                    "{t("home.about.missionScripture")}"
-                    <span className="text-green-600 font-bold ml-2">
-                      - {t("home.about.missionScriptureRef")}
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* God is Love - Full Row */}
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center p-8 bg-gradient-to-r from-green-100 to-teal-100 rounded-2xl border-2 border-green-300/30 shadow-xl">
-              <div className="flex items-center justify-center mb-4 space-x-2">
-                <Heart className="h-6 w-6 text-red-500 animate-pulse" />
-                <span className="text-2xl font-bold text-green-800">
-                  {t("home.about.godIsLoveTitle")}
-                </span>
-                <Heart className="h-6 w-6 text-red-500 animate-pulse" />
-              </div>
-              <p className="text-green-700 text-lg italic">
-                "{t("home.about.godIsLoveScripture")}" -{" "}
-                {t("home.about.godIsLoveScriptureRef")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <About aboutContent={aboutContent} />
 
       {/* Music Album Section - Enhanced with Divine Harmony Theme */}
       <section
@@ -818,10 +403,14 @@ export default function Page() {
                 <div className="absolute -top-6 -right-6 w-full h-full bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                 <div className="absolute -top-3 -right-3 w-full h-full bg-blue-600/80 rounded-2xl"></div>
                 <div className="relative overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
-                  <img
+                  <Image
                     src="/ministry-images/isma-album.jpg"
                     alt="Ismael Silva Music"
+                    width={400}
+                    height={400}
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 25rem, 100vw"
+                    priority
                   />
                   {/* Musical overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-transparent to-transparent"></div>
@@ -865,8 +454,8 @@ export default function Page() {
               HIS GLORIOUS RETURN
             </h2>
             <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed font-light">
-              The hope of every believer - the blessed promise of our Lord's
-              return
+              The hope of every believer - the blessed promise of our
+              Lord&apos;s return
             </p>
           </div>
 
@@ -882,9 +471,9 @@ export default function Page() {
                   HIS PROMISE
                 </CardTitle>
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
-                  "And if I go and prepare a place for you, I will come again
-                  and receive you to Myself; that where I am, there you may be
-                  also."
+                  &quot;And if I go and prepare a place for you, I will come
+                  again and receive you to Myself; that where I am, there you
+                  may be also.&quot;
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
                   - John 14:3
@@ -902,9 +491,9 @@ export default function Page() {
                   HIS KINGDOM
                 </CardTitle>
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
-                  "Then the King will say to those on His right hand, 'Come, you
-                  blessed of My Father, inherit the kingdom prepared for you
-                  from the foundation of the world.'"
+                  &quot;Then the King will say to those on His right hand,
+                  &apos;Come, you blessed of My Father, inherit the kingdom
+                  prepared for you from the foundation of the world.&apos;&quot;
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
                   - Matthew 25:34
@@ -922,9 +511,9 @@ export default function Page() {
                   HIS LOVE
                 </CardTitle>
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
-                  "And God will wipe away every tear from their eyes; there
+                  &quot;And God will wipe away every tear from their eyes; there
                   shall be no more death, nor sorrow, nor crying. There shall be
-                  no more pain, for the former things have passed away."
+                  no more pain, for the former things have passed away.&quot;
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
                   - Revelation 21:4
@@ -942,12 +531,12 @@ export default function Page() {
                 <Star className="h-8 w-8 text-yellow-300 animate-pulse" />
               </div>
               <h3 className="text-4xl md:text-5xl font-bold text-yellow-300 mb-6 text-divine-glow">
-                "EVEN SO, COME LORD JESUS!"
+                &quot;EVEN SO, COME LORD JESUS!&quot;
               </h3>
               <p className="text-white/90 text-xl leading-relaxed mb-4">
-                The Spirit and the bride say, "Come!" And let him who hears say,
-                "Come!" And let him who thirsts come. Whoever desires, let him
-                take the water of life freely.
+                The Spirit and the bride say, &quot;Come!&quot; And let him who
+                hears say, &quot;Come!&quot; And let him who thirsts come.
+                Whoever desires, let him take the water of life freely.
               </p>
               <p className="text-yellow-300 font-bold text-lg">
                 - Revelation 22:17, 20
@@ -998,7 +587,7 @@ export default function Page() {
             <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
               {t(
                 "home.contact.subtitle",
-                "Connect with us as we journey together toward His eternal kingdom"
+                "Connect with us as we journey together toward His eternal kingdom",
               )}
             </p>
           </div>
@@ -1057,7 +646,7 @@ export default function Page() {
             <p className="text-gray-300 text-lg italic">
               {t(
                 "home.contact.message",
-                '"Come, Lord Jesus!" - Revelation 22:20'
+                '"Come, Lord Jesus!" - Revelation 22:20',
               )}
             </p>
           </div>
@@ -1097,7 +686,7 @@ export default function Page() {
                 <Star className="h-5 w-5 ml-2" />
               </div>
               <p className="text-gray-300 text-sm italic">
-                "Surely I am coming quickly" - Revelation 22:20
+                &quot;Surely I am coming quickly&quot; - Revelation 22:20
               </p>
             </div>
           </div>
