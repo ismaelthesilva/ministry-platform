@@ -6,30 +6,79 @@ datasource db {
   provider = "postgresql"
 }
 
-// Adicione isso ao seu model User existente
+// NextAuth User model
 model User {
-  id String @id @default(cuid())
-  // ... seus campos existentes (email, name, etc)
+  id                String    @id @default(cuid())
+  name              String?
+  email             String?   @unique
+  emailVerified     DateTime?
+  image             String?
+  password          String?
   
-  // Novos campos para o Tracker
-  country       String?
-  phone         String?
-  religion      String?
-  age           Int?
-  favBook       String?
-  favVerse      String?
+  // Bible Tracker fields
+  country           String?
+  phone             String?
+  religion          String?
+  age               Int?
+  favBook           String?
+  favVerse          String?
+  selectedPlanId    String?
+  preferredLanguage String    @default("pt") // "pt" or "en"
   
-  // Relacionamento com o plano escolhido
-  selectedPlanId String?
-  progress       UserProgress[]
+  // Relations
+  accounts          Account[]
+  sessions          Session[]
+  progress          UserProgress[]
+  
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
 }
 
 model Plan {
   id          String         @id @default(cuid())
-  slug        String         @unique // 'bible-only', 'prophetic', 'classical'
+  slug        String         // 'bible-only', 'prophetic', 'classical'
   title       String
   description String?
+  language    String         @default("pt") // "pt" or "en"
   readings    DailyReading[]
+  
+  @@unique([slug, language])
+  @@index([language])
 }
 
 model DailyReading {
@@ -41,7 +90,7 @@ model DailyReading {
   dateDisplay String   // ex: "1 de Janeiro"
   
   // Conteúdo Unificado
-  bibleTextMain    String   // O texto principal (História)
+  bibleTextMain    String?  // O texto principal (História) - opcional para algumas leituras
   bibleTextDevo    String?  // Texto devocional (Salmos/Sabedoria - usado no plano Profético)
   
   // Campos de Comentário (EGW ou Clássicos)
@@ -49,9 +98,11 @@ model DailyReading {
   commentaryWork   String?  // "Patriarcas e Profetas" ou "Confissões"
   commentaryRef    String?  // Capítulo ou Referência
   topic            String?  // Tema do dia
+  language         String   @default("pt") // "pt" or "en"
 
   progress    UserProgress[]
 
+  @@unique([planId, dayNumber], name: "planId_dayNumber")
   @@index([planId, dayNumber])
 }
 

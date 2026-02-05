@@ -1,0 +1,366 @@
+﻿Day,Bible Text
+Jan-01,Genesis 1-3
+Jan-02,Genesis 4-6
+Jan-03,Genesis 7-9
+Jan-04,Genesis 10-12
+Jan-05,Genesis 13-16
+Jan-06,Genesis 17-19
+Jan-07,Genesis 20-22
+Jan-08,Genesis 23-25
+Jan-09,Genesis 26-28
+Jan-10,Genesis 29-31
+Jan-11,Genesis 32-34
+Jan-12,Genesis 35-37
+Jan-13,Genesis 38-40
+Jan-14,Genesis 41-42
+Jan-15,Genesis 43-45
+Jan-16,Genesis 46-48
+Jan-17,Genesis 49-50
+Jan-18,Exodus 1-3
+Jan-19,Exodus 4-6
+Jan-20,Exodus 7-9
+Jan-21,Exodus 10-12
+Jan-22,Exodus 13-15
+Jan-23,Exodus 16-18
+Jan-24,Exodus 19-21
+Jan-25,Exodus 22-24
+Jan-26,Exodus 25-27
+Jan-27,Exodus 28-29
+Jan-28,Exodus 30-32
+Jan-29,Exodus 33-35
+Jan-30,Exodus 36-38
+Jan-31,Exodus 39-40
+Feb-01,Leviticus 1-4
+Feb-02,Leviticus 5-7
+Feb-03,Leviticus 8-10
+Feb-04,Leviticus 11-13
+Feb-05,Leviticus 14-15
+Feb-06,Leviticus 16-18
+Feb-07,Leviticus 19-21
+Feb-08,Leviticus 22-23
+Feb-09,Leviticus 24-25
+Feb-10,Leviticus 26-27
+Feb-11,Numbers 1-2
+Feb-12,Numbers 3-4
+Feb-13,Numbers 5-6
+Feb-14,Numbers 7
+Feb-15,Numbers 8-10
+Feb-16,Numbers 11-13
+Feb-17,Numbers 14-15
+Feb-18,Numbers 16-17
+Feb-19,Numbers 18-20
+Feb-20,Numbers 21-22
+Feb-21,Numbers 23-25
+Feb-22,Numbers 26-27
+Feb-23,Numbers 28-30
+Feb-24,Numbers 31-32
+Feb-25,Numbers 33-34
+Feb-26,Numbers 35-36
+Feb-27,Deuteronomy 1-2
+Feb-28,Deuteronomy 3-4
+Mar-01,Deuteronomy 5-7
+Mar-02,Deuteronomy 8-10
+Mar-03,Deuteronomy 11-13
+Mar-04,Deuteronomy 14-16
+Mar-05,Deuteronomy 17-20
+Mar-06,Deuteronomy 21-23
+Mar-07,Deuteronomy 24-27
+Mar-08,Deuteronomy 28
+Mar-09,Deuteronomy 29-31
+Mar-10,Deuteronomy 32-34
+Mar-11,Joshua 1-4
+Mar-12,Joshua 5-8
+Mar-13,Joshua 9-11
+Mar-14,Joshua 12-15
+Mar-15,Joshua 16-18
+Mar-16,Joshua 19-21
+Mar-17,Joshua 22-24
+Mar-18,Judges 1-3
+Mar-19,Judges 4-6
+Mar-20,Judges 7-9
+Mar-21,Judges 10-12
+Mar-22,Judges 13-16
+Mar-23,Judges 17-21
+Mar-24,Ruth 1-4
+Mar-25,1 Samuel 1-3
+Mar-26,1 Samuel 4-8
+Mar-27,1 Samuel 9-12
+Mar-28,1 Samuel 13-14
+Mar-29,1 Samuel 15-17
+Mar-30,1 Samuel 18-20
+Mar-31,1 Samuel 21-24
+Apr-01,1 Samuel 25-27
+Apr-02,1 Samuel 28-31
+Apr-03,2 Samuel 1-3
+Apr-04,2 Samuel 4-7
+Apr-05,2 Samuel 8-11
+Apr-06,2 Samuel 12-13
+Apr-07,2 Samuel 14-16
+Apr-08,2 Samuel 17-19
+Apr-09,2 Samuel 20-22
+Apr-10,2 Samuel 23-24
+Apr-11,1 Kings 1-2
+Apr-12,1 Kings 3-5
+Apr-13,1 Kings 6-7
+Apr-14,1 Kings 8-9
+Apr-15,1 Kings 10-11
+Apr-16,1 Kings 12-14
+Apr-17,1 Kings 15-17
+Apr-18,1 Kings 18-20
+Apr-19,1 Kings 21-22
+Apr-20,2 Kings 1-3
+Apr-21,2 Kings 4-5
+Apr-22,2 Kings 6-8
+Apr-23,2 Kings 9-11
+Apr-24,2 Kings 12-14
+Apr-25,2 Kings 15-17
+Apr-26,2 Kings 18-19
+Apr-27,2 Kings 20-22
+Apr-28,2 Kings 23-25
+Apr-29,1 Chronicles 1-2
+Apr-30,1 Chronicles 3-5
+May-01,1 Chronicles 6
+May-02,1 Chronicles 7-8
+May-03,1 Chronicles 9-11
+May-04,1 Chronicles 12-14
+May-05,1 Chronicles 15-17
+May-06,1 Chronicles 18-21
+May-07,1 Chronicles 22-24
+May-08,1 Chronicles 25-27
+May-09,1 Chronicles 28-29
+May-10,2 Chronicles 1-4
+May-11,2 Chronicles 5-8
+May-12,2 Chronicles 9-12
+May-13,2 Chronicles 13-16
+May-14,2 Chronicles 17-20
+May-15,2 Chronicles 21-24
+May-16,2 Chronicles 25-27
+May-17,2 Chronicles 28-31
+May-18,2 Chronicles 32-34
+May-19,2 Chronicles 35-36
+May-20,Ezra 1-4
+May-21,Ezra 5-7
+May-22,Ezra 8-10
+May-23,Nehemiah 1-3
+May-24,Nehemiah 4-6
+May-25,Nehemiah 7-9
+May-26,Nehemiah 10-11
+May-27,Nehemiah 12-13
+May-28,Esther 1-5
+May-29,Esther 6-10
+May-30,Job 1-4
+May-31,Job 5-7
+Jun-01,Job 8-10
+Jun-02,Job 11-14
+Jun-03,Job 15-17
+Jun-04,Job 18-19
+Jun-05,Job 20-21
+Jun-06,Job 22-24
+Jun-07,Job 25-28
+Jun-08,Job 29-31
+Jun-09,Job 32-34
+Jun-10,Job 35-37
+Jun-11,Job 38-39
+Jun-12,Job 40-42
+Jun-13,Psalms 1-8
+Jun-14,Psalms 9-16
+Jun-15,Psalms 17-20
+Jun-16,Psalms 21-25
+Jun-17,Psalms 26-31
+Jun-18,Psalms 32-35
+Jun-19,Psalms 36-39
+Jun-20,Psalms 40-45
+Jun-21,Psalms 46-50
+Jun-22,Psalms 51-57
+Jun-23,Psalms 58-65
+Jun-24,Psalms 66-69
+Jun-25,Psalms 70-73
+Jun-26,Psalms 74-77
+Jun-27,Psalms 78-79
+Jun-28,Psalms 80-85
+Jun-29,Psalms 86-89
+Jun-30,Psalms 90-95
+Jul-01,Psalms 96-102
+Jul-02,Psalms 103-105
+Jul-03,Psalms 106-107
+Jul-04,Psalms 108-114
+Jul-05,Psalms 115-118
+Jul-06,Psalms 119:1-88
+Jul-07,Psalms 119:89-176
+Jul-08,Psalms 120-132
+Jul-09,Psalms 133-139
+Jul-10,Psalms 140-145
+Jul-11,Psalms 146-150
+Jul-12,Proverbs 1-3
+Jul-13,Proverbs 4-6
+Jul-14,Proverbs 7-9
+Jul-15,Proverbs 10-12
+Jul-16,Proverbs 13-15
+Jul-17,Proverbs 16-18
+Jul-18,Proverbs 19-21
+Jul-19,Proverbs 22-23
+Jul-20,Proverbs 24-26
+Jul-21,Proverbs 27-29
+Jul-22,Proverbs 30-31
+Jul-23,Ecclesiastes 1-4
+Jul-24,Ecclesiastes 5-8
+Jul-25,Ecclesiastes 9-12
+Jul-26,Song of Solomon 1-4
+Jul-27,Song of Solomon 5-8
+Jul-28,Isaiah 1-4
+Jul-29,Isaiah 5-8
+Jul-30,Isaiah 9-12
+Jul-31,Isaiah 13-17
+Aug-01,Isaiah 18-22
+Aug-02,Isaiah 23-27
+Aug-03,Isaiah 28-30
+Aug-04,Isaiah 31-35
+Aug-05,Isaiah 36-41
+Aug-06,Isaiah 42-44
+Aug-07,Isaiah 45-48
+Aug-08,Isaiah 49-53
+Aug-09,Isaiah 54-58
+Aug-10,Isaiah 59-63
+Aug-11,Isaiah 64-66
+Aug-12,Jeremiah 1-3
+Aug-13,Jeremiah 4-6
+Aug-14,Jeremiah 7-9
+Aug-15,Jeremiah 10-13
+Aug-16,Jeremiah 14-17
+Aug-17,Jeremiah 18-22
+Aug-18,Jeremiah 23-25
+Aug-19,Jeremiah 26-29
+Aug-20,Jeremiah 30-31
+Aug-21,Jeremiah 32-34
+Aug-22,Jeremiah 35-37
+Aug-23,Jeremiah 38-41
+Aug-24,Jeremiah 42-45
+Aug-25,Jeremiah 46-48
+Aug-26,Jeremiah 49-50
+Aug-27,Jeremiah 51-52
+Aug-28,Lamentations 1-2
+Aug-29,Lamentations 3-5
+Aug-30,Ezekiel 1-4
+Aug-31,Ezekiel 5-8
+Sep-01,Ezekiel 9-12
+Sep-02,Ezekiel 13-15
+Sep-03,Ezekiel 16
+Sep-04,Ezekiel 17-19
+Sep-05,Ezekiel 20-21
+Sep-06,Ezekiel 22-23
+Sep-07,Ezekiel 24-26
+Sep-08,Ezekiel 27-28
+Sep-09,Ezekiel 29-31
+Sep-10,Ezekiel 32-33
+Sep-11,Ezekiel 34-36
+Sep-12,Ezekiel 37-38
+Sep-13,Ezekiel 39-40
+Sep-14,Ezekiel 41-43
+Sep-15,Ezekiel 44-46
+Sep-16,Ezekiel 47-48
+Sep-17,Daniel 1-3
+Sep-18,Daniel 4-6
+Sep-19,Daniel 7-9
+Sep-20,Daniel 10-12
+Sep-21,Hosea 1-7
+Sep-22,Hosea 8-14
+Sep-23,Joel 1-3
+Sep-24,Amos 1-5
+Sep-25,Amos 6-9
+Sep-26,Obadiah / Jonah 1-4
+Sep-27,Micah 1-7
+Sep-28,Nahum 1-3
+Sep-29,Habakkuk 1-3
+Sep-30,Zephaniah 1-3
+Oct-01,Haggai 1-2
+Oct-02,Zechariah 1-5
+Oct-03,Zechariah 6-10
+Oct-04,Zechariah 11-14
+Oct-05,Malachi 1-4
+Oct-06,Matthew 1-4
+Oct-07,Matthew 5-6
+Oct-08,Matthew 7-9
+Oct-09,Matthew 10-12
+Oct-10,Matthew 13-14
+Oct-11,Matthew 15-17
+Oct-12,Matthew 18-20
+Oct-13,Matthew 21-22
+Oct-14,Matthew 23-24
+Oct-15,Matthew 25-26
+Oct-16,Matthew 27-28
+Oct-17,Mark 1-3
+Oct-18,Mark 4-5
+Oct-19,Mark 6-7
+Oct-20,Mark 8-9
+Oct-21,Mark 10-11
+Oct-22,Mark 12-13
+Oct-23,Mark 14
+Oct-24,Mark 15-16
+Oct-25,Luke 1-2
+Oct-26,Luke 3-4
+Oct-27,Luke 5-6
+Oct-28,Luke 7-8
+Oct-29,Luke 9-10
+Oct-30,Luke 11-12
+Oct-31,Luke 13-15
+Nov-01,Luke 16-18
+Nov-02,Luke 19-20
+Nov-03,Luke 21-22
+Nov-04,Luke 23-24
+Nov-05,John 1-2
+Nov-06,John 3-4
+Nov-07,John 5-6
+Nov-08,John 7-8
+Nov-09,John 9-10
+Nov-10,John 11-12
+Nov-11,John 13-15
+Nov-12,John 16-18
+Nov-13,John 19-21
+Nov-14,Acts 1-3
+Nov-15,Acts 4-6
+Nov-16,Acts 7-8
+Nov-17,Acts 9-10
+Nov-18,Acts 11-13
+Nov-19,Acts 14-16
+Nov-20,Acts 17-19
+Nov-21,Acts 20-22
+Nov-22,Acts 23-25
+Nov-23,Acts 26-28
+Nov-24,Romans 1-3
+Nov-25,Romans 4-7
+Nov-26,Romans 8-10
+Nov-27,Romans 11-13
+Nov-28,Romans 14-16
+Nov-29,1 Corinthians 1-4
+Nov-30,1 Corinthians 5-8
+Dec-01,1 Corinthians 9-11
+Dec-02,1 Corinthians 12-14
+Dec-03,1 Corinthians 15-16
+Dec-04,2 Corinthians 1-4
+Dec-05,2 Corinthians 5-9
+Dec-06,2 Corinthians 10-13
+Dec-07,Galatians 1-3
+Dec-08,Galatians 4-6
+Dec-09,Ephesians 1-3
+Dec-10,Ephesians 4-6
+Dec-11,Philippians 1-4
+Dec-12,Colossians 1-4
+Dec-13,1 Thessalonians 1-5
+Dec-14,2 Thessalonians 1-3
+Dec-15,1 Timothy 1-6
+Dec-16,2 Timothy 1-4
+Dec-17,Titus / Philemon
+Dec-18,Hebrews 1-4
+Dec-19,Hebrews 5-8
+Dec-20,Hebrews 9-10
+Dec-21,Hebrews 11-13
+Dec-22,James 1-5
+Dec-23,1 Peter 1-5
+Dec-24,2 Peter 1-3
+Dec-25,1 John 1-5
+Dec-26,2 John / 3 John / Jude
+Dec-27,Revelation 1-3
+Dec-28,Revelation 4-7
+Dec-29,Revelation 8-12
+Dec-30,Revelation 13-17
+Dec-31,Revelation 18-22

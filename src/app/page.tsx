@@ -29,6 +29,9 @@ import Messages from "@/components/home/Messages";
 import Books from "@/components/home/Books";
 import Songs from "@/components/home/Songs";
 import About from "@/components/home/About";
+import HeroSection from "@/components/home/HeroSection";
+import DailyInspiration from "@/components/home/DailyInspiration";
+import FeaturesGrid from "@/components/home/FeaturesGrid";
 
 interface Video {
   link: string;
@@ -168,7 +171,7 @@ export default function Page() {
           asChild
           className="group bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 hover:from-purple-700 hover:via-blue-700 hover:to-purple-700 text-white px-6 py-3 text-base font-semibold shadow-2xl border-0 rounded-full animate-divine-pulse transform hover:scale-110 transition-all duration-300"
         >
-          <a href="/revelation" className="flex items-center">
+          <a href="/Revelation" className="flex items-center">
             <BookOpen className="h-5 w-5 mr-2 group-hover:animate-pulse" />
             Revelation Study
           </a>
@@ -203,101 +206,16 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Hero Section - Enhanced with Divine Majesty */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Background Image with Enhanced Divine Overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="/ministry-images/header-felicidade.png"
-            alt="Ministry Header"
-            fill
-            priority
-            className="w-full h-full object-cover object-center scale-105 animate-[zoom_20s_ease-in-out_infinite_alternate]"
-            sizes="100vw"
-          />
-          {/* Multiple Divine Light Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-purple-900/60 to-black/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"></div>
-          <div className="absolute inset-0 bg-divine-radiance"></div>
-        </div>
+      {/* New Hero Section with Bible Tracker CTA */}
+      <HeroSection />
 
-        {/* Floating Divine Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Heavenly Light Particles */}
-          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-yellow-300 rounded-full animate-divine-pulse opacity-60"></div>
-          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-heavenly-float opacity-50"></div>
-          <div className="absolute bottom-1/3 left-1/5 w-2.5 h-2.5 bg-blue-200 rounded-full animate-divine-pulse opacity-70"></div>
-          <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-purple-200 rounded-full animate-heavenly-float opacity-40"></div>
+      {/* New Daily Inspiration Section */}
+      <DailyInspiration />
 
-          {/* Divine Cross Elements */}
-          <div className="absolute top-1/6 right-1/6 animate-grace-glow">
-            <Cross className="h-8 w-8 text-yellow-300/30" />
-          </div>
-          <div className="absolute bottom-1/4 left-1/8 animate-breathe">
-            <Cross className="h-6 w-6 text-white/20" />
-          </div>
-        </div>
+      {/* New Features Grid */}
+      <FeaturesGrid />
 
-        <div className="container mx-auto h-full flex flex-col items-center justify-center relative z-10 px-4 text-center">
-          {/* Divine Crown with Enhanced Animation */}
-          <div className="mb-8 relative">
-            <div className="animate-divine-pulse">
-              <Crown className="h-20 w-20 text-yellow-400 drop-shadow-2xl mx-auto mb-4 text-divine-glow" />
-            </div>
-            {/* Radiating Light Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent blur-3xl animate-pulse"></div>
-          </div>
-
-          {/* Main Title with Enhanced Divine Styling */}
-          <div className="relative mb-6">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-yellow-200 drop-shadow-2xl leading-tight text-divine-glow">
-              {t("home.hero.title")}
-            </h1>
-            {/* Multiple Glow Layers */}
-            <div className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-3xl -z-10"></div>
-            <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-yellow-400/10 to-white/10 blur-2xl -z-10"></div>
-          </div>
-
-          {/* Subtitle with Grace Styling */}
-          <p className="text-2xl md:text-4xl lg:text-5xl text-blue-100 font-light tracking-wider drop-shadow-lg uppercase text-grace-shadow mb-8">
-            {t("home.hero.subtitle")}
-          </p>
-
-          {/* Divine Light Badge with Enhanced Effect */}
-          <div className="relative mb-12">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent blur-2xl animate-pulse"></div>
-            <Badge className="relative bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-gray-900 font-bold px-8 py-3 text-xl border-0 shadow-2xl animate-divine-pulse">
-              <Sparkles className="h-6 w-6 mr-3" />
-              {t("home.hero.tagline")}
-              <Sparkles className="h-6 w-6 ml-3" />
-            </Badge>
-          </div>
-
-          {/* Call to Action with Divine Power */}
-          <div className="space-y-6">
-            <Button
-              asChild
-              size="lg"
-              className="group bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-700 hover:via-purple-700 hover:to-blue-700 text-white px-12 py-6 text-xl font-bold shadow-2xl border-0 animate-divine-pulse transform hover:scale-105 transition-all duration-300"
-            >
-              <a href="#messages" className="flex items-center">
-                <Shield className="h-6 w-6 mr-3 group-hover:animate-pulse" />
-                {t("home.hero.cta")}
-                <Play className="h-6 w-6 ml-3 group-hover:animate-pulse" />
-              </a>
-            </Button>
-
-            {/* Scroll Invitation */}
-            <div className="flex flex-col items-center text-white/90 animate-bounce">
-              <ChevronDown className="h-8 w-8 mb-2" />
-              <span className="text-lg font-light tracking-wide">
-                {t("home.hero.scroll")}
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* Existing Sections */}
       <Messages messages={messages} getYouTubeVideoId={getYouTubeVideoId} />
 
       <Songs songs={songs} getYouTubeVideoId={getYouTubeVideoId} />
