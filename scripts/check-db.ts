@@ -32,7 +32,6 @@ async function checkDatabase() {
     readingsByPlan.forEach((p) => {
       console.log(`   - ${p.title}: ${p._count.readings} readings`);
     });
-
   } catch (error) {
     console.error("❌ Error checking database:", error);
   } finally {

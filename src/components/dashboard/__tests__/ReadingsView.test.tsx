@@ -70,9 +70,13 @@ describe("ReadingsView", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    (useRouter as any).mockReturnValue({
+    vi.mocked(useRouter).mockReturnValue({
       refresh: mockRefresh,
       push: mockPush,
+      back: vi.fn(),
+      forward: vi.fn(),
+      replace: vi.fn(),
+      prefetch: vi.fn(),
     });
   });
 
@@ -126,3 +130,13 @@ describe("ReadingsView", () => {
     }
   });
 });
+function beforeEach(arg0: () => void) {
+  const vitestBeforeEach = (globalThis as { beforeEach?: (fn: () => void) => void })
+    .beforeEach;
+  if (typeof vitestBeforeEach === "function") {
+    vitestBeforeEach(arg0);
+    return;
+  }
+  throw new Error("beforeEach is not available in this environment.");
+}
+

@@ -100,6 +100,45 @@ export async function markReadingComplete(userId: string, readingId: string) {
   }
 }
 
+export async function toggleReadingComplete(
+  userId: string,
+  readingId: string,
+  completed: boolean,
+) {
+  try {
+    if (completed) {
+      await prisma.userProgress.delete({
+        where: {
+          userId_readingId: {
+            userId,
+            readingId,
+          },
+        },
+      });
+    } else {
+      await prisma.userProgress.upsert({
+        where: {
+          userId_readingId: {
+            userId,
+            readingId,
+          },
+        },
+        update: {},
+        create: {
+          userId,
+          readingId,
+        },
+      });
+    }
+
+    revalidatePath("/dashboard/readings");
+    return { success: true };
+  } catch (error) {
+    console.error("Error toggling reading completion:", error);
+    return { success: false, error: "Erro ao atualizar leitura" };
+  }
+}
+
 export async function clearUserPlan(userId: string) {
   try {
     await prisma.user.update({

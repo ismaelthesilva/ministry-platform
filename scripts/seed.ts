@@ -26,10 +26,10 @@ function parseCSV(filePath: string): ReadingRow[] {
 
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(",").map((v) => v.trim());
-    const row: any = {};
+    const row: Partial<ReadingRow> = {};
 
     headers.forEach((header, index) => {
-      row[header] = values[index] || "";
+      row[header as keyof ReadingRow] = values[index] || "";
     });
 
     rows.push(row as ReadingRow);

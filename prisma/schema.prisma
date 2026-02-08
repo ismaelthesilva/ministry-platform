@@ -9,7 +9,9 @@ datasource db {
 // NextAuth User model
 model User {
   id                String    @id @default(cuid())
-  name              String?
+  name              String?   // Full name (kept for backwards compatibility with NextAuth)
+  firstName         String?
+  lastName          String?
   email             String?   @unique
   emailVerified     DateTime?
   image             String?
@@ -18,10 +20,11 @@ model User {
   // Bible Tracker fields
   country           String?
   phone             String?
+  gender            String?   // "male", "female", or custom
   religion          String?
   age               Int?
-  favBook           String?
-  favVerse          String?
+  favBook           String?   // Favorite Bible book
+  favVerse          String?   // Favorite Bible verse
   selectedPlanId    String?
   preferredLanguage String    @default("pt") // "pt" or "en"
   
