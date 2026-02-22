@@ -18,13 +18,10 @@ import {
   BookOpen,
   Star,
   Crown,
-  Play,
-  ChevronDown,
-  Cross,
-  Shield,
   Sparkles,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import { DeveloperFooter as Footer } from "@/components/Footer";
 import Messages from "@/components/home/Messages";
 import Books from "@/components/home/Books";
 import Songs from "@/components/home/Songs";
@@ -571,59 +568,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Footer - Enhanced with Eternal Hope Theme */}
-      <footer className="py-16 bg-gray-900 border-t border-gray-700 relative overflow-hidden">
-        {/* Heavenly Background */}
-        <div className="absolute inset-0">
-          <div className="absolute top-4 left-4 w-1 h-1 bg-yellow-300 rounded-full animate-pulse"></div>
-          <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-white rounded-full animate-ping"></div>
-          <div className="absolute bottom-4 left-1/3 w-1 h-1 bg-blue-200 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-8 right-1/4 w-1 h-1 bg-yellow-200 rounded-full animate-ping"></div>
-        </div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          {/* Divine Crown */}
-          <div className="mb-6">
-            <Crown className="h-12 w-12 text-yellow-400 mx-auto mb-4 animate-divine-pulse" />
-          </div>
-
-          {/* Ministry Title */}
-          <p className="text-gray-100 mb-3 font-bold text-2xl text-divine-glow">
-            {t("home.hero.title")}
-          </p>
-          <p className="text-yellow-300 mb-6 text-lg font-semibold tracking-wide">
-            {t("home.hero.subtitle")}
-          </p>
-
-          {/* Eternal Message */}
-          <div className="mb-6 max-w-md mx-auto">
-            <div className="bg-gradient-to-r from-yellow-400/20 to-blue-400/20 backdrop-blur-sm border border-yellow-300/30 rounded-2xl p-6">
-              <div className="flex items-center justify-center text-yellow-300 text-lg font-semibold mb-2">
-                <Star className="h-5 w-5 mr-2" />
-                <span>{t("home.footer.message")}</span>
-                <Star className="h-5 w-5 ml-2" />
-              </div>
-              <p className="text-gray-300 text-sm italic">
-                &quot;Surely I am coming quickly&quot; - Revelation 22:20
-              </p>
-            </div>
-          </div>
-
-          {/* Copyright & Final Blessing */}
-          <div className="border-t border-gray-700 pt-6">
-            <p className="text-gray-500 text-sm mb-3">
-              © 2025 All rights reserved
-            </p>
-            <div className="flex items-center justify-center text-gray-400 text-sm space-x-4">
-              <Cross className="h-4 w-4 text-blue-300" />
-              <span className="text-blue-300 font-medium">Grace & Peace</span>
-              <Heart className="h-4 w-4 text-red-300" />
-              <span className="text-green-300 font-medium">Love & Hope</span>
-              <Crown className="h-4 w-4 text-yellow-300" />
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
