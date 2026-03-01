@@ -181,14 +181,6 @@ export function DashboardHome({ data }: DashboardHomeProps) {
                   {data.todayReading.bibleTextMain}
                 </p>
               </div>
-              {data.todayReading.bibleTextDevo && (
-                <div>
-                  <h4 className="text-sm font-semibold mb-1">Devotional</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {data.todayReading.bibleTextDevo}
-                  </p>
-                </div>
-              )}
             </div>
           </CardContent>
         </Card>

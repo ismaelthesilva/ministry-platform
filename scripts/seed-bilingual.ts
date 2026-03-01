@@ -128,30 +128,24 @@ async function main() {
       `   ✅ ${bibleOnlyPt.title}: ${brBibleReadings.length} readings created`,
     );
 
-    // Portuguese Prophetic Plan
+    // Portuguese Prophetic Plan (Date, Bible verse, Book, Title)
     console.log("\n   Loading Portuguese Prophetic readings...");
     const brPropheticCsv = parseCSV(path.join(scriptsDir, "br-prophetic.csv"));
     const brPropheticReadings = [];
     for (let i = 1; i < brPropheticCsv.length; i++) {
-      const [
-        dateDisplay,
-        bibleTextMain,
-        bibleTextDevo,
-        commentaryWork,
-        commentaryRef,
-      ] = brPropheticCsv[i];
+      const [dateDisplay, bibleVerse, book, title] = brPropheticCsv[i];
       if (!dateDisplay) continue;
 
       brPropheticReadings.push({
         planId: propheticPt.id,
         dayNumber: i,
         dateDisplay,
-        bibleTextMain: bibleTextMain || null,
-        bibleTextDevo: bibleTextDevo || null,
-        commentaryAuthor: commentaryWork ? "Ellen G. White" : null,
-        commentaryWork: commentaryWork || null,
-        commentaryRef: commentaryRef || null,
-        topic: null,
+        bibleTextMain: bibleVerse || null,
+        bibleTextDevo: null,
+        commentaryAuthor: book ? "Ellen G. White" : null,
+        commentaryWork: book || null,
+        commentaryRef: null,
+        topic: title || null,
         language: "pt",
       });
     }

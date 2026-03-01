@@ -154,6 +154,8 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
       token = lower.split(" de ").pop() ?? "";
     } else if (lower.includes("-")) {
       token = lower.split("-").pop() ?? "";
+    } else if (lower.includes("/")) {
+      token = lower.split("/").pop() ?? "";
     } else {
       token = lower.split(" ")[1] ?? "";
     }
@@ -182,7 +184,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
     availableMonths[0]?.key ||
     monthOptions[0].key;
 
-  const [activeMonth, setActiveMonth] = useState(defaultMonth);
+  const [activeMonth, setActiveMonth] = useState<string>(defaultMonth);
 
   const handleToggleReading = async (readingId: string) => {
     setLoading(readingId);
@@ -222,7 +224,6 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
   const isClassicPlan =
     planSlug.includes("classic") || planSlug.includes("classical");
 
-  const showDevotional = data.allReadings.some((r) => r.bibleTextDevo);
   const showCommentary = data.allReadings.some((r) => r.commentaryAuthor);
 
   const baseColumns = isPropheticPlan
@@ -236,15 +237,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
         },
         {
           key: "bibleTextMain",
-          label: "Texto Bíblico (História)",
+          label: "Texto Bíblico",
           className: "max-w-[220px] truncate",
           render: (reading: DailyReading) => reading.bibleTextMain || "-",
-        },
-        {
-          key: "bibleTextDevo",
-          label: "Texto Bíblico (Adicional)",
-          className: "max-w-[220px] truncate",
-          render: (reading: DailyReading) => reading.bibleTextDevo || "-",
         },
         {
           key: "commentaryWork",
@@ -254,9 +249,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
         },
         {
           key: "topic",
-          label: "Título Oficial do Capítulo",
+          label: "Título",
           className: "max-w-[240px] truncate",
-          render: (reading: DailyReading) => reading.commentaryRef || "-",
+          render: (reading: DailyReading) => reading.topic || "-",
         },
       ]
     : isClassicPlan
@@ -318,17 +313,6 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
             className: "max-w-[260px] truncate",
             render: (reading: DailyReading) => reading.bibleTextMain || "-",
           },
-          ...(showDevotional
-            ? [
-                {
-                  key: "bibleTextDevo",
-                  label: "Devotional",
-                  className: "max-w-[240px] truncate",
-                  render: (reading: DailyReading) =>
-                    reading.bibleTextDevo || "-",
-                },
-              ]
-            : []),
           ...(showCommentary
             ? [
                 {
@@ -424,21 +408,13 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                   {data.todayReading.bibleTextMain}
                 </p>
               </div>
-              {data.todayReading.bibleTextDevo && (
-                <div>
-                  <h4 className="font-semibold mb-1">Devotional</h4>
-                  <p className="text-muted-foreground">
-                    {data.todayReading.bibleTextDevo}
-                  </p>
-                </div>
-              )}
-              {isPropheticPlan && data.todayReading.commentaryRef && (
+              {isPropheticPlan && data.todayReading.topic && (
                 <div>
                   <h4 className="font-semibold mb-1">
                     Título Oficial do Capítulo
                   </h4>
                   <p className="text-muted-foreground">
-                    {data.todayReading.commentaryRef}
+                    {data.todayReading.topic}
                   </p>
                 </div>
               )}
@@ -467,17 +443,23 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
         <CardContent>
           <Tabs value={activeMonth} onValueChange={setActiveMonth}>
             <TabsList className="w-full justify-start overflow-x-auto gap-2">
+              <TabsTrigger value="all">
+                {data.user?.preferredLanguage === "en" ? "All" : "Todos"}
+              </TabsTrigger>
               {availableMonths.map((month) => (
                 <TabsTrigger key={month.key} value={month.key}>
                   {month.label}
                 </TabsTrigger>
               ))}
             </TabsList>
-            {availableMonths.map((month) => (
-              <TabsContent key={month.key} value={month.key}>
+            {["all", ...availableMonths.map((m) => m.key)].map((monthKey) => (
+              <TabsContent key={monthKey} value={monthKey}>
                 <div className="space-y-4">
                   <div className="md:hidden space-y-3">
-                    {readingsByMonth[month.key].map((reading) => {
+                    {(monthKey === "all"
+                      ? data.allReadings
+                      : (readingsByMonth[monthKey] ?? [])
+                    ).map((reading) => {
                       const completed = isReadingCompleted(reading.id);
                       const isToday = reading.id === data.todayReading?.id;
 
@@ -485,7 +467,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                         <div
                           key={reading.id}
                           className={cn(
-                            "rounded-lg border p-4 space-y-3",
+                            "rounded-lg border border-gray-100 p-3 space-y-2",
                             isToday && "bg-primary/5",
                             completed &&
                               "bg-muted/70 text-muted-foreground opacity-60 grayscale",
@@ -532,25 +514,28 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                         )}
                       >
                         <thead>
-                          <tr className="border-b bg-muted/50">
+                          <tr className="border-b border-gray-100 bg-muted/50">
                             {baseColumns.map((column) => (
                               <th
                                 key={column.key}
                                 className={cn(
-                                  "h-10 px-4 text-left align-middle font-medium",
+                                  "h-8 py-2 px-3 text-left align-middle font-medium text-xs",
                                   column.className,
                                 )}
                               >
                                 {column.label}
                               </th>
                             ))}
-                            <th className="h-10 px-4 text-center align-middle font-medium w-[90px]">
+                            <th className="h-8 py-2 px-3 text-center align-middle font-medium text-xs w-[90px]">
                               Status
                             </th>
                           </tr>
                         </thead>
-                        <tbody>
-                          {readingsByMonth[month.key].map((reading) => {
+                        <tbody className="divide-y divide-gray-100">
+                          {(monthKey === "all"
+                            ? data.allReadings
+                            : (readingsByMonth[monthKey] ?? [])
+                          ).map((reading) => {
                             const completed = isReadingCompleted(reading.id);
                             const isToday =
                               reading.id === data.todayReading?.id;
@@ -559,7 +544,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                               <tr
                                 key={reading.id}
                                 className={cn(
-                                  "border-b transition-colors hover:bg-muted/50",
+                                  "transition-colors hover:bg-muted/50",
                                   isToday && "bg-primary/5",
                                   completed &&
                                     "bg-muted/60 text-muted-foreground opacity-60 grayscale",
@@ -569,7 +554,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                                   <td
                                     key={column.key}
                                     className={cn(
-                                      "p-4 align-middle",
+                                      "py-2 px-3 align-middle text-xs",
                                       column.className,
                                       completed &&
                                         "bg-muted/60 text-muted-foreground opacity-60 grayscale",
@@ -580,7 +565,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                                 ))}
                                 <td
                                   className={cn(
-                                    "p-4 align-middle text-center",
+                                    "py-2 px-3 align-middle text-center text-xs",
                                     completed &&
                                       "bg-muted/60 text-muted-foreground opacity-60 grayscale",
                                   )}

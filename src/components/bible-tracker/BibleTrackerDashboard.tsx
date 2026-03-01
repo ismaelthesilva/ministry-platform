@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { markReadingComplete } from "@/app/bible-tracker/actions";
 import { handleSignOut } from "@/app/bible-tracker/logout-action";
 import { clearUserPlan } from "@/app/bible-tracker/clear-plan-action";
@@ -63,6 +64,90 @@ export default function BibleTrackerDashboard({
   // Translation helper
   const t = (pt: string, en: string) => (language === "pt" ? pt : en);
 
+  const normalizeToken = (value: string) =>
+    value
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "")
+      .trim();
+
+  const monthOptions =
+    language === "en"
+      ? [
+          { key: "jan", label: "Jan" },
+          { key: "feb", label: "Feb" },
+          { key: "mar", label: "Mar" },
+          { key: "apr", label: "Apr" },
+          { key: "may", label: "May" },
+          { key: "jun", label: "Jun" },
+          { key: "jul", label: "Jul" },
+          { key: "aug", label: "Aug" },
+          { key: "sep", label: "Sep" },
+          { key: "oct", label: "Oct" },
+          { key: "nov", label: "Nov" },
+          { key: "dec", label: "Dec" },
+        ]
+      : [
+          { key: "jan", label: "Jan" },
+          { key: "fev", label: "Fev" },
+          { key: "mar", label: "Mar" },
+          { key: "abr", label: "Abr" },
+          { key: "mai", label: "Mai" },
+          { key: "jun", label: "Jun" },
+          { key: "jul", label: "Jul" },
+          { key: "ago", label: "Ago" },
+          { key: "set", label: "Set" },
+          { key: "out", label: "Out" },
+          { key: "nov", label: "Nov" },
+          { key: "dez", label: "Dez" },
+        ];
+
+  const monthTokenMap: Record<string, string> = {
+    janeiro: "jan", jan: "jan", january: "jan",
+    fevereiro: "fev", fev: "fev", feb: "feb", february: "feb",
+    marco: "mar", mar: "mar", march: "mar",
+    abril: "abr", abr: "abr", april: "apr",
+    maio: "mai", mai: "mai", may: "may",
+    junho: "jun", jun: "jun", june: "jun",
+    julho: "jul", jul: "jul", july: "jul",
+    agosto: "ago", ago: "ago", august: "aug",
+    setembro: "set", set: "set", sep: "sep", sept: "sep", september: "sep",
+    outubro: "out", out: "out", oct: "oct", october: "oct",
+    novembro: "nov", nov: "nov", november: "nov",
+    dezembro: "dez", dez: "dez", dec: "dec", december: "dec",
+  };
+
+  const getMonthKeyFromDateDisplay = (dateDisplay: string) => {
+    if (!dateDisplay) return "";
+    const lower = normalizeToken(dateDisplay);
+    let token = "";
+    if (lower.includes(" de ")) token = lower.split(" de ").pop() ?? "";
+    else if (lower.includes("-")) token = lower.split("-").pop() ?? "";
+    else if (lower.includes("/")) token = lower.split("/").pop() ?? "";
+    else token = lower.split(" ")[1] ?? "";
+    return monthTokenMap[normalizeToken(token)] ?? "";
+  };
+
+  const readingsByMonth = monthOptions.reduce(
+    (acc, month) => ({ ...acc, [month.key]: [] as DailyReading[] }),
+    {} as Record<string, DailyReading[]>,
+  );
+  data.allReadings.forEach((reading) => {
+    const monthKey = getMonthKeyFromDateDisplay(reading.dateDisplay);
+    if (monthKey && readingsByMonth[monthKey]) {
+      readingsByMonth[monthKey].push(reading);
+    }
+  });
+
+  const availableMonths = monthOptions.filter(
+    (month) => readingsByMonth[month.key]?.length,
+  );
+  const defaultMonth =
+    getMonthKeyFromDateDisplay(data.todayReading?.dateDisplay || "") ||
+    availableMonths[0]?.key ||
+    monthOptions[0].key;
+  const [activeMonth, setActiveMonth] = useState(defaultMonth);
+
   const handleToggleReading = async (
     readingId: string,
     isCompleted: boolean,
@@ -95,14 +180,6 @@ export default function BibleTrackerDashboard({
       }
     }
   };
-
-  // Debug: Check if we have the necessary data
-  console.log("Dashboard data:", {
-    hasPlan: !!data.plan,
-    hasTodayReading: !!data.todayReading,
-    completionPercentage: data.completionPercentage,
-    planTitle: data.plan?.title,
-  });
 
   // Show error state if no plan data
   if (!data.plan) {
@@ -216,99 +293,115 @@ export default function BibleTrackerDashboard({
             <CardTitle>{t("Leituras do Ano", "Year Readings")}</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b bg-gray-50">
-                    <th className="px-4 py-3 text-left text-sm font-semibold">
-                      {t("Dia", "Day")}
-                    </th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold">
-                      {t("Data", "Date")}
-                    </th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold">
-                      {t("Leitura Principal", "Main Reading")}
-                    </th>
-                    {data.allReadings.some((r) => r.bibleTextDevo) && (
-                      <th className="px-4 py-3 text-left text-sm font-semibold">
-                        {t("Devocional", "Devotional")}
-                      </th>
-                    )}
-                    {data.allReadings.some((r) => r.commentaryAuthor) && (
-                      <th className="px-4 py-3 text-left text-sm font-semibold">
-                        {t("Comentário", "Commentary")}
-                      </th>
-                    )}
-                    <th className="px-4 py-3 text-center text-sm font-semibold">
-                      {t("Status", "Status")}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.allReadings.map((reading) => {
-                    const isCompleted = data.completedReadingIds.includes(
-                      reading.id,
-                    );
-                    const isLoading = loading === reading.id;
-
-                    return (
-                      <tr
-                        key={reading.id}
-                        className={`border-b hover:bg-gray-50 ${isCompleted ? "bg-green-50" : ""}`}
-                      >
-                        <td className="px-4 py-3 text-sm font-medium">
-                          {reading.dayNumber}
-                        </td>
-                        <td className="px-4 py-3 text-sm">
-                          {reading.dateDisplay}
-                        </td>
-                        <td className="px-4 py-3 text-sm">
-                          {reading.bibleTextMain}
-                        </td>
-                        {data.allReadings.some((r) => r.bibleTextDevo) && (
-                          <td className="px-4 py-3 text-sm">
-                            {reading.bibleTextDevo || "-"}
-                          </td>
-                        )}
-                        {data.allReadings.some((r) => r.commentaryAuthor) && (
-                          <td className="px-4 py-3 text-sm">
-                            {reading.commentaryAuthor ? (
-                              <div>
-                                <div className="font-medium">
-                                  {reading.commentaryAuthor}
-                                </div>
-                                <div className="text-xs text-gray-600">
-                                  {reading.commentaryWork} -{" "}
-                                  {reading.commentaryRef}
-                                </div>
-                              </div>
-                            ) : (
-                              "-"
+            <Tabs value={activeMonth} onValueChange={setActiveMonth}>
+              <TabsList className="w-full justify-start overflow-x-auto gap-2 mb-4">
+                <TabsTrigger value="all">
+                  {t("Todos", "All")}
+                </TabsTrigger>
+                {availableMonths.map((month) => (
+                  <TabsTrigger key={month.key} value={month.key}>
+                    {month.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+              {["all", ...availableMonths.map((m) => m.key)].map(
+                (monthKey) => (
+                  <TabsContent key={monthKey} value={monthKey}>
+                    <div className="overflow-x-auto rounded-md border">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b border-gray-100 bg-gray-50">
+                            <th className="py-2 px-3 text-left text-xs font-semibold">
+                              {t("Dia", "Day")}
+                            </th>
+                            <th className="py-2 px-3 text-left text-xs font-semibold">
+                              {t("Data", "Date")}
+                            </th>
+                            <th className="py-2 px-3 text-left text-xs font-semibold">
+                              {t("Leitura Principal", "Main Reading")}
+                            </th>
+                            {data.allReadings.some((r) => r.commentaryAuthor) && (
+                              <th className="py-2 px-3 text-left text-xs font-semibold">
+                                {t("Comentário", "Commentary")}
+                              </th>
                             )}
-                          </td>
-                        )}
-                        <td className="px-4 py-3 text-center">
-                          {isCompleted ? (
-                            <CheckCircle2 className="h-6 w-6 text-green-600 mx-auto" />
-                          ) : (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              disabled={isLoading}
-                              onClick={() =>
-                                handleToggleReading(reading.id, false)
-                              }
-                            >
-                              {isLoading ? t("...", "...") : t("Ler", "Read")}
-                            </Button>
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                            <th className="py-2 px-3 text-center text-xs font-semibold">
+                              {t("Status", "Status")}
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-100">
+                          {(monthKey === "all"
+                            ? data.allReadings
+                            : readingsByMonth[monthKey] ?? []
+                          ).map((reading) => {
+                            const isCompleted =
+                              data.completedReadingIds.includes(reading.id);
+                            const isLoading = loading === reading.id;
+
+                            return (
+                              <tr
+                                key={reading.id}
+                                className={`transition-colors hover:bg-gray-50 ${
+                                  isCompleted ? "bg-green-50" : ""
+                                }`}
+                              >
+                                <td className="py-2 px-3 text-xs font-medium">
+                                  {reading.dayNumber}
+                                </td>
+                                <td className="py-2 px-3 text-xs">
+                                  {reading.dateDisplay}
+                                </td>
+                                <td className="py-2 px-3 text-xs">
+                                  {reading.bibleTextMain}
+                                </td>
+                                {data.allReadings.some(
+                                  (r) => r.commentaryAuthor,
+                                ) && (
+                                  <td className="py-2 px-3 text-xs">
+                                    {reading.commentaryAuthor ? (
+                                      <div>
+                                        <div className="font-medium">
+                                          {reading.commentaryAuthor}
+                                        </div>
+                                        <div className="text-[10px] text-gray-600">
+                                          {reading.commentaryWork} -{" "}
+                                          {reading.commentaryRef}
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      "-"
+                                    )}
+                                  </td>
+                                )}
+                                <td className="py-2 px-3 text-center">
+                                  {isCompleted ? (
+                                    <CheckCircle2 className="h-5 w-5 text-green-600 mx-auto" />
+                                  ) : (
+                                    <Button
+                                      size="sm"
+                                      variant="outline"
+                                      disabled={isLoading}
+                                      onClick={() =>
+                                        handleToggleReading(reading.id, false)
+                                      }
+                                    >
+                                      {isLoading
+                                        ? t("...", "...")
+                                        : t("Ler", "Read")}
+                                    </Button>
+                                  )}
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  </TabsContent>
+                ),
+              )}
+            </Tabs>
           </CardContent>
         </Card>
       </div>

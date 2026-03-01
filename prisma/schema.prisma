@@ -89,7 +89,7 @@ model DailyReading {
   planId      String
   plan        Plan     @relation(fields: [planId], references: [id])
   
-  dayNumber   Int      // 1 a 366
+  dayNumber   Int      // 1 a 365
   dateDisplay String   // ex: "1 de Janeiro"
   
   // Conteúdo Unificado
