@@ -74,10 +74,10 @@ model VerificationToken {
 
 model Plan {
   id          String         @id @default(cuid())
-  slug        String         // 'bible-only', 'prophetic', 'classical'
+  slug        String         // 'bible', 'prophetic', 'classic'
   title       String
   description String?
-  language    String         @default("pt") // "pt" or "en"
+  language    String         @default("en") // "en" or "br"
   readings    DailyReading[]
   
   @@unique([slug, language])
@@ -85,25 +85,22 @@ model Plan {
 }
 
 model DailyReading {
-  id          String   @id @default(cuid())
-  planId      String
-  plan        Plan     @relation(fields: [planId], references: [id])
-  
-  dayNumber   Int      // 1 a 365
-  dateDisplay String   // ex: "1 de Janeiro"
-  
-  // Conteúdo Unificado
-  bibleTextMain    String?  // O texto principal (História) - opcional para algumas leituras
-  bibleTextDevo    String?  // Texto devocional (Salmos/Sabedoria - usado no plano Profético)
-  
-  // Campos de Comentário (EGW ou Clássicos)
-  commentaryAuthor String?  // "Ellen G. White" ou "Santo Agostinho"
-  commentaryWork   String?  // "Patriarcas e Profetas" ou "Confissões"
-  commentaryRef    String?  // Capítulo ou Referência
-  topic            String?  // Tema do dia
-  language         String   @default("pt") // "pt" or "en"
+  id        String   @id @default(cuid())
+  planId    String
+  plan      Plan     @relation(fields: [planId], references: [id])
 
-  progress    UserProgress[]
+  dayNumber Int      // 1-365
+  date      String   // e.g. "01-Jan"
+
+  // Bible reading (all plans)
+  bible     String?  // e.g. "Genesis 1-3"
+
+  // Commentary fields (prophetic + classic only)
+  author    String?  // "Ellen G. White" or "Saint Augustine"
+  book      String?  // "Patriarchs and Prophets" or "Confessions"
+  title     String?  // Chapter title or key theme
+
+  progress  UserProgress[]
 
   @@unique([planId, dayNumber], name: "planId_dayNumber")
   @@index([planId, dayNumber])

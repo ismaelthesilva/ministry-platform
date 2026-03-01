@@ -27,11 +27,11 @@ async function main() {
     console.log("English Prophetic Plan (first 10 readings):");
     console.log("===============================================");
     readings.forEach((r) => {
-      console.log(`Day ${r.dayNumber}: ${r.dateDisplay}`);
-      console.log(`  Bible Text (History): ${r.bibleTextMain || "N/A"}`);
-      console.log(`  Bible Text (Additional): ${r.bibleTextDevo || "N/A"}`);
-      console.log(`  Book: ${r.commentaryWork || "N/A"}`);
-      console.log(`  Chapter Title: ${r.commentaryRef || "N/A"}`);
+      console.log(`Day ${r.dayNumber}: ${r.date}`);
+      console.log(`  Bible: ${r.bible || "N/A"}`);
+      console.log(`  Author: ${r.author || "N/A"}`);
+      console.log(`  Book: ${r.book || "N/A"}`);
+      console.log(`  Title: ${r.title || "N/A"}`);
       console.log("");
     });
 

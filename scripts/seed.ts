@@ -6,13 +6,11 @@ const prisma = new PrismaClient();
 
 interface ReadingRow {
   dayNumber: string;
-  dateDisplay: string;
-  bibleTextMain: string;
-  bibleTextDevo?: string;
-  commentaryAuthor?: string;
-  commentaryWork?: string;
-  commentaryRef?: string;
-  topic?: string;
+  date: string;
+  bible: string;
+  author?: string;
+  book?: string;
+  title?: string;
 }
 
 function parseCSV(filePath: string): ReadingRow[] {
@@ -43,24 +41,24 @@ async function seedPlans() {
 
   const plans = [
     {
-      slug: "bible-only",
+      slug: "bible",
       title: "Bíblia em 1 Ano",
       description: "Leia toda a Bíblia em um ano com um plano cronológico.",
-      language: "pt",
+      language: "br",
     },
     {
       slug: "prophetic",
       title: "Plano Profético",
       description:
         "Bíblia + Comentários de Ellen G. White (Espírito de Profecia).",
-      language: "pt",
+      language: "br",
     },
     {
-      slug: "classical",
+      slug: "classic",
       title: "Plano Clássico",
       description:
         "Bíblia + Comentários de Pais da Igreja e Teólogos Clássicos.",
-      language: "pt",
+      language: "br",
     },
   ];
 
@@ -119,13 +117,11 @@ async function seedDailyReadings() {
         await prisma.dailyReading.update({
           where: { id: existing.id },
           data: {
-            dateDisplay: row.dateDisplay,
-            bibleTextMain: row.bibleTextMain,
-            bibleTextDevo: row.bibleTextDevo || "",
-            commentaryAuthor: row.commentaryAuthor || "",
-            commentaryWork: row.commentaryWork || "",
-            commentaryRef: row.commentaryRef || "",
-            topic: row.topic || "",
+            date: row.date,
+            bible: row.bible,
+            author: row.author || null,
+            book: row.book || null,
+            title: row.title || null,
           },
         });
       } else {
@@ -134,13 +130,11 @@ async function seedDailyReadings() {
           data: {
             planId: plan.id,
             dayNumber: parseInt(row.dayNumber),
-            dateDisplay: row.dateDisplay,
-            bibleTextMain: row.bibleTextMain,
-            bibleTextDevo: row.bibleTextDevo || "",
-            commentaryAuthor: row.commentaryAuthor || "",
-            commentaryWork: row.commentaryWork || "",
-            commentaryRef: row.commentaryRef || "",
-            topic: row.topic || "",
+            date: row.date,
+            bible: row.bible,
+            author: row.author || null,
+            book: row.book || null,
+            title: row.title || null,
           },
         });
       }
@@ -176,32 +170,26 @@ async function createSampleReadings() {
         const dayNumber = month * 30 + day;
         if (dayNumber > 365) break;
 
-        const dateDisplay = `${day} de ${months[month]}`;
+        const date = `${day < 10 ? "0" + day : day}-${months[month].slice(0, 3)}`;
 
-        let bibleTextMain = "";
-        let bibleTextDevo = "";
-        let commentaryAuthor = "";
-        let commentaryWork = "";
-        let commentaryRef = "";
-        let topic = "";
+        let bible = "";
+        let author: string | null = null;
+        let book: string | null = null;
+        let title: string | null = null;
 
-        if (plan.slug === "bible-only") {
-          bibleTextMain = `Gênesis ${dayNumber}`;
-          topic = `Criação e História - Dia ${dayNumber}`;
+        if (plan.slug === "bible") {
+          bible = `Gênesis ${dayNumber}`;
+          title = `Criação e História - Dia ${dayNumber}`;
         } else if (plan.slug === "prophetic") {
-          bibleTextMain = `Gênesis ${dayNumber}`;
-          bibleTextDevo = `Salmos ${Math.ceil(dayNumber / 2)}`;
-          commentaryAuthor = "Ellen G. White";
-          commentaryWork = "Patriarcas e Profetas";
-          commentaryRef = `Capítulo ${Math.ceil(dayNumber / 5)}`;
-          topic = `Profecia e História - Dia ${dayNumber}`;
-        } else if (plan.slug === "classical") {
-          bibleTextMain = `Gênesis ${dayNumber}`;
-          bibleTextDevo = `Salmos ${Math.ceil(dayNumber / 2)}`;
-          commentaryAuthor = "Santo Agostinho";
-          commentaryWork = "Confissões";
-          commentaryRef = `Livro ${Math.ceil(dayNumber / 30)}`;
-          topic = `Teologia Clássica - Dia ${dayNumber}`;
+          bible = `Gênesis ${dayNumber}`;
+          author = "Ellen G. White";
+          book = "Patriarcas e Profetas";
+          title = `Capítulo ${Math.ceil(dayNumber / 5)}`;
+        } else if (plan.slug === "classic") {
+          bible = `Gênesis ${dayNumber}`;
+          author = "Santo Agostinho";
+          book = "Confissões";
+          title = `Livro ${Math.ceil(dayNumber / 30)}`;
         }
 
         // Check if reading exists
@@ -217,13 +205,11 @@ async function createSampleReadings() {
           await prisma.dailyReading.update({
             where: { id: existing.id },
             data: {
-              dateDisplay,
-              bibleTextMain,
-              bibleTextDevo,
-              commentaryAuthor,
-              commentaryWork,
-              commentaryRef,
-              topic,
+              date,
+              bible,
+              author,
+              book,
+              title,
             },
           });
         } else {
@@ -232,13 +218,11 @@ async function createSampleReadings() {
             data: {
               planId: plan.id,
               dayNumber,
-              dateDisplay,
-              bibleTextMain,
-              bibleTextDevo,
-              commentaryAuthor,
-              commentaryWork,
-              commentaryRef,
-              topic,
+              date,
+              bible,
+              author,
+              book,
+              title,
             },
           });
         }

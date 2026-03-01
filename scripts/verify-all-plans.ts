@@ -41,7 +41,7 @@ async function main() {
 
     if (firstReading) {
       console.log(
-        `${plan.language.toUpperCase()} ${plan.slug}: ${firstReading.dateDisplay}`,
+        `${plan.language.toUpperCase()} ${plan.slug}: ${firstReading.date}`,
       );
     }
   }

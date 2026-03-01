@@ -15,6 +15,7 @@ import { useState } from "react";
 import { CheckCircle2, BookOpen } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Plan {
   id: string;
@@ -33,6 +34,9 @@ interface PlansViewProps {
 export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
   const router = useRouter();
   const [loading, setLoading] = useState<string | null>(null);
+  const { language } = useLanguage();
+  const isBr = language === "br";
+  const t = (br: string, en: string) => (isBr ? br : en);
 
   const handleSelectPlan = async (planSlug: string, language: string) => {
     setLoading(planSlug);
@@ -61,20 +65,26 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
     string,
     { title: string; description: string }
   > = {
-    "bible-only": {
-      title: "Bible Only",
-      description:
+    bible: {
+      title: t("Só a Bíblia", "Bible Only"),
+      description: t(
+        "Leituras diárias da Bíblia completa em um ano.",
         "Focus on daily Bible readings through the entire scripture in one year.",
+      ),
     },
     prophetic: {
-      title: "Prophetic Reading",
-      description:
+      title: t("Leitura Profética", "Prophetic Reading"),
+      description: t(
+        "Combine leituras bíblicas com comentários proféticos e devocionais.",
         "Combine Bible readings with prophetic commentary and devotional insights.",
+      ),
     },
-    classical: {
-      title: "Classical Reading",
-      description:
+    classic: {
+      title: t("Leitura Clássica", "Classical Reading"),
+      description: t(
+        "Leituras bíblicas combinadas com literatura cristã clássica.",
         "Bible readings paired with classical Christian literature and commentary.",
+      ),
     },
   };
 
@@ -82,9 +92,14 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
     <div className="container max-w-6xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Reading Plans</h1>
+        <h1 className="text-3xl font-bold tracking-tight">
+          {t("Planos de Leitura", "Reading Plans")}
+        </h1>
         <p className="text-muted-foreground">
-          Choose a reading plan to guide your daily Bible study
+          {t(
+            "Escolha um plano de leitura para guiar seu estudo bíblico diário",
+            "Choose a reading plan to guide your daily Bible study",
+          )}
         </p>
       </div>
 
@@ -111,7 +126,7 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
                   {isCurrentPlan && (
                     <Badge variant="default">
                       <CheckCircle2 className="mr-1 h-3 w-3" />
-                      Active
+                      {t("Ativo", "Active")}
                     </Badge>
                   )}
                 </div>
@@ -121,15 +136,20 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
               <CardContent className="flex-1">
                 <div className="space-y-2">
                   <div className="text-sm">
-                    <span className="font-medium">Duration:</span> 366 days
+                    <span className="font-medium">
+                      {t("Duração:", "Duration:")}{" "}
+                    </span>
+                    {t("366 dias", "366 days")}
                   </div>
                   <div className="text-sm">
-                    <span className="font-medium">Available in:</span>
+                    <span className="font-medium">
+                      {t("Disponível em:", "Available in:")}
+                    </span>
                   </div>
                   <div className="flex gap-2">
                     {planGroup.map((plan) => (
                       <Badge key={plan.id} variant="outline">
-                        {plan.language === "pt" ? "🇧🇷 PT" : "🇺🇸 EN"}
+                        {plan.language === "br" ? "🇧🇷 PT" : "🇺🇸 EN"}
                       </Badge>
                     ))}
                   </div>
@@ -149,10 +169,10 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
                     }
                   >
                     {plan.id === currentPlanId
-                      ? "Current Plan"
-                      : plan.language === "pt"
-                        ? "Select PT"
-                        : "Select EN"}
+                      ? t("Plano Atual", "Current Plan")
+                      : plan.language === "br"
+                        ? t("Selecionar PT", "Select PT")
+                        : t("Selecionar EN", "Select EN")}
                   </Button>
                 ))}
               </CardFooter>
@@ -164,33 +184,44 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
       {/* Info Section */}
       <Card>
         <CardHeader>
-          <CardTitle>How it works</CardTitle>
+          <CardTitle>{t("Como funciona", "How it works")}</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
               <span>
-                Select a reading plan that fits your spiritual growth goals
+                {t(
+                  "Selecione um plano de leitura que se encaixe nos seus objetivos espirituais",
+                  "Select a reading plan that fits your spiritual growth goals",
+                )}
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
               <span>
-                Follow daily readings designed to take you through the entire
-                Bible in one year
+                {t(
+                  "Siga leituras diárias planejadas para você percorrer toda a Bíblia em um ano",
+                  "Follow daily readings designed to take you through the entire Bible in one year",
+                )}
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
               <span>
-                Track your progress and mark readings as complete as you go
+                {t(
+                  "Acompanhe seu progresso e marque as leituras como concluídas",
+                  "Track your progress and mark readings as complete as you go",
+                )}
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
               <span>
-                Switch plans anytime to explore different reading approaches
+                {t(
+                  "Troque de plano a qualquer momento para explorar diferentes abordagens",
+                  "Switch plans anytime to explore different reading approaches",
+                )}
               </span>
             </li>
           </ul>

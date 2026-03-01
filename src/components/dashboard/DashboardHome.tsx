@@ -16,9 +16,11 @@ import { BookOpen, CheckCircle2, TrendingUp, Calendar } from "lucide-react";
 interface DailyReading {
   id: string;
   dayNumber: number;
-  dateDisplay: string;
-  bibleTextMain: string;
-  bibleTextDevo: string | null;
+  date: string;
+  bible: string | null;
+  author: string | null;
+  book: string | null;
+  title: string | null;
 }
 
 interface User {
@@ -164,9 +166,7 @@ export function DashboardHome({ data }: DashboardHomeProps) {
                   Today's Reading
                   <Badge>Day {data.todayReading.dayNumber}</Badge>
                 </CardTitle>
-                <CardDescription>
-                  {data.todayReading.dateDisplay}
-                </CardDescription>
+                <CardDescription>{data.todayReading.date}</CardDescription>
               </div>
               <Button asChild>
                 <Link href="/dashboard/readings">View Reading</Link>
@@ -178,7 +178,7 @@ export function DashboardHome({ data }: DashboardHomeProps) {
               <div>
                 <h4 className="text-sm font-semibold mb-1">Main Reading</h4>
                 <p className="text-sm text-muted-foreground">
-                  {data.todayReading.bibleTextMain}
+                  {data.todayReading.bible}
                 </p>
               </div>
             </div>

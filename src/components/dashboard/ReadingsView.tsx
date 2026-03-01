@@ -18,14 +18,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 interface DailyReading {
   id: string;
   dayNumber: number;
-  dateDisplay: string;
-  bibleTextMain: string;
-  bibleTextDevo: string | null;
-  commentaryAuthor: string | null;
-  commentaryWork: string | null;
-  commentaryRef: string | null;
-  topic: string | null;
-  language: string;
+  date: string;
+  bible: string | null;
+  author: string | null;
+  book: string | null;
+  title: string | null;
 }
 
 interface User {
@@ -58,8 +55,8 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
     data.completedReadingIds,
   );
 
-  const getDayFromDateDisplay = (dateDisplay: string) => {
-    const match = dateDisplay.match(/^\s*(\d{1,2})/);
+  const getDayFromDate = (date: string) => {
+    const match = date.match(/^(\d{1,2})/);
     return match?.[1] ?? "";
   };
 
@@ -145,9 +142,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
     december: "dec",
   };
 
-  const getMonthKeyFromDateDisplay = (dateDisplay: string) => {
-    if (!dateDisplay) return "";
-    const lower = normalizeToken(dateDisplay);
+  const getMonthKeyFromDate = (date: string) => {
+    if (!date) return "";
+    const lower = normalizeToken(date);
     let token = "";
 
     if (lower.includes(" de ")) {
@@ -169,7 +166,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
   );
 
   data.allReadings.forEach((reading) => {
-    const monthKey = getMonthKeyFromDateDisplay(reading.dateDisplay);
+    const monthKey = getMonthKeyFromDate(reading.date);
     if (monthKey && readingsByMonth[monthKey]) {
       readingsByMonth[monthKey].push(reading);
     }
@@ -180,7 +177,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
   );
 
   const defaultMonth =
-    getMonthKeyFromDateDisplay(data.todayReading?.dateDisplay || "") ||
+    getMonthKeyFromDate(data.todayReading?.date || "") ||
     availableMonths[0]?.key ||
     monthOptions[0].key;
 
@@ -221,10 +218,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
 
   const planSlug = data.plan?.slug?.toLowerCase() ?? "";
   const isPropheticPlan = planSlug.includes("prophetic");
-  const isClassicPlan =
-    planSlug.includes("classic") || planSlug.includes("classical");
+  const isClassicPlan = planSlug.includes("classic");
 
-  const showCommentary = data.allReadings.some((r) => r.commentaryAuthor);
+  const showCommentary = data.allReadings.some((r) => r.author);
 
   const baseColumns = isPropheticPlan
     ? [
@@ -233,25 +229,25 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
           label: "Dia",
           className: "w-[80px]",
           render: (reading: DailyReading) =>
-            getDayFromDateDisplay(reading.dateDisplay) || reading.dayNumber,
+            getDayFromDate(reading.date) || reading.dayNumber,
         },
         {
-          key: "bibleTextMain",
+          key: "bible",
           label: "Texto Bíblico",
           className: "max-w-[220px] truncate",
-          render: (reading: DailyReading) => reading.bibleTextMain || "-",
+          render: (reading: DailyReading) => reading.bible || "-",
         },
         {
-          key: "commentaryWork",
+          key: "book",
           label: "Livro",
           className: "max-w-[180px] truncate",
-          render: (reading: DailyReading) => reading.commentaryWork || "-",
+          render: (reading: DailyReading) => reading.book || "-",
         },
         {
-          key: "topic",
+          key: "title",
           label: "Título",
           className: "max-w-[240px] truncate",
-          render: (reading: DailyReading) => reading.topic || "-",
+          render: (reading: DailyReading) => reading.title || "-",
         },
       ]
     : isClassicPlan
@@ -261,36 +257,31 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
             label: "Dia",
             className: "w-[80px]",
             render: (reading: DailyReading) =>
-              getDayFromDateDisplay(reading.dateDisplay) || reading.dayNumber,
+              getDayFromDate(reading.date) || reading.dayNumber,
           },
           {
-            key: "bibleTextMain",
+            key: "bible",
             label: "Texto Bíblico",
             className: "max-w-[220px] truncate",
-            render: (reading: DailyReading) => reading.bibleTextMain || "-",
+            render: (reading: DailyReading) => reading.bible || "-",
           },
           {
-            key: "commentaryAuthor",
+            key: "author",
             label: "Autor Clássico",
             className: "max-w-[180px] truncate",
-            render: (reading: DailyReading) => reading.commentaryAuthor || "-",
+            render: (reading: DailyReading) => reading.author || "-",
           },
           {
-            key: "commentaryWork",
+            key: "book",
             label: "Obra de Referência",
             className: "max-w-[220px] truncate",
-            render: (reading: DailyReading) =>
-              reading.commentaryWork
-                ? `${reading.commentaryWork}${
-                    reading.commentaryRef ? ` • ${reading.commentaryRef}` : ""
-                  }`
-                : "-",
+            render: (reading: DailyReading) => reading.book || "-",
           },
           {
-            key: "topic",
+            key: "title",
             label: "Tema Chave",
             className: "max-w-[240px] truncate",
-            render: (reading: DailyReading) => reading.topic || "-",
+            render: (reading: DailyReading) => reading.title || "-",
           },
         ]
       : [
@@ -299,28 +290,27 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
             label: "Day",
             className: "w-[80px]",
             render: (reading: DailyReading) =>
-              getDayFromDateDisplay(reading.dateDisplay) || reading.dayNumber,
+              getDayFromDate(reading.date) || reading.dayNumber,
           },
           {
             key: "date",
             label: "Date",
             className: "w-[140px] whitespace-nowrap",
-            render: (reading: DailyReading) => reading.dateDisplay,
+            render: (reading: DailyReading) => reading.date,
           },
           {
-            key: "bibleTextMain",
+            key: "bible",
             label: "Main Reading",
             className: "max-w-[260px] truncate",
-            render: (reading: DailyReading) => reading.bibleTextMain || "-",
+            render: (reading: DailyReading) => reading.bible || "-",
           },
           ...(showCommentary
             ? [
                 {
-                  key: "commentaryAuthor",
+                  key: "author",
                   label: "Commentary",
                   className: "max-w-[220px] truncate",
-                  render: (reading: DailyReading) =>
-                    reading.commentaryAuthor || "-",
+                  render: (reading: DailyReading) => reading.author || "-",
                 },
               ]
             : []),
@@ -388,9 +378,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                   Today&apos;s Reading
                   <Badge>Day {data.todayReading.dayNumber}</Badge>
                 </CardTitle>
-                <CardDescription>
-                  {data.todayReading.dateDisplay}
-                </CardDescription>
+                <CardDescription>{data.todayReading.date}</CardDescription>
               </div>
               <ReadingStatusButton
                 completed={isReadingCompleted(data.todayReading.id)}
@@ -405,25 +393,23 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
               <div>
                 <h4 className="font-semibold mb-1">Main Reading</h4>
                 <p className="text-muted-foreground">
-                  {data.todayReading.bibleTextMain}
+                  {data.todayReading.bible}
                 </p>
               </div>
-              {isPropheticPlan && data.todayReading.topic && (
-                <div>
-                  <h4 className="font-semibold mb-1">
-                    Título Oficial do Capítulo
-                  </h4>
-                  <p className="text-muted-foreground">
-                    {data.todayReading.topic}
-                  </p>
-                </div>
-              )}
-              {data.todayReading.commentaryAuthor && (
+              {(isPropheticPlan || isClassicPlan) &&
+                data.todayReading.title && (
+                  <div>
+                    <h4 className="font-semibold mb-1">Topic</h4>
+                    <p className="text-muted-foreground">
+                      {data.todayReading.title}
+                    </p>
+                  </div>
+                )}
+              {data.todayReading.author && (
                 <div>
                   <h4 className="font-semibold mb-1">Commentary</h4>
                   <p className="text-muted-foreground">
-                    {data.todayReading.commentaryAuthor} -{" "}
-                    {data.todayReading.commentaryWork}
+                    {data.todayReading.author} - {data.todayReading.book}
                   </p>
                 </div>
               )}
@@ -477,11 +463,11 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                             <div>
                               <p className="text-sm font-semibold">
                                 Dia{" "}
-                                {getDayFromDateDisplay(reading.dateDisplay) ||
+                                {getDayFromDate(reading.date) ||
                                   reading.dayNumber}
                               </p>
                               <p className="text-xs text-muted-foreground">
-                                {reading.dateDisplay}
+                                {reading.date}
                               </p>
                             </div>
                             <ReadingStatusButton
