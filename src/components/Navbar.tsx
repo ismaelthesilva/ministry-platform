@@ -19,23 +19,29 @@ import {
   Mail,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { initializeTheme, toggleTheme, getStoredTheme } from "../lib/theme";
+import { toggleTheme, getStoredTheme, getEffectiveTheme } from "../lib/theme";
 
 const DarkModeToggle: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const currentTheme = getStoredTheme();
+    return getEffectiveTheme(currentTheme) === "dark";
+  });
+  const pathname = usePathname();
+
   useEffect(() => {
-    const currentTheme = initializeTheme();
-    Promise.resolve().then(() => setIsDarkMode(currentTheme === "dark"));
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleSystemChange = (e: MediaQueryListEvent) => {
-      const stored = getStoredTheme();
-      if (stored === "system") {
+      if (getStoredTheme() === "system") {
         setIsDarkMode(e.matches);
       }
     };
     mediaQuery.addEventListener("change", handleSystemChange);
     return () => mediaQuery.removeEventListener("change", handleSystemChange);
   }, []);
+
+  // Only show toggle on homepage
+  if (pathname !== "/") return null;
+
   const handleToggle = () => {
     const newTheme = toggleTheme();
     setIsDarkMode(newTheme === "dark");
@@ -59,6 +65,11 @@ const DarkModeToggle: React.FC = () => {
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
+  const pathname = usePathname();
+
+  // Only show toggle on homepage
+  if (pathname !== "/") return null;
+
   return (
     <Button
       variant="ghost"
@@ -131,7 +142,7 @@ const Navbar: React.FC = () => {
     },
     {
       name: t("navbar.about", "About"),
-      href: "/#about",
+      href: "/about",
       icon: <User className="h-4 w-4" />,
     },
     {

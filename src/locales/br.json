@@ -47,17 +47,17 @@
       "label": "Livros",
       "items": [
         {
-          "title": "eBook",
-          "subtitle": "Edição em Inglês",
-          "image": "/ministry-images/book-king.jpg",
-          "link": "https://www.amazon.com/dp/B082LX6ZWZ",
-          "buttonText": "Comprar no Amazon Kindle"
-        },
-        {
           "title": "eBook & Livro Físico",
           "subtitle": "Edição em Português",
           "image": "/ministry-images/livro-rei.jpg",
           "link": "https://www.amazon.com.br/dp/B082J64R4X",
+          "buttonText": "Comprar na Amazon"
+        },
+        {
+          "title": "eBook",
+          "subtitle": "Edição em Português",
+          "image": "/ministry-images/05-Quinto-Capa.jpg",
+          "link": "https://www.amazon.com.br/dp/B0GHZRC8N4",
           "buttonText": "Comprar na Amazon"
         }
       ]
@@ -109,7 +109,39 @@
         "Minha paixão pela música me levou a criar canções originais de adoração que expressam minha fé e devoção. Essas composições vêm de experiências pessoais e reflexões espirituais, criadas para elevar e inspirar outros em suas próprias jornadas de fé.",
         "Ouça minhas canções originais nas principais plataformas de streaming. Cada peça representa um capítulo único em minha caminhada espiritual, compartilhando mensagens de esperança, redenção e amor infalível de Deus.",
         "Clique nos links para ouvir minhas canções originais no Apple Music, Spotify e muitos outros!"
-      ]
+      ],
+      "platforms": {
+        "apple": "Apple Music",
+        "spotify": "Spotify",
+        "all": "Todas as Plataformas"
+      }
+    },
+    "promise": {
+      "title": "SUA VOLTA GLORIOSA",
+      "subtitle": "A esperança de todo crente - a promessa bendita da volta de nosso Senhor",
+      "items": [
+        {
+          "title": "SUA PROMESSA",
+          "description": "\"E, se eu for e vos preparar lugar, virei outra vez e vos levarei para mim mesmo, para que, onde eu estiver, estejais vós também.\"",
+          "reference": "- João 14:3"
+        },
+        {
+          "title": "SEU REINO",
+          "description": "\"Então, dirá o Rei aos que estiverem à sua direita: 'Vinde, benditos de meu Pai! Entrai na posse do reino que vos está preparado desde a fundação do mundo.'\"",
+          "reference": "- Mateus 25:34"
+        },
+        {
+          "title": "SEU AMOR",
+          "description": "\"E Deus limpará de seus olhos toda a lágrima; e não haverá mais morte, nem pranto, nem clamor, nem dor; porque já as primeiras coisas são passadas.\"",
+          "reference": "- Apocalipse 21:4"
+        }
+      ],
+      "declaration": {
+        "title": "\"ORA, VEM SENHOR JESUS!\"",
+        "text": "O Espírito e a noiva dizem: \"Vem!\" E quem ouve, diga: \"Vem!\" E quem tem sede, venha; e quem quiser, tome de graça da água da vida.",
+        "reference": "- Apocalipse 22:17, 20",
+        "cta": "Estudar Apocalipse"
+      }
     },
     "contact": {
       "title": "CONEXÃO",

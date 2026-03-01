@@ -8,7 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import {
   Music,
   Heart,
@@ -25,7 +24,6 @@ import { DeveloperFooter as Footer } from "@/components/Footer";
 import Messages from "@/components/home/Messages";
 import Books from "@/components/home/Books";
 import Songs from "@/components/home/Songs";
-import About from "@/components/home/About";
 import HeroSection from "@/components/home/HeroSection";
 import DailyInspiration from "@/components/home/DailyInspiration";
 import FeaturesGrid from "@/components/home/FeaturesGrid";
@@ -85,15 +83,21 @@ export default function Page() {
     {
       title: t("home.books.items.0.title", "eBook"),
       subtitle: t("home.books.items.0.subtitle", "English Edition"),
-      image: "/ministry-images/book-king.jpg",
-      link: "https://www.amazon.com/dp/B082LX6ZWZ",
+      image: t("home.books.items.0.image", "/ministry-images/book-king.jpg"),
+      link: t(
+        "home.books.items.0.link",
+        "https://www.amazon.com/dp/B082LX6ZWZ",
+      ),
       buttonText: t("home.books.items.0.buttonText", "Buy on Amazon Kindle"),
     },
     {
       title: t("home.books.items.1.title", "eBook & Paperback"),
       subtitle: t("home.books.items.1.subtitle", "Portuguese Edition"),
-      image: "/ministry-images/livro-rei.jpg",
-      link: "https://www.amazon.com.br/dp/B082J64R4X",
+      image: t("home.books.items.1.image", "/ministry-images/livro-rei.jpg"),
+      link: t(
+        "home.books.items.1.link",
+        "https://www.amazon.com.br/dp/B082J64R4X",
+      ),
       buttonText: t("home.books.items.1.buttonText", "Buy on Amazon"),
     },
   ];
@@ -114,33 +118,6 @@ export default function Page() {
       title: t("home.songs.videos.2.title", "O Teu Amor me salvou"),
       description: t("home.songs.videos.2.description", "Original Song"),
     },
-  ];
-
-  const aboutContent: string[] = [
-    t(
-      "home.about.content.0",
-      "Embracing the Christian faith is both a profound privilege and a weighty responsibility...",
-    ),
-    t(
-      "home.about.content.1",
-      "Partnering with God, these seasons are ordinary yet may I reflect on my journey...",
-    ),
-    t(
-      "home.about.content.2",
-      "My life's path led me to Brazil and New Zealand with my beloved wife, Jandai...",
-    ),
-    t(
-      "home.about.content.3",
-      "Following Jesus's command in Matthew 28:19-20, we're committed to spreading the gospel...",
-    ),
-    t(
-      "home.about.content.4",
-      'As Theodore Roosevelt wisely said, "People don\'t care how much you know..."',
-    ),
-    t(
-      "home.about.content.5",
-      'In summation, I declare, "God is love" (1 John 4:8)...',
-    ),
   ];
 
   const musicDescription: string[] = [
@@ -170,7 +147,7 @@ export default function Page() {
         >
           <a href="/Revelation" className="flex items-center">
             <BookOpen className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-            Revelation Study
+            {t("revelation.title")} Study
           </a>
         </Button>
       </div>
@@ -218,8 +195,6 @@ export default function Page() {
       <Songs songs={songs} getYouTubeVideoId={getYouTubeVideoId} />
 
       <Books books={books} />
-
-      <About aboutContent={aboutContent} />
 
       {/* Music Album Section - Enhanced with Divine Harmony Theme */}
       <section
@@ -275,7 +250,9 @@ export default function Page() {
                     className="flex flex-col items-center"
                   >
                     <Music className="h-6 w-6 mb-1 group-hover:animate-pulse" />
-                    <span>Apple Music</span>
+                    <span>
+                      {t("home.music.platforms.apple", "Apple Music")}
+                    </span>
                   </a>
                 </Button>
 
@@ -290,7 +267,7 @@ export default function Page() {
                     className="flex flex-col items-center"
                   >
                     <Music className="h-6 w-6 mb-1 group-hover:animate-pulse" />
-                    <span>Spotify</span>
+                    <span>{t("home.music.platforms.spotify", "Spotify")}</span>
                   </a>
                 </Button>
 
@@ -305,7 +282,9 @@ export default function Page() {
                     className="flex flex-col items-center"
                   >
                     <Heart className="h-6 w-6 mb-1 group-hover:animate-pulse" />
-                    <span>All Platforms</span>
+                    <span>
+                      {t("home.music.platforms.all", "All Platforms")}
+                    </span>
                   </a>
                 </Button>
               </div>
@@ -366,11 +345,13 @@ export default function Page() {
             </div>
 
             <h2 className="text-5xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-yellow-200 text-divine-glow">
-              HIS GLORIOUS RETURN
+              {t("home.promise.title", "HIS GLORIOUS RETURN")}
             </h2>
             <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed font-light">
-              The hope of every believer - the blessed promise of our
-              Lord&apos;s return
+              {t(
+                "home.promise.subtitle",
+                "The hope of every believer - the blessed promise of our Lord's return",
+              )}
             </p>
           </div>
 
@@ -383,15 +364,16 @@ export default function Page() {
                   <Star className="h-12 w-12 text-yellow-300 mx-auto animate-divine-pulse" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-300 transition-colors duration-300">
-                  HIS PROMISE
+                  {t("home.promise.items.0.title", "HIS PROMISE")}
                 </CardTitle>
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
-                  &quot;And if I go and prepare a place for you, I will come
-                  again and receive you to Myself; that where I am, there you
-                  may be also.&quot;
+                  {t(
+                    "home.promise.items.0.description",
+                    '"And if I go and prepare a place for you, I will come again and receive you to Myself; that where I am, there you may be also."',
+                  )}
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
-                  - John 14:3
+                  {t("home.promise.items.0.reference", "- John 14:3")}
                 </p>
               </CardHeader>
             </Card>
@@ -403,15 +385,16 @@ export default function Page() {
                   <Crown className="h-12 w-12 text-yellow-300 mx-auto animate-grace-glow" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-300 transition-colors duration-300">
-                  HIS KINGDOM
+                  {t("home.promise.items.1.title", "HIS KINGDOM")}
                 </CardTitle>
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
-                  &quot;Then the King will say to those on His right hand,
-                  &apos;Come, you blessed of My Father, inherit the kingdom
-                  prepared for you from the foundation of the world.&apos;&quot;
+                  {t(
+                    "home.promise.items.1.description",
+                    "\"Then the King will say to those on His right hand, 'Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world.'\"",
+                  )}
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
-                  - Matthew 25:34
+                  {t("home.promise.items.1.reference", "- Matthew 25:34")}
                 </p>
               </CardHeader>
             </Card>
@@ -423,15 +406,16 @@ export default function Page() {
                   <Heart className="h-12 w-12 text-yellow-300 mx-auto animate-breathe" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-300 transition-colors duration-300">
-                  HIS LOVE
+                  {t("home.promise.items.2.title", "HIS LOVE")}
                 </CardTitle>
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
-                  &quot;And God will wipe away every tear from their eyes; there
-                  shall be no more death, nor sorrow, nor crying. There shall be
-                  no more pain, for the former things have passed away.&quot;
+                  {t(
+                    "home.promise.items.2.description",
+                    '"And God will wipe away every tear from their eyes; there shall be no more death, nor sorrow, nor crying. There shall be no more pain, for the former things have passed away."',
+                  )}
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
-                  - Revelation 21:4
+                  {t("home.promise.items.2.reference", "- Revelation 21:4")}
                 </p>
               </CardHeader>
             </Card>
@@ -446,15 +430,22 @@ export default function Page() {
                 <Star className="h-8 w-8 text-yellow-300 animate-pulse" />
               </div>
               <h3 className="text-4xl md:text-5xl font-bold text-yellow-300 mb-6 text-divine-glow">
-                &quot;EVEN SO, COME LORD JESUS!&quot;
+                {t(
+                  "home.promise.declaration.title",
+                  '"EVEN SO, COME LORD JESUS!"',
+                )}
               </h3>
               <p className="text-white/90 text-xl leading-relaxed mb-4">
-                The Spirit and the bride say, &quot;Come!&quot; And let him who
-                hears say, &quot;Come!&quot; And let him who thirsts come.
-                Whoever desires, let him take the water of life freely.
+                {t(
+                  "home.promise.declaration.text",
+                  'The Spirit and the bride say, "Come!" And let him who hears say, "Come!" And let him who thirsts come. Whoever desires, let him take the water of life freely.',
+                )}
               </p>
               <p className="text-yellow-300 font-bold text-lg">
-                - Revelation 22:17, 20
+                {t(
+                  "home.promise.declaration.reference",
+                  "- Revelation 22:17, 20",
+                )}
               </p>
 
               {/* Call to Preparation */}
@@ -465,7 +456,7 @@ export default function Page() {
                 >
                   <a href="#revelation" className="flex items-center">
                     <BookOpen className="h-6 w-6 mr-3" />
-                    Study Revelation
+                    {t("home.promise.declaration.cta", "Study Revelation")}
                     <Sparkles className="h-6 w-6 ml-3" />
                   </a>
                 </Button>
@@ -572,5 +563,3 @@ export default function Page() {
     </div>
   );
 }
-
-// Removed duplicate export
