@@ -27,7 +27,7 @@ const revelationTranslations: { [key: string]: Translations } = {
   br: brRevelationTranslations,
 };
 const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined
+  undefined,
 );
 interface LanguageProviderProps {
   children: ReactNode;
@@ -35,16 +35,19 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
-  const [language, setLanguage] = useState<string>("en");
+  const [language, setLanguageState] = useState<string>("en");
+
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
     if (savedLanguage && translations[savedLanguage]) {
-      setLanguage(savedLanguage);
+      setLanguageState(savedLanguage);
     }
   }, []);
-  useEffect(() => {
-    localStorage.setItem("language", language);
-  }, [language]);
+
+  const setLanguage = (lang: string) => {
+    localStorage.setItem("language", lang);
+    setLanguageState(lang);
+  };
   const t = (key: string, fallback?: string): string => {
     try {
       const keys = key.split(".");

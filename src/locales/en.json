@@ -54,11 +54,11 @@
           "buttonText": "Buy on Amazon Kindle"
         },
         {
-          "title": "eBook & Paperback",
-          "subtitle": "Portuguese Edition",
-          "image": "/ministry-images/livro-rei.jpg",
-          "link": "https://www.amazon.com.br/dp/B082J64R4X",
-          "buttonText": "Buy on Amazon"
+          "title": "eBook",
+          "subtitle": "English Edition",
+          "image": "/ministry-images/05-Fifth-Cover.jpg",
+          "link": "",
+          "buttonText": "Coming soon"
         }
       ]
     },
@@ -109,7 +109,39 @@
         "My passion for music has led me to create original worship songs that express my faith and devotion. These compositions come from personal experiences and spiritual reflections, crafted to uplift and inspire others in their own faith journeys.",
         "Listen to my original songs on popular streaming platforms. Each piece represents a unique chapter in my spiritual walk, sharing messages of hope, redemption, and God's unfailing love.",
         "Click links to listen to my Original songs on Apple Music, Spotify and many others!"
-      ]
+      ],
+      "platforms": {
+        "apple": "Apple Music",
+        "spotify": "Spotify",
+        "all": "All Platforms"
+      }
+    },
+    "promise": {
+      "title": "HIS GLORIOUS RETURN",
+      "subtitle": "The hope of every believer - the blessed promise of our Lord's return",
+      "items": [
+        {
+          "title": "HIS PROMISE",
+          "description": "\"And if I go and prepare a place for you, I will come again and receive you to Myself; that where I am, there you may be also.\"",
+          "reference": "- John 14:3"
+        },
+        {
+          "title": "HIS KINGDOM",
+          "description": "\"Then the King will say to those on His right hand, 'Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world.'\"",
+          "reference": "- Matthew 25:34"
+        },
+        {
+          "title": "HIS LOVE",
+          "description": "\"And God will wipe away every tear from their eyes; there shall be no more death, nor sorrow, nor crying. There shall be no more pain, for the former things have passed away.\"",
+          "reference": "- Revelation 21:4"
+        }
+      ],
+      "declaration": {
+        "title": "\"EVEN SO, COME LORD JESUS!\"",
+        "text": "The Spirit and the bride say, \"Come!\" And let him who hears say, \"Come!\" And let him who thirsts come. Whoever desires, let him take the water of life freely.",
+        "reference": "- Revelation 22:17, 20",
+        "cta": "Study Revelation"
+      }
     },
     "contact": {
       "title": "CONNECTION",
