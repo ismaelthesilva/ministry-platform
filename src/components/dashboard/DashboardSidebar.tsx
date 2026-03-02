@@ -39,7 +39,10 @@ export function DashboardSidebar() {
         <div className="flex items-center h-16 flex-shrink-0 px-4 border-b">
           <h1 className="text-xl font-bold">Ministry Platform</h1>
         </div>
-        <nav className="flex-1 px-2 py-4 space-y-1">
+        <nav
+          className="flex-1 px-2 py-4 space-y-1"
+          aria-label="Primary navigation"
+        >
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive =
@@ -56,6 +59,7 @@ export function DashboardSidebar() {
                     ? "bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                     : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100",
                 )}
+                aria-current={isActive ? "page" : undefined}
               >
                 <Icon className="mr-3 h-5 w-5 flex-shrink-0" />
                 {item.label}
@@ -68,6 +72,7 @@ export function DashboardSidebar() {
             variant="outline"
             className="w-full justify-start"
             onClick={() => signOut({ callbackUrl: "/login" })}
+            aria-label="Sign out of Ministry Platform"
           >
             <LogOut className="mr-3 h-5 w-5" />
             Sign Out

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Circle } from "lucide-react";
+import { CheckCircle2, Circle, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ReadingStatusButtonProps {
@@ -19,26 +19,55 @@ export function ReadingStatusButton({
   showLabel = false,
   className,
 }: ReadingStatusButtonProps) {
+  const state = completed ? "completed" : "pending";
+  const iconBase = "h-5 w-5 transition-transform duration-200 ease-out";
+  const icon = loading ? (
+    <Loader2
+      className="h-5 w-5 text-muted-foreground animate-spin"
+      aria-hidden
+    />
+  ) : completed ? (
+    <CheckCircle2 className={cn(iconBase, "text-emerald-500")} />
+  ) : (
+    <Circle className={cn(iconBase, "text-muted-foreground")} />
+  );
+  const labelText = loading
+    ? "Updating..."
+    : completed
+      ? "Completed"
+      : "Mark Complete";
+  const ariaLabel = loading
+    ? "Updating reading status"
+    : completed
+      ? "Mark reading as incomplete"
+      : "Mark reading as complete";
+
+  const dataAttributes = {
+    "data-state": state,
+    ...(loading ? { "data-loading": "true" } : {}),
+  } as const;
+
   if (showLabel) {
     return (
       <Button
-        variant={completed ? "secondary" : "default"}
+        variant="ghost"
         size="sm"
         onClick={onClick}
         disabled={loading}
-        className={className}
-      >
-        {completed ? (
-          <>
-            <CheckCircle2 className="mr-2 h-4 w-4 text-muted-foreground" />
-            Completed
-          </>
-        ) : (
-          <>
-            <Circle className="mr-2 h-4 w-4" />
-            Mark Complete
-          </>
+        className={cn(
+          "gap-2 rounded-full px-3 py-2 font-semibold",
+          completed
+            ? "bg-emerald-50 text-emerald-700"
+            : "bg-white text-slate-600",
+          className,
         )}
+        aria-pressed={completed}
+        aria-label={ariaLabel}
+        type="button"
+        {...dataAttributes}
+      >
+        {icon}
+        <span>{labelText}</span>
       </Button>
     );
   }
@@ -49,13 +78,17 @@ export function ReadingStatusButton({
       size="sm"
       onClick={onClick}
       disabled={loading}
-      className={cn("h-9 w-full p-0", className)}
-    >
-      {completed ? (
-        <CheckCircle2 className="h-5 w-5 text-muted-foreground" />
-      ) : (
-        <Circle className="h-5 w-5 text-muted-foreground" />
+      className={cn(
+        "reading-status-button",
+        completed ? "border border-emerald-200" : "border border-gray-200",
+        className,
       )}
+      aria-pressed={completed}
+      aria-label={ariaLabel}
+      type="button"
+      {...dataAttributes}
+    >
+      {icon}
     </Button>
   );
 }
