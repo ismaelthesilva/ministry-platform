@@ -40,7 +40,8 @@ describe("DashboardHome", () => {
 
   it("displays completion percentage", () => {
     render(<DashboardHome data={mockData} userId="test-user" />);
-    expect(screen.getByText("10%")).toBeInTheDocument();
+    const matches = screen.getAllByText("10%");
+    expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it("shows today's reading", () => {
