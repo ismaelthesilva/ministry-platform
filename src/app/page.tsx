@@ -63,7 +63,7 @@ export default function Page() {
     },
     {
       link: "https://www.youtube.com/watch?v=EZ4LBnEZPlg",
-      title: t("home.messages.videos.1.title", "The way to Happiness"),
+      title: t("home.messages.videos.1.title", "The Way to Happiness"),
       description: t(
         "home.messages.videos.1.description",
         "Do you want to be happy? Discover the path to true happiness.",

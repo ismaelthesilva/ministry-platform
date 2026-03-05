@@ -17,11 +17,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { User, Mail, LogOut, Save, Edit2, X } from "lucide-react";
+import {
+  User,
+  Mail,
+  LogOut,
+  Save,
+  Edit2,
+  X,
+  Lock,
+  KeyRound,
+} from "lucide-react";
 import { signOut } from "next-auth/react";
 import { useState } from "react";
 import {
   updateProfile,
+  updateEmail,
+  changePassword,
   type UpdateProfileData,
 } from "@/app/dashboard/profile/actions";
 import { useRouter } from "next/navigation";
@@ -49,6 +60,25 @@ export function ProfileView({ user }: ProfileViewProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
+
+  // Email update state
+  const [isEditingEmail, setIsEditingEmail] = useState(false);
+  const [newEmail, setNewEmail] = useState(user.email || "");
+  const [emailLoading, setEmailLoading] = useState(false);
+  const [emailMessage, setEmailMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
+
+  // Password change state
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordLoading, setPasswordLoading] = useState(false);
+  const [passwordMessage, setPasswordMessage] = useState<{
     type: "success" | "error";
     text: string;
   } | null>(null);
@@ -99,6 +129,44 @@ export function ProfileView({ user }: ProfileViewProps) {
     setMessage(null);
   };
 
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmailLoading(true);
+    setEmailMessage(null);
+    const result = await updateEmail(newEmail);
+    if (result.success) {
+      setEmailMessage({ type: "success", text: result.message });
+      setIsEditingEmail(false);
+      router.refresh();
+    } else {
+      setEmailMessage({ type: "error", text: result.message });
+    }
+    setEmailLoading(false);
+  };
+
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordMessage(null);
+    if (newPassword !== confirmPassword) {
+      setPasswordMessage({
+        type: "error",
+        text: "New passwords do not match.",
+      });
+      return;
+    }
+    setPasswordLoading(true);
+    const result = await changePassword(currentPassword, newPassword);
+    if (result.success) {
+      setPasswordMessage({ type: "success", text: result.message });
+      setCurrentPassword("");
+      setNewPassword("");
+      setConfirmPassword("");
+    } else {
+      setPasswordMessage({ type: "error", text: result.message });
+    }
+    setPasswordLoading(false);
+  };
+
   return (
     <div className="container max-w-4xl mx-auto p-6 space-y-6">
       {/* Header */}
@@ -141,22 +209,89 @@ export function ProfileView({ user }: ProfileViewProps) {
             <CardDescription>Your basic personal details</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {/* Email (Read-only) */}
+            {/* Email */}
             <div className="space-y-2">
               <Label htmlFor="email" className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
                 Email
               </Label>
-              <Input
-                id="email"
-                type="email"
-                value={user.email || ""}
-                disabled
-                className="bg-muted"
-              />
-              <p className="text-xs text-muted-foreground">
-                Email cannot be changed
-              </p>
+              {isEditingEmail ? (
+                <form onSubmit={handleEmailSubmit} className="space-y-2">
+                  <Input
+                    id="email"
+                    type="email"
+                    value={newEmail}
+                    onChange={(e) => setNewEmail(e.target.value)}
+                    placeholder="Enter new email"
+                    required
+                    autoFocus
+                  />
+                  {emailMessage && (
+                    <p
+                      className={`text-xs px-3 py-2 rounded border ${
+                        emailMessage.type === "success"
+                          ? "text-green-700 bg-green-50 border-green-200"
+                          : "text-red-700 bg-red-50 border-red-200"
+                      }`}
+                    >
+                      {emailMessage.text}
+                    </p>
+                  )}
+                  <div className="flex gap-2">
+                    <Button type="submit" size="sm" disabled={emailLoading}>
+                      <Save className="mr-1 h-3 w-3" />
+                      {emailLoading ? "Saving…" : "Save"}
+                    </Button>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="outline"
+                      disabled={emailLoading}
+                      onClick={() => {
+                        setIsEditingEmail(false);
+                        setNewEmail(user.email || "");
+                        setEmailMessage(null);
+                      }}
+                    >
+                      <X className="mr-1 h-3 w-3" />
+                      Cancel
+                    </Button>
+                  </div>
+                </form>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <Input
+                    id="email"
+                    type="email"
+                    value={user.email || ""}
+                    disabled
+                    className="bg-muted"
+                  />
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    onClick={() => {
+                      setNewEmail(user.email || "");
+                      setEmailMessage(null);
+                      setIsEditingEmail(true);
+                    }}
+                  >
+                    <Edit2 className="h-3 w-3" />
+                  </Button>
+                </div>
+              )}
+              {!isEditingEmail && emailMessage && (
+                <p
+                  className={`text-xs px-3 py-2 rounded border ${
+                    emailMessage.type === "success"
+                      ? "text-green-700 bg-green-50 border-green-200"
+                      : "text-red-700 bg-red-50 border-red-200"
+                  }`}
+                >
+                  {emailMessage.text}
+                </p>
+              )}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -392,6 +527,79 @@ export function ProfileView({ user }: ProfileViewProps) {
           </Card>
         )}
       </form>
+
+      {/* Change Password Card */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Lock className="h-5 w-5" />
+            Change Password
+          </CardTitle>
+          <CardDescription>
+            Choose a strong password that you don&apos;t use elsewhere
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handlePasswordSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="currentPassword">Current Password</Label>
+              <Input
+                id="currentPassword"
+                type="password"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+                placeholder="••••••••"
+                autoComplete="current-password"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="newPassword">New Password</Label>
+              <Input
+                id="newPassword"
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                placeholder="••••••••"
+                autoComplete="new-password"
+                minLength={6}
+                required
+              />
+              <p className="text-xs text-muted-foreground">
+                Minimum 6 characters
+              </p>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword">Confirm New Password</Label>
+              <Input
+                id="confirmPassword"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="••••••••"
+                autoComplete="new-password"
+                minLength={6}
+                required
+              />
+            </div>
+            {passwordMessage && (
+              <p
+                className={`text-sm px-3 py-2 rounded border ${
+                  passwordMessage.type === "success"
+                    ? "text-green-700 bg-green-50 border-green-200"
+                    : "text-red-700 bg-red-50 border-red-200"
+                }`}
+              >
+                {passwordMessage.text}
+              </p>
+            )}
+            <Button type="submit" disabled={passwordLoading}>
+              <KeyRound className="mr-2 h-4 w-4" />
+              {passwordLoading ? "Changing…" : "Change Password"}
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
 
       {/* Account Actions Card */}
       <Card>
