@@ -1,6 +1,7 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { PlansView } from "@/components/dashboard/PlansView";
+import { LanguageProvider } from "@/context/LanguageContext";
 import { useRouter } from "next/navigation";
 
 // Mock next/navigation
@@ -16,14 +17,14 @@ vi.mock("@/app/dashboard/actions", () => ({
 const mockPlans = [
   {
     id: "1",
-    slug: "bible-only",
+    slug: "bible",
     title: "Bible Only - PT",
     description: "Leitura diária da Bíblia",
-    language: "pt",
+    language: "br",
   },
   {
     id: "2",
-    slug: "bible-only",
+    slug: "bible",
     title: "Bible Only - EN",
     description: "Daily Bible reading",
     language: "en",
@@ -33,9 +34,12 @@ const mockPlans = [
     slug: "prophetic",
     title: "Prophetic - PT",
     description: "Leitura profética",
-    language: "pt",
+    language: "br",
   },
 ];
+
+const renderWithProvider = (ui: React.ReactElement) =>
+  render(<LanguageProvider>{ui}</LanguageProvider>);
 
 describe("PlansView", () => {
   const mockRefresh = vi.fn();
@@ -50,24 +54,24 @@ describe("PlansView", () => {
   });
 
   it("renders plans page title", () => {
-    render(<PlansView plans={mockPlans} userId="test-user" />);
+    renderWithProvider(<PlansView plans={mockPlans} userId="test-user" />);
     expect(screen.getByText("Reading Plans")).toBeInTheDocument();
   });
 
   it("displays all unique plans", () => {
-    render(<PlansView plans={mockPlans} userId="test-user" />);
+    renderWithProvider(<PlansView plans={mockPlans} userId="test-user" />);
     expect(screen.getByText("Bible Only")).toBeInTheDocument();
     expect(screen.getByText("Prophetic Reading")).toBeInTheDocument();
   });
 
   it("shows language badges for each plan", () => {
-    render(<PlansView plans={mockPlans} userId="test-user" />);
-    expect(screen.getByText("🇧🇷 PT")).toBeInTheDocument();
+    renderWithProvider(<PlansView plans={mockPlans} userId="test-user" />);
+    expect(screen.getAllByText("🇧🇷 PT")[0]).toBeInTheDocument();
     expect(screen.getByText("🇺🇸 EN")).toBeInTheDocument();
   });
 
   it("highlights current active plan", () => {
-    render(
+    renderWithProvider(
       <PlansView plans={mockPlans} userId="test-user" currentPlanId="1" />,
     );
     expect(screen.getByText("Active")).toBeInTheDocument();
@@ -77,7 +81,7 @@ describe("PlansView", () => {
   it("handles plan selection", async () => {
     const { selectPlan } = await import("@/app/dashboard/actions");
 
-    render(<PlansView plans={mockPlans} userId="test-user" />);
+    renderWithProvider(<PlansView plans={mockPlans} userId="test-user" />);
 
     const selectButtons = screen.getAllByText(/Select/);
     fireEvent.click(selectButtons[0]);
@@ -86,12 +90,13 @@ describe("PlansView", () => {
   });
 
   it("displays plan information", () => {
-    render(<PlansView plans={mockPlans} userId="test-user" />);
-    expect(screen.getByText(/366 days/)).toBeInTheDocument();
+    renderWithProvider(<PlansView plans={mockPlans} userId="test-user" />);
+    const matches = screen.getAllByText(/366 days/);
+    expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it("shows how it works section", () => {
-    render(<PlansView plans={mockPlans} userId="test-user" />);
+    renderWithProvider(<PlansView plans={mockPlans} userId="test-user" />);
     expect(screen.getByText("How it works")).toBeInTheDocument();
   });
 });
