@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-} from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 import enTranslations from "../locales/en.json";
 import brTranslations from "../locales/br.json";
 import enRevelationTranslations from "../locales/revelation/en.json";
@@ -15,6 +9,7 @@ interface LanguageContextType {
   setLanguage: (lang: string) => void;
   t: (key: string, fallback?: string) => string;
   tr: (key: string, fallback?: string) => string;
+  tObj: (key: string, fallback?: unknown) => unknown;
   trObj: (key: string, fallback?: unknown) => unknown;
 }
 type Translations = Record<string, unknown>;
@@ -35,14 +30,11 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
-  const [language, setLanguageState] = useState<string>("en");
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage && translations[savedLanguage]) {
-      setLanguageState(savedLanguage);
-    }
-  }, []);
+  const [language, setLanguageState] = useState<string>(() => {
+    const saved =
+      typeof window !== "undefined" ? localStorage.getItem("language") : null;
+    return saved && translations[saved] ? saved : "en";
+  });
 
   const setLanguage = (lang: string) => {
     localStorage.setItem("language", lang);
@@ -53,15 +45,47 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       const keys = key.split(".");
       let value: unknown = translations[language];
       for (const k of keys) {
-        if (value && typeof value === "object" && k in value) {
+        if (value === null || value === undefined) return fallback ?? key;
+        if (Array.isArray(value)) {
+          const idx = Number(k);
+          if (!Number.isNaN(idx) && idx < (value as unknown[]).length) {
+            value = (value as unknown[])[idx];
+          } else {
+            return fallback ?? key;
+          }
+        } else if (typeof value === "object" && k in (value as object)) {
           value = (value as Record<string, unknown>)[k];
         } else {
-          return fallback || key;
+          return fallback ?? key;
         }
       }
-      return typeof value === "string" ? value : fallback || key;
-    } catch (error) {
-      return fallback || key;
+      return typeof value === "string" ? value : (fallback ?? key);
+    } catch {
+      return fallback ?? key;
+    }
+  };
+  const tObj = (key: string, fallback?: unknown): unknown => {
+    try {
+      const keys = key.split(".");
+      let value: unknown = translations[language];
+      for (const k of keys) {
+        if (value === null || value === undefined) return fallback;
+        if (Array.isArray(value)) {
+          const idx = Number(k);
+          if (!Number.isNaN(idx) && idx < (value as unknown[]).length) {
+            value = (value as unknown[])[idx];
+          } else {
+            return fallback;
+          }
+        } else if (typeof value === "object" && k in (value as object)) {
+          value = (value as Record<string, unknown>)[k];
+        } else {
+          return fallback;
+        }
+      }
+      return value !== null && value !== undefined ? value : fallback;
+    } catch {
+      return fallback;
     }
   };
   const tr = (key: string, fallback?: string): string => {
@@ -69,21 +93,23 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       const keys = key.split(".");
       let value: unknown = revelationTranslations[language];
       for (const k of keys) {
-        if (value && typeof value === "object" && k in value) {
+        if (value === null || value === undefined) return fallback ?? key;
+        if (Array.isArray(value)) {
+          const idx = Number(k);
+          if (!Number.isNaN(idx) && idx < (value as unknown[]).length) {
+            value = (value as unknown[])[idx];
+          } else {
+            return fallback ?? key;
+          }
+        } else if (typeof value === "object" && k in (value as object)) {
           value = (value as Record<string, unknown>)[k];
         } else {
-          return fallback || key;
+          return fallback ?? key;
         }
       }
-      if (typeof value === "string") {
-        return value;
-      } else if (value !== null && value !== undefined) {
-        return fallback || "";
-      } else {
-        return fallback || key;
-      }
-    } catch (error) {
-      return fallback || key;
+      return typeof value === "string" ? value : (fallback ?? key);
+    } catch {
+      return fallback ?? key;
     }
   };
   const trObj = (key: string, fallback?: unknown): unknown => {
@@ -91,14 +117,22 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       const keys = key.split(".");
       let value: unknown = revelationTranslations[language];
       for (const k of keys) {
-        if (value && typeof value === "object" && k in value) {
+        if (value === null || value === undefined) return fallback;
+        if (Array.isArray(value)) {
+          const idx = Number(k);
+          if (!Number.isNaN(idx) && idx < (value as unknown[]).length) {
+            value = (value as unknown[])[idx];
+          } else {
+            return fallback;
+          }
+        } else if (typeof value === "object" && k in (value as object)) {
           value = (value as Record<string, unknown>)[k];
         } else {
           return fallback;
         }
       }
       return value !== null && value !== undefined ? value : fallback;
-    } catch (error) {
+    } catch {
       return fallback;
     }
   };
@@ -107,6 +141,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     setLanguage,
     t,
     tr,
+    tObj,
     trObj,
   };
   return (

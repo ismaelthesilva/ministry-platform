@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import Navbar from "@/components/Navbar";
+import { DeveloperFooter as Footer } from "@/components/Footer";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -296,6 +297,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -20,8 +20,17 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Image with Enhanced Divine Overlay */}
@@ -56,12 +65,12 @@ export default function HeroSection() {
 
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-yellow-200 drop-shadow-2xl leading-tight mb-6">
-          Ministério Pastor Ismael Silva
+          {mounted ? t("home.hero.title") : "Ministério Pastor Ismael Silva"}
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl md:text-3xl lg:text-4xl text-blue-100 font-light tracking-wider drop-shadow-lg uppercase mb-8">
-          Ensinando a Palavra de Deus
+          {mounted ? t("home.hero.subtitle") : "Ensinando a Palavra de Deus"}
         </p>
 
         {/* Primary CTA - Bible Tracker */}
@@ -73,7 +82,7 @@ export default function HeroSection() {
           >
             <Link href="/dashboard" className="flex items-center gap-3">
               <BookOpen className="h-6 w-6 group-hover:animate-pulse" />
-              Comece o seu Ano Bíblico
+              {mounted ? t("home.hero.cta") : "Comece o seu Ano Bíblico"}
               <Sparkles className="h-6 w-6 group-hover:animate-pulse" />
             </Link>
           </Button>
@@ -89,7 +98,7 @@ export default function HeroSection() {
           >
             <a href="#messages">
               <Play className="h-5 w-5 mr-2" />
-              Sermões
+              {mounted ? t("home.hero.sermons") : "Sermões"}
             </a>
           </Button>
           <Button

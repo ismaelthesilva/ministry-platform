@@ -7,17 +7,55 @@
     "revelation": "Revelation",
     "about": "About",
     "contact": "Contact",
+    "bibleTracker": "Bible Tracker",
     "subtitle": "Ministry",
     "toggleLanguage": "Switch to Portuguese",
     "toggleTheme": "Toggle theme"
   },
   "home": {
     "hero": {
-      "title": "ISMAEL SILVA",
-      "subtitle": "MINISTRY",
+      "title": "Ministerio Pastor Ismael Silva",
+      "subtitle": "Teaching the Word of God",
       "tagline": "The Way to Happiness",
-      "cta": "Begin Your Journey",
+      "cta": "Begin Your Bible Year",
+      "sermons": "Sermons",
       "scroll": "Discover More Below"
+    },
+    "dailyInspiration": {
+      "title": "Verse of the Day",
+      "verses": [
+        {
+          "text": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+          "reference": "John 3:16"
+        },
+        {
+          "text": "Trust in the Lord with all your heart and lean not on your own understanding.",
+          "reference": "Proverbs 3:5"
+        },
+        {
+          "text": "I can do all this through him who gives me strength.",
+          "reference": "Philippians 4:13"
+        }
+      ]
+    },
+    "features": {
+      "title": "Ministry Resources",
+      "subtitle": "Explore our resources to grow in your spiritual journey",
+      "explore": "Explore",
+      "items": {
+        "bibleYear": {
+          "title": "Bible Year",
+          "description": "Read the entire Bible in one year with guided plans and inspiring commentaries."
+        },
+        "messages": {
+          "title": "Sermons",
+          "description": "Watch powerful messages that transform lives and strengthen faith."
+        },
+        "songs": {
+          "title": "Songs",
+          "description": "Listen to original worship songs available on all platforms."
+        }
+      }
     },
     "messages": {
       "title": "MESSAGES",
