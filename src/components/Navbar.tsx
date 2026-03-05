@@ -17,40 +17,19 @@ import {
   Heart,
   User,
   Mail,
+  BookOpen,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { toggleTheme, getStoredTheme, getEffectiveTheme } from "../lib/theme";
+import { useTheme } from "../context/ThemeContext";
 
 const DarkModeToggle: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const currentTheme = getStoredTheme();
-    return getEffectiveTheme(currentTheme) === "dark";
-  });
-  const pathname = usePathname();
+  const { isDarkMode, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleSystemChange = (e: MediaQueryListEvent) => {
-      if (getStoredTheme() === "system") {
-        setIsDarkMode(e.matches);
-      }
-    };
-    mediaQuery.addEventListener("change", handleSystemChange);
-    return () => mediaQuery.removeEventListener("change", handleSystemChange);
-  }, []);
-
-  // Only show toggle on homepage
-  if (pathname !== "/") return null;
-
-  const handleToggle = () => {
-    const newTheme = toggleTheme();
-    setIsDarkMode(newTheme === "dark");
-  };
   return (
     <Button
       variant="ghost"
       size="icon"
-      onClick={handleToggle}
+      onClick={toggleTheme}
       className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
       title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
@@ -65,10 +44,11 @@ const DarkModeToggle: React.FC = () => {
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
-  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
 
-  // Only show toggle on homepage
-  if (pathname !== "/") return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <Button
@@ -77,7 +57,7 @@ const LanguageSwitcher: React.FC = () => {
       onClick={() => setLanguage(language === "en" ? "br" : "en")}
       className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-sm"
     >
-      {language === "en" ? "🇺🇸 EN" : "🇧🇷 PT"}
+      {mounted ? (language === "en" ? "🇺🇸 EN" : "🇧🇷 PT") : "🇺🇸 EN"}
     </Button>
   );
 };
@@ -87,6 +67,11 @@ const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
   const { t } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const updateActive = () => {
@@ -221,7 +206,9 @@ const Navbar: React.FC = () => {
                 ISMAEL SILVA
               </span>
               <span className="text-xs text-gray-600 dark:text-gray-400">
-                {t("navbar.subtitle", "Ministry & Music")}
+                {mounted
+                  ? t("navbar.subtitle", "Ministry & Music")
+                  : "Ministry & Music"}
               </span>
             </div>
           </Link>
@@ -239,7 +226,7 @@ const Navbar: React.FC = () => {
                   )}
                 >
                   {item.icon}
-                  <span>{item.name}</span>
+                  <span>{mounted ? item.name : ""}</span>
                 </button>
               ) : (
                 <Link
@@ -254,13 +241,26 @@ const Navbar: React.FC = () => {
                   )}
                 >
                   {item.icon}
-                  <span>{item.name}</span>
+                  <span>{mounted ? item.name : ""}</span>
                 </Link>
               ),
             )}
             <div className="flex items-center space-x-2 ml-4">
               <LanguageSwitcher />
               <DarkModeToggle />
+            </div>
+            <div className="ml-4">
+              <Button
+                asChild
+                className="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-lg flex items-center space-x-2"
+              >
+                <Link href="/dashboard">
+                  <BookOpen className="h-4 w-4" />
+                  <span>
+                    {mounted ? t("navbar.bibleTracker", "Bible Tracker") : ""}
+                  </span>
+                </Link>
+              </Button>
             </div>
           </div>
           {/* Mobile Navigation */}
@@ -283,7 +283,9 @@ const Navbar: React.FC = () => {
                         className="flex items-center space-x-3 px-4 py-3 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-800 w-full"
                       >
                         {item.icon}
-                        <span className="font-medium">{item.name}</span>
+                        <span className="font-medium">
+                          {mounted ? item.name : ""}
+                        </span>
                       </button>
                     ) : (
                       <Link
@@ -297,10 +299,28 @@ const Navbar: React.FC = () => {
                         )}
                       >
                         {item.icon}
-                        <span className="font-medium">{item.name}</span>
+                        <span className="font-medium">
+                          {mounted ? item.name : ""}
+                        </span>
                       </Link>
                     ),
                   )}
+                  <div className="pt-4 px-4">
+                    <Button
+                      asChild
+                      className="w-full bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center space-x-2 py-6 rounded-xl"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Link href="/dashboard">
+                        <BookOpen className="h-5 w-5" />
+                        <span className="text-lg">
+                          {mounted
+                            ? t("navbar.bibleTracker", "Bible Tracker")
+                            : ""}
+                        </span>
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
