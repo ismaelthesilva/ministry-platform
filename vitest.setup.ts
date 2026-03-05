@@ -26,3 +26,20 @@ const localStorageMock = {
 Object.defineProperty(window, "localStorage", {
   value: localStorageMock,
 });
+
+// Mock IntersectionObserver
+class IntersectionObserverMock {
+  constructor(callback: any) {
+    this.callback = callback;
+  }
+  callback: any;
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
+}
+
+Object.defineProperty(window, "IntersectionObserver", {
+  writable: true,
+  configurable: true,
+  value: IntersectionObserverMock,
+});
