@@ -56,7 +56,8 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
   );
   const [announcement, setAnnouncement] = useState("");
 
-  const getDayFromDate = (date: string) => {
+  const getDayFromDate = (date: string | undefined | null) => {
+    if (!date) return "";
     const match = date.match(/^(\d{1,2})/);
     return match?.[1] ?? "";
   };
@@ -100,18 +101,47 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
         ];
 
   const monthTokenMap: Record<string, string> = {
-    janeiro: "jan", jan: "jan", january: "jan",
-    fevereiro: "fev", fev: "fev", feb: "feb", february: "feb",
-    marco: "mar", mar: "mar", march: "mar",
-    abril: "abr", abr: "abr", april: "apr",
-    maio: "mai", mai: "mai", may: "may",
-    junho: "jun", jun: "jun", june: "jun",
-    julho: "jul", jul: "jul", july: "jul",
-    agosto: "ago", ago: "ago", august: "aug",
-    setembro: "set", set: "set", sep: "sep", sept: "sep", september: "sep",
-    outubro: "out", out: "out", oct: "oct", october: "oct",
-    novembro: "nov", nov: "nov", november: "nov",
-    dezembro: "dez", dez: "dez", dec: "dec", december: "dec",
+    janeiro: "jan",
+    jan: "jan",
+    january: "jan",
+    fevereiro: "fev",
+    fev: "fev",
+    feb: "feb",
+    february: "feb",
+    marco: "mar",
+    mar: "mar",
+    march: "mar",
+    abril: "abr",
+    abr: "abr",
+    april: "apr",
+    maio: "mai",
+    mai: "mai",
+    may: "may",
+    junho: "jun",
+    jun: "jun",
+    june: "jun",
+    julho: "jul",
+    jul: "jul",
+    july: "jul",
+    agosto: "ago",
+    ago: "ago",
+    august: "aug",
+    setembro: "set",
+    set: "set",
+    sep: "sep",
+    sept: "sep",
+    september: "sep",
+    outubro: "out",
+    out: "out",
+    oct: "oct",
+    october: "oct",
+    novembro: "nov",
+    nov: "nov",
+    november: "nov",
+    dezembro: "dez",
+    dez: "dez",
+    dec: "dec",
+    december: "dec",
   };
 
   const getMonthKeyFromDate = (date: string) => {
@@ -163,7 +193,10 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
       };
       return acc;
     },
-    {} as Record<string, { total: number; completedCount: number; completionPercentage: number }>,
+    {} as Record<
+      string,
+      { total: number; completedCount: number; completionPercentage: number }
+    >,
   );
 
   const currentMonthKey = getMonthKeyFromDate(data.todayReading?.date || "");
@@ -214,7 +247,11 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
     } else {
       setCompletedIds((prev) => [...prev, reading.id]);
     }
-    const result = await toggleReadingComplete(userId, reading.id, currentlyCompleted);
+    const result = await toggleReadingComplete(
+      userId,
+      reading.id,
+      currentlyCompleted,
+    );
     if (!result.success) {
       if (currentlyCompleted) {
         setCompletedIds((prev) => [...prev, reading.id]);
@@ -227,12 +264,17 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
           : "Não foi possível atualizar a leitura. Tente novamente.",
       );
     } else {
-      const localizedDay = data.user?.preferredLanguage === "en" ? "Day" : "Dia";
+      const localizedDay =
+        data.user?.preferredLanguage === "en" ? "Day" : "Dia";
       const dayValue = getDayFromDate(reading.date) || reading.dayNumber;
       const actionText =
         data.user?.preferredLanguage === "en"
-          ? currentlyCompleted ? "marked incomplete" : "marked complete"
-          : currentlyCompleted ? "marcado como pendente" : "marcado como concluído";
+          ? currentlyCompleted
+            ? "marked incomplete"
+            : "marked complete"
+          : currentlyCompleted
+            ? "marcado como pendente"
+            : "marcado como concluído";
       setAnnouncement(`${localizedDay} ${dayValue} ${actionText}`);
     }
     setLoading(null);
@@ -359,7 +401,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
   return (
     <div className="container max-w-7xl mx-auto p-6 space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">{data.plan?.title}</h1>
+        <h1 className="text-3xl font-bold tracking-tight">
+          {data.plan?.title}
+        </h1>
         <p className="text-muted-foreground">Track your daily Bible readings</p>
       </div>
 
@@ -367,7 +411,8 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
         <CardHeader>
           <CardTitle>Your Progress</CardTitle>
           <CardDescription>
-            {completedIds.length} of {data.allReadings.length} readings completed
+            {completedIds.length} of {data.allReadings.length} readings
+            completed
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -378,14 +423,19 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
               aria-live="polite"
             >
               <span className="font-medium">
-                {Math.round((completedIds.length / data.allReadings.length) * 100)}%
+                {Math.round(
+                  (completedIds.length / data.allReadings.length) * 100,
+                )}
+                %
               </span>
               <span className="text-muted-foreground">
                 {data.allReadings.length - completedIds.length} remaining
               </span>
             </div>
             <Progress
-              value={Math.round((completedIds.length / data.allReadings.length) * 100)}
+              value={Math.round(
+                (completedIds.length / data.allReadings.length) * 100,
+              )}
               className="h-2"
             />
           </div>
@@ -393,7 +443,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
       </Card>
 
       {announcement && (
-        <p className="sr-only" aria-live="assertive">{announcement}</p>
+        <p className="sr-only" aria-live="assertive">
+          {announcement}
+        </p>
       )}
 
       {data.todayReading && (
@@ -419,14 +471,19 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
             <div className="space-y-4">
               <div>
                 <h4 className="font-semibold mb-1">Main Reading</h4>
-                <p className="text-muted-foreground">{data.todayReading.bible}</p>
+                <p className="text-muted-foreground">
+                  {data.todayReading.bible}
+                </p>
               </div>
-              {(isPropheticPlan || isClassicPlan) && data.todayReading.title && (
-                <div>
-                  <h4 className="font-semibold mb-1">Topic</h4>
-                  <p className="text-muted-foreground">{data.todayReading.title}</p>
-                </div>
-              )}
+              {(isPropheticPlan || isClassicPlan) &&
+                data.todayReading.title && (
+                  <div>
+                    <h4 className="font-semibold mb-1">Topic</h4>
+                    <p className="text-muted-foreground">
+                      {data.todayReading.title}
+                    </p>
+                  </div>
+                )}
               {data.todayReading.author && (
                 <div>
                   <h4 className="font-semibold mb-1">Commentary</h4>
@@ -443,7 +500,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
       <Card>
         <CardHeader>
           <CardTitle>All Readings</CardTitle>
-          <CardDescription>Complete year reading plan with 366 days</CardDescription>
+          <CardDescription>
+            Complete year reading plan with 366 days
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs value={activeMonth} onValueChange={setActiveMonth}>
@@ -463,9 +522,12 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                 )}
               >
                 <span className="font-semibold">
-                  {data.user?.preferredLanguage === "en" ? "All" : "Todos"} ({totalReadings})
+                  {data.user?.preferredLanguage === "en" ? "All" : "Todos"} (
+                  {totalReadings})
                 </span>
-                <span className="text-[10px] text-muted-foreground">{totalCompletion}% complete</span>
+                <span className="text-[10px] text-muted-foreground">
+                  {totalCompletion}% complete
+                </span>
               </TabsTrigger>
               {availableMonths.map((month) => {
                 const stats = monthStats[month.key] ?? {
@@ -489,7 +551,9 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                       isCurrent && "ring-1 ring-blue-400/70",
                     )}
                   >
-                    <span className="font-semibold">{month.label} ({stats.total})</span>
+                    <span className="font-semibold">
+                      {month.label} ({stats.total})
+                    </span>
                     <span className="text-[10px] text-muted-foreground">
                       {stats.completionPercentage}% complete
                     </span>
@@ -519,12 +583,17 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                           <div className="flex items-center justify-between gap-3">
                             <div>
                               <p className="text-xs font-semibold uppercase tracking-wide reading-status-label">
-                                {data.user?.preferredLanguage === "en" ? "Day" : "Dia"}
+                                {data.user?.preferredLanguage === "en"
+                                  ? "Day"
+                                  : "Dia"}
                                 <span className="ml-1">
-                                  {getDayFromDate(reading.date) || reading.dayNumber}
+                                  {getDayFromDate(reading.date) ||
+                                    reading.dayNumber}
                                 </span>
                               </p>
-                              <p className="text-xs text-muted-foreground">{reading.date}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {reading.date}
+                              </p>
                             </div>
                             <ReadingStatusButton
                               completed={completed}
@@ -551,7 +620,10 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                   <div className="hidden md:block">
                     <div className="rounded-md border overflow-auto">
                       <table
-                        className={cn("reading-table w-full text-sm table-fixed", tableMinWidth)}
+                        className={cn(
+                          "reading-table w-full text-sm table-fixed",
+                          tableMinWidth,
+                        )}
                         aria-label="Reading tracker table"
                       >
                         <thead>
@@ -578,7 +650,8 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                             : (readingsByMonth[monthKey] ?? [])
                           ).map((reading) => {
                             const completed = isReadingCompleted(reading.id);
-                            const isToday = reading.id === data.todayReading?.id;
+                            const isToday =
+                              reading.id === data.todayReading?.id;
                             return (
                               <tr
                                 key={reading.id}
@@ -588,7 +661,11 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                                 {baseColumns.map((column) => (
                                   <td
                                     key={column.key}
-                                    className={cn("reading-cell", "text-xs", column.className)}
+                                    className={cn(
+                                      "reading-cell",
+                                      "text-xs",
+                                      column.className,
+                                    )}
                                   >
                                     {column.render(reading)}
                                   </td>

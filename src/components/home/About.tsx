@@ -5,8 +5,12 @@ import Image from "next/image";
 import { Heart, Cross, Globe, Star } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function About({ aboutContent }: { aboutContent: string[] }) {
+export default function About() {
   const { t } = useLanguage();
+
+  const aboutContent: string[] = Array.from({ length: 6 }, (_, i) =>
+    t(`home.about.content.${i}`),
+  );
 
   return (
     <section

@@ -51,89 +51,32 @@ export default function Page() {
     const match = url.match(regex);
     return match ? match[1] : "";
   };
-  // Define the data directly since the translation system expects simple strings
-  const messages: Video[] = [
-    {
-      link: "https://www.youtube.com/watch?v=Gk1NMp3g_b0",
-      title: t("home.messages.videos.0.title", "The Incomparable Christ"),
-      description: t(
-        "home.messages.videos.0.description",
-        "Who is Jesus Christ? How important is Jesus to my life today?",
-      ),
-    },
-    {
-      link: "https://www.youtube.com/watch?v=EZ4LBnEZPlg",
-      title: t("home.messages.videos.1.title", "The way to Happiness"),
-      description: t(
-        "home.messages.videos.1.description",
-        "Do you want to be happy? Discover the path to true happiness.",
-      ),
-    },
-    {
-      link: "https://www.youtube.com/watch?v=jf9Kogw6FU4",
-      title: t("home.messages.videos.2.title", "O Incomparável Cristo"),
-      description: t(
-        "home.messages.videos.2.description",
-        "Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje?",
-      ),
-    },
-  ];
 
-  const books: Book[] = [
-    {
-      title: t("home.books.items.0.title", "eBook"),
-      subtitle: t("home.books.items.0.subtitle", "English Edition"),
-      image: t("home.books.items.0.image", "/ministry-images/book-king.jpg"),
-      link: t(
-        "home.books.items.0.link",
-        "https://www.amazon.com/dp/B082LX6ZWZ",
-      ),
-      buttonText: t("home.books.items.0.buttonText", "Buy on Amazon Kindle"),
-    },
-    {
-      title: t("home.books.items.1.title", "eBook & Paperback"),
-      subtitle: t("home.books.items.1.subtitle", "Portuguese Edition"),
-      image: t("home.books.items.1.image", "/ministry-images/livro-rei.jpg"),
-      link: t(
-        "home.books.items.1.link",
-        "https://www.amazon.com.br/dp/B082J64R4X",
-      ),
-      buttonText: t("home.books.items.1.buttonText", "Buy on Amazon"),
-    },
-  ];
+  // Build arrays from locale — IDs come from the JSON so switching language
+  // picks up the correct video set automatically.
+  const messages: Video[] = Array.from({ length: 3 }, (_, i) => ({
+    link: `https://www.youtube.com/watch?v=${t(`home.messages.videos.${i}.id`)}`,
+    title: t(`home.messages.videos.${i}.title`),
+    description: t(`home.messages.videos.${i}.description`),
+  }));
 
-  const songs: Video[] = [
-    {
-      link: "https://www.youtube.com/watch?v=TncbtUXcFRs",
-      title: t("home.songs.videos.0.title", "O Toque que Cura"),
-      description: t("home.songs.videos.0.description", "Original Song"),
-    },
-    {
-      link: "https://www.youtube.com/watch?v=YI-vkMp2Gjk",
-      title: t("home.songs.videos.1.title", "Virtuosa"),
-      description: t("home.songs.videos.1.description", "Original Song"),
-    },
-    {
-      link: "https://www.youtube.com/watch?v=mtK__QsG0bk",
-      title: t("home.songs.videos.2.title", "O Teu Amor me salvou"),
-      description: t("home.songs.videos.2.description", "Original Song"),
-    },
-  ];
+  const books: Book[] = Array.from({ length: 2 }, (_, i) => ({
+    title: t(`home.books.items.${i}.title`),
+    subtitle: t(`home.books.items.${i}.subtitle`),
+    image: t(`home.books.items.${i}.image`),
+    link: t(`home.books.items.${i}.link`),
+    buttonText: t(`home.books.items.${i}.buttonText`),
+  }));
 
-  const musicDescription: string[] = [
-    t(
-      "home.music.description.0",
-      "My passion for music has led me to create original worship songs...",
-    ),
-    t(
-      "home.music.description.1",
-      "Listen to my original songs on popular streaming platforms...",
-    ),
-    t(
-      "home.music.description.2",
-      "Click links to listen to my Original songs on Apple Music, Spotify and many others!",
-    ),
-  ];
+  const songs: Video[] = Array.from({ length: 3 }, (_, i) => ({
+    link: `https://www.youtube.com/watch?v=${t(`home.songs.videos.${i}.id`)}`,
+    title: t(`home.songs.videos.${i}.title`),
+    description: t(`home.songs.videos.${i}.description`),
+  }));
+
+  const musicDescription: string[] = Array.from({ length: 3 }, (_, i) =>
+    t(`home.music.description.${i}`),
+  );
 
   return (
     <div className="min-h-screen bg-heavenly relative overflow-hidden">

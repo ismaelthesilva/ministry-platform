@@ -7,17 +7,55 @@
     "revelation": "Apocalipse",
     "about": "Sobre",
     "contact": "Contato",
+    "bibleTracker": "Ano Bíblico",
     "subtitle": "Ministério",
     "toggleLanguage": "Mudar para Inglês",
     "toggleTheme": "Alternar tema"
   },
   "home": {
     "hero": {
-      "title": "ISMAEL SILVA",
-      "subtitle": "MINISTÉRIO",
+      "title": "Ministério Pastor Ismael Silva",
+      "subtitle": "Ensinando a Palavra de Deus",
       "tagline": "O Caminho para a Felicidade",
-      "cta": "Inicie Sua Jornada",
+      "cta": "Inicie seu Ano Bíblico",
+      "sermons": "Sermões",
       "scroll": "Descubra Mais Abaixo"
+    },
+    "dailyInspiration": {
+      "title": "Versículo do Dia",
+      "verses": [
+        {
+          "text": "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.",
+          "reference": "João 3:16"
+        },
+        {
+          "text": "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.",
+          "reference": "Provérbios 3:5"
+        },
+        {
+          "text": "Posso todas as coisas naquele que me fortalece.",
+          "reference": "Filipenses 4:13"
+        }
+      ]
+    },
+    "features": {
+      "title": "Recursos do Ministério",
+      "subtitle": "Explore nossos recursos para crescer em sua jornada espiritual",
+      "explore": "Explorar",
+      "items": {
+        "bibleYear": {
+          "title": "Ano Bíblico",
+          "description": "Leia a Bíblia completa em um ano com planos guiados e comentários inspiradores."
+        },
+        "messages": {
+          "title": "Sermões",
+          "description": "Assista mensagens poderosas que transformam vidas e fortalecem a fé."
+        },
+        "songs": {
+          "title": "Músicas",
+          "description": "Ouça canções originais de adoração disponíveis em todas as plataformas."
+        }
+      }
     },
     "messages": {
       "title": "MENSAGENS",

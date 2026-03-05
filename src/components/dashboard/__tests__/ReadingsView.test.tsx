@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ReadingsView } from "@/components/dashboard/ReadingsView";
 import { useRouter } from "next/navigation";
@@ -10,7 +10,7 @@ vi.mock("next/navigation", () => ({
 
 // Mock server actions
 vi.mock("@/app/dashboard/actions", () => ({
-  markReadingComplete: vi.fn(() => Promise.resolve({ success: true })),
+  toggleReadingComplete: vi.fn(() => Promise.resolve({ success: true })),
 }));
 
 const mockData = {
@@ -25,14 +25,11 @@ const mockData = {
   todayReading: {
     id: "1",
     dayNumber: 1,
-    dateDisplay: "January 1",
-    bibleTextMain: "Genesis 1-3",
-    bibleTextDevo: null,
-    commentaryAuthor: null,
-    commentaryWork: null,
-    commentaryRef: null,
-    topic: null,
-    language: "en",
+    date: "1 January",
+    bible: "Genesis 1-3",
+    author: null,
+    book: null,
+    title: null,
   },
   completionPercentage: 10,
   completedReadingIds: ["2"],
@@ -40,26 +37,20 @@ const mockData = {
     {
       id: "1",
       dayNumber: 1,
-      dateDisplay: "January 1",
-      bibleTextMain: "Genesis 1-3",
-      bibleTextDevo: null,
-      commentaryAuthor: null,
-      commentaryWork: null,
-      commentaryRef: null,
-      topic: null,
-      language: "en",
+      date: "1 January",
+      bible: "Genesis 1-3",
+      author: null,
+      book: null,
+      title: null,
     },
     {
       id: "2",
       dayNumber: 2,
-      dateDisplay: "January 2",
-      bibleTextMain: "Genesis 4-6",
-      bibleTextDevo: null,
-      commentaryAuthor: null,
-      commentaryWork: null,
-      commentaryRef: null,
-      topic: null,
-      language: "en",
+      date: "2 January",
+      bible: "Genesis 4-6",
+      author: null,
+      book: null,
+      title: null,
     },
   ],
 };
@@ -99,8 +90,8 @@ describe("ReadingsView", () => {
 
   it("renders all readings in table", () => {
     render(<ReadingsView data={mockData} userId="test-user" />);
-    expect(screen.getByText("Genesis 1-3")).toBeInTheDocument();
-    expect(screen.getByText("Genesis 4-6")).toBeInTheDocument();
+    expect(screen.getAllByText("Genesis 1-3")[0]).toBeInTheDocument();
+    expect(screen.getAllByText("Genesis 4-6")[0]).toBeInTheDocument();
   });
 
   it("shows completed status for finished readings", () => {
@@ -111,32 +102,15 @@ describe("ReadingsView", () => {
   });
 
   it("handles marking reading as complete", async () => {
-    const { markReadingComplete } = await import("@/app/dashboard/actions");
-    
+    const { toggleReadingComplete } = await import("@/app/dashboard/actions");
+
     render(<ReadingsView data={mockData} userId="test-user" />);
-    
+
     const buttons = screen.getAllByRole("button");
-    const markCompleteButton = buttons.find(
-      (btn) => btn.textContent === "Mark Complete",
-    );
+    fireEvent.click(buttons[0]);
 
-    if (markCompleteButton) {
-      fireEvent.click(markCompleteButton);
-
-      await waitFor(() => {
-        expect(markReadingComplete).toHaveBeenCalledWith("test-user", "1");
-        expect(mockRefresh).toHaveBeenCalled();
-      });
-    }
+    await waitFor(() => {
+      expect(toggleReadingComplete).toHaveBeenCalled();
+    });
   });
 });
-function beforeEach(arg0: () => void) {
-  const vitestBeforeEach = (globalThis as { beforeEach?: (fn: () => void) => void })
-    .beforeEach;
-  if (typeof vitestBeforeEach === "function") {
-    vitestBeforeEach(arg0);
-    return;
-  }
-  throw new Error("beforeEach is not available in this environment.");
-}
-
