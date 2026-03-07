@@ -17,22 +17,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  User,
-  Mail,
-  LogOut,
-  Save,
-  Edit2,
-  X,
-  Lock,
-  KeyRound,
-} from "lucide-react";
+import { User, Mail, LogOut, Save, Edit2, X } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { useState } from "react";
 import {
   updateProfile,
   updateEmail,
-  changePassword,
   type UpdateProfileData,
 } from "@/app/dashboard/profile/actions";
 import { useRouter } from "next/navigation";
@@ -69,16 +59,6 @@ export function ProfileView({ user }: ProfileViewProps) {
   const [newEmail, setNewEmail] = useState(user.email || "");
   const [emailLoading, setEmailLoading] = useState(false);
   const [emailMessage, setEmailMessage] = useState<{
-    type: "success" | "error";
-    text: string;
-  } | null>(null);
-
-  // Password change state
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [passwordLoading, setPasswordLoading] = useState(false);
-  const [passwordMessage, setPasswordMessage] = useState<{
     type: "success" | "error";
     text: string;
   } | null>(null);
@@ -142,29 +122,6 @@ export function ProfileView({ user }: ProfileViewProps) {
       setEmailMessage({ type: "error", text: result.message });
     }
     setEmailLoading(false);
-  };
-
-  const handlePasswordSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setPasswordMessage(null);
-    if (newPassword !== confirmPassword) {
-      setPasswordMessage({
-        type: "error",
-        text: "New passwords do not match.",
-      });
-      return;
-    }
-    setPasswordLoading(true);
-    const result = await changePassword(currentPassword, newPassword);
-    if (result.success) {
-      setPasswordMessage({ type: "success", text: result.message });
-      setCurrentPassword("");
-      setNewPassword("");
-      setConfirmPassword("");
-    } else {
-      setPasswordMessage({ type: "error", text: result.message });
-    }
-    setPasswordLoading(false);
   };
 
   return (
@@ -527,79 +484,6 @@ export function ProfileView({ user }: ProfileViewProps) {
           </Card>
         )}
       </form>
-
-      {/* Change Password Card */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Lock className="h-5 w-5" />
-            Change Password
-          </CardTitle>
-          <CardDescription>
-            Choose a strong password that you don&apos;t use elsewhere
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handlePasswordSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="currentPassword">Current Password</Label>
-              <Input
-                id="currentPassword"
-                type="password"
-                value={currentPassword}
-                onChange={(e) => setCurrentPassword(e.target.value)}
-                placeholder="••••••••"
-                autoComplete="current-password"
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="newPassword">New Password</Label>
-              <Input
-                id="newPassword"
-                type="password"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-                placeholder="••••••••"
-                autoComplete="new-password"
-                minLength={6}
-                required
-              />
-              <p className="text-xs text-muted-foreground">
-                Minimum 6 characters
-              </p>
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm New Password</Label>
-              <Input
-                id="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="••••••••"
-                autoComplete="new-password"
-                minLength={6}
-                required
-              />
-            </div>
-            {passwordMessage && (
-              <p
-                className={`text-sm px-3 py-2 rounded border ${
-                  passwordMessage.type === "success"
-                    ? "text-green-700 bg-green-50 border-green-200"
-                    : "text-red-700 bg-red-50 border-red-200"
-                }`}
-              >
-                {passwordMessage.text}
-              </p>
-            )}
-            <Button type="submit" disabled={passwordLoading}>
-              <KeyRound className="mr-2 h-4 w-4" />
-              {passwordLoading ? "Changing…" : "Change Password"}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
 
       {/* Account Actions Card */}
       <Card>
