@@ -9,8 +9,6 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { cn } from "../lib/utils";
 import {
   Menu,
-  Sun,
-  Moon,
   Book,
   Music,
   MessageSquare,
@@ -20,33 +18,12 @@ import {
   BookOpen,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { useTheme } from "../context/ThemeContext";
-
-const DarkModeToggle: React.FC = () => {
-  const { isDarkMode, toggleTheme } = useTheme();
-
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={toggleTheme}
-      className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
-      title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-    >
-      {isDarkMode ? (
-        <Sun className="h-5 w-5 text-yellow-500" />
-      ) : (
-        <Moon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-      )}
-    </Button>
-  );
-};
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setMounted(true);
   }, []);
 
@@ -55,7 +32,7 @@ const LanguageSwitcher: React.FC = () => {
       variant="ghost"
       size="sm"
       onClick={() => setLanguage(language === "en" ? "br" : "en")}
-      className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-sm"
+      className="rounded-full hover:bg-gray-100 text-sm"
     >
       {mounted ? (language === "en" ? "🇺🇸 EN" : "🇧🇷 PT") : "🇺🇸 EN"}
     </Button>
@@ -67,11 +44,7 @@ const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
   const { t } = useLanguage();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const [mounted, setMounted] = React.useState(true);
 
   useEffect(() => {
     const updateActive = () => {
@@ -186,7 +159,7 @@ const Navbar: React.FC = () => {
     return () => observer.disconnect();
   }, [pathname]);
   return (
-    <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+    <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -202,10 +175,10 @@ const Navbar: React.FC = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-gray-900 dark:text-white text-sm">
+              <span className="font-bold text-gray-900 text-sm">
                 ISMAEL SILVA
               </span>
-              <span className="text-xs text-gray-600 dark:text-gray-400">
+              <span className="text-xs text-gray-600">
                 {mounted
                   ? t("navbar.subtitle", "Ministry & Music")
                   : "Ministry & Music"}
@@ -221,8 +194,8 @@ const Navbar: React.FC = () => {
                   onClick={() => handleNavClick(item.href)}
                   className={cn(
                     "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-                    "hover:bg-gray-100 dark:hover:bg-gray-800",
-                    "text-gray-700 dark:text-gray-300",
+                    "hover:bg-gray-100",
+                    "text-gray-700",
                   )}
                 >
                   {item.icon}
@@ -234,10 +207,10 @@ const Navbar: React.FC = () => {
                   href={item.href}
                   className={cn(
                     "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-                    "hover:bg-gray-100 dark:hover:bg-gray-800",
+                    "hover:bg-gray-100",
                     isActive(item.href)
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
-                      : "text-gray-700 dark:text-gray-300",
+                      ? "bg-blue-100 text-blue-700"
+                      : "text-gray-700",
                   )}
                 >
                   {item.icon}
@@ -247,7 +220,6 @@ const Navbar: React.FC = () => {
             )}
             <div className="flex items-center space-x-2 ml-4">
               <LanguageSwitcher />
-              <DarkModeToggle />
             </div>
             <div className="ml-4">
               <Button
@@ -266,7 +238,6 @@ const Navbar: React.FC = () => {
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-2">
             <LanguageSwitcher />
-            <DarkModeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full">
@@ -280,7 +251,7 @@ const Navbar: React.FC = () => {
                       <button
                         key={item.name}
                         onClick={() => handleNavClick(item.href)}
-                        className="flex items-center space-x-3 px-4 py-3 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-800 w-full"
+                        className="flex items-center space-x-3 px-4 py-3 rounded-lg text-left hover:bg-gray-100 w-full"
                       >
                         {item.icon}
                         <span className="font-medium">
@@ -293,9 +264,8 @@ const Navbar: React.FC = () => {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          "flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800",
-                          isActive(item.href) &&
-                            "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+                          "flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-gray-100",
+                          isActive(item.href) && "bg-blue-100 text-blue-700",
                         )}
                       >
                         {item.icon}

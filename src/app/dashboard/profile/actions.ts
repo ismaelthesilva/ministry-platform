@@ -3,7 +3,6 @@
 import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import bcrypt from "bcryptjs";
 
 export interface UpdateProfileData {
   firstName?: string;
@@ -98,55 +97,5 @@ export async function updateEmail(newEmail: string) {
   } catch (error) {
     console.error("Error updating email:", error);
     return { success: false, message: "Failed to update email." };
-  }
-}
-
-export async function changePassword(
-  currentPassword: string,
-  newPassword: string,
-) {
-  try {
-    const session = await auth();
-
-    if (!session?.user?.id) {
-      return { success: false, message: "Unauthorized" };
-    }
-
-    if (!newPassword || newPassword.length < 6) {
-      return {
-        success: false,
-        message: "New password must be at least 6 characters.",
-      };
-    }
-
-    const user = await prisma.user.findUnique({
-      where: { id: session.user.id },
-      select: { password: true },
-    });
-
-    if (!user?.password) {
-      return {
-        success: false,
-        message:
-          "No password set on this account (OAuth login). You cannot change the password here.",
-      };
-    }
-
-    const isValid = await bcrypt.compare(currentPassword, user.password);
-    if (!isValid) {
-      return { success: false, message: "Current password is incorrect." };
-    }
-
-    const hashed = await bcrypt.hash(newPassword, 10);
-
-    await prisma.user.update({
-      where: { id: session.user.id },
-      data: { password: hashed },
-    });
-
-    return { success: true, message: "Password changed successfully." };
-  } catch (error) {
-    console.error("Error changing password:", error);
-    return { success: false, message: "Failed to change password." };
   }
 }
