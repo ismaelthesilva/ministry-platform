@@ -44,7 +44,11 @@ const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
   const { t } = useLanguage();
-  const [mounted, setMounted] = React.useState(true);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const updateActive = () => {
