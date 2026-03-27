@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
+import { signIn } from "next-auth/react";
 import { sendMagicLink } from "./actions";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MailCheck } from "lucide-react";
+import { MailCheck, Fingerprint } from "lucide-react";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -116,6 +117,25 @@ export default function LoginPage() {
 
             <SubmitButton />
           </form>
+
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase text-muted-foreground">
+              <span className="bg-background px-2">Or continue with</span>
+            </div>
+          </div>
+
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full gap-2"
+            onClick={() => signIn("passkey")}
+          >
+            <Fingerprint className="h-4 w-4 text-blue-500" />
+            Sign in with Passkey
+          </Button>
 
           <div className="mt-4 text-center">
             <Link

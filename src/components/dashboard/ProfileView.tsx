@@ -17,8 +17,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { User, Mail, LogOut, Save, Edit2, X } from "lucide-react";
-import { signOut } from "next-auth/react";
+import { User, Mail, LogOut, Save, Edit2, X, Fingerprint } from "lucide-react";
+import { signOut, signIn } from "next-auth/react";
 import { useState } from "react";
 import {
   updateProfile,
@@ -484,6 +484,32 @@ export function ProfileView({ user }: ProfileViewProps) {
           </Card>
         )}
       </form>
+
+      {/* Security Card */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle>Security</CardTitle>
+          <CardDescription>
+            Manage passkeys for biometric or hardware-key login
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex flex-col gap-1">
+            <p className="text-sm text-muted-foreground">
+              Register a Passkey (TouchID, FaceID, or hardware security key) so
+              you can sign in without a magic link.
+            </p>
+          </div>
+          <Button
+            variant="outline"
+            className="w-full justify-start gap-2"
+            onClick={() => signIn("passkey", { action: "register" })}
+          >
+            <Fingerprint className="h-4 w-4 text-blue-500" />
+            Register new Passkey
+          </Button>
+        </CardContent>
+      </Card>
 
       {/* Account Actions Card */}
       <Card>
