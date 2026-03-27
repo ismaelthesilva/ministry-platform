@@ -30,6 +30,7 @@ model User {
   // Relations
   accounts          Account[]
   sessions          Session[]
+  Authenticators    Authenticator[]
   progress          UserProgress[]
   
   createdAt         DateTime  @default(now())
@@ -69,6 +70,21 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Authenticator {
+  credentialID         String  @id
+  userId               String
+  providerAccountId    String
+  credentialPublicKey  String
+  counter              Int
+  credentialDeviceType String
+  credentialBackedUp   Boolean
+  transports           String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, credentialID])
 }
 
 model Plan {
