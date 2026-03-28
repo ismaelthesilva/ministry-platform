@@ -18,7 +18,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { User, Mail, LogOut, Save, Edit2, X, Fingerprint } from "lucide-react";
-import { signOut, signIn } from "next-auth/react";
+import { signOut } from "next-auth/react";
+import { signIn as signInWebAuthn } from "next-auth/webauthn";
 import { useState } from "react";
 import {
   updateProfile,
@@ -503,7 +504,7 @@ export function ProfileView({ user }: ProfileViewProps) {
           <Button
             variant="outline"
             className="w-full justify-start gap-2"
-            onClick={() => signIn("passkey", { action: "register" })}
+            onClick={() => signInWebAuthn("passkey", { action: "register" })}
           >
             <Fingerprint className="h-4 w-4 text-blue-500" />
             Register new Passkey

@@ -66,7 +66,7 @@ export default function PlanSelector({
             {language === "pt" ? "Sair" : "Sign Out"}
           </Button>
         </div>
-        
+
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             {language === "pt"
@@ -122,8 +122,8 @@ export default function PlanSelector({
                       ? "Selecionando..."
                       : "Selecting..."
                     : language === "pt"
-                      ? "Selecionar"
-                      : "Select"}
+                    ? "Selecionar"
+                    : "Select"}
                 </Button>
               </CardContent>
             </Card>

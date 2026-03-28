@@ -22,7 +22,7 @@ describe("Navbar", () => {
           <LanguageProvider>
             <Navbar />
           </LanguageProvider>
-        </ThemeProvider>,
+        </ThemeProvider>
       );
     });
 

@@ -28,7 +28,9 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [theme, setThemeState] = useState<Theme>(() => getStoredTheme());
-  const [isDarkMode, setIsDarkMode] = useState(() => getEffectiveTheme(getStoredTheme()) === "dark");
+  const [isDarkMode, setIsDarkMode] = useState(
+    () => getEffectiveTheme(getStoredTheme()) === "dark"
+  );
 
   // Apply theme to DOM on client side only
   useLayoutEffect(() => {

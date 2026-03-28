@@ -170,7 +170,10 @@ async function createSampleReadings() {
         const dayNumber = month * 30 + day;
         if (dayNumber > 365) break;
 
-        const date = `${day < 10 ? "0" + day : day}-${months[month].slice(0, 3)}`;
+        const date = `${day < 10 ? "0" + day : day}-${months[month].slice(
+          0,
+          3
+        )}`;
 
         let bible = "";
         let author: string | null = null;

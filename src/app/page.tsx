@@ -55,7 +55,9 @@ export default function Page() {
   // Build arrays from locale — IDs come from the JSON so switching language
   // picks up the correct video set automatically.
   const messages: Video[] = Array.from({ length: 3 }, (_, i) => ({
-    link: `https://www.youtube.com/watch?v=${t(`home.messages.videos.${i}.id`)}`,
+    link: `https://www.youtube.com/watch?v=${t(
+      `home.messages.videos.${i}.id`
+    )}`,
     title: t(`home.messages.videos.${i}.title`),
     description: t(`home.messages.videos.${i}.description`),
   }));
@@ -75,7 +77,7 @@ export default function Page() {
   }));
 
   const musicDescription: string[] = Array.from({ length: 3 }, (_, i) =>
-    t(`home.music.description.${i}`),
+    t(`home.music.description.${i}`)
   );
 
   return (
@@ -293,7 +295,7 @@ export default function Page() {
             <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed font-light">
               {t(
                 "home.promise.subtitle",
-                "The hope of every believer - the blessed promise of our Lord's return",
+                "The hope of every believer - the blessed promise of our Lord's return"
               )}
             </p>
           </div>
@@ -312,7 +314,7 @@ export default function Page() {
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
                   {t(
                     "home.promise.items.0.description",
-                    '"And if I go and prepare a place for you, I will come again and receive you to Myself; that where I am, there you may be also."',
+                    '"And if I go and prepare a place for you, I will come again and receive you to Myself; that where I am, there you may be also."'
                   )}
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
@@ -333,7 +335,7 @@ export default function Page() {
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
                   {t(
                     "home.promise.items.1.description",
-                    "\"Then the King will say to those on His right hand, 'Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world.'\"",
+                    "\"Then the King will say to those on His right hand, 'Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world.'\""
                   )}
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
@@ -354,7 +356,7 @@ export default function Page() {
                 <CardDescription className="text-white/80 text-lg leading-relaxed">
                   {t(
                     "home.promise.items.2.description",
-                    '"And God will wipe away every tear from their eyes; there shall be no more death, nor sorrow, nor crying. There shall be no more pain, for the former things have passed away."',
+                    '"And God will wipe away every tear from their eyes; there shall be no more death, nor sorrow, nor crying. There shall be no more pain, for the former things have passed away."'
                   )}
                 </CardDescription>
                 <p className="text-yellow-300 font-semibold mt-4">
@@ -375,19 +377,19 @@ export default function Page() {
               <h3 className="text-4xl md:text-5xl font-bold text-yellow-300 mb-6 text-divine-glow">
                 {t(
                   "home.promise.declaration.title",
-                  '"EVEN SO, COME LORD JESUS!"',
+                  '"EVEN SO, COME LORD JESUS!"'
                 )}
               </h3>
               <p className="text-white/90 text-xl leading-relaxed mb-4">
                 {t(
                   "home.promise.declaration.text",
-                  'The Spirit and the bride say, "Come!" And let him who hears say, "Come!" And let him who thirsts come. Whoever desires, let him take the water of life freely.',
+                  'The Spirit and the bride say, "Come!" And let him who hears say, "Come!" And let him who thirsts come. Whoever desires, let him take the water of life freely.'
                 )}
               </p>
               <p className="text-yellow-300 font-bold text-lg">
                 {t(
                   "home.promise.declaration.reference",
-                  "- Revelation 22:17, 20",
+                  "- Revelation 22:17, 20"
                 )}
               </p>
 
@@ -436,7 +438,7 @@ export default function Page() {
             <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
               {t(
                 "home.contact.subtitle",
-                "Connect with us as we journey together toward His eternal kingdom",
+                "Connect with us as we journey together toward His eternal kingdom"
               )}
             </p>
           </div>
@@ -495,7 +497,7 @@ export default function Page() {
             <p className="text-gray-300 text-lg italic">
               {t(
                 "home.contact.message",
-                '"Come, Lord Jesus!" - Revelation 22:20',
+                '"Come, Lord Jesus!" - Revelation 22:20'
               )}
             </p>
           </div>

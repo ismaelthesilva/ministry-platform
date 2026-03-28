@@ -50,7 +50,7 @@ describe("Footer", () => {
     it("renders connect prompt", () => {
       render(<DeveloperFooter />);
       expect(
-        screen.getByText("Would you like to connect?"),
+        screen.getByText("Would you like to connect?")
       ).toBeInTheDocument();
     });
 

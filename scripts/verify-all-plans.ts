@@ -26,7 +26,9 @@ async function main() {
   console.log("==================");
   plans.forEach((plan) => {
     console.log(
-      `${plan.language.toUpperCase()} - ${plan.title} (${plan.slug}): ${plan._count.readings} readings`,
+      `${plan.language.toUpperCase()} - ${plan.title} (${plan.slug}): ${
+        plan._count.readings
+      } readings`
     );
   });
 
@@ -41,7 +43,7 @@ async function main() {
 
     if (firstReading) {
       console.log(
-        `${plan.language.toUpperCase()} ${plan.slug}: ${firstReading.date}`,
+        `${plan.language.toUpperCase()} ${plan.slug}: ${firstReading.date}`
       );
     }
   }

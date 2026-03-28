@@ -138,7 +138,7 @@ Implemented Next.js Server Actions for type-safe, server-side operations:
 export async function selectPlan(
   userId: string,
   planSlug: string,
-  language: string,
+  language: string
 );
 export async function markReadingComplete(userId: string, readingId: string);
 export async function getUserBibleTrackerData(userId: string);

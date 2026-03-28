@@ -12,7 +12,7 @@ export const authConfig = {
       const isLoggedIn = !!auth?.user;
       const protectedPrefixes = ["/dashboard", "/bible-tracker"];
       const isProtected = protectedPrefixes.some((p) =>
-        nextUrl.pathname.startsWith(p),
+        nextUrl.pathname.startsWith(p)
       );
       if (isProtected && !isLoggedIn) {
         const loginUrl = new URL("/login", nextUrl.origin);
