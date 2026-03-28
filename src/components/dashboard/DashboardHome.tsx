@@ -163,7 +163,7 @@ export function DashboardHome({ data }: DashboardHomeProps) {
             <div className="flex items-center justify-between">
               <div>
                 <CardTitle className="flex items-center gap-2">
-                  Today's Reading
+                  Today&apos;s Reading
                   <Badge>Day {data.todayReading.dayNumber}</Badge>
                 </CardTitle>
                 <CardDescription>{data.todayReading.date}</CardDescription>

@@ -14,7 +14,7 @@ import { markReadingComplete } from "@/app/bible-tracker/actions";
 import { handleSignOut } from "@/app/bible-tracker/logout-action";
 import { clearUserPlan } from "@/app/bible-tracker/clear-plan-action";
 import { useState } from "react";
-import { BookOpen, CheckCircle2, LogOut, List } from "lucide-react";
+import { CheckCircle2, LogOut, List } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 interface DailyReading {

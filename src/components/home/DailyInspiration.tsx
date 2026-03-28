@@ -6,10 +6,11 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useState } from "react";
 
 export default function DailyInspiration() {
-  const { t, tObj, language } = useLanguage();
+  const { t, tObj } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -44,7 +45,7 @@ export default function DailyInspiration() {
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <blockquote className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 italic leading-relaxed">
-              "{todayVerse.text}"
+              &quot;{todayVerse.text}&quot;
             </blockquote>
             <cite className="text-lg font-semibold text-blue-600 dark:text-blue-400 not-italic">
               - {todayVerse.reference}

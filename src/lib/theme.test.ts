@@ -88,8 +88,7 @@ describe("theme utilities", () => {
 
     it("returns 'light' when window is undefined", () => {
       const originalWindow = global.window;
-      // @ts-ignore - testing undefined window
-      global.window = undefined;
+      (global as Record<string, unknown>).window = undefined;
 
       expect(getSystemTheme()).toBe("light");
 
@@ -109,8 +108,7 @@ describe("theme utilities", () => {
 
     it("returns 'system' when localStorage is not available", () => {
       const originalWindow = global.window;
-      // @ts-ignore - testing undefined window
-      global.window = undefined;
+      (global as Record<string, unknown>).window = undefined;
 
       expect(getStoredTheme()).toBe("system");
 
@@ -137,8 +135,7 @@ describe("theme utilities", () => {
 
     it("does nothing when window is undefined", () => {
       const originalWindow = global.window;
-      // @ts-ignore - testing undefined window
-      global.window = undefined;
+      (global as Record<string, unknown>).window = undefined;
 
       expect(() => setStoredTheme("dark")).not.toThrow();
 
@@ -211,8 +208,7 @@ describe("theme utilities", () => {
 
     it("does nothing when document is undefined", () => {
       const originalDocument = global.document;
-      // @ts-ignore - testing undefined document
-      global.document = undefined;
+      (global as Record<string, unknown>).document = undefined;
 
       expect(() => applyTheme("dark")).not.toThrow();
 

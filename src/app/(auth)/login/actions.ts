@@ -1,7 +1,6 @@
 "use server";
 
 import { signIn } from "@/auth";
-import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { hash } from "bcryptjs";
@@ -20,7 +19,11 @@ export async function loginWithCredentials(
   try {
     await signIn("credentials", { email, password, redirect: false });
   } catch (error) {
-    if (error instanceof AuthError) {
+    if (
+      error instanceof Error &&
+      (error.message.includes("CredentialsSignin") ||
+        error.message.includes("credentials"))
+    ) {
       return { error: "Invalid email or password." };
     }
     throw error;
@@ -78,7 +81,7 @@ export async function sendMagicLink(
     await signIn("resend", { email, redirect: false });
     return { sent: true };
   } catch (error) {
-    if (error instanceof AuthError) {
+    if (error instanceof Error) {
       return { error: "Something went wrong. Please try again." };
     }
     throw error;

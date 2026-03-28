@@ -8,6 +8,7 @@ import prisma from "@/lib/prisma";
 import { authConfig } from "./auth.config";
 import { compare } from "bcryptjs";
 
+// @ts-expect-error — next-auth v5 beta default import not callable under TS 5.9 + moduleResolution:bundler
 export const { handlers, signIn, signOut, auth } = NextAuth({
   ...authConfig,
   // experimental: { enableWebAuthn: true }, // re-enable when Passkey is active
