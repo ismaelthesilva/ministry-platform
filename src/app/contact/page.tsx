@@ -23,7 +23,7 @@ export default function ContactPage() {
   const [error, setError] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({
       ...formData,
@@ -51,7 +51,7 @@ export default function ContactPage() {
           subject: formData.subject,
           message: formData.message,
           to_name: "Ismael Silva Ministry",
-        },
+        }
       );
 
       if (result.status === 200) {
@@ -85,7 +85,7 @@ export default function ContactPage() {
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {t(
                 "contact.subtitle",
-                "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+                "We'd love to hear from you. Send us a message and we'll respond as soon as possible."
               )}
             </p>
           </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     <p className="text-green-800 dark:text-green-200">
                       {t(
                         "contact.success",
-                        "Message sent successfully! We'll get back to you soon.",
+                        "Message sent successfully! We'll get back to you soon."
                       )}
                     </p>
                   </div>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                         placeholder={t(
                           "contact.emailPlaceholder",
-                          "john@example.com",
+                          "john@example.com"
                         )}
                       />
                     </div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                         placeholder={t(
                           "contact.phonePlaceholder",
-                          "+1 (555) 000-0000",
+                          "+1 (555) 000-0000"
                         )}
                       />
                     </div>
@@ -246,7 +246,7 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                         placeholder={t(
                           "contact.subjectPlaceholder",
-                          "How can we help?",
+                          "How can we help?"
                         )}
                       />
                     </div>
@@ -269,7 +269,7 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
                       placeholder={t(
                         "contact.messagePlaceholder",
-                        "Tell us more about your inquiry...",
+                        "Tell us more about your inquiry..."
                       )}
                     />
                   </div>

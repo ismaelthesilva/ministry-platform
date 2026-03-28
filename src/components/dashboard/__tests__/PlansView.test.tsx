@@ -72,7 +72,7 @@ describe("PlansView", () => {
 
   it("highlights current active plan", () => {
     renderWithProvider(
-      <PlansView plans={mockPlans} userId="test-user" currentPlanId="1" />,
+      <PlansView plans={mockPlans} userId="test-user" currentPlanId="1" />
     );
     expect(screen.getByText("Active")).toBeInTheDocument();
     expect(screen.getByText("Current Plan")).toBeInTheDocument();

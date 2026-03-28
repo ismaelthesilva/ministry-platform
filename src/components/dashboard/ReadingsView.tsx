@@ -52,7 +52,7 @@ interface ReadingsViewProps {
 export function ReadingsView({ data, userId }: ReadingsViewProps) {
   const [loading, setLoading] = useState<string | null>(null);
   const [completedIds, setCompletedIds] = useState<string[]>(
-    data.completedReadingIds,
+    data.completedReadingIds
   );
   const [announcement, setAnnouncement] = useState("");
 
@@ -162,7 +162,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
 
   const readingsByMonth = monthOptions.reduce(
     (acc, month) => ({ ...acc, [month.key]: [] as DailyReading[] }),
-    {} as Record<string, DailyReading[]>,
+    {} as Record<string, DailyReading[]>
   );
 
   data.allReadings.forEach((reading) => {
@@ -173,31 +173,25 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
   });
 
   const availableMonths = monthOptions.filter(
-    (month) => readingsByMonth[month.key]?.length,
+    (month) => readingsByMonth[month.key]?.length
   );
 
-  const monthStats = availableMonths.reduce(
-    (acc, month) => {
-      const monthReadings = readingsByMonth[month.key] ?? [];
-      const completedCount = monthReadings.reduce(
-        (count, reading) =>
-          completedIds.includes(reading.id) ? count + 1 : count,
-        0,
-      );
-      acc[month.key] = {
-        total: monthReadings.length,
-        completedCount,
-        completionPercentage: monthReadings.length
-          ? Math.round((completedCount / monthReadings.length) * 100)
-          : 0,
-      };
-      return acc;
-    },
-    {} as Record<
-      string,
-      { total: number; completedCount: number; completionPercentage: number }
-    >,
-  );
+  const monthStats = availableMonths.reduce((acc, month) => {
+    const monthReadings = readingsByMonth[month.key] ?? [];
+    const completedCount = monthReadings.reduce(
+      (count, reading) =>
+        completedIds.includes(reading.id) ? count + 1 : count,
+      0
+    );
+    acc[month.key] = {
+      total: monthReadings.length,
+      completedCount,
+      completionPercentage: monthReadings.length
+        ? Math.round((completedCount / monthReadings.length) * 100)
+        : 0,
+    };
+    return acc;
+  }, {} as Record<string, { total: number; completedCount: number; completionPercentage: number }>);
 
   const currentMonthKey = getMonthKeyFromDate(data.todayReading?.date || "");
 
@@ -225,7 +219,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
     const tabsContainer = tabsListRef.current;
     if (!tabsContainer) return;
     const trigger = tabsContainer.querySelector<HTMLElement>(
-      `[data-value="${activeMonth}"]`,
+      `[data-value="${activeMonth}"]`
     );
     if (trigger) {
       const triggerRect = trigger.getBoundingClientRect();
@@ -250,7 +244,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
     const result = await toggleReadingComplete(
       userId,
       reading.id,
-      currentlyCompleted,
+      currentlyCompleted
     );
     if (!result.success) {
       if (currentlyCompleted) {
@@ -261,7 +255,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
       setAnnouncement(
         data.user?.preferredLanguage === "en"
           ? "Unable to update reading. Please try again."
-          : "Não foi possível atualizar a leitura. Tente novamente.",
+          : "Não foi possível atualizar a leitura. Tente novamente."
       );
     } else {
       const localizedDay =
@@ -273,8 +267,8 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
             ? "marked incomplete"
             : "marked complete"
           : currentlyCompleted
-            ? "marcado como pendente"
-            : "marcado como concluído";
+          ? "marcado como pendente"
+          : "marcado como concluído";
       setAnnouncement(`${localizedDay} ${dayValue} ${actionText}`);
     }
     setLoading(null);
@@ -323,80 +317,80 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
         },
       ]
     : isClassicPlan
-      ? [
-          {
-            key: "day",
-            label: "Dia",
-            className: "w-[80px]",
-            render: (reading: DailyReading) =>
-              getDayFromDate(reading.date) || reading.dayNumber,
-          },
-          {
-            key: "bible",
-            label: "Texto Bíblico",
-            className: "max-w-[220px] truncate",
-            render: (reading: DailyReading) => reading.bible || "-",
-          },
-          {
-            key: "author",
-            label: "Autor Clássico",
-            className: "max-w-[180px] truncate",
-            render: (reading: DailyReading) => reading.author || "-",
-          },
-          {
-            key: "book",
-            label: "Obra de Referência",
-            className: "max-w-[220px] truncate",
-            render: (reading: DailyReading) => reading.book || "-",
-          },
-          {
-            key: "title",
-            label: "Tema Chave",
-            className: "max-w-[240px] truncate",
-            render: (reading: DailyReading) => reading.title || "-",
-          },
-        ]
-      : [
-          {
-            key: "day",
-            label: "Day",
-            className: "w-[80px]",
-            render: (reading: DailyReading) =>
-              getDayFromDate(reading.date) || reading.dayNumber,
-          },
-          {
-            key: "date",
-            label: "Date",
-            className: "w-[140px] whitespace-nowrap",
-            render: (reading: DailyReading) => reading.date,
-          },
-          {
-            key: "bible",
-            label: "Main Reading",
-            className: "max-w-[260px] truncate",
-            render: (reading: DailyReading) => reading.bible || "-",
-          },
-          ...(showCommentary
-            ? [
-                {
-                  key: "author",
-                  label: "Commentary",
-                  className: "max-w-[220px] truncate",
-                  render: (reading: DailyReading) => reading.author || "-",
-                },
-              ]
-            : []),
-        ];
+    ? [
+        {
+          key: "day",
+          label: "Dia",
+          className: "w-[80px]",
+          render: (reading: DailyReading) =>
+            getDayFromDate(reading.date) || reading.dayNumber,
+        },
+        {
+          key: "bible",
+          label: "Texto Bíblico",
+          className: "max-w-[220px] truncate",
+          render: (reading: DailyReading) => reading.bible || "-",
+        },
+        {
+          key: "author",
+          label: "Autor Clássico",
+          className: "max-w-[180px] truncate",
+          render: (reading: DailyReading) => reading.author || "-",
+        },
+        {
+          key: "book",
+          label: "Obra de Referência",
+          className: "max-w-[220px] truncate",
+          render: (reading: DailyReading) => reading.book || "-",
+        },
+        {
+          key: "title",
+          label: "Tema Chave",
+          className: "max-w-[240px] truncate",
+          render: (reading: DailyReading) => reading.title || "-",
+        },
+      ]
+    : [
+        {
+          key: "day",
+          label: "Day",
+          className: "w-[80px]",
+          render: (reading: DailyReading) =>
+            getDayFromDate(reading.date) || reading.dayNumber,
+        },
+        {
+          key: "date",
+          label: "Date",
+          className: "w-[140px] whitespace-nowrap",
+          render: (reading: DailyReading) => reading.date,
+        },
+        {
+          key: "bible",
+          label: "Main Reading",
+          className: "max-w-[260px] truncate",
+          render: (reading: DailyReading) => reading.bible || "-",
+        },
+        ...(showCommentary
+          ? [
+              {
+                key: "author",
+                label: "Commentary",
+                className: "max-w-[220px] truncate",
+                render: (reading: DailyReading) => reading.author || "-",
+              },
+            ]
+          : []),
+      ];
 
   const mobileFields = baseColumns.filter(
-    (column) => column.key !== "day" && column.key !== "date",
+    (column) => column.key !== "day" && column.key !== "date"
   );
 
   const tableMinWidth = isPropheticPlan
     ? "min-w-[980px]"
     : isClassicPlan
-      ? "min-w-[900px]"
-      : "min-w-[760px]";
+    ? "min-w-[900px]"
+    : "min-w-[760px]";
 
   return (
     <div className="container max-w-7xl mx-auto p-6 space-y-6">
@@ -424,7 +418,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
             >
               <span className="font-medium">
                 {Math.round(
-                  (completedIds.length / data.allReadings.length) * 100,
+                  (completedIds.length / data.allReadings.length) * 100
                 )}
                 %
               </span>
@@ -434,7 +428,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
             </div>
             <Progress
               value={Math.round(
-                (completedIds.length / data.allReadings.length) * 100,
+                (completedIds.length / data.allReadings.length) * 100
               )}
               className="h-2"
             />
@@ -518,7 +512,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                   "flex flex-col items-start gap-0.5 rounded-full px-3 py-1.5 text-sm transition-all duration-150 border border-transparent",
                   activeMonth === "all"
                     ? "bg-slate-900 text-white shadow"
-                    : "bg-muted/30 text-muted-foreground hover:bg-muted/60",
+                    : "bg-muted/30 text-muted-foreground hover:bg-muted/60"
                 )}
               >
                 <span className="font-semibold">
@@ -548,7 +542,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                       isActive
                         ? "bg-slate-900 text-white shadow"
                         : "bg-muted/30 text-muted-foreground hover:bg-muted/60",
-                      isCurrent && "ring-1 ring-blue-400/70",
+                      isCurrent && "ring-1 ring-blue-400/70"
                     )}
                   >
                     <span className="font-semibold">
@@ -570,7 +564,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                   <div className="md:hidden space-y-3">
                     {(monthKey === "all"
                       ? data.allReadings
-                      : (readingsByMonth[monthKey] ?? [])
+                      : readingsByMonth[monthKey] ?? []
                     ).map((reading) => {
                       const completed = isReadingCompleted(reading.id);
                       const isToday = reading.id === data.todayReading?.id;
@@ -622,7 +616,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                       <table
                         className={cn(
                           "reading-table w-full text-sm table-fixed",
-                          tableMinWidth,
+                          tableMinWidth
                         )}
                         aria-label="Reading tracker table"
                       >
@@ -633,7 +627,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                                 key={column.key}
                                 className={cn(
                                   "h-8 py-2 px-3 text-left align-middle font-medium text-xs",
-                                  column.className,
+                                  column.className
                                 )}
                               >
                                 {column.label}
@@ -647,7 +641,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                         <tbody>
                           {(monthKey === "all"
                             ? data.allReadings
-                            : (readingsByMonth[monthKey] ?? [])
+                            : readingsByMonth[monthKey] ?? []
                           ).map((reading) => {
                             const completed = isReadingCompleted(reading.id);
                             const isToday =
@@ -664,7 +658,7 @@ export function ReadingsView({ data, userId }: ReadingsViewProps) {
                                     className={cn(
                                       "reading-cell",
                                       "text-xs",
-                                      column.className,
+                                      column.className
                                     )}
                                   >
                                     {column.render(reading)}

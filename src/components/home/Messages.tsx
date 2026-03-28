@@ -1,6 +1,11 @@
 "use client";
 import React from "react";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { MessageCircle, Star, Cross, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
@@ -20,7 +25,10 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
   const { t } = useLanguage();
 
   return (
-    <section id="messages" className="py-24 bg-gradient-to-b from-white via-blue-50 to-purple-50 relative">
+    <section
+      id="messages"
+      className="py-24 bg-gradient-to-b from-white via-blue-50 to-purple-50 relative"
+    >
       <div className="absolute inset-0 bg-grace-aura opacity-30"></div>
       <div className="absolute inset-0 opacity-5">
         <div
@@ -56,13 +64,18 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {messages.map((video: Video, index: number) => (
-            <Card key={index} className="group card-divine overflow-hidden bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 relative">
+            <Card
+              key={index}
+              className="group card-divine overflow-hidden bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 relative"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-blue-400/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
 
               <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
                 <iframe
                   className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${getYouTubeVideoId(video.link)}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
+                  src={`https://www.youtube.com/embed/${getYouTubeVideoId(
+                    video.link
+                  )}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
                   title={video.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -82,7 +95,9 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-blue-500">
                     <Star className="h-5 w-5 mr-3 animate-pulse" />
-                    <span className="text-sm font-semibold tracking-wide uppercase">{t("home.messages.label")}</span>
+                    <span className="text-sm font-semibold tracking-wide uppercase">
+                      {t("home.messages.label")}
+                    </span>
                   </div>
                   <Cross className="h-5 w-5 text-blue-300 animate-grace-glow" />
                 </div>
@@ -92,7 +107,10 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-gray-600 text-lg mb-6 italic">&quot;Faith comes by hearing, and hearing by the word of God&quot; - Romans 10:17</p>
+          <p className="text-gray-600 text-lg mb-6 italic">
+            &quot;Faith comes by hearing, and hearing by the word of God&quot; -
+            Romans 10:17
+          </p>
           <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300">
             <Youtube className="h-5 w-5 mr-2" />
             Watch More Messages

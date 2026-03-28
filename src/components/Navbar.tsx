@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
           }
         });
       },
-      { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0 },
+      { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0 }
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -199,7 +199,7 @@ const Navbar: React.FC = () => {
                   className={cn(
                     "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
                     "hover:bg-gray-100",
-                    "text-gray-700",
+                    "text-gray-700"
                   )}
                 >
                   {item.icon}
@@ -214,13 +214,13 @@ const Navbar: React.FC = () => {
                     "hover:bg-gray-100",
                     isActive(item.href)
                       ? "bg-blue-100 text-blue-700"
-                      : "text-gray-700",
+                      : "text-gray-700"
                   )}
                 >
                   {item.icon}
                   <span>{mounted ? item.name : ""}</span>
                 </Link>
-              ),
+              )
             )}
             <div className="flex items-center space-x-2 ml-4">
               <LanguageSwitcher />
@@ -269,7 +269,7 @@ const Navbar: React.FC = () => {
                         onClick={() => setIsOpen(false)}
                         className={cn(
                           "flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-gray-100",
-                          isActive(item.href) && "bg-blue-100 text-blue-700",
+                          isActive(item.href) && "bg-blue-100 text-blue-700"
                         )}
                       >
                         {item.icon}
@@ -277,7 +277,7 @@ const Navbar: React.FC = () => {
                           {mounted ? item.name : ""}
                         </span>
                       </Link>
-                    ),
+                    )
                   )}
                   <div className="pt-4 px-4">
                     <Button

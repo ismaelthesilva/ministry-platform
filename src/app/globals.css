@@ -68,11 +68,8 @@ body {
 
   .reading-row,
   .reading-card {
-    transition:
-      background-color 0.2s ease,
-      color 0.15s ease,
-      transform 0.2s ease,
-      filter 0.25s ease;
+    transition: background-color 0.2s ease, color 0.15s ease,
+      transform 0.2s ease, filter 0.25s ease;
   }
 
   .reading-row {
@@ -120,9 +117,7 @@ body {
   }
 
   .reading-cell {
-    transition:
-      padding 0.2s ease,
-      color 0.2s ease;
+    transition: padding 0.2s ease, color 0.2s ease;
     padding: 0.75rem 0.85rem;
   }
 
@@ -140,16 +135,12 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition:
-      background-color 0.2s ease,
-      transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
     min-width: 46px;
   }
 
   .reading-status-button svg {
-    transition:
-      transform 0.25s ease,
-      color 0.2s ease;
+    transition: transform 0.25s ease, color 0.2s ease;
   }
 
   .reading-status-button[data-state="completed"] {

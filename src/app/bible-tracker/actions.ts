@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 export async function selectPlan(
   userId: string,
   planSlug: string,
-  language: string = "pt",
+  language: string = "pt"
 ) {
   try {
     const plan = await prisma.plan.findFirst({
@@ -59,7 +59,7 @@ export async function updateUserProfile(
     favBook?: string;
     favVerse?: string;
     preferredLanguage?: string;
-  },
+  }
 ) {
   try {
     await prisma.user.update({
