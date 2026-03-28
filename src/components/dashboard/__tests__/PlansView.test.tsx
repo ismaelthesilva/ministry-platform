@@ -47,9 +47,13 @@ describe("PlansView", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    (useRouter as any).mockReturnValue({
+    vi.mocked(useRouter).mockReturnValue({
       refresh: mockRefresh,
       push: mockPush,
+      back: vi.fn(),
+      forward: vi.fn(),
+      replace: vi.fn(),
+      prefetch: vi.fn(),
     });
   });
 
