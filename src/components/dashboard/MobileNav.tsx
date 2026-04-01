@@ -7,33 +7,35 @@ import { Home, BookOpen, List, User, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
-
-const menuItems = [
-  {
-    href: "/dashboard",
-    label: "Home",
-    icon: Home,
-  },
-  {
-    href: "/dashboard/readings",
-    label: "Readings",
-    icon: BookOpen,
-  },
-  {
-    href: "/dashboard/plans",
-    label: "Plans",
-    icon: List,
-  },
-  {
-    href: "/dashboard/profile",
-    label: "Profile",
-    icon: User,
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function MobileNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const menuItems = [
+    {
+      href: "/dashboard",
+      label: t("dashboard.sidebar.home"),
+      icon: Home,
+    },
+    {
+      href: "/dashboard/readings",
+      label: t("dashboard.sidebar.readings"),
+      icon: BookOpen,
+    },
+    {
+      href: "/dashboard/plans",
+      label: t("dashboard.sidebar.plans"),
+      icon: List,
+    },
+    {
+      href: "/dashboard/profile",
+      label: t("dashboard.sidebar.profile"),
+      icon: User,
+    },
+  ];
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -42,11 +44,11 @@ export function MobileNav() {
           variant="ghost"
           className="md:hidden"
           size="icon"
-          aria-label="Open navigation menu"
+          aria-label={t("dashboard.sidebar.openMenu")}
           aria-expanded={open}
         >
           <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle menu</span>
+          <span className="sr-only">{t("dashboard.sidebar.toggleMenu")}</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="w-64">

@@ -221,6 +221,79 @@
       "message": "Este estudo está sendo cuidadosamente preparado com oração e pesquisa minuciosa para fornecer o conteúdo mais preciso e espiritualmente enriquecedor possível."
     }
   },
+  "dashboard": {
+    "title": "Painel",
+    "welcome": "Bem-vindo de volta! Acompanhe seu progresso de leitura bíblica",
+    "noPlans": "Nenhum plano disponível",
+    "runSeed": "Execute: npm run db:seed:bilingual",
+    "sidebar": {
+      "home": "Início",
+      "readings": "Leituras",
+      "plans": "Planos",
+      "profile": "Perfil",
+      "signOut": "Sair",
+      "openMenu": "Abrir menu de navegação",
+      "toggleMenu": "Alternar menu"
+    },
+    "stats": {
+      "totalProgress": "Progresso Total",
+      "ofCompleted": "{completed} de {total} concluídos",
+      "currentStreak": "Sequência Atual",
+      "consecutiveDays": "dias consecutivos",
+      "remaining": "Restantes",
+      "readingsLeft": "leituras restantes",
+      "currentPlan": "Plano Atual",
+      "changePlan": "Trocar plano"
+    },
+    "progress": {
+      "title": "Progresso Geral",
+      "subtitle": "Sua jornada pelo plano completo de leitura bíblica",
+      "readingsCompleted": "{count} leituras concluídas",
+      "ofTotal": "{completed} de {total} leituras concluídas",
+      "remaining": "{count} restantes"
+    },
+    "today": {
+      "title": "Leitura de Hoje",
+      "day": "Dia",
+      "viewReading": "Ver Leitura",
+      "mainReading": "Leitura Principal",
+      "topic": "Tópico",
+      "commentary": "Comentário"
+    },
+    "quickActions": {
+      "viewAll": "Ver Todas as Leituras",
+      "viewAllDesc": "Veja seu plano completo de leitura e acompanhe o progresso",
+      "changePlan": "Trocar Plano",
+      "changePlanDesc": "Mude para um plano de leitura diferente a qualquer momento",
+      "updateProfile": "Atualizar Perfil",
+      "updateProfileDesc": "Gerencie suas configurações e preferências"
+    },
+    "readings": {
+      "title": "Todas as Leituras",
+      "subtitle": "Plano completo de leitura anual com 366 dias",
+      "trackProgress": "Acompanhe suas leituras bíblicas diárias",
+      "yourProgress": "Seu Progresso",
+      "all": "Todos",
+      "complete": "concluído",
+      "columns": {
+        "day": "Dia",
+        "date": "Data",
+        "mainReading": "Leitura Principal",
+        "commentary": "Comentário",
+        "bibleText": "Texto Bíblico",
+        "book": "Livro",
+        "chapterTitle": "Título",
+        "classicAuthor": "Autor Clássico",
+        "referenceWork": "Obra de Referência",
+        "keyTheme": "Tema Chave",
+        "status": "Status"
+      },
+      "unableToUpdate": "Não foi possível atualizar a leitura. Tente novamente.",
+      "markedComplete": "marcado como concluído",
+      "markedIncomplete": "marcado como pendente",
+      "keyboardHint": "Use as setas para navegar pelos meses e pressione Enter para selecionar."
+    }
+  },
   "contact": {
     "title": "Entre em Contato",
     "subtitle": "Adoraríamos ouvir de você. Envie-nos uma mensagem e responderemos o mais breve possível.",

@@ -6,32 +6,34 @@ import { cn } from "@/lib/utils";
 import { Home, BookOpen, List, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signOut } from "next-auth/react";
-
-const menuItems = [
-  {
-    href: "/dashboard",
-    label: "Home",
-    icon: Home,
-  },
-  {
-    href: "/dashboard/readings",
-    label: "Readings",
-    icon: BookOpen,
-  },
-  {
-    href: "/dashboard/plans",
-    label: "Plans",
-    icon: List,
-  },
-  {
-    href: "/dashboard/profile",
-    label: "Profile",
-    icon: User,
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function DashboardSidebar() {
   const pathname = usePathname();
+  const { t } = useLanguage();
+
+  const menuItems = [
+    {
+      href: "/dashboard",
+      label: t("dashboard.sidebar.home"),
+      icon: Home,
+    },
+    {
+      href: "/dashboard/readings",
+      label: t("dashboard.sidebar.readings"),
+      icon: BookOpen,
+    },
+    {
+      href: "/dashboard/plans",
+      label: t("dashboard.sidebar.plans"),
+      icon: List,
+    },
+    {
+      href: "/dashboard/profile",
+      label: t("dashboard.sidebar.profile"),
+      icon: User,
+    },
+  ];
 
   return (
     <aside className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 bg-gray-50 dark:bg-gray-900 border-r">
@@ -72,10 +74,10 @@ export function DashboardSidebar() {
             variant="outline"
             className="w-full justify-start"
             onClick={() => signOut({ callbackUrl: "/login" })}
-            aria-label="Sign out of Ministry Platform"
+            aria-label={t("dashboard.sidebar.signOut")}
           >
             <LogOut className="mr-3 h-5 w-5" />
-            Sign Out
+            {t("dashboard.sidebar.signOut")}
           </Button>
         </div>
       </div>
