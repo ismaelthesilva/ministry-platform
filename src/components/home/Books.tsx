@@ -47,7 +47,7 @@ export default function Books({ books }: Props) {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {t(
               "home.books.subtitle",
-              "Sacred writings that illuminate the path to eternal truth and divine understanding",
+              "Sacred writings that illuminate the path to eternal truth and divine understanding"
             )}
           </p>
         </div>

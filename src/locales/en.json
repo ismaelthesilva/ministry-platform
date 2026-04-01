@@ -221,6 +221,79 @@
       "message": "This study is being carefully prepared with prayer and thorough research to provide the most accurate and spiritually enriching content possible."
     }
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back! Track your Bible reading progress",
+    "noPlans": "No plans available",
+    "runSeed": "Please run: npm run db:seed:bilingual",
+    "sidebar": {
+      "home": "Home",
+      "readings": "Readings",
+      "plans": "Plans",
+      "profile": "Profile",
+      "signOut": "Sign Out",
+      "openMenu": "Open navigation menu",
+      "toggleMenu": "Toggle menu"
+    },
+    "stats": {
+      "totalProgress": "Total Progress",
+      "ofCompleted": "{completed} of {total} completed",
+      "currentStreak": "Current Streak",
+      "consecutiveDays": "consecutive days",
+      "remaining": "Remaining",
+      "readingsLeft": "readings left",
+      "currentPlan": "Current Plan",
+      "changePlan": "Change plan"
+    },
+    "progress": {
+      "title": "Overall Progress",
+      "subtitle": "Your journey through the complete Bible reading plan",
+      "readingsCompleted": "{count} readings completed",
+      "ofTotal": "{completed} of {total} readings completed",
+      "remaining": "{count} remaining"
+    },
+    "today": {
+      "title": "Today's Reading",
+      "day": "Day",
+      "viewReading": "View Reading",
+      "mainReading": "Main Reading",
+      "topic": "Topic",
+      "commentary": "Commentary"
+    },
+    "quickActions": {
+      "viewAll": "View All Readings",
+      "viewAllDesc": "See your complete reading plan and track progress",
+      "changePlan": "Change Plan",
+      "changePlanDesc": "Switch to a different reading plan anytime",
+      "updateProfile": "Update Profile",
+      "updateProfileDesc": "Manage your account settings and preferences"
+    },
+    "readings": {
+      "title": "All Readings",
+      "subtitle": "Complete year reading plan with 366 days",
+      "trackProgress": "Track your daily Bible readings",
+      "yourProgress": "Your Progress",
+      "all": "All",
+      "complete": "complete",
+      "columns": {
+        "day": "Day",
+        "date": "Date",
+        "mainReading": "Main Reading",
+        "commentary": "Commentary",
+        "bibleText": "Bible Text",
+        "book": "Book",
+        "chapterTitle": "Chapter Title",
+        "classicAuthor": "Classic Author",
+        "referenceWork": "Reference Work",
+        "keyTheme": "Key Theme",
+        "status": "Status"
+      },
+      "unableToUpdate": "Unable to update reading. Please try again.",
+      "markedComplete": "marked complete",
+      "markedIncomplete": "marked incomplete",
+      "keyboardHint": "Use the arrow keys to move between months and press Enter to select."
+    }
+  },
   "contact": {
     "title": "Get in Touch",
     "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",

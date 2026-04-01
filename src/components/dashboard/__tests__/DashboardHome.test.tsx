@@ -1,6 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { DashboardHome } from "@/components/dashboard/DashboardHome";
+import { LanguageProvider } from "@/context/LanguageContext";
+
+const renderWithProvider = (ui: React.ReactElement) =>
+  render(<LanguageProvider>{ui}</LanguageProvider>);
 
 const mockData = {
   user: {
@@ -34,29 +38,30 @@ const mockData = {
 
 describe("DashboardHome", () => {
   it("renders dashboard title", () => {
-    render(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
     expect(screen.getByText("Dashboard")).toBeInTheDocument();
   });
 
   it("displays completion percentage", () => {
-    render(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
     const matches = screen.getAllByText("10%");
     expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it("shows today's reading", () => {
-    render(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
     expect(screen.getByText("Today's Reading")).toBeInTheDocument();
     expect(screen.getByText("Day 36")).toBeInTheDocument();
   });
 
   it("displays current plan title", () => {
-    render(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
     expect(screen.getByText("Bible Only - English")).toBeInTheDocument();
   });
 
   it("shows completed readings count", () => {
-    render(<DashboardHome data={mockData} userId="test-user" />);
-    expect(screen.getByText(/3 of 30 completed/)).toBeInTheDocument();
+    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
+    const matches = screen.getAllByText(/3 \/ 30/);
+    expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 });

@@ -1,7 +1,7 @@
 // Enhanced stats for Revelation chapters
 export function getEnhancedChapterStats(
   chapterNumber: number,
-  verses: any[],
+  verses: { text?: string; commentary?: string }[],
   studyProgress: number
 ) {
   // Calculate word counts

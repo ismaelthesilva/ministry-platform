@@ -48,7 +48,7 @@ export default function Songs({ songs, getYouTubeVideoId }: Props) {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {t(
               "home.songs.subtitle",
-              "Heavenly melodies that lift the soul and prepare hearts for worship in His presence",
+              "Heavenly melodies that lift the soul and prepare hearts for worship in His presence"
             )}
           </p>
         </div>
@@ -62,7 +62,9 @@ export default function Songs({ songs, getYouTubeVideoId }: Props) {
               <div className="relative aspect-video w-full overflow-hidden">
                 <iframe
                   className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${getYouTubeVideoId(song.link)}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
+                  src={`https://www.youtube.com/embed/${getYouTubeVideoId(
+                    song.link
+                  )}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
                   title={song.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 export async function selectPlan(
   userId: string,
   planSlug: string,
-  language: string = "pt",
+  language: string = "pt"
 ) {
   try {
     const plan = await prisma.plan.findFirst({
@@ -60,7 +60,7 @@ export async function updateUserProfile(
     favBook?: string;
     favVerse?: string;
     preferredLanguage?: string;
-  },
+  }
 ) {
   try {
     await prisma.user.update({
@@ -103,7 +103,7 @@ export async function markReadingComplete(userId: string, readingId: string) {
 export async function toggleReadingComplete(
   userId: string,
   readingId: string,
-  completed: boolean,
+  completed: boolean
 ) {
   try {
     if (completed) {
@@ -223,7 +223,7 @@ export async function getUserBibleTrackerData(userId: string) {
 
     const completedReadingIds = user.progress.map((p) => p.readingId);
     const completionPercentage = Math.round(
-      (completedReadingIds.length / allReadings.length) * 100,
+      (completedReadingIds.length / allReadings.length) * 100
     );
 
     return {

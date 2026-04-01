@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const updatedAt = new Date().toISOString();
 
@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
       SHOW max_connections;
     `;
     const maxConnections = parseInt(
-      maxConnectionsResult[0]?.max_connections || "0",
+      maxConnectionsResult[0]?.max_connections || "0"
     );
 
     // Get current connections count
@@ -51,7 +51,7 @@ export async function GET(request: NextRequest) {
         error: "Database connection failed",
         details: error instanceof Error ? error.message : "Unknown error",
       },
-      { status: 500 },
+      { status: 500 }
     );
   } finally {
     await prisma.$disconnect();

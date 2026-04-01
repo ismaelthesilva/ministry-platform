@@ -34,13 +34,13 @@ export function ReadingStatusButton({
   const labelText = loading
     ? "Updating..."
     : completed
-      ? "Completed"
-      : "Mark Complete";
+    ? "Completed"
+    : "Mark Complete";
   const ariaLabel = loading
     ? "Updating reading status"
     : completed
-      ? "Mark reading as incomplete"
-      : "Mark reading as complete";
+    ? "Mark reading as incomplete"
+    : "Mark reading as complete";
 
   const dataAttributes = {
     "data-state": state,
@@ -59,7 +59,7 @@ export function ReadingStatusButton({
           completed
             ? "bg-emerald-50 text-emerald-700"
             : "bg-white text-slate-600",
-          className,
+          className
         )}
         aria-pressed={completed}
         aria-label={ariaLabel}
@@ -81,7 +81,7 @@ export function ReadingStatusButton({
       className={cn(
         "reading-status-button",
         completed ? "border border-emerald-200" : "border border-gray-200",
-        className,
+        className
       )}
       aria-pressed={completed}
       aria-label={ariaLabel}

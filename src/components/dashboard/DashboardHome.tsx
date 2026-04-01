@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, CheckCircle2, TrendingUp, Calendar } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface DailyReading {
   id: string;
@@ -47,6 +48,7 @@ interface DashboardHomeProps {
 }
 
 export function DashboardHome({ data }: DashboardHomeProps) {
+  const { t } = useLanguage();
   const completedCount = data.completedReadingIds.length;
   const totalReadings = data.allReadings.length;
   const remainingReadings = totalReadings - completedCount;
@@ -72,10 +74,10 @@ export function DashboardHome({ data }: DashboardHomeProps) {
     <div className="container max-w-6xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-muted-foreground">
-          Welcome back! Track your Bible reading progress
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight">
+          {t("dashboard.title")}
+        </h1>
+        <p className="text-muted-foreground">{t("dashboard.welcome")}</p>
       </div>
 
       {/* Stats Grid */}
@@ -83,7 +85,7 @@ export function DashboardHome({ data }: DashboardHomeProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
-              Total Progress
+              {t("dashboard.stats.totalProgress")}
             </CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -92,7 +94,7 @@ export function DashboardHome({ data }: DashboardHomeProps) {
               {data.completionPercentage}%
             </div>
             <p className="text-xs text-muted-foreground">
-              {completedCount} of {totalReadings} completed
+              {completedCount} / {totalReadings}
             </p>
           </CardContent>
         </Card>
@@ -100,36 +102,46 @@ export function DashboardHome({ data }: DashboardHomeProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
-              Current Streak
+              {t("dashboard.stats.currentStreak")}
             </CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{currentStreak}</div>
-            <p className="text-xs text-muted-foreground">consecutive days</p>
+            <p className="text-xs text-muted-foreground">
+              {t("dashboard.stats.consecutiveDays")}
+            </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Remaining</CardTitle>
+            <CardTitle className="text-sm font-medium">
+              {t("dashboard.stats.remaining")}
+            </CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{remainingReadings}</div>
-            <p className="text-xs text-muted-foreground">readings left</p>
+            <p className="text-xs text-muted-foreground">
+              {t("dashboard.stats.readingsLeft")}
+            </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Current Plan</CardTitle>
+            <CardTitle className="text-sm font-medium">
+              {t("dashboard.stats.currentPlan")}
+            </CardTitle>
             <BookOpen className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-xl font-bold truncate">{data.plan?.title}</div>
             <Button variant="link" asChild className="h-auto p-0 text-xs">
-              <Link href="/dashboard/plans">Change plan</Link>
+              <Link href="/dashboard/plans">
+                {t("dashboard.stats.changePlan")}
+              </Link>
             </Button>
           </CardContent>
         </Card>
@@ -138,17 +150,15 @@ export function DashboardHome({ data }: DashboardHomeProps) {
       {/* Progress Card */}
       <Card>
         <CardHeader>
-          <CardTitle>Overall Progress</CardTitle>
-          <CardDescription>
-            Your journey through the complete Bible reading plan
-          </CardDescription>
+          <CardTitle>{t("dashboard.progress.title")}</CardTitle>
+          <CardDescription>{t("dashboard.progress.subtitle")}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
             <Progress value={data.completionPercentage} className="h-3" />
             <div className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">
-                {completedCount} readings completed
+                {completedCount} / {totalReadings}
               </span>
               <span className="font-medium">{data.completionPercentage}%</span>
             </div>
@@ -163,20 +173,26 @@ export function DashboardHome({ data }: DashboardHomeProps) {
             <div className="flex items-center justify-between">
               <div>
                 <CardTitle className="flex items-center gap-2">
-                  Today's Reading
-                  <Badge>Day {data.todayReading.dayNumber}</Badge>
+                  {t("dashboard.today.title")}
+                  <Badge>
+                    {t("dashboard.today.day")} {data.todayReading.dayNumber}
+                  </Badge>
                 </CardTitle>
                 <CardDescription>{data.todayReading.date}</CardDescription>
               </div>
               <Button asChild>
-                <Link href="/dashboard/readings">View Reading</Link>
+                <Link href="/dashboard/readings">
+                  {t("dashboard.today.viewReading")}
+                </Link>
               </Button>
             </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               <div>
-                <h4 className="text-sm font-semibold mb-1">Main Reading</h4>
+                <h4 className="text-sm font-semibold mb-1">
+                  {t("dashboard.today.mainReading")}
+                </h4>
                 <p className="text-sm text-muted-foreground">
                   {data.todayReading.bible}
                 </p>
@@ -193,10 +209,10 @@ export function DashboardHome({ data }: DashboardHomeProps) {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="h-5 w-5" />
-                View All Readings
+                {t("dashboard.quickActions.viewAll")}
               </CardTitle>
               <CardDescription>
-                See your complete reading plan and track progress
+                {t("dashboard.quickActions.viewAllDesc")}
               </CardDescription>
             </CardHeader>
           </Link>
@@ -207,10 +223,10 @@ export function DashboardHome({ data }: DashboardHomeProps) {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Calendar className="h-5 w-5" />
-                Change Plan
+                {t("dashboard.quickActions.changePlan")}
               </CardTitle>
               <CardDescription>
-                Switch to a different reading plan anytime
+                {t("dashboard.quickActions.changePlanDesc")}
               </CardDescription>
             </CardHeader>
           </Link>
@@ -221,10 +237,10 @@ export function DashboardHome({ data }: DashboardHomeProps) {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5" />
-                Update Profile
+                {t("dashboard.quickActions.updateProfile")}
               </CardTitle>
               <CardDescription>
-                Manage your account settings and preferences
+                {t("dashboard.quickActions.updateProfileDesc")}
               </CardDescription>
             </CardHeader>
           </Link>

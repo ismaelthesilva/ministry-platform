@@ -1,15 +1,19 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+// Future providers (kept for when passkey/magic-link are re-enabled):
+// import Resend from "next-auth/providers/resend";
+// import Passkey from "next-auth/providers/passkey";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma";
-import bcrypt from "bcryptjs";
+import { authConfig } from "./auth.config";
+import { compare } from "bcryptjs";
 
+// @ts-expect-error — next-auth v5 beta default import not callable under TS 5.9 + moduleResolution:bundler
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  ...authConfig,
+  // experimental: { enableWebAuthn: true }, // re-enable when Passkey is active
   adapter: PrismaAdapter(prisma),
   session: { strategy: "jwt" },
-  pages: {
-    signIn: "/login",
-  },
   providers: [
     Credentials({
       credentials: {
@@ -17,27 +21,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null;
-        }
-
+        if (!credentials?.email || !credentials?.password) return null;
         const user = await prisma.user.findUnique({
           where: { email: credentials.email as string },
         });
-
-        if (!user || !user.password) {
-          return null;
-        }
-
-        const isPasswordValid = await bcrypt.compare(
+        if (!user?.passwordHash) return null;
+        const valid = await compare(
           credentials.password as string,
-          user.password,
+          user.passwordHash
         );
-
-        if (!isPasswordValid) {
-          return null;
-        }
-
+        if (!valid) return null;
         return {
           id: user.id,
           email: user.email,
@@ -46,18 +39,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         };
       },
     }),
+    // Resend({ apiKey: process.env.AUTH_RESEND_KEY, from: process.env.EMAIL_FROM }),
+    // Passkey,
   ],
   callbacks: {
     async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
+      if (user) token.id = user.id;
       return token;
     },
     async session({ session, token }) {
-      if (token && session.user) {
-        session.user.id = token.id as string;
-      }
+      if (token && session.user) session.user.id = token.id as string;
       return session;
     },
   },

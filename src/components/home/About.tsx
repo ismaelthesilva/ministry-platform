@@ -9,7 +9,7 @@ export default function About() {
   const { t } = useLanguage();
 
   const aboutContent: string[] = Array.from({ length: 6 }, (_, i) =>
-    t(`home.about.content.${i}`),
+    t(`home.about.content.${i}`)
   );
 
   return (

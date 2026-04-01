@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useActionState, useEffect } from "react";
+import { useActionState, useState } from "react";
 import { useFormStatus } from "react-dom";
-import { authenticate, register } from "./actions";
-import { useRouter } from "next/navigation";
+// Future providers (kept for re-activation):
+// import { signIn as signInWebAuthn } from "next-auth/webauthn";
+import { loginWithCredentials, registerAccount } from "./actions";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -17,67 +18,33 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-function LoginButton() {
+function SubmitButton({
+  label,
+  pendingLabel,
+}: {
+  label: string;
+  pendingLabel: string;
+}) {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? "Signing in…" : "Sign in"}
-    </Button>
-  );
-}
-
-function RegisterButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? "Creating account…" : "Create account"}
+      {pending ? pendingLabel : label}
     </Button>
   );
 }
 
 export default function LoginPage() {
-  const router = useRouter();
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [loginErrorMessage, loginDispatch] = useActionState(
-    authenticate,
-    undefined,
+  const [mode, setMode] = useState<"login" | "register">("login");
+  const [loginState, loginDispatch] = useActionState(
+    loginWithCredentials,
+    undefined
   );
-  const [registerState, registerDispatch] = useActionState(register, undefined);
+  const [registerState, registerDispatch] = useActionState(
+    registerAccount,
+    undefined
+  );
 
-  // Redirect on successful login
-  useEffect(() => {
-    if (loginErrorMessage === null) {
-      router.push("/dashboard");
-    }
-  }, [loginErrorMessage, router]);
-
-  if (registerState?.success) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 px-4">
-        <Card className="w-full max-w-sm shadow-lg">
-          <CardHeader className="space-y-1 pb-4">
-            <CardTitle className="text-2xl font-bold text-center text-green-600">
-              Account created!
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-sm text-center text-muted-foreground">
-              Your account has been created successfully. Please sign in.
-            </p>
-            <Button
-              className="w-full"
-              onClick={() => {
-                setIsRegistering(false);
-                window.location.reload();
-              }}
-            >
-              Go to Sign In
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
+  const error = mode === "login" ? loginState?.error : registerState?.error;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 px-4">
@@ -105,17 +72,17 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm shadow-lg">
         <CardHeader className="space-y-1 pb-4">
           <CardTitle className="text-2xl font-bold text-center">
-            {isRegistering ? "Create Account" : "Sign in"}
+            {mode === "login" ? "Sign in" : "Create account"}
           </CardTitle>
           <CardDescription className="text-center">
-            {isRegistering
-              ? "Fill in your details to register"
-              : "Enter your credentials to access your dashboard"}
+            {mode === "login"
+              ? "Enter your credentials to access the platform"
+              : "Fill in the details below to create your account"}
           </CardDescription>
         </CardHeader>
 
         <CardContent>
-          {!isRegistering ? (
+          {mode === "login" ? (
             <form action={loginDispatch} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
@@ -141,37 +108,26 @@ export default function LoginPage() {
                 />
               </div>
 
-              {loginErrorMessage && (
+              {error && (
                 <p
                   role="alert"
                   className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md px-3 py-2"
                 >
-                  {loginErrorMessage}
+                  {error}
                 </p>
               )}
 
-              <LoginButton />
-
-              <p className="text-sm text-center text-muted-foreground">
-                Don&apos;t have an account?{" "}
-                <button
-                  type="button"
-                  onClick={() => setIsRegistering(true)}
-                  className="text-primary hover:underline underline-offset-4 font-medium"
-                >
-                  Create one
-                </button>
-              </p>
+              <SubmitButton label="Sign in" pendingLabel="Signing in…" />
             </form>
           ) : (
             <form action={registerDispatch} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name">Full name</Label>
                 <Input
                   id="name"
                   type="text"
                   name="name"
-                  placeholder="Your name"
+                  placeholder="John Doe"
                   autoComplete="name"
                   required
                 />
@@ -195,44 +151,61 @@ export default function LoginPage() {
                   id="reg-password"
                   type="password"
                   name="password"
-                  placeholder="••••••••"
+                  placeholder="Min. 8 characters"
                   autoComplete="new-password"
-                  minLength={6}
                   required
                 />
               </div>
 
-              {registerState?.error && (
+              <div className="space-y-2">
+                <Label htmlFor="confirm">Confirm password</Label>
+                <Input
+                  id="confirm"
+                  type="password"
+                  name="confirm"
+                  placeholder="••••••••"
+                  autoComplete="new-password"
+                  required
+                />
+              </div>
+
+              {error && (
                 <p
                   role="alert"
                   className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md px-3 py-2"
                 >
-                  {registerState.error}
+                  {error}
                 </p>
               )}
 
-              <RegisterButton />
-
-              <p className="text-sm text-center text-muted-foreground">
-                Already have an account?{" "}
-                <button
-                  type="button"
-                  onClick={() => setIsRegistering(false)}
-                  className="text-primary hover:underline underline-offset-4 font-medium"
-                >
-                  Sign in
-                </button>
-              </p>
+              <SubmitButton
+                label="Create account"
+                pendingLabel="Creating account…"
+              />
             </form>
           )}
 
-          <div className="mt-4 text-center">
-            <Link
-              href="/"
+          {/* Future: Magic link & Passkey buttons go here */}
+
+          <div className="mt-5 text-center space-y-2">
+            <button
+              type="button"
+              onClick={() => setMode(mode === "login" ? "register" : "login")}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors underline-offset-4 hover:underline"
             >
-              ← Back to home
-            </Link>
+              {mode === "login"
+                ? "Don't have an account? Create one"
+                : "Already have an account? Sign in"}
+            </button>
+
+            <div>
+              <Link
+                href="/"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline-offset-4 hover:underline"
+              >
+                ← Back to home
+              </Link>
+            </div>
           </div>
         </CardContent>
       </Card>
