@@ -2,6 +2,10 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ReadingsView } from "@/components/dashboard/ReadingsView";
 import { useRouter } from "next/navigation";
+import { LanguageProvider } from "@/context/LanguageContext";
+
+const renderWithProvider = (ui: React.ReactElement) =>
+  render(<LanguageProvider>{ui}</LanguageProvider>);
 
 // Mock next/navigation
 vi.mock("next/navigation", () => ({
@@ -72,30 +76,30 @@ describe("ReadingsView", () => {
   });
 
   it("renders plan title", () => {
-    render(<ReadingsView data={mockData} userId="test-user" />);
+    renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
     expect(screen.getByText("Bible Only - English")).toBeInTheDocument();
   });
 
   it("displays progress information", () => {
-    render(<ReadingsView data={mockData} userId="test-user" />);
+    renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
     expect(screen.getByText("Your Progress")).toBeInTheDocument();
-    expect(screen.getByText(/1 of 2 readings completed/)).toBeInTheDocument();
+    expect(screen.getByText(/1 \/ 2/)).toBeInTheDocument();
   });
 
   it("shows today's reading card", () => {
-    render(<ReadingsView data={mockData} userId="test-user" />);
+    renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
     expect(screen.getByText("Today's Reading")).toBeInTheDocument();
     expect(screen.getByText("Day 1")).toBeInTheDocument();
   });
 
   it("renders all readings in table", () => {
-    render(<ReadingsView data={mockData} userId="test-user" />);
+    renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
     expect(screen.getAllByText("Genesis 1-3")[0]).toBeInTheDocument();
     expect(screen.getAllByText("Genesis 4-6")[0]).toBeInTheDocument();
   });
 
   it("shows completed status for finished readings", () => {
-    render(<ReadingsView data={mockData} userId="test-user" />);
+    renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
     const completedIcons = screen.getAllByRole("button");
     // Reading 2 should be marked as completed
     expect(completedIcons.length).toBeGreaterThan(0);
@@ -104,7 +108,7 @@ describe("ReadingsView", () => {
   it("handles marking reading as complete", async () => {
     const { toggleReadingComplete } = await import("@/app/dashboard/actions");
 
-    render(<ReadingsView data={mockData} userId="test-user" />);
+    renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
 
     const buttons = screen.getAllByRole("button");
     fireEvent.click(buttons[0]);

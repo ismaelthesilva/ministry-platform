@@ -29,10 +29,10 @@ Object.defineProperty(window, "localStorage", {
 
 // Mock IntersectionObserver
 class IntersectionObserverMock {
-  constructor(callback: any) {
+  constructor(callback: IntersectionObserverCallback) {
     this.callback = callback;
   }
-  callback: any;
+  callback: IntersectionObserverCallback;
   observe = vi.fn();
   unobserve = vi.fn();
   disconnect = vi.fn();

@@ -14,7 +14,7 @@ import { markReadingComplete } from "@/app/bible-tracker/actions";
 import { handleSignOut } from "@/app/bible-tracker/logout-action";
 import { clearUserPlan } from "@/app/bible-tracker/clear-plan-action";
 import { useState } from "react";
-import { BookOpen, CheckCircle2, LogOut, List } from "lucide-react";
+import { CheckCircle2, LogOut, List } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 interface DailyReading {
@@ -156,7 +156,7 @@ export default function BibleTrackerDashboard({
 
   const readingsByMonth = monthOptions.reduce(
     (acc, month) => ({ ...acc, [month.key]: [] as DailyReading[] }),
-    {} as Record<string, DailyReading[]>,
+    {} as Record<string, DailyReading[]>
   );
   data.allReadings.forEach((reading) => {
     const monthKey = getMonthKeyFromDate(reading.date);
@@ -166,7 +166,7 @@ export default function BibleTrackerDashboard({
   });
 
   const availableMonths = monthOptions.filter(
-    (month) => readingsByMonth[month.key]?.length,
+    (month) => readingsByMonth[month.key]?.length
   );
   const defaultMonth =
     getMonthKeyFromDate(data.todayReading?.date || "") ||
@@ -176,7 +176,7 @@ export default function BibleTrackerDashboard({
 
   const handleToggleReading = async (
     readingId: string,
-    isCompleted: boolean,
+    isCompleted: boolean
   ) => {
     setLoading(readingId);
 
@@ -195,8 +195,8 @@ export default function BibleTrackerDashboard({
     const confirmed = confirm(
       t(
         "Tem certeza que deseja mudar de plano? Seu progresso será mantido.",
-        "Are you sure you want to change plans? Your progress will be kept.",
-      ),
+        "Are you sure you want to change plans? Your progress will be kept."
+      )
     );
 
     if (confirmed) {
@@ -221,7 +221,7 @@ export default function BibleTrackerDashboard({
             <p>
               {t(
                 "Não foi possível carregar seu plano de leitura. Verifique os logs do servidor para mais detalhes.",
-                "Could not load your reading plan. Check server logs for details.",
+                "Could not load your reading plan. Check server logs for details."
               )}
             </p>
             {data.user?.selectedPlanId && (
@@ -258,7 +258,7 @@ export default function BibleTrackerDashboard({
             <p className="text-sm text-gray-600">
               {t(
                 `Ano Bíblico ${new Date().getFullYear()}`,
-                `Bible Year ${new Date().getFullYear()}`,
+                `Bible Year ${new Date().getFullYear()}`
               )}
             </p>
           </div>
@@ -293,7 +293,7 @@ export default function BibleTrackerDashboard({
             <CardDescription>
               {t(
                 "Continue lendo diariamente para completar o ano bíblico",
-                "Keep reading daily to complete the Bible year",
+                "Keep reading daily to complete the Bible year"
               )}
             </CardDescription>
           </CardHeader>
@@ -356,10 +356,10 @@ export default function BibleTrackerDashboard({
                       <tbody className="divide-y divide-gray-100">
                         {(monthKey === "all"
                           ? data.allReadings
-                          : (readingsByMonth[monthKey] ?? [])
+                          : readingsByMonth[monthKey] ?? []
                         ).map((reading) => {
                           const isCompleted = data.completedReadingIds.includes(
-                            reading.id,
+                            reading.id
                           );
                           const isLoading = loading === reading.id;
 

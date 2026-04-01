@@ -50,16 +50,13 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
   };
 
   // Group plans by slug (combining languages)
-  const groupedPlans = plans.reduce(
-    (acc, plan) => {
-      if (!acc[plan.slug]) {
-        acc[plan.slug] = [];
-      }
-      acc[plan.slug].push(plan);
-      return acc;
-    },
-    {} as Record<string, Plan[]>,
-  );
+  const groupedPlans = plans.reduce((acc, plan) => {
+    if (!acc[plan.slug]) {
+      acc[plan.slug] = [];
+    }
+    acc[plan.slug].push(plan);
+    return acc;
+  }, {} as Record<string, Plan[]>);
 
   const planDescriptions: Record<
     string,
@@ -69,21 +66,21 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
       title: t("Só a Bíblia", "Bible Only"),
       description: t(
         "Leituras diárias da Bíblia completa em um ano.",
-        "Focus on daily Bible readings through the entire scripture in one year.",
+        "Focus on daily Bible readings through the entire scripture in one year."
       ),
     },
     prophetic: {
       title: t("Leitura Profética", "Prophetic Reading"),
       description: t(
         "Combine leituras bíblicas com comentários proféticos e devocionais.",
-        "Combine Bible readings with prophetic commentary and devotional insights.",
+        "Combine Bible readings with prophetic commentary and devotional insights."
       ),
     },
     classic: {
       title: t("Leitura Clássica", "Classical Reading"),
       description: t(
         "Leituras bíblicas combinadas com literatura cristã clássica.",
-        "Bible readings paired with classical Christian literature and commentary.",
+        "Bible readings paired with classical Christian literature and commentary."
       ),
     },
   };
@@ -98,7 +95,7 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
         <p className="text-muted-foreground">
           {t(
             "Escolha um plano de leitura para guiar seu estudo bíblico diário",
-            "Choose a reading plan to guide your daily Bible study",
+            "Choose a reading plan to guide your daily Bible study"
           )}
         </p>
       </div>
@@ -117,7 +114,7 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
               key={slug}
               className={cn(
                 "flex flex-col transition-all hover:shadow-lg",
-                isCurrentPlan && "border-primary",
+                isCurrentPlan && "border-primary"
               )}
             >
               <CardHeader>
@@ -171,8 +168,8 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
                     {plan.id === currentPlanId
                       ? t("Plano Atual", "Current Plan")
                       : plan.language === "br"
-                        ? t("Selecionar PT", "Select PT")
-                        : t("Selecionar EN", "Select EN")}
+                      ? t("Selecionar PT", "Select PT")
+                      : t("Selecionar EN", "Select EN")}
                   </Button>
                 ))}
               </CardFooter>
@@ -193,7 +190,7 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
               <span>
                 {t(
                   "Selecione um plano de leitura que se encaixe nos seus objetivos espirituais",
-                  "Select a reading plan that fits your spiritual growth goals",
+                  "Select a reading plan that fits your spiritual growth goals"
                 )}
               </span>
             </li>
@@ -202,7 +199,7 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
               <span>
                 {t(
                   "Siga leituras diárias planejadas para você percorrer toda a Bíblia em um ano",
-                  "Follow daily readings designed to take you through the entire Bible in one year",
+                  "Follow daily readings designed to take you through the entire Bible in one year"
                 )}
               </span>
             </li>
@@ -211,7 +208,7 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
               <span>
                 {t(
                   "Acompanhe seu progresso e marque as leituras como concluídas",
-                  "Track your progress and mark readings as complete as you go",
+                  "Track your progress and mark readings as complete as you go"
                 )}
               </span>
             </li>
@@ -220,7 +217,7 @@ export function PlansView({ plans, userId, currentPlanId }: PlansViewProps) {
               <span>
                 {t(
                   "Troque de plano a qualquer momento para explorar diferentes abordagens",
-                  "Switch plans anytime to explore different reading approaches",
+                  "Switch plans anytime to explore different reading approaches"
                 )}
               </span>
             </li>

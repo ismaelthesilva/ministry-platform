@@ -1,11 +1,5 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Page() {
@@ -99,8 +93,9 @@ export default function Page() {
             </p>
 
             <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 italic text-slate-700">
-              &ldquo;Este livro não é apenas sobre teologia, é sobre a retomada da sua
-              identidade como filho e representante do Reino aqui na Terra.&rdquo;
+              &ldquo;Este livro não é apenas sobre teologia, é sobre a retomada
+              da sua identidade como filho e representante do Reino aqui na
+              Terra.&rdquo;
             </div>
 
             <p>
@@ -182,8 +177,8 @@ export default function Page() {
                 “
               </span>
               <p className="relative z-10">
-                &quot;Uma clareza impressionante sobre o Reino de Deus. Finalmente
-                entendi meu papel como cristão na sociedade.&quot;
+                &quot;Uma clareza impressionante sobre o Reino de Deus.
+                Finalmente entendi meu papel como cristão na sociedade.&quot;
               </p>
               <cite className="block mt-4 not-italic font-bold text-slate-900">
                 — João Pedro, Lisboa
@@ -197,8 +192,8 @@ export default function Page() {
       <section className="py-20 bg-amber-600 text-white">
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-            Chegou a hora de parar de apenas &quot;existir&quot; e começar a &quot;governar&quot;
-            com o Rei.
+            Chegou a hora de parar de apenas &quot;existir&quot; e começar a
+            &quot;governar&quot; com o Rei.
           </h2>
           <p className="text-xl mb-10 text-amber-100">
             Garanta agora o seu exemplar e receba as chaves para uma vida de

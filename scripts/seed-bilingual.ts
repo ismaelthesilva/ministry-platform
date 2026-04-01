@@ -139,7 +139,7 @@ async function main() {
     }
     await prisma.dailyReading.createMany({ data: brPropheticReadings });
     console.log(
-      `   ✅ ${propheticBr.title}: ${brPropheticReadings.length} readings`,
+      `   ✅ ${propheticBr.title}: ${brPropheticReadings.length} readings`
     );
 
     // BR Classic (5 cols): Date, Bible, Author, Book, Title
@@ -161,7 +161,7 @@ async function main() {
     }
     await prisma.dailyReading.createMany({ data: brClassicReadings });
     console.log(
-      `   ✅ ${classicBr.title}: ${brClassicReadings.length} readings`,
+      `   ✅ ${classicBr.title}: ${brClassicReadings.length} readings`
     );
 
     // EN Bible (2 cols): Date, Bible
@@ -195,7 +195,7 @@ async function main() {
     }
     await prisma.dailyReading.createMany({ data: enPropheticReadings });
     console.log(
-      `   ✅ ${propheticEn.title}: ${enPropheticReadings.length} readings`,
+      `   ✅ ${propheticEn.title}: ${enPropheticReadings.length} readings`
     );
 
     // EN Classic (5 cols): Date, Bible, Author, Book, Title
@@ -217,7 +217,7 @@ async function main() {
     }
     await prisma.dailyReading.createMany({ data: enClassicReadings });
     console.log(
-      `   ✅ ${classicEn.title}: ${enClassicReadings.length} readings`,
+      `   ✅ ${classicEn.title}: ${enClassicReadings.length} readings`
     );
 
     const total =

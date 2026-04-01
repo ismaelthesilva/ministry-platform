@@ -47,9 +47,13 @@ describe("PlansView", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    (useRouter as any).mockReturnValue({
+    vi.mocked(useRouter).mockReturnValue({
       refresh: mockRefresh,
       push: mockPush,
+      back: vi.fn(),
+      forward: vi.fn(),
+      replace: vi.fn(),
+      prefetch: vi.fn(),
     });
   });
 
@@ -72,7 +76,7 @@ describe("PlansView", () => {
 
   it("highlights current active plan", () => {
     renderWithProvider(
-      <PlansView plans={mockPlans} userId="test-user" currentPlanId="1" />,
+      <PlansView plans={mockPlans} userId="test-user" currentPlanId="1" />
     );
     expect(screen.getByText("Active")).toBeInTheDocument();
     expect(screen.getByText("Current Plan")).toBeInTheDocument();

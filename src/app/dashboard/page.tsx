@@ -21,7 +21,7 @@ export default async function DashboardPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-2">No plans available</h1>
-          <p className="text-gray-600">Please run: npm run db:seed:bilingual</p>
+          <p className="text-gray-600">npm run db:seed:bilingual</p>
         </div>
       </div>
     );

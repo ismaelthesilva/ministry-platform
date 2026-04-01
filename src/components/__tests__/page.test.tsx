@@ -22,7 +22,7 @@ describe("Homepage", () => {
           <LanguageProvider>
             <Page />
           </LanguageProvider>
-        </ThemeProvider>,
+        </ThemeProvider>
       );
     });
     expect(screen.getByRole("navigation")).toBeInTheDocument();
@@ -35,7 +35,7 @@ describe("Homepage", () => {
           <LanguageProvider>
             <Page />
           </LanguageProvider>
-        </ThemeProvider>,
+        </ThemeProvider>
       );
     });
     // The text might be in Portuguese or English depending on how t() handles the fallback/hydration
@@ -43,8 +43,8 @@ describe("Homepage", () => {
     // Use a regex to be flexible between translated versions
     expect(
       screen.getByText(
-        /Ministerio Pastor Ismael Silva|Ministério Pastor Ismael Silva/i,
-      ),
+        /Ministerio Pastor Ismael Silva|Ministério Pastor Ismael Silva/i
+      )
     ).toBeInTheDocument();
   });
 
@@ -55,7 +55,7 @@ describe("Homepage", () => {
           <LanguageProvider>
             <Page />
           </LanguageProvider>
-        </ThemeProvider>,
+        </ThemeProvider>
       );
     });
     // Section title is h2 or similar, check for text. Use getAllByText and check the heading or use getByRole

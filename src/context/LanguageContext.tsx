@@ -22,7 +22,7 @@ const revelationTranslations: { [key: string]: Translations } = {
   br: brRevelationTranslations,
 };
 const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined,
+  undefined
 );
 interface LanguageProviderProps {
   children: ReactNode;
@@ -59,7 +59,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           return fallback ?? key;
         }
       }
-      return typeof value === "string" ? value : (fallback ?? key);
+      return typeof value === "string" ? value : fallback ?? key;
     } catch {
       return fallback ?? key;
     }
@@ -107,7 +107,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           return fallback ?? key;
         }
       }
-      return typeof value === "string" ? value : (fallback ?? key);
+      return typeof value === "string" ? value : fallback ?? key;
     } catch {
       return fallback ?? key;
     }

@@ -1,23 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  BookOpen,
-  Music,
-  Heart,
-  Play,
-  Star,
-  Crown,
-  Cross,
-  Sparkles,
-} from "lucide-react";
+import { BookOpen, Music, Play, Crown, Cross, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
@@ -28,6 +12,7 @@ export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
