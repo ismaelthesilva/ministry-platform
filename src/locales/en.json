@@ -14,11 +14,14 @@
   },
   "home": {
     "hero": {
-      "title": "Ministerio Pastor Ismael Silva",
-      "subtitle": "Teaching the Word of God",
+      "title": "The Preacher",
+      "subtitle": "Three voices, one message: The King is coming!",
       "tagline": "The Way to Happiness",
-      "cta": "Begin Your Bible Year",
+      "cta": "Start Your Bible Year",
       "sermons": "Sermons",
+      "music": "Music",
+      "books": "Books",
+      "voice": "Voice",
       "scroll": "Discover More Below"
     },
     "dailyInspiration": {
@@ -44,8 +47,8 @@
       "explore": "Explore",
       "items": {
         "bibleYear": {
-          "title": "Bible Year",
-          "description": "Read the entire Bible in one year with guided plans and inspiring commentaries."
+          "title": "Reading Year",
+          "description": "Read the entire Bible in a year with guided plans and inspiring commentaries."
         },
         "messages": {
           "title": "Sermons",
@@ -53,29 +56,29 @@
         },
         "songs": {
           "title": "Songs",
-          "description": "Listen to original worship songs available on all platforms."
+          "description": "Listen to original songs available on all platforms."
         }
       }
     },
     "messages": {
       "title": "MESSAGES",
-      "subtitle": "Discover the eternal truths that prepare us for His glorious return",
+      "subtitle": "Discover eternal truths that prepare us for His glorious return",
       "label": "Message",
       "videos": [
         {
           "id": "Gk1NMp3g_b0",
           "title": "The Incomparable Christ",
-          "description": "Who is Jesus Christ? How important is Jesus to my life today? Our life is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
+          "description": "Who is Jesus Christ? How important is Jesus to my life today? Our world is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
         },
         {
           "id": "EZ4LBnEZPlg",
           "title": "The Way to Happiness",
-          "description": "Do you want to be happy? So, what is happiness according to a biblical perspective? Discover the path to true and lasting happiness."
+          "description": "Do you want to be happy? So, what is happiness from a biblical perspective? Discover the path to true and lasting happiness."
         },
         {
           "id": "jf9Kogw6FU4",
           "title": "The Incomparable Christ (Portuguese)",
-          "description": "Who is Jesus Christ? What is the importance of Jesus in my life today? Our life is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
+          "description": "Who is Jesus Christ? What is the importance of Jesus in my life today? Our world is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
         }
       ]
     },
@@ -102,32 +105,32 @@
     },
     "songs": {
       "title": "ORIGINAL SONGS",
-      "subtitle": "Heavenly melodies that lift the soul and prepare hearts for worship in His presence",
+      "subtitle": "Heavenly melodies that uplift the spirit and prepare hearts for worship in His presence",
       "label": "Worship Song",
       "videos": [
         {
           "id": "TncbtUXcFRs",
-          "title": "O Toque que Cura",
+          "title": "The Healing Touch",
           "description": "Original Song"
         },
         {
           "id": "YI-vkMp2Gjk",
-          "title": "Virtuosa",
+          "title": "Virtuous",
           "description": "Original Song"
         },
         {
           "id": "mtK__QsG0bk",
-          "title": "O Teu Amor me salvou",
+          "title": "Your Love Saved Me",
           "description": "Original Song"
         }
       ]
     },
     "about": {
       "title": "HEART OF GRACE",
-      "subtitle": "A heart surrendered to serve, a life devoted to sharing His love and grace with the world",
+      "subtitle": "A heart surrendered to serve, a life dedicated to sharing God's love and grace with the world",
       "mission": "Global Mission",
-      "missionText": "Spreading the love of Christ across nations, preparing hearts for His glorious return through the power of His Word and the demonstration of His grace.",
-      "missionScripture": "And this gospel of the kingdom will be preached in all the world as a witness to all nations, and then the end will come.",
+      "missionText": "Spreading the love of Christ in all nations, preparing hearts for His glorious return through the power of His Word and the demonstration of His grace.",
+      "missionScripture": "And this gospel of the kingdom will be preached in all the world as a witness to all the nations, and then the end will come.",
       "missionScriptureRef": "Matthew 24:14",
       "godIsLoveTitle": "God is Love",
       "godIsLoveScripture": "We love because He first loved us",
