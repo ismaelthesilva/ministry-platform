@@ -9,6 +9,7 @@ import {
 import { MessageCircle, Star, Cross, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect, useState } from "react";
 
 interface Video {
   link: string;
@@ -23,6 +24,11 @@ interface Props {
 
 export default function Messages({ messages, getYouTubeVideoId }: Props) {
   const { t } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section
@@ -49,10 +55,12 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
           </div>
 
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-blue-600 to-purple-600 text-divine-glow">
-            {t("home.messages.title")}
+            {mounted ? t("home.messages.title") : "MENSAGENS"}
           </h2>
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-            {t("home.messages.subtitle")}
+            {mounted
+              ? t("home.messages.subtitle")
+              : "Escritos sagrados que iluminam o caminho para a verdade eterna"}
           </p>
 
           <div className="flex items-center justify-center mt-8 space-x-4">
@@ -76,7 +84,7 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
                   src={`https://www.youtube.com/embed/${getYouTubeVideoId(
                     video.link
                   )}?rel=0&showinfo=0&modestbranding=1&autoplay=0&controls=1`}
-                  title={video.title}
+                  title={mounted ? video.title : "Sermon Video"}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -86,17 +94,17 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
 
               <CardHeader className="p-8 relative">
                 <CardTitle className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300 mb-4 leading-tight">
-                  {video.title}
+                  {mounted ? video.title : "Mensagem"}
                 </CardTitle>
                 <CardDescription className="text-gray-600 leading-relaxed text-lg mb-6">
-                  {video.description}
+                  {mounted ? video.description : "Carregando descrição..."}
                 </CardDescription>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-blue-500">
                     <Star className="h-5 w-5 mr-3 animate-pulse" />
                     <span className="text-sm font-semibold tracking-wide uppercase">
-                      {t("home.messages.label")}
+                      {mounted ? t("home.messages.label") : "Mensagem"}
                     </span>
                   </div>
                   <Cross className="h-5 w-5 text-blue-300 animate-grace-glow" />

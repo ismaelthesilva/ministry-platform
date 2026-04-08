@@ -1,27 +1,28 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { BookOpen, Music, Play, Crown, Cross, Sparkles } from "lucide-react";
+import {
+  BookOpen,
+  Music,
+  Play,
+  Crown,
+  Cross,
+  Sparkles,
+  Book,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import { useEffect, useState } from "react";
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
 
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Image with Enhanced Divine Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/ministry-images/header-felicidade.png"
+          src="/ministry-images/the-preacher.png"
           alt="Ministry Header"
           fill
           priority
@@ -50,12 +51,12 @@ export default function HeroSection() {
 
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-white to-yellow-200 drop-shadow-2xl leading-tight mb-6">
-          {mounted ? t("home.hero.title") : "Ministério Pastor Ismael Silva"}
+          {t("home.hero.title")}
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl md:text-3xl lg:text-4xl text-blue-100 font-light tracking-wider drop-shadow-lg uppercase mb-8">
-          {mounted ? t("home.hero.subtitle") : "Ensinando a Palavra de Deus"}
+          {t("home.hero.subtitle")}
         </p>
 
         {/* Primary CTA - Bible Tracker */}
@@ -67,34 +68,62 @@ export default function HeroSection() {
           >
             <Link href="/dashboard" className="flex items-center gap-3">
               <BookOpen className="h-6 w-6 group-hover:animate-pulse" />
-              {mounted ? t("home.hero.cta") : "Comece o seu Ano Bíblico"}
+              {t("home.hero.cta")}
               <Sparkles className="h-6 w-6 group-hover:animate-pulse" />
             </Link>
           </Button>
         </div>
 
         {/* Secondary CTAs */}
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-6 justify-center">
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20"
+            className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 h-auto py-4 min-w-[140px]"
           >
-            <a href="#messages">
-              <Play className="h-5 w-5 mr-2" />
-              {mounted ? t("home.hero.sermons") : "Sermões"}
+            <a href="#messages" className="flex flex-col items-center">
+              <div className="flex items-center mb-1">
+                <Play className="h-5 w-5 mr-2" />
+                <span className="font-bold">{t("home.hero.sermons")}</span>
+              </div>
+              <span className="text-xs opacity-70 italic">
+                {t("home.hero.voice")} 1
+              </span>
             </a>
           </Button>
+
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20"
+            className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 h-auto py-4 min-w-[140px]"
           >
-            <a href="#music">
-              <Music className="h-5 w-5 mr-2" />
-              Músicas
+            <a href="#music" className="flex flex-col items-center">
+              <div className="flex items-center mb-1">
+                <Music className="h-5 w-5 mr-2" />
+                <span className="font-bold">{t("home.hero.music")}</span>
+              </div>
+              <span className="text-xs opacity-70 italic">
+                {t("home.hero.voice")} 2
+              </span>
+            </a>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 h-auto py-4 min-w-[140px]"
+          >
+            <a href="#books" className="flex flex-col items-center">
+              <div className="flex items-center mb-1">
+                <Book className="h-5 w-5 mr-2" />
+                <span className="font-bold">{t("home.hero.books")}</span>
+              </div>
+              <span className="text-xs opacity-70 italic">
+                {t("home.hero.voice")} 3
+              </span>
             </a>
           </Button>
         </div>

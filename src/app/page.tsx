@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import {
   Music,
   Heart,
@@ -44,6 +45,13 @@ interface Book {
 
 export default function Page() {
   const { t } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
 
   // Helper function to extract YouTube video ID from URL
   const getYouTubeVideoId = (url: string): string => {
@@ -92,7 +100,7 @@ export default function Page() {
         >
           <a href="/Revelation" className="flex items-center">
             <BookOpen className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-            {t("revelation.title")} Study
+            {mounted ? t("revelation.title") : "Estudo do Apocalipse"} Study
           </a>
         </Button>
       </div>

@@ -38,14 +38,7 @@ describe("Homepage", () => {
         </ThemeProvider>
       );
     });
-    // The text might be in Portuguese or English depending on how t() handles the fallback/hydration
-    // Since default is 'en', we expect the 'en' translation.
-    // Use a regex to be flexible between translated versions
-    expect(
-      screen.getByText(
-        /Ministerio Pastor Ismael Silva|Ministério Pastor Ismael Silva/i
-      )
-    ).toBeInTheDocument();
+    expect(screen.getByText(/The Preacher/i)).toBeInTheDocument();
   });
 
   it("renders messages section", async () => {

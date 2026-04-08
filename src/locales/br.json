@@ -14,11 +14,14 @@
   },
   "home": {
     "hero": {
-      "title": "Ministério Pastor Ismael Silva",
-      "subtitle": "Ensinando a Palavra de Deus",
+      "title": "O Pregador",
+      "subtitle": "Três vozes, uma única mensagem: O Rei está vindo!",
       "tagline": "O Caminho para a Felicidade",
       "cta": "Inicie seu Ano Bíblico",
       "sermons": "Sermões",
+      "music": "Músicas",
+      "books": "Livros",
+      "voice": "Voz",
       "scroll": "Descubra Mais Abaixo"
     },
     "dailyInspiration": {
