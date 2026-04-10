@@ -9,28 +9,46 @@ import {
   Cross,
   Sparkles,
   Book,
+  X,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { useState } from "react";
 
 export default function HeroSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [showVideo, setShowVideo] = useState(false);
+
+  // Video IDs: EN and BR
+  const videoId = language === "br" ? "jf9Kogw6FU4" : "Gk1NMp3g_b0";
 
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Image with Enhanced Divine Overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src="/ministry-images/the-preacher.png"
-          alt="Ministry Header"
-          fill
-          priority
-          className="w-full h-full object-cover object-center scale-105 animate-[zoom_20s_ease-in-out_infinite_alternate]"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-purple-900/60 to-black/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"></div>
+      <div className="absolute inset-0 group">
+        <div
+          className="absolute inset-0 cursor-pointer"
+          onClick={() => setShowVideo(true)}
+        >
+          <Image
+            src="/ministry-images/the-preacher.png"
+            alt="Ministry Header"
+            fill
+            priority
+            className="w-full h-full object-cover object-center scale-105 animate-[zoom_20s_ease-in-out_infinite_alternate] transition-all duration-700 group-hover:scale-110 group-hover:brightness-50"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-purple-900/60 to-black/70 group-hover:bg-black/40 transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"></div>
+
+          {/* Play Icon Hint Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="bg-white/20 backdrop-blur-md rounded-full p-8 border border-white/30 shadow-2xl">
+              <Play className="h-20 w-20 text-white fill-white animate-pulse" />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Floating Divine Elements */}
@@ -128,6 +146,27 @@ export default function HeroSection() {
           </Button>
         </div>
       </div>
+
+      {/* Video Modal Display */}
+      {showVideo && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm">
+          <button
+            onClick={() => setShowVideo(false)}
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20"
+            aria-label="Close video"
+          >
+            <X className="h-8 w-8" />
+          </button>
+          <div className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 ring-1 ring-white/20 transform animate-in fade-in zoom-in duration-300">
+            <iframe
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

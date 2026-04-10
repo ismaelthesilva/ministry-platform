@@ -7,7 +7,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { ExternalLink, Download, Crown } from "lucide-react";
+import { ExternalLink, Download, Crown, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -39,7 +39,7 @@ export default function Books({ books }: Props) {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6 shadow-xl">
-            <svg className="h-8 w-8 text-white" />
+            <BookOpen className="h-8 w-8 text-white" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
             {t("home.books.title")}
