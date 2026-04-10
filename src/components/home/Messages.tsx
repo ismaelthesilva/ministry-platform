@@ -23,11 +23,13 @@ interface Props {
 }
 
 export default function Messages({ messages, getYouTubeVideoId }: Props) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
+    return () => setMounted(false);
   }, []);
 
   return (
@@ -119,9 +121,28 @@ export default function Messages({ messages, getYouTubeVideoId }: Props) {
             &quot;Faith comes by hearing, and hearing by the word of God&quot; -
             Romans 10:17
           </p>
-          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300">
-            <Youtube className="h-5 w-5 mr-2" />
-            Watch More Messages
+          {/* Links: EN and BR playlists */}
+          {/**
+           * EN: https://www.youtube.com/watch?v=Gk1NMp3g_b0&list=PLFiMchafppaWOVhm1lWSZ8tCPWX9vVMHo
+           * BR: https://www.youtube.com/watch?v=jf9Kogw6FU4&list=PLFiMchafppaVhksG9cOoGHhaub54dJ-jW
+           */}
+          <Button
+            asChild
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300"
+          >
+            <a
+              href={
+                language === "br"
+                  ? "https://www.youtube.com/watch?v=jf9Kogw6FU4&list=PLFiMchafppaVhksG9cOoGHhaub54dJ-jW"
+                  : "https://www.youtube.com/watch?v=Gk1NMp3g_b0&list=PLFiMchafppaWOVhm1lWSZ8tCPWX9vVMHo"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              <Youtube className="h-5 w-5 mr-2" />
+              {t("home.messages.watchMore", "Watch More Messages")}
+            </a>
           </Button>
         </div>
       </div>
