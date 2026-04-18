@@ -298,16 +298,17 @@ export function ReadingsView({
   // Undo countdown
   useEffect(() => {
     if (!undoData) return;
-    if (undoData.countdown <= 0) {
-      setUndoData(null);
-      return;
-    }
+    const delay = undoData.countdown <= 0 ? 0 : 1000;
     const timer = setTimeout(
       () =>
         setUndoData((prev) =>
-          prev ? { ...prev, countdown: prev.countdown - 1 } : null
+          prev && prev.countdown <= 0
+            ? null
+            : prev
+            ? { ...prev, countdown: prev.countdown - 1 }
+            : null
         ),
-      1000
+      delay
     );
     return () => clearTimeout(timer);
   }, [undoData]);
