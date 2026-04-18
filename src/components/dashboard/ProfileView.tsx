@@ -110,8 +110,8 @@ export function ProfileView({ user }: ProfileViewProps) {
     setMessage(null);
   };
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleEmailSubmit = async (e?: React.FormEvent) => {
+    e?.preventDefault();
     setEmailLoading(true);
     setEmailMessage(null);
     const result = await updateEmail(newEmail);
@@ -176,7 +176,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                 Email
               </Label>
               {isEditingEmail ? (
-                <form onSubmit={handleEmailSubmit} className="space-y-2">
+                <div className="space-y-2">
                   <Input
                     id="email"
                     type="email"
@@ -185,6 +185,12 @@ export function ProfileView({ user }: ProfileViewProps) {
                     placeholder="Enter new email"
                     required
                     autoFocus
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        handleEmailSubmit();
+                      }
+                    }}
                   />
                   {emailMessage && (
                     <p
@@ -198,7 +204,12 @@ export function ProfileView({ user }: ProfileViewProps) {
                     </p>
                   )}
                   <div className="flex gap-2">
-                    <Button type="submit" size="sm" disabled={emailLoading}>
+                    <Button
+                      type="button"
+                      size="sm"
+                      disabled={emailLoading}
+                      onClick={() => handleEmailSubmit()}
+                    >
                       <Save className="mr-1 h-3 w-3" />
                       {emailLoading ? "Saving…" : "Save"}
                     </Button>
@@ -217,7 +228,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                       Cancel
                     </Button>
                   </div>
-                </form>
+                </div>
               ) : (
                 <div className="flex items-center gap-2">
                   <Input
