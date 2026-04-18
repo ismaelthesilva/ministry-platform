@@ -93,12 +93,12 @@ body {
   }
 
   .reading-card[data-status="completed"] {
-    padding-block: 0.85rem;
+    padding-block: 0.5rem;
   }
 
   .reading-row[data-status="completed"] .reading-cell {
-    padding-top: 0.45rem;
-    padding-bottom: 0.45rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
   }
 
   .reading-row[data-today="true"],
@@ -110,15 +110,15 @@ body {
 
   .reading-card {
     border: 1px solid #e5e7eb;
-    border-radius: 1rem;
-    padding: 1rem;
+    border-radius: 0.75rem;
+    padding: 0.625rem 0.75rem;
     background: #ffffff;
-    min-height: 72px;
+    min-height: auto;
   }
 
   .reading-cell {
     transition: padding 0.2s ease, color 0.2s ease;
-    padding: 0.75rem 0.85rem;
+    padding: 0.4rem 0.65rem;
   }
 
   .reading-status-label {
@@ -179,6 +179,88 @@ body {
   }
 }
 
+/* ── Undo Toast ──────────────────────────────────────────────────────── */
+
+.undo-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 0.65rem 1rem 0.65rem 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: undo-slide-up 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  max-width: calc(100vw - 2rem);
+}
+
+.undo-toast-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.undo-toast-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f1f5f9;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.undo-toast-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.undo-toast-countdown {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+  font-size: 0.75rem;
+}
+
+.undo-toast-close {
+  background: transparent;
+  border: none;
+  color: rgba(241, 245, 249, 0.5);
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.undo-toast-close:hover {
+  color: #f1f5f9;
+}
+
+@keyframes undo-slide-up {
+  from {
+    transform: translateX(-50%) translateY(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .reading-card {
     padding: 1rem 1rem 1.25rem;
@@ -192,5 +274,11 @@ body {
   .reading-status-button {
     width: 48px;
     height: 48px;
+  }
+
+  .undo-toast {
+    bottom: 1rem;
+    padding: 0.6rem 0.875rem 0.6rem 1rem;
+    font-size: 0.75rem;
   }
 }

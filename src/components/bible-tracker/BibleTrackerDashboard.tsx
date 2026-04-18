@@ -68,89 +68,85 @@ export default function BibleTrackerDashboard({
       .replace(/\p{Diacritic}/gu, "")
       .trim();
 
-  const monthOptions =
-    language === "en"
-      ? [
-          { key: "jan", label: "Jan" },
-          { key: "feb", label: "Feb" },
-          { key: "mar", label: "Mar" },
-          { key: "apr", label: "Apr" },
-          { key: "may", label: "May" },
-          { key: "jun", label: "Jun" },
-          { key: "jul", label: "Jul" },
-          { key: "aug", label: "Aug" },
-          { key: "sep", label: "Sep" },
-          { key: "oct", label: "Oct" },
-          { key: "nov", label: "Nov" },
-          { key: "dec", label: "Dec" },
-        ]
-      : [
-          { key: "jan", label: "Jan" },
-          { key: "fev", label: "Fev" },
-          { key: "mar", label: "Mar" },
-          { key: "abr", label: "Abr" },
-          { key: "mai", label: "Mai" },
-          { key: "jun", label: "Jun" },
-          { key: "jul", label: "Jul" },
-          { key: "ago", label: "Ago" },
-          { key: "set", label: "Set" },
-          { key: "out", label: "Out" },
-          { key: "nov", label: "Nov" },
-          { key: "dez", label: "Dez" },
-        ];
+  const isBr = language !== "en";
+
+  const monthOptions = [
+    { key: "jan", label: isBr ? "Jan" : "Jan" },
+    { key: "feb", label: isBr ? "Fev" : "Feb" },
+    { key: "mar", label: isBr ? "Mar" : "Mar" },
+    { key: "apr", label: isBr ? "Abr" : "Apr" },
+    { key: "may", label: isBr ? "Mai" : "May" },
+    { key: "jun", label: isBr ? "Jun" : "Jun" },
+    { key: "jul", label: isBr ? "Jul" : "Jul" },
+    { key: "aug", label: isBr ? "Ago" : "Aug" },
+    { key: "sep", label: isBr ? "Set" : "Sep" },
+    { key: "oct", label: isBr ? "Out" : "Oct" },
+    { key: "nov", label: isBr ? "Nov" : "Nov" },
+    { key: "dec", label: isBr ? "Dez" : "Dec" },
+  ];
 
   const monthTokenMap: Record<string, string> = {
-    janeiro: "jan",
     jan: "jan",
-    january: "jan",
-    fevereiro: "fev",
-    fev: "fev",
     feb: "feb",
-    february: "feb",
-    marco: "mar",
     mar: "mar",
-    march: "mar",
-    abril: "abr",
-    abr: "abr",
-    april: "apr",
-    maio: "mai",
-    mai: "mai",
+    apr: "apr",
     may: "may",
-    junho: "jun",
     jun: "jun",
-    june: "jun",
-    julho: "jul",
     jul: "jul",
-    july: "jul",
-    agosto: "ago",
-    ago: "ago",
-    august: "aug",
-    setembro: "set",
-    set: "set",
+    aug: "aug",
     sep: "sep",
-    sept: "sep",
-    september: "sep",
-    outubro: "out",
-    out: "out",
     oct: "oct",
-    october: "oct",
-    novembro: "nov",
     nov: "nov",
-    november: "nov",
-    dezembro: "dez",
-    dez: "dez",
     dec: "dec",
+    january: "jan",
+    february: "feb",
+    march: "mar",
+    april: "apr",
+    june: "jun",
+    july: "jul",
+    august: "aug",
+    september: "sep",
+    sept: "sep",
+    october: "oct",
+    november: "nov",
     december: "dec",
+    fev: "feb",
+    abr: "apr",
+    mai: "may",
+    ago: "aug",
+    set: "sep",
+    out: "oct",
+    dez: "dec",
+    janeiro: "jan",
+    fevereiro: "feb",
+    marco: "mar",
+    abril: "apr",
+    maio: "may",
+    junho: "jun",
+    julho: "jul",
+    agosto: "aug",
+    setembro: "sep",
+    outubro: "oct",
+    novembro: "nov",
+    dezembro: "dec",
   };
 
   const getMonthKeyFromDate = (date: string) => {
     if (!date) return "";
     const lower = normalizeToken(date);
     let token = "";
-    if (lower.includes(" de ")) token = lower.split(" de ").pop() ?? "";
-    else if (lower.includes("-")) token = lower.split("-").pop() ?? "";
-    else if (lower.includes("/")) token = lower.split("/").pop() ?? "";
-    else token = lower.split(" ")[1] ?? "";
+    if (lower.includes(" de ")) {
+      token = lower.split(" de ").pop() ?? "";
+    } else if (lower.includes("-")) {
+      const parts = lower.split("-");
+      token = parts.find((p) => /[a-z]/.test(p)) ?? "";
+    } else if (lower.includes("/")) {
+      const parts = lower.split("/");
+      token = parts.find((p) => /[a-z]/.test(p)) ?? "";
+    } else {
+      const parts = lower.split(" ");
+      token = parts.find((p) => /[a-z]/.test(p)) ?? "";
+    }
     return monthTokenMap[normalizeToken(token)] ?? "";
   };
 
@@ -168,6 +164,16 @@ export default function BibleTrackerDashboard({
   const availableMonths = monthOptions.filter(
     (month) => readingsByMonth[month.key]?.length
   );
+
+  const monthStats = availableMonths.reduce((acc, m) => {
+    const rds = readingsByMonth[m.key] ?? [];
+    const done = rds.filter((r) =>
+      data.completedReadingIds.includes(r.id)
+    ).length;
+    acc[m.key] = { total: rds.length, completedCount: done };
+    return acc;
+  }, {} as Record<string, { total: number; completedCount: number }>);
+
   const defaultMonth =
     getMonthKeyFromDate(data.todayReading?.date || "") ||
     availableMonths[0]?.key ||
@@ -321,12 +327,31 @@ export default function BibleTrackerDashboard({
           <CardContent>
             <Tabs value={activeMonth} onValueChange={setActiveMonth}>
               <TabsList className="w-full justify-start overflow-x-auto gap-2 mb-4">
-                <TabsTrigger value="all">{t("Todos", "All")}</TabsTrigger>
-                {availableMonths.map((month) => (
-                  <TabsTrigger key={month.key} value={month.key}>
-                    {month.label}
-                  </TabsTrigger>
-                ))}
+                <TabsTrigger value="all" className="flex flex-col items-start">
+                  <span className="font-semibold">{t("Todos", "All")}</span>
+                  <span className="opacity-75 text-xs">
+                    {data.completedReadingIds.length} /{" "}
+                    {data.allReadings.length}
+                  </span>
+                </TabsTrigger>
+                {availableMonths.map((month) => {
+                  const stats = monthStats[month.key] ?? {
+                    total: 0,
+                    completedCount: 0,
+                  };
+                  return (
+                    <TabsTrigger
+                      key={month.key}
+                      value={month.key}
+                      className="flex flex-col items-start"
+                    >
+                      <span className="font-semibold">{month.label}</span>
+                      <span className="opacity-75 text-xs">
+                        {stats.completedCount} / {stats.total}
+                      </span>
+                    </TabsTrigger>
+                  );
+                })}
               </TabsList>
               {["all", ...availableMonths.map((m) => m.key)].map((monthKey) => (
                 <TabsContent key={monthKey} value={monthKey}>
