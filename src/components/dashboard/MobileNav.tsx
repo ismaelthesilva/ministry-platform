@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Home, BookOpen, List, User, Menu } from "lucide-react";
+import { Home, BookOpen, List, User, Menu, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
@@ -12,7 +12,7 @@ import { useLanguage } from "@/context/LanguageContext";
 export function MobileNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
 
   const menuItems = [
     {
@@ -82,6 +82,18 @@ export function MobileNav() {
               );
             })}
           </nav>
+          <div className="p-4 border-t">
+            <button
+              className="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 w-full transition-colors"
+              onClick={() => {
+                setLanguage(language === "en" ? "br" : "en");
+                setOpen(false);
+              }}
+            >
+              <Globe className="mr-3 h-5 w-5 flex-shrink-0" />
+              {language === "en" ? "Português" : "English"}
+            </button>
+          </div>
         </div>
       </SheetContent>
     </Sheet>
