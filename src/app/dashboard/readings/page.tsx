@@ -1,4 +1,4 @@
-import { getUserBibleTrackerData } from "../actions";
+import { getUserBibleTrackerData, getAllPlans } from "../actions";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { ReadingsView } from "@/components/dashboard/ReadingsView";
@@ -11,12 +11,15 @@ export default async function ReadingsPage() {
   }
 
   const userId = session.user.id;
-  const data = await getUserBibleTrackerData(userId);
+  const [data, plans] = await Promise.all([
+    getUserBibleTrackerData(userId),
+    getAllPlans(),
+  ]);
 
   // If no plan selected, redirect to plans page
   if (!data.user || !data.user.selectedPlanId || !data.plan) {
     redirect("/dashboard/plans");
   }
 
-  return <ReadingsView data={data} userId={userId} />;
+  return <ReadingsView data={data} userId={userId} allPlans={plans} />;
 }

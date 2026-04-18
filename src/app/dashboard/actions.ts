@@ -249,6 +249,35 @@ export async function getUserBibleTrackerData(userId: string) {
   }
 }
 
+export async function resetMonthProgress(userId: string, readingIds: string[]) {
+  try {
+    await prisma.userProgress.deleteMany({
+      where: { userId, readingId: { in: readingIds } },
+    });
+    revalidatePath("/dashboard/readings");
+    revalidatePath("/dashboard");
+    return { success: true };
+  } catch (error) {
+    console.error("Error resetting month progress:", error);
+    return { success: false, error: "Failed to reset" };
+  }
+}
+
+export async function restoreReadings(userId: string, readingIds: string[]) {
+  try {
+    await prisma.userProgress.createMany({
+      data: readingIds.map((readingId) => ({ userId, readingId })),
+      skipDuplicates: true,
+    });
+    revalidatePath("/dashboard/readings");
+    revalidatePath("/dashboard");
+    return { success: true };
+  } catch (error) {
+    console.error("Error restoring readings:", error);
+    return { success: false, error: "Failed to restore" };
+  }
+}
+
 export async function getAllPlans(language?: string) {
   try {
     const plans = await prisma.plan.findMany({
@@ -262,5 +291,66 @@ export async function getAllPlans(language?: string) {
   } catch (error) {
     console.error("Error fetching plans:", error);
     return [];
+  }
+}
+
+export async function getTrackerDataForPlan(
+  userId: string,
+  planSlug: string,
+  planLanguage: string
+) {
+  try {
+    const plan = await prisma.plan.findFirst({
+      where: { slug: planSlug, language: planLanguage },
+    });
+
+    if (!plan) {
+      return {
+        plan: null,
+        todayReading: null,
+        allReadings: [],
+        completedReadingIds: [],
+        completionPercentage: 0,
+      };
+    }
+
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now.getTime() - start.getTime();
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+
+    const allReadings = await prisma.dailyReading.findMany({
+      where: { planId: plan.id },
+      orderBy: { dayNumber: "asc" },
+    });
+
+    const todayReading =
+      allReadings.find((r) => r.dayNumber === dayOfYear) || null;
+
+    const userProgress = await prisma.userProgress.findMany({
+      where: { userId, readingId: { in: allReadings.map((r) => r.id) } },
+    });
+    const completedReadingIds = userProgress.map((p) => p.readingId);
+    const completionPercentage = allReadings.length
+      ? Math.round((completedReadingIds.length / allReadings.length) * 100)
+      : 0;
+
+    return {
+      plan: { title: plan.title, slug: plan.slug },
+      todayReading,
+      allReadings,
+      completedReadingIds,
+      completionPercentage,
+    };
+  } catch (error) {
+    console.error("Error getting tracker data for plan:", error);
+    return {
+      plan: null,
+      todayReading: null,
+      allReadings: [],
+      completedReadingIds: [],
+      completionPercentage: 0,
+    };
   }
 }

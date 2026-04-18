@@ -263,6 +263,13 @@
       "topic": "Topic",
       "commentary": "Commentary"
     },
+    "monthlyProgress": {
+      "title": "Monthly Progress",
+      "bestMonth": "Best month: {month} ({pct}%)",
+      "startReadings": "Start your readings!",
+      "viewAll": "View all",
+      "done": "Done"
+    },
     "quickActions": {
       "viewAll": "View All Readings",
       "viewAllDesc": "See your complete reading plan and track progress",
@@ -273,7 +280,7 @@
     },
     "readings": {
       "title": "All Readings",
-      "subtitle": "Complete year reading plan with 366 days",
+      "subtitle": "Complete year reading plan with 365 days",
       "trackProgress": "Track your daily Bible readings",
       "yourProgress": "Your Progress",
       "all": "All",
@@ -294,7 +301,23 @@
       "unableToUpdate": "Unable to update reading. Please try again.",
       "markedComplete": "marked complete",
       "markedIncomplete": "marked incomplete",
-      "keyboardHint": "Use the arrow keys to move between months and press Enter to select."
+      "keyboardHint": "Use the arrow keys to move between months and press Enter to select.",
+      "resetMonth": "Reset Month",
+      "resetConfirm": "Confirm Reset",
+      "resetCancel": "Cancel",
+      "readingsReset": "readings reset",
+      "undoReset": "Undo",
+      "jumpToToday": "Jump to Today",
+      "weekProgress": "Last 7 Days",
+      "completedThisMonth": "completed this month",
+      "onTrack": "On track",
+      "behind": "Behind",
+      "streakDays": "day streak",
+      "markComplete": "Mark complete",
+      "markIncomplete": "Mark incomplete",
+      "updating": "Updating...",
+      "completed": "Completed",
+      "updatingStatus": "Updating reading status"
     }
   },
   "contact": {

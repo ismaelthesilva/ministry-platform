@@ -17,6 +17,11 @@ vi.mock("@/app/dashboard/actions", () => ({
   toggleReadingComplete: vi.fn(() => Promise.resolve({ success: true })),
 }));
 
+// Mock scrollIntoView
+beforeEach(() => {
+  Element.prototype.scrollIntoView = vi.fn();
+});
+
 const mockData = {
   user: {
     preferredLanguage: "en",
@@ -83,13 +88,13 @@ describe("ReadingsView", () => {
   it("displays progress information", () => {
     renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
     expect(screen.getByText("Your Progress")).toBeInTheDocument();
-    expect(screen.getByText(/1 \/ 2/)).toBeInTheDocument();
+    expect(screen.getAllByText(/1 \/ 2/).length).toBeGreaterThan(0);
   });
 
   it("shows today's reading card", () => {
     renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
     expect(screen.getByText("Today's Reading")).toBeInTheDocument();
-    expect(screen.getByText("Day 1")).toBeInTheDocument();
+    expect(screen.getAllByText(/Day\s+1/).length).toBeGreaterThan(0);
   });
 
   it("renders all readings in table", () => {
@@ -110,8 +115,11 @@ describe("ReadingsView", () => {
 
     renderWithProvider(<ReadingsView data={mockData} userId="test-user" />);
 
-    const buttons = screen.getAllByRole("button");
-    fireEvent.click(buttons[0]);
+    // Find toggle buttons by their aria-label
+    const toggleButtons = screen.getAllByLabelText(
+      /Mark (complete|incomplete)/
+    );
+    fireEvent.click(toggleButtons[0]);
 
     await waitFor(() => {
       expect(toggleReadingComplete).toHaveBeenCalled();
