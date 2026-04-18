@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-} from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 import enTranslations from "../locales/en.json";
 import brTranslations from "../locales/br.json";
 import enRevelationTranslations from "../locales/revelation/en.json";
@@ -36,14 +30,13 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
-  const [language, setLanguageState] = useState<string>("en");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("language");
-    if (saved && translations[saved]) {
-      setLanguageState(saved);
+  const [language, setLanguageState] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("language");
+      if (saved && translations[saved]) return saved;
     }
-  }, []);
+    return "en";
+  });
 
   const setLanguage = (lang: string) => {
     localStorage.setItem("language", lang);
