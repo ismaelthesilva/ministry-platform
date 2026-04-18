@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Circle, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface ReadingStatusButtonProps {
   completed: boolean;
@@ -19,7 +20,9 @@ export function ReadingStatusButton({
   showLabel = false,
   className,
 }: ReadingStatusButtonProps) {
+  const { t } = useLanguage();
   const state = completed ? "completed" : "pending";
+
   const iconBase = "h-5 w-5 transition-transform duration-200 ease-out";
   const icon = loading ? (
     <Loader2
@@ -29,18 +32,20 @@ export function ReadingStatusButton({
   ) : completed ? (
     <CheckCircle2 className={cn(iconBase, "text-emerald-500")} />
   ) : (
-    <Circle className={cn(iconBase, "text-muted-foreground")} />
+    <Circle className={cn(iconBase, "text-muted-foreground/60")} />
   );
+
   const labelText = loading
-    ? "Updating..."
+    ? t("dashboard.readings.updating")
     : completed
-    ? "Completed"
-    : "Mark Complete";
+    ? t("dashboard.readings.completed")
+    : t("dashboard.readings.markComplete");
+
   const ariaLabel = loading
-    ? "Updating reading status"
+    ? t("dashboard.readings.updatingStatus")
     : completed
-    ? "Mark reading as incomplete"
-    : "Mark reading as complete";
+    ? t("dashboard.readings.markIncomplete")
+    : t("dashboard.readings.markComplete");
 
   const dataAttributes = {
     "data-state": state,
@@ -55,10 +60,10 @@ export function ReadingStatusButton({
         onClick={onClick}
         disabled={loading}
         className={cn(
-          "gap-2 rounded-full px-3 py-2 font-semibold",
+          "gap-2 rounded-full px-4 py-2 font-semibold transition-all duration-200",
           completed
-            ? "bg-emerald-50 text-emerald-700"
-            : "bg-white text-slate-600",
+            ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-950/30 dark:text-emerald-400"
+            : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300",
           className
         )}
         aria-pressed={completed}
@@ -80,7 +85,7 @@ export function ReadingStatusButton({
       disabled={loading}
       className={cn(
         "reading-status-button",
-        completed ? "border border-emerald-200" : "border border-gray-200",
+        completed ? "border border-emerald-200" : "border border-gray-200/80",
         className
       )}
       aria-pressed={completed}

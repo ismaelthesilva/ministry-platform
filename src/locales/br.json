@@ -263,6 +263,13 @@
       "topic": "Tópico",
       "commentary": "Comentário"
     },
+    "monthlyProgress": {
+      "title": "Progresso Mensal",
+      "bestMonth": "Melhor mês: {month} ({pct}%)",
+      "startReadings": "Comece suas leituras!",
+      "viewAll": "Ver tudo",
+      "done": "Feito"
+    },
     "quickActions": {
       "viewAll": "Ver Todas as Leituras",
       "viewAllDesc": "Veja seu plano completo de leitura e acompanhe o progresso",
@@ -273,7 +280,7 @@
     },
     "readings": {
       "title": "Todas as Leituras",
-      "subtitle": "Plano completo de leitura anual com 366 dias",
+      "subtitle": "Plano completo de leitura anual com 365 dias",
       "trackProgress": "Acompanhe suas leituras bíblicas diárias",
       "yourProgress": "Seu Progresso",
       "all": "Todos",
@@ -294,7 +301,23 @@
       "unableToUpdate": "Não foi possível atualizar a leitura. Tente novamente.",
       "markedComplete": "marcado como concluído",
       "markedIncomplete": "marcado como pendente",
-      "keyboardHint": "Use as setas para navegar pelos meses e pressione Enter para selecionar."
+      "keyboardHint": "Use as setas para navegar pelos meses e pressione Enter para selecionar.",
+      "resetMonth": "Resetar Mês",
+      "resetConfirm": "Confirmar Reset",
+      "resetCancel": "Cancelar",
+      "readingsReset": "leituras resetadas",
+      "undoReset": "Desfazer",
+      "jumpToToday": "Ir para Hoje",
+      "weekProgress": "Últimos 7 Dias",
+      "completedThisMonth": "concluídas este mês",
+      "onTrack": "Em dia",
+      "behind": "Atrasado",
+      "streakDays": "dias seguidos",
+      "markComplete": "Marcar como lido",
+      "markIncomplete": "Marcar como pendente",
+      "updating": "Atualizando...",
+      "completed": "Concluído",
+      "updatingStatus": "Atualizando status da leitura"
     }
   },
   "contact": {

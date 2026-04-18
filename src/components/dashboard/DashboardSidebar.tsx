@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Home, BookOpen, List, User, LogOut } from "lucide-react";
+import { Home, BookOpen, List, User, LogOut, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signOut } from "next-auth/react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function DashboardSidebar() {
   const pathname = usePathname();
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
 
   const menuItems = [
     {
@@ -69,7 +69,16 @@ export function DashboardSidebar() {
             );
           })}
         </nav>
-        <div className="flex-shrink-0 p-4 border-t">
+        <div className="flex-shrink-0 p-4 border-t space-y-2">
+          <Button
+            variant="ghost"
+            className="w-full justify-start text-sm"
+            onClick={() => setLanguage(language === "en" ? "br" : "en")}
+            aria-label={t("navbar.toggleLanguage")}
+          >
+            <Globe className="mr-3 h-5 w-5" />
+            {language === "en" ? "Português" : "English"}
+          </Button>
           <Button
             variant="outline"
             className="w-full justify-start"

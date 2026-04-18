@@ -126,11 +126,13 @@ export function ProfileView({ user }: ProfileViewProps) {
   };
 
   return (
-    <div className="container max-w-4xl mx-auto p-6 space-y-6">
+    <div className="container max-w-4xl mx-auto p-4 sm:p-6 space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Profile</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
+            Profile
+          </h1>
           <p className="text-muted-foreground">
             Manage your account settings and preferences
           </p>
@@ -229,13 +231,14 @@ export function ProfileView({ user }: ProfileViewProps) {
                     type="button"
                     size="sm"
                     variant="outline"
+                    className="min-w-[44px] min-h-[44px]"
                     onClick={() => {
                       setNewEmail(user.email || "");
                       setEmailMessage(null);
                       setIsEditingEmail(true);
                     }}
                   >
-                    <Edit2 className="h-3 w-3" />
+                    <Edit2 className="h-4 w-4" />
                   </Button>
                 </div>
               )}

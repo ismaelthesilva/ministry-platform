@@ -1,5 +1,6 @@
 import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
 import { MobileNav } from "@/components/dashboard/MobileNav";
+import { DeveloperFooter } from "@/components/Footer";
 
 export default function DashboardLayout({
   children,
@@ -22,6 +23,7 @@ export default function DashboardLayout({
         {/* Page Content */}
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
           {children}
+          <DeveloperFooter />
         </main>
       </div>
     </div>
