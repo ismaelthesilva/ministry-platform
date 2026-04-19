@@ -46,7 +46,8 @@ pids
 # Coverage directory used by tools like istanbul
 coverage/
 *.lcov
-Docs/
+docs/
+prisma/backup
 
 # nyc test coverage
 .nyc_output
