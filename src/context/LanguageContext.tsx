@@ -1,5 +1,54 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useSyncExternalStore,
+  ReactNode,
+} from "react";
+
+// ---------------------------------------------------------------------------
+// Module-level external store — avoids useState + useEffect hydration issues
+// ---------------------------------------------------------------------------
+let _language = "en";
+let _initialized = false;
+const _subscribers = new Set<() => void>();
+
+function initLanguageStore() {
+  if (_initialized || typeof window === "undefined") return;
+  _initialized = true;
+  const saved = localStorage.getItem("language");
+  if (saved && (saved === "en" || saved === "br")) {
+    _language = saved;
+  }
+}
+
+const languageStore = {
+  subscribe(cb: () => void): () => void {
+    _subscribers.add(cb);
+    return () => {
+      _subscribers.delete(cb);
+      // Reset when all consumers unmount (keeps tests isolated without module reloads)
+      if (_subscribers.size === 0) {
+        _language = "en";
+        _initialized = false;
+      }
+    };
+  },
+  getSnapshot(): string {
+    initLanguageStore();
+    return _language;
+  },
+  getServerSnapshot(): string {
+    return "en";
+  },
+  set(lang: string): void {
+    _language = lang;
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", lang);
+    }
+    _subscribers.forEach((cb) => cb());
+  },
+};
 import enTranslations from "../locales/en.json";
 import brTranslations from "../locales/br.json";
 import enRevelationTranslations from "../locales/revelation/en.json";
@@ -30,15 +79,14 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
-  const [language, setLanguageState] = useState<string>(() => {
-    if (typeof window === "undefined") return "en";
-    const saved = localStorage.getItem("language");
-    return saved && translations[saved] ? saved : "en";
-  });
+  const language = useSyncExternalStore(
+    languageStore.subscribe,
+    languageStore.getSnapshot,
+    languageStore.getServerSnapshot
+  );
 
   const setLanguage = (lang: string) => {
-    localStorage.setItem("language", lang);
-    setLanguageState(lang);
+    languageStore.set(lang);
   };
   const t = (key: string, fallback?: string): string => {
     try {
