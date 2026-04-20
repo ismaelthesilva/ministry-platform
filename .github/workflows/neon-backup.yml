@@ -2,7 +2,7 @@ name: Neon Database Backup
 
 on:
   schedule:
-    - cron: "0 14 */3 * *" # Every 3 days at 2am NZ
+    - cron: "0 14 * * *" # Every day at 2am NZ
   workflow_dispatch:
 
 jobs:
@@ -43,7 +43,7 @@ jobs:
           ls -lh "$BACKUP_FILE"
 
       - name: Upload to GitHub Releases
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: backup-${{ env.BACKUP_DATE }}
           name: Database Backup ${{ env.BACKUP_DATE }}
@@ -51,10 +51,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Keep only last 10 releases
-        uses: dev-drprasad/delete-older-releases@v0.3.2
-        with:
-          keep_latest: 10
-          delete_tags: true
+      - name: Keep last 30 releases
+        run: |
+          gh release list --limit 1000 --json tagName,createdAt \
+            --jq 'sort_by(.createdAt) | reverse | .[30:] | .[].tagName' \
+          | while read -r tag; do
+              gh release delete "$tag" --yes --cleanup-tag
+            done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
