@@ -43,7 +43,7 @@ jobs:
           ls -lh "$BACKUP_FILE"
 
       - name: Upload to GitHub Releases
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: backup-${{ env.BACKUP_DATE }}
           name: Database Backup ${{ env.BACKUP_DATE }}
@@ -52,11 +52,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Keep last 30 releases
-        run: |
-          gh release list --limit 1000 --json tagName,createdAt \
-            --jq 'sort_by(.createdAt) | reverse | .[30:] | .[].tagName' \
-          | while read -r tag; do
-              gh release delete "$tag" --yes --cleanup-tag
-            done
+        uses: dev-drprasad/delete-older-releases@v0.3.2
+        with:
+          keep_latest: 30
+          delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
