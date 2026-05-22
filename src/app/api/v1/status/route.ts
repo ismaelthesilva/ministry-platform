@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
+// Prevent Next.js from statically collecting this route at build time.
+// DATABASE_URL is only available at runtime on Vercel.
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     const updatedAt = new Date().toISOString();
