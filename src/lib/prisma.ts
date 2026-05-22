@@ -7,8 +7,18 @@ function createPrismaClient() {
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) {
     if (process.env.NEXT_PHASE === "phase-production-build") {
-      // Return a dummy client during build time if DB is not available
-      return new PrismaClient();
+      // During build, DATABASE_URL is not available on Vercel.
+      // Return a Proxy stub so module-level imports don't throw;
+      // routes must be marked `dynamic = 'force-dynamic'` so this
+      // stub is never actually called at runtime.
+      return new Proxy({} as PrismaClient, {
+        get(_target, prop) {
+          if (prop === "$connect" || prop === "$disconnect") {
+            return () => Promise.resolve();
+          }
+          return () => Promise.resolve(null);
+        },
+      });
     }
     throw new Error("DATABASE_URL environment variable is not set");
   }
