@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
   Music,
@@ -149,7 +150,62 @@ export default function Page() {
 
       <Books books={books} />
 
-      {/* Music Album Section - Enhanced with Divine Harmony Theme */}
+      {/* Social Project Banner */}
+      <section className="py-16 px-4 bg-gradient-to-b from-white to-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <Link href="/leadership" className="block group">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[340px] flex items-center">
+              {/* Background image */}
+              <Image
+                src="/ministry-images/social-youth-project.png"
+                alt="Social Project — Rangatahi West Auckland"
+                fill
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F]/92 via-[#0A0A0F]/70 to-transparent" />
+              {/* Content */}
+              <div className="relative z-10 px-8 py-12 md:px-14 max-w-xl">
+                <span
+                  className="inline-block text-xs tracking-widest uppercase border rounded-full px-3 py-1 mb-5"
+                  style={{
+                    fontFamily: "monospace",
+                    color: "#818cf8",
+                    borderColor: "rgba(99,102,241,0.4)",
+                  }}
+                >
+                  Social Project · Tāmaki Makaurau · Active
+                </span>
+                <h2
+                  className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  Three Pillars.{" "}
+                  <span style={{ color: "#818cf8" }}>One Mission.</span>
+                  <br />
+                  <span style={{ color: "#22d3ee" }}>
+                    Aotearoa&apos;s Youth.
+                  </span>
+                </h2>
+                <p className="text-slate-300 text-base leading-relaxed mb-8">
+                  Pastoral care, technology, and sport — working in concert to
+                  support rangatahi across West Auckland. An ongoing community
+                  initiative addressing the youth mental health crisis.
+                </p>
+                <span
+                  className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full text-sm transition-colors duration-200"
+                  style={{
+                    backgroundColor: "#4f46e5",
+                    color: "#fff",
+                  }}
+                >
+                  Discover the Project →
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
       <section
         id="music"
         className="py-20 bg-gradient-to-b from-blue-50 to-purple-50 relative overflow-hidden"
