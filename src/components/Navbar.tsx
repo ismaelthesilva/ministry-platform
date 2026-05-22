@@ -1,6 +1,6 @@
 "use client";
 // ...existing code...
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -16,6 +16,8 @@ import {
   User,
   Mail,
   BookOpen,
+  ChevronDown,
+  Globe,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -42,6 +44,8 @@ const LanguageSwitcher: React.FC = () => {
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const resourcesRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { t } = useLanguage();
   const [mounted, setMounted] = React.useState(false);
@@ -112,6 +116,33 @@ const Navbar: React.FC = () => {
       href: "/contact",
       icon: <Mail className="h-4 w-4" />,
     },
+    {
+      name: "Social Project",
+      href: "/leadership",
+      icon: <Globe className="h-4 w-4" />,
+    },
+  ];
+  const resourceItems = [
+    {
+      name: t("navbar.messages", "Messages"),
+      href: "/#messages",
+      icon: <MessageSquare className="h-4 w-4" />,
+    },
+    {
+      name: t("navbar.songs", "Songs"),
+      href: "/#songs",
+      icon: <Music className="h-4 w-4" />,
+    },
+    {
+      name: t("navbar.books", "Books"),
+      href: "/#books",
+      icon: <Book className="h-4 w-4" />,
+    },
+    {
+      name: t("navbar.revelation", "Revelation"),
+      href: "/Revelation",
+      icon: <Book className="h-4 w-4" />,
+    },
   ];
   const scrollToSection = (sectionId: string) => {
     if (sectionId.startsWith("#")) {
@@ -162,6 +193,20 @@ const Navbar: React.FC = () => {
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        resourcesRef.current &&
+        !resourcesRef.current.contains(e.target as Node)
+      ) {
+        setResourcesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,37 +236,114 @@ const Navbar: React.FC = () => {
           </Link>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {navigationItems.map((item) =>
-              item.href.includes("#") ? (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
+            {/* Home */}
+            <Link
+              href="/"
+              className={cn(
+                "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100",
+                isActive("/") ? "bg-blue-100 text-blue-700" : "text-gray-700"
+              )}
+            >
+              <Heart className="h-4 w-4" />
+              <span>{mounted ? t("navbar.home", "Home") : ""}</span>
+            </Link>
+
+            {/* Resources dropdown */}
+            <div ref={resourcesRef} className="relative">
+              <button
+                onClick={() => setResourcesOpen((prev) => !prev)}
+                className={cn(
+                  "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100",
+                  resourcesOpen ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                )}
+              >
+                <Book className="h-4 w-4" />
+                <span>{mounted ? "Resources" : ""}</span>
+                <ChevronDown
                   className={cn(
-                    "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-                    "hover:bg-gray-100",
-                    "text-gray-700"
+                    "h-3 w-3 transition-transform duration-200",
+                    resourcesOpen && "rotate-180"
                   )}
-                >
-                  {item.icon}
-                  <span>{mounted ? item.name : ""}</span>
-                </button>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-                    "hover:bg-gray-100",
-                    isActive(item.href)
-                      ? "bg-blue-100 text-blue-700"
-                      : "text-gray-700"
+                />
+              </button>
+              {resourcesOpen && (
+                <div className="absolute top-full left-0 mt-1.5 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-50">
+                  {resourceItems.map((item) =>
+                    item.href.includes("#") ? (
+                      <button
+                        key={item.name}
+                        onClick={() => {
+                          handleNavClick(item.href);
+                          setResourcesOpen(false);
+                        }}
+                        className="flex items-center space-x-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 w-full text-left"
+                      >
+                        {item.icon}
+                        <span>{mounted ? item.name : ""}</span>
+                      </button>
+                    ) : (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setResourcesOpen(false)}
+                        className={cn(
+                          "flex items-center space-x-3 px-4 py-2.5 text-sm hover:bg-gray-50",
+                          isActive(item.href)
+                            ? "text-blue-700 font-medium"
+                            : "text-gray-700"
+                        )}
+                      >
+                        {item.icon}
+                        <span>{mounted ? item.name : ""}</span>
+                      </Link>
+                    )
                   )}
-                >
-                  {item.icon}
-                  <span>{mounted ? item.name : ""}</span>
-                </Link>
-              )
-            )}
+                </div>
+              )}
+            </div>
+
+            {/* About */}
+            <Link
+              href="/about"
+              className={cn(
+                "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100",
+                isActive("/about")
+                  ? "bg-blue-100 text-blue-700"
+                  : "text-gray-700"
+              )}
+            >
+              <User className="h-4 w-4" />
+              <span>{mounted ? t("navbar.about", "About") : ""}</span>
+            </Link>
+
+            {/* Contact */}
+            <Link
+              href="/contact"
+              className={cn(
+                "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100",
+                isActive("/contact")
+                  ? "bg-blue-100 text-blue-700"
+                  : "text-gray-700"
+              )}
+            >
+              <Mail className="h-4 w-4" />
+              <span>{mounted ? t("navbar.contact", "Contact") : ""}</span>
+            </Link>
+
+            {/* Social Project */}
+            <Link
+              href="/leadership"
+              className={cn(
+                "flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100",
+                isActive("/leadership")
+                  ? "bg-blue-100 text-blue-700"
+                  : "text-gray-700"
+              )}
+            >
+              <Globe className="h-4 w-4" />
+              <span>{mounted ? "Social Project" : ""}</span>
+            </Link>
+
             <div className="flex items-center space-x-2 ml-4">
               <LanguageSwitcher />
             </div>
