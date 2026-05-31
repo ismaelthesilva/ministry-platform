@@ -759,7 +759,7 @@ export default function LeadershipPage() {
           </p>
           <div className="flex gap-6 text-sm" style={{ color: "#94a3b8" }}>
             <a
-              href="https://www.linkedin.com/in/ismaelsilva"
+              href="https://www.linkedin.com/in/ismaelthesilva"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors duration-200 hover:text-indigo-400"
@@ -768,20 +768,13 @@ export default function LeadershipPage() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/ismaesilva"
+              href="https://github.com/ismaelthesilva"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors duration-200 hover:text-indigo-400"
               style={{ color: "inherit" }}
             >
               GitHub
-            </a>
-            <a
-              href="mailto:ismael@ismaelsilva.org"
-              className="transition-colors duration-200 hover:text-indigo-400"
-              style={{ color: "inherit" }}
-            >
-              Email
             </a>
           </div>
           <p
