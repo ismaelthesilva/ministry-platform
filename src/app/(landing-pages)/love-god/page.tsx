@@ -425,7 +425,7 @@ export default function LoveGodPage() {
               >
                 <iframe
                   title="Love God, Hate Church? — VSL Coming Soon"
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/k29ONyjCyOE?si=81l0lgrTH-IH5L0D"
                   style={{
                     position: "absolute",
                     top: 0,
