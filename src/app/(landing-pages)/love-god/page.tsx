@@ -261,19 +261,19 @@ export default function LoveGodPage() {
     {
       quote:
         "I left my church three years ago and carried the guilt like a stone. This book finally put it down. Ismael doesn't let the institution off the hook — and he doesn't let us wallow either. It's the most honest thing I've read about faith in years.",
-      name: "Rachel M.",
+      name: "— Early Reader",
       role: "Former worship leader, now house church member",
     },
     {
       quote:
         "As a pastor, I've watched too many people leave without anyone asking why. Ismael's framework gave me language for those conversations. This book should be in every pastor's library.",
-      name: "Pastor David K.",
-      role: "Senior Pastor, Covenant Church",
+      name: "— Early Reader",
+      role: "Senior Pastor",
     },
     {
       quote:
         "I was skeptical — another 'church hurt' book? But this isn't that. It's theological. It's precise. And it changed how I lead. I required my entire staff to read it.",
-      name: "Pastor Leah T.",
+      name: "— Early Reader",
       role: "Executive Pastor, multi-site church",
     },
   ];
@@ -932,7 +932,7 @@ export default function LoveGodPage() {
                   }}
                 >
                   {[
-                    "✓ Publish-Ready Manuscript",
+                    "✓ Now Available on Amazon",
                     "✓ 78,000 Words",
                     "✓ 12-Chapter Theological Framework",
                   ].map((badge) => (
@@ -1347,24 +1347,6 @@ export default function LoveGodPage() {
                 Order Now — Amazon →
               </a>
 
-              <a
-                href="#preorder"
-                className="lghc-cta-outline"
-                style={{
-                  display: "inline-block",
-                  background: "transparent",
-                  color: C.cream,
-                  fontSize: "16px",
-                  fontWeight: 600,
-                  padding: "14px 40px",
-                  borderRadius: "50px",
-                  textDecoration: "none",
-                  border: `1px solid ${C.cream}35`,
-                }}
-              >
-                Pre-order Signed Hardcover
-              </a>
-
               <p
                 style={{
                   color: C.mutedDark,
@@ -1372,8 +1354,8 @@ export default function LoveGodPage() {
                   marginTop: "4px",
                 }}
               >
-                🔒 30-Day Money-Back Guarantee · Secure Checkout · Amazon
-                Fulfilled
+                🔒 Secure Checkout · Fulfilled by Amazon · Kindle &amp; Print
+                Available
               </p>
             </div>
           </div>
@@ -1439,11 +1421,9 @@ export default function LoveGodPage() {
               delivered to your inbox. No spam — ever.
             </p>
 
-            {/* ConvertKit / Mailchimp form — swap YOUR_FORM_ID */}
             <form
-              action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions"
+              action="https://app.kit.com/forms/9644911/subscriptions"
               method="post"
-              target="_blank"
               style={{
                 display: "flex",
                 flexDirection: "column",
