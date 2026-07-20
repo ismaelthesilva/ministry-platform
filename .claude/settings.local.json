@@ -5,7 +5,18 @@
       "Bash(npx tsc *)",
       "Bash(npm run *)",
       "Bash(git stash *)",
-      "Bash(npx eslint *)"
+      "Bash(npx eslint *)",
+      "Bash(python3 -c \"import docx\")",
+      "Bash(python3 extract.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 build_book.py)",
+      "Bash(python3 generate_ts.py)",
+      "Bash(grep -rn \"href=\\\\\"/Revelation\\\\\"\\\\|href={\\\\`/Revelation\" src/components/ src/app/)",
+      "Bash(sips -g pixelWidth -g pixelHeight docx_raw/word/media/image1.JPG)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(npx vitest *)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs -r kill)"
     ]
   }
 }

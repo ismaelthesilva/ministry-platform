@@ -41,7 +41,10 @@ describe("RevelationChapterUnderResearch", () => {
     renderWithProvider(<RevelationChapterUnderResearch chapterNumber={7} />);
     const backButton = screen.getByText(/Back to Revelation Index/i);
     expect(backButton).toBeInTheDocument();
-    expect(backButton.closest("a")).toHaveAttribute("href", "/Revelation");
+    expect(backButton.closest("a")).toHaveAttribute(
+      "href",
+      "/Revelation/study"
+    );
   });
 
   it("displays study in progress title", () => {

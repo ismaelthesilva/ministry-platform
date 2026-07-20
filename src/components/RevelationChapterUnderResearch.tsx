@@ -31,7 +31,7 @@ const RevelationChapterUnderResearch: React.FC<
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-8">
       <div className="max-w-4xl mx-auto">
         {/* Back to Index Button */}
-        <Link href="/Revelation">
+        <Link href="/Revelation/study">
           <Button variant="outline" className="mb-6 flex items-center gap-2">
             <ArrowLeft className="h-4 w-4" />
             {getText(
@@ -169,7 +169,7 @@ const RevelationChapterUnderResearch: React.FC<
               onClick={() =>
                 chapterNumber > 1
                   ? router.push(`/Revelation/Revelation${chapterNumber - 1}`)
-                  : router.push("/Revelation")
+                  : router.push("/Revelation/study")
               }
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -183,7 +183,7 @@ const RevelationChapterUnderResearch: React.FC<
               onClick={() =>
                 chapterNumber < 22
                   ? router.push(`/Revelation/Revelation${chapterNumber + 1}`)
-                  : router.push("/Revelation")
+                  : router.push("/Revelation/study")
               }
               disabled={chapterNumber >= 22}
             >
