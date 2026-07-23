@@ -246,7 +246,7 @@ export default function LeadershipPage() {
                 className="text-sm mb-4"
                 style={{ fontFamily: fontDmMono, color: "#818cf8" }}
               >
-                Youth Pastor, Northwest Anglican Church
+                Pastor, NW Church
               </p>
               <p
                 className="text-sm leading-relaxed flex-1"
@@ -477,7 +477,7 @@ export default function LeadershipPage() {
         >
           &ldquo;Kāore e taea e tētahi tangata anake — no single person can do
           this alone. The project operates through reciprocal relationships with
-          the Leataata Trust, Royal Road School, and the Anglican Diocese,
+          the Leataata Trust, Royal Road School, and the NW Church,
           connecting systems that strengthen each other.&rdquo;
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -491,7 +491,7 @@ export default function LeadershipPage() {
               desc: "On-campus mentoring and chaplaincy. Schools see youth daily; churches provide extended support.",
             },
             {
-              name: "Anglican Diocese",
+              name: "NW Church",
               desc: "Institutional backing for youth mentorship network development across Auckland.",
             },
           ].map(({ name, desc }) => (
@@ -560,7 +560,7 @@ export default function LeadershipPage() {
               practical skill, and genuine faith into a replicable model.
             </p>
             <p>
-              As Youth Pastor at Northwest Anglican Church, I work directly with
+              As Youth Pastor at NW Church, I work directly with
               150+ young people, and many will face bullying, sexual abuse,
               mental health crises, and isolation. I hold a Master&apos;s in
               Leadership and a postgraduate qualification in Psychology (Family
@@ -601,7 +601,7 @@ export default function LeadershipPage() {
             </p>
             <p>
               This model is collaborative — rooted in partnerships with the
-              Leataata Trust, Royal Road School, and the Anglican Diocese. It is
+              Leataata Trust, Royal Road School, and the NW Church. It is
               sustainable through institutional backing and digital
               infrastructure. And it is scalable: The Preacher platform is
               designed to be adopted by churches and organisations across
@@ -630,14 +630,14 @@ export default function LeadershipPage() {
             {
               quote:
                 "He very quickly endeared himself to the young people and their parents and the leadership of our church community. He has a heart to teach and guide young people into healthy attitudes and behaviours that grow them into strong individuals and citizens.",
-              name: "Robyn Fasi",
-              role: "Community Deacon, Northwest Anglican Church",
+              name: "Workmate Feeback",
+              role: "Community NW Church",
             },
             {
               quote:
                 "Under Pastor Ismael's leadership, my two teenage girls have grown spiritually, emotionally, and personally. He has been a wonderful role model—teaching them the importance of faith, respect, kindness, and integrity.",
               name: "Lowata Rokowati",
-              role: "Parent, Northwest Anglican Church community",
+              role: "Parent, NW Church community",
             },
           ].map(({ quote, name, role }) => (
             <div
@@ -705,7 +705,7 @@ export default function LeadershipPage() {
               {
                 n: "01",
                 title: "Diocese Mentor Network",
-                desc: "A trained network of youth mentors and leaders across the Anglican Diocese, rooted in trauma-informed frameworks and embodied resilience practices.",
+                desc: "A trained network of youth mentors and leaders across Auckland, rooted in trauma-informed frameworks and embodied resilience practices.",
               },
               {
                 n: "02",
