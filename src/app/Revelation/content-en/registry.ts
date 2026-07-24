@@ -1,0 +1,401 @@
+import type { ChapterMeta, PartMeta } from "../content/types";
+
+// English edition of the chapter registry — mirrors ../content/registry.ts
+// structure and numbering exactly, but with translated/adapted titles.
+export const chapterRegistry: ChapterMeta[] = [
+  {
+    number: 1,
+    title: `The End of Fear`,
+    subtitle: `Why Revelation Is a Book of Hope (Revelation 1:1-3)`,
+    part: 1,
+    wordCount: 620,
+    hasNotes: false,
+  },
+  {
+    number: 2,
+    title: `The Judge's Face`,
+    subtitle: `Jesus As You Have Never Imagined Him (Revelation 1:4-20)`,
+    part: 1,
+    wordCount: 660,
+    hasNotes: false,
+  },
+  {
+    number: 3,
+    title: `Spiritual Burnout`,
+    subtitle: `When Love Grows Cold and Turns to Routine (Revelation 2:1-7)`,
+    part: 1,
+    wordCount: 580,
+    hasNotes: false,
+  },
+  {
+    number: 4,
+    title: `Invisible Wealth`,
+    subtitle: `Why Losing Everything Can Mean Gaining Everything (Revelation 2:8-11)`,
+    part: 1,
+    wordCount: 690,
+    hasNotes: false,
+  },
+  {
+    number: 5,
+    title: `The Tolerance Trap`,
+    subtitle: `The Danger of Accepting Everything (Pergamum and Thyatira - Revelation 2:12-29)`,
+    part: 1,
+    wordCount: 780,
+    hasNotes: false,
+  },
+  {
+    number: 6,
+    title: `The Living Dead`,
+    subtitle: `Do You Have Life, or Just a Reputation? (Sardis - Revelation 3:1-6)`,
+    part: 1,
+    wordCount: 650,
+    hasNotes: false,
+  },
+  {
+    number: 7,
+    title: `The Open Door`,
+    subtitle: `The Power of Faithfulness in Weakness (Philadelphia - Revelation 3:7-13)`,
+    part: 1,
+    wordCount: 660,
+    hasNotes: false,
+  },
+  {
+    number: 8,
+    title: `Neither Hot Nor Cold`,
+    subtitle: `God's Nausea at Hypocrisy (Laodicea - Revelation 3:14-22)`,
+    part: 1,
+    wordCount: 720,
+    hasNotes: false,
+  },
+  {
+    number: 9,
+    title: `The Command Center`,
+    subtitle: `Who Really Runs the Planet? (Revelation 4:1-11)`,
+    part: 2,
+    wordCount: 830,
+    hasNotes: false,
+  },
+  {
+    number: 10,
+    title: `The Paradox`,
+    subtitle: `The Lion Who Won by Dying (Revelation 5:1-14)`,
+    part: 2,
+    wordCount: 830,
+    hasNotes: false,
+  },
+  {
+    number: 11,
+    title: `War and Peace`,
+    subtitle: `The Bloody History of Truth (The 4 Horsemen - Revelation 6:1-8)`,
+    part: 2,
+    wordCount: 780,
+    hasNotes: false,
+  },
+  {
+    number: 12,
+    title: `The Cry for Justice`,
+    subtitle: `"How Long, O Lord?" (The 5th Seal - Revelation 6:9-11)`,
+    part: 2,
+    wordCount: 810,
+    hasNotes: false,
+  },
+  {
+    number: 13,
+    title: `The Day the Sky Fell`,
+    subtitle: `Cosmic Signs and the End (The 6th Seal - Revelation 6:12-17)`,
+    part: 2,
+    wordCount: 830,
+    hasNotes: false,
+  },
+  {
+    number: 14,
+    title: `Armor-Plated`,
+    subtitle: `The Mark That Protects You in the Chaos (The Sealing - Revelation 7:1-8)`,
+    part: 2,
+    wordCount: 850,
+    hasNotes: false,
+  },
+  {
+    number: 15,
+    title: `The Silence of God`,
+    subtitle: `The Calm Before the Final Embrace (The 7th Seal - Revelation 8:1)`,
+    part: 2,
+    wordCount: 780,
+    hasNotes: false,
+  },
+  {
+    number: 16,
+    title: `Environmental Collapse`,
+    subtitle: `Judgment on Jerusalem and the Fall of Rome (Trumpets 1 and 2 - Revelation 8:2-9)`,
+    part: 3,
+    wordCount: 880,
+    hasNotes: false,
+  },
+  {
+    number: 17,
+    title: `Bitter Waters`,
+    subtitle: `The Pollution of Truth and the Eclipse of God (Trumpets 3 and 4 - Revelation 8:10-13)`,
+    part: 3,
+    wordCount: 1000,
+    hasNotes: false,
+  },
+  {
+    number: 18,
+    title: `The Key to the Abyss`,
+    subtitle: `When Hell Rises to Earth (Trumpet 5 - Revelation 9:1-12)`,
+    part: 3,
+    wordCount: 830,
+    hasNotes: false,
+  },
+  {
+    number: 19,
+    title: `The Invisible War`,
+    subtitle: `The Conflict the Media Won't Show You (Trumpet 6 - Revelation 9:13-21)`,
+    part: 3,
+    wordCount: 900,
+    hasNotes: false,
+  },
+  {
+    number: 20,
+    title: `Digesting the Truth`,
+    subtitle: `Why Prophecy Is Sweet and Bitter (Revelation 10:1-11)`,
+    part: 3,
+    wordCount: 960,
+    hasNotes: false,
+  },
+  {
+    number: 21,
+    title: `The Two Witnesses`,
+    subtitle: `The Book No One Can Kill (Revelation 11:1-14)`,
+    part: 3,
+    wordCount: 940,
+    hasNotes: false,
+  },
+  {
+    number: 22,
+    title: `The Final Trumpet`,
+    subtitle: `The Kingdom Changes Owners (The Seventh Trumpet - Revelation 11:15-19)`,
+    part: 3,
+    wordCount: 780,
+    hasNotes: false,
+  },
+  {
+    number: 23,
+    title: `Christmas and War`,
+    subtitle: `Behind the Scenes of the Cosmic War (Revelation 12:1-17)`,
+    part: 4,
+    wordCount: 1140,
+    hasNotes: false,
+  },
+  {
+    number: 24,
+    title: `The Beast from the Sea`,
+    subtitle: `Religion and Power — A Deadly Mixture (Revelation 13:1-10)`,
+    part: 4,
+    wordCount: 920,
+    hasNotes: false,
+  },
+  {
+    number: 25,
+    title: `The Hidden Enemy`,
+    subtitle: `When Tyranny Wears the Clothes of Liberty (The Beast from the Earth - Revelation 13:11-18)`,
+    part: 4,
+    wordCount: 950,
+    hasNotes: false,
+  },
+  {
+    number: 26,
+    title: `The Resistance`,
+    subtitle: `The Profile of Those Who Cannot Be Bought (Revelation 14:1-5)`,
+    part: 4,
+    wordCount: 1090,
+    hasNotes: false,
+  },
+  {
+    number: 27,
+    title: `The Final Ultimatum`,
+    subtitle: `Three Messages for the Modern World (Revelation 14:6-13)`,
+    part: 4,
+    wordCount: 980,
+    hasNotes: false,
+  },
+  {
+    number: 28,
+    title: `The Great Harvest`,
+    subtitle: `Wheat, or Grapes of Blood — Which Are You? (Revelation 14:14-20)`,
+    part: 4,
+    wordCount: 900,
+    hasNotes: false,
+  },
+  {
+    number: 29,
+    title: `The Song of the Free`,
+    subtitle: `Victory Over the System (Revelation 15:1-8)`,
+    part: 4,
+    wordCount: 850,
+    hasNotes: false,
+  },
+  {
+    number: 30,
+    title: `No Mercy`,
+    subtitle: `When the Door of Grace Closes (Bowls 1 to 3 - Revelation 16:1-7)`,
+    part: 5,
+    wordCount: 1010,
+    hasNotes: false,
+  },
+  {
+    number: 31,
+    title: `Heat and Darkness`,
+    subtitle: `Extreme Weather and the Darkened Throne (Bowls 4 and 5 - Revelation 16:8-11)`,
+    part: 5,
+    wordCount: 810,
+    hasNotes: false,
+  },
+  {
+    number: 32,
+    title: `Armageddon`,
+    subtitle: `What Will Really Happen (Bowl 6 - Revelation 16:12-16)`,
+    part: 5,
+    wordCount: 1050,
+    hasNotes: false,
+  },
+  {
+    number: 33,
+    title: `It Is Done`,
+    subtitle: `The End of the Line for Evil (Bowl 7 - Revelation 16:17-21)`,
+    part: 5,
+    wordCount: 900,
+    hasNotes: false,
+  },
+  {
+    number: 34,
+    title: `The Great Harlot`,
+    subtitle: `The Seduction of False Religion (Revelation 17:1-6)`,
+    part: 6,
+    wordCount: 880,
+    hasNotes: false,
+  },
+  {
+    number: 35,
+    title: `Politics and Religion`,
+    subtitle: `The Eighth King and the Final Superpower (Revelation 17:7-18)`,
+    part: 6,
+    wordCount: 1010,
+    hasNotes: false,
+  },
+  {
+    number: 36,
+    title: `The Global Crash`,
+    subtitle: `When Money Will Be Worth Nothing (Revelation 18)`,
+    part: 6,
+    wordCount: 1000,
+    hasNotes: false,
+  },
+  {
+    number: 37,
+    title: `The Wedding Invitation`,
+    subtitle: `The Feast in Heaven While the Earth Burns (Revelation 19:1-10)`,
+    part: 6,
+    wordCount: 870,
+    hasNotes: false,
+  },
+  {
+    number: 38,
+    title: `The White Rider`,
+    subtitle: `The Return of the King of Kings, the Journey Through Space, and the End of Human History (Revelation 19:11-21; 8:1)`,
+    part: 6,
+    wordCount: 1200,
+    hasNotes: false,
+  },
+  {
+    number: 39,
+    title: `A Vacation from History`,
+    subtitle: `The Trip of a Lifetime and the Millennium in Heaven (Revelation 20:1-6)`,
+    part: 7,
+    wordCount: 1010,
+    hasNotes: false,
+  },
+  {
+    number: 40,
+    title: `The Final Judgment`,
+    subtitle: `The End of Impunity and the Death of Death (Revelation 20:7-15)`,
+    part: 7,
+    wordCount: 1080,
+    hasNotes: false,
+  },
+  {
+    number: 41,
+    title: `Heaven on Earth`,
+    subtitle: `Farewell to Pain, Tears, and Death (Revelation 21:1-5)`,
+    part: 7,
+    wordCount: 1010,
+    hasNotes: false,
+  },
+  {
+    number: 42,
+    title: `Face to Face`,
+    subtitle: `The University of Eternity and the End of the Conflict (Revelation 22)`,
+    part: 7,
+    wordCount: 990,
+    hasNotes: false,
+  },
+  {
+    number: 43,
+    title: `Epilogue`,
+    part: 7,
+    wordCount: 780,
+    hasNotes: false,
+  },
+];
+
+export const partRegistry: PartMeta[] = [
+  {
+    number: 1,
+    title: `Part 1: The Survival Manual (Vision and Letters)`,
+    tagline: `The Promise: Understanding the church, and yourself.`,
+  },
+  {
+    number: 2,
+    title: `Part 2: The Control of History (The Seals)`,
+  },
+  {
+    number: 3,
+    title: `Part 3: The Emergency Alerts (The Trumpets)`,
+  },
+  {
+    number: 4,
+    title: `Part 4: The Great Conflict (The Characters)`,
+  },
+  {
+    number: 5,
+    title: `Part 5: The Reckoning (The Bowls)`,
+  },
+  {
+    number: 6,
+    title: `Part 6: The Fall of the Empire (Babylon)`,
+  },
+  {
+    number: 7,
+    title: `Part 7: The New Beginning (The Future)`,
+  },
+];
+
+export const TOTAL_CHAPTERS = chapterRegistry.length;
+
+export function getChapterMeta(number: number): ChapterMeta | undefined {
+  return chapterRegistry.find((c) => c.number === number);
+}
+
+export function getPartMeta(number: number): PartMeta | undefined {
+  return partRegistry.find((p) => p.number === number);
+}
+
+export function getChaptersForPart(partNumber: number): ChapterMeta[] {
+  return chapterRegistry.filter((c) => c.part === partNumber);
+}
+
+const WORDS_PER_MINUTE = 220;
+
+export function estimateReadingMinutes(wordCount: number): number {
+  return Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE));
+}
