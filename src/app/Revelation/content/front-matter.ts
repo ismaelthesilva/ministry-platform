@@ -10,6 +10,9 @@ export const bookMeta = {
   author: "Ismael Silva",
 };
 
+export const introTitle = "O Fim é Apenas o Começo";
+export const introSubtitle = "Por que você não precisa ter medo do futuro";
+
 export const authorBio: string[] = [
   `**Autor**`,
   `Ismael Silva é um líder inspirador, empreendedor e campeão mundial de Brazilian Jiu-Jitsu, conquistando o **Double Gold** em competição no Japão. Ele combina disciplinas rigorosas com uma paixão genuína por ajudar as pessoas a alcançarem seu melhor potencial — físico, mental e emocional.`,
