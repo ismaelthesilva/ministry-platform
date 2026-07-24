@@ -5,7 +5,30 @@
       "Bash(npx tsc *)",
       "Bash(npm run *)",
       "Bash(git stash *)",
-      "Bash(npx eslint *)"
+      "Bash(npx eslint *)",
+      "Bash(python3 -c \"import docx\")",
+      "Bash(python3 extract.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 build_book.py)",
+      "Bash(python3 generate_ts.py)",
+      "Bash(grep -rn \"href=\\\\\"/Revelation\\\\\"\\\\|href={\\\\`/Revelation\" src/components/ src/app/)",
+      "Bash(sips -g pixelWidth -g pixelHeight docx_raw/word/media/image1.JPG)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(npx vitest *)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs -r kill)",
+      "Bash(python3 *)",
+      "Bash(curl *)",
+      "Bash(lsof -iTCP -sTCP:LISTEN -P)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"next-server\")",
+      "Bash(lsof -tiTCP:3000,3001)",
+      "Bash(xargs -r kill -9)",
+      "Bash(cp /tmp/verify-content-en.mjs /Users/ismaelsilva/Dev-Mini/ismaHOST/ministry-platform/verify-content-en.mjs)",
+      "Bash(npx tsx *)",
+      "Bash(lsof -tiTCP:3000)",
+      "Bash(xargs -r ps -p)",
+      "Bash(git mv *)"
     ]
   }
 }

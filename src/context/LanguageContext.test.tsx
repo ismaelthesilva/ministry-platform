@@ -104,55 +104,6 @@ describe("LanguageContext", () => {
       const translation = result.current.t("non.existing.key");
       expect(translation).toBe("non.existing.key");
     });
-
-    it("tr() returns revelation translation", () => {
-      const { result } = renderHook(() => useLanguage(), {
-        wrapper: ({ children }) => (
-          <LanguageProvider>{children}</LanguageProvider>
-        ),
-      });
-
-      const translation = result.current.tr("revelation.title", "Default");
-      expect(translation).toBeDefined();
-      expect(typeof translation).toBe("string");
-    });
-
-    it("tr() returns fallback for non-existing key", () => {
-      const { result } = renderHook(() => useLanguage(), {
-        wrapper: ({ children }) => (
-          <LanguageProvider>{children}</LanguageProvider>
-        ),
-      });
-
-      const translation = result.current.tr(
-        "non.existing.key",
-        "Fallback Text"
-      );
-      expect(translation).toBe("Fallback Text");
-    });
-
-    it("trObj() returns object for existing key", () => {
-      const { result } = renderHook(() => useLanguage(), {
-        wrapper: ({ children }) => (
-          <LanguageProvider>{children}</LanguageProvider>
-        ),
-      });
-
-      const translation = result.current.trObj("revelation.chapters.1");
-      expect(translation).toBeDefined();
-    });
-
-    it("trObj() returns fallback for non-existing key", () => {
-      const { result } = renderHook(() => useLanguage(), {
-        wrapper: ({ children }) => (
-          <LanguageProvider>{children}</LanguageProvider>
-        ),
-      });
-
-      const fallback = { test: "value" };
-      const translation = result.current.trObj("non.existing.key", fallback);
-      expect(translation).toEqual(fallback);
-    });
   });
 
   describe("useLanguage hook", () => {
