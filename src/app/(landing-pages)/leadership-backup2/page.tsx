@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     "An integrated community project for Aotearoa's rangatahi — connecting pastoral care, technology, and sport to address the youth mental health crisis in West Auckland.",
   openGraph: {
-    title: "Ismael Santos da Silva — Community Leadership",
+    title: "Ismael Silva — Community Leadership",
     description: "Three pillars. One mission. Aotearoa's youth.",
     url: "https://ismaelsilva.org/leadership",
     siteName: "Ismael Silva",
