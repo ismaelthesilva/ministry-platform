@@ -1,29 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
 import { Heart, Code2, Trophy } from "lucide-react";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const dmMono = DM_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-dm-mono",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Community Leadership | Ismael Santos da Silva",
+  title: "Community Leadership | Ismael Silva",
   description:
     "An integrated community project for Aotearoa's rangatahi — connecting pastoral care, technology, and sport to address the youth mental health crisis in West Auckland.",
   openGraph: {
@@ -36,14 +16,14 @@ export const metadata: Metadata = {
   },
 };
 
-const fontDmSans = "var(--font-dm-sans), system-ui, sans-serif";
-const fontPlayfair = "var(--font-playfair), Georgia, serif";
-const fontDmMono = "var(--font-dm-mono), 'Courier New', monospace";
+const fontDmSans = "var(--font-geist-sans), system-ui, sans-serif";
+const fontPlayfair = fontDmSans;
+const fontDmMono = "var(--font-geist-mono), monospace";
 
 export default function LeadershipPage() {
   return (
     <main
-      className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable}`}
+      className=""
       style={{
         fontFamily: fontDmSans,
         backgroundColor: "#0A0A0F",
@@ -246,7 +226,7 @@ export default function LeadershipPage() {
                 className="text-sm mb-4"
                 style={{ fontFamily: fontDmMono, color: "#818cf8" }}
               >
-                Pastor, NW Church
+                Youth Pastor
               </p>
               <p
                 className="text-sm leading-relaxed flex-1"
@@ -293,7 +273,7 @@ export default function LeadershipPage() {
                 className="text-sm mb-4"
                 style={{ fontFamily: fontDmMono, color: "#818cf8" }}
               >
-                Founder, Base Logic Labs
+                Founder &amp; Developer
               </p>
               <p
                 className="text-sm leading-relaxed flex-1"
@@ -301,7 +281,7 @@ export default function LeadershipPage() {
               >
                 Built The Preacher — a bilingual (EN/PT) digital platform for
                 youth mentoring, spiritual formation, and peer support. Built
-                JFit digital fitness platform improving wellbeing in West
+                Built a digital fitness platform improving wellbeing in West
                 Auckland. One pastor can now support thousands.
               </p>
               <div
@@ -341,16 +321,16 @@ export default function LeadershipPage() {
                 className="text-sm mb-4"
                 style={{ fontFamily: fontDmMono, color: "#818cf8" }}
               >
-                NZ National Champion &amp; World Champion, BJJ
+                National &amp; World Champion, BJJ
               </p>
               <p
                 className="text-sm leading-relaxed flex-1"
                 style={{ color: "#cbd5e1" }}
               >
-                NZ BJJ Federation National Champion (Dec 2024). World Champion,
-                SJJIF (Sept 2025). Sport is pastoral technology — teaching young
-                abuse survivors that failure is safe, recoverable, and
-                instructive. Witnessed resilience in action.
+                National BJJ Champion (Dec 2024). World Champion (Sept 2025).
+                Sport is pastoral technology — teaching young abuse survivors
+                that failure is safe, recoverable, and instructive. Witnessed
+                resilience in action.
               </p>
               <div
                 className="mt-6 pt-5"
@@ -476,21 +456,21 @@ export default function LeadershipPage() {
         >
           &ldquo;Kāore e taea e tētahi tangata anake — no single person can do
           this alone. The project operates through reciprocal relationships with
-          the Leataata Trust, Royal Road School, and the NW Church, connecting
-          systems that strengthen each other.&rdquo;
+          a community trust, a local school, and the church, connecting systems
+          that strengthen each other.&rdquo;
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              name: "Leataata Trust",
+              name: "A Community Trust",
               desc: "Community navigator service supporting vulnerable whanau. Reciprocal referrals — food bank, crisis support, mentoring.",
             },
             {
-              name: "Royal Road School",
+              name: "A Local School",
               desc: "On-campus mentoring and chaplaincy. Schools see youth daily; churches provide extended support.",
             },
             {
-              name: "NW Church",
+              name: "The Church",
               desc: "Institutional backing for youth mentorship network development across Auckland.",
             },
           ].map(({ name, desc }) => (
@@ -559,11 +539,11 @@ export default function LeadershipPage() {
               practical skill, and genuine faith into a replicable model.
             </p>
             <p>
-              As Youth Pastor at NW Church, I work directly with 150+ young
-              people, and many will face bullying, sexual abuse, mental health
-              crises, and isolation. I hold a Master&apos;s in Leadership and a
-              postgraduate qualification in Psychology (Family Counselling).
-              This is not volunteer work; this is my professional commitment.
+              As a Youth Pastor, I work directly with 150+ young people, and
+              many will face bullying, sexual abuse, mental health crises, and
+              isolation. I hold a Master&apos;s in Leadership and a postgraduate
+              qualification in Psychology (Family Counselling). This is not
+              volunteer work; this is my professional commitment.
             </p>
             <p>
               But pastoral care alone cannot scale. So I built The Preacher, a
@@ -598,12 +578,11 @@ export default function LeadershipPage() {
               pastoral work conducted through sport.
             </p>
             <p>
-              This model is collaborative — rooted in partnerships with the
-              Leataata Trust, Royal Road School, and the NW Church. It is
-              sustainable through institutional backing and digital
-              infrastructure. And it is scalable: The Preacher platform is
-              designed to be adopted by churches and organisations across
-              Aotearoa and beyond.
+              This model is collaborative — rooted in partnerships with a
+              community trust, a local school, and the church. It is sustainable
+              through institutional backing and digital infrastructure. And it
+              is scalable: the platform is designed to be adopted by churches
+              and organisations across Aotearoa and beyond.
             </p>
             <p>
               Aotearoa deserves leaders who refuse to choose between care and
@@ -627,15 +606,15 @@ export default function LeadershipPage() {
           {[
             {
               quote:
-                "He very quickly endeared himself to the young people and their parents and the leadership of our church community. He has a heart to teach and guide young people into healthy attitudes and behaviours that grow them into strong individuals and citizens.",
-              name: "Workmate Feeback",
-              role: "Community NW Church",
+                "What sets Ismael apart is the absence of contradiction. Most leaders compartmentalise — he integrates. His pastoral instinct shapes how he builds technology; his athletic discipline informs how he mentors. Working alongside him, I have watched young people respond not just to what he says, but to who he consistently is. That kind of integrity doesn't come from a programme — it comes from a person who has done the work.",
+              name: "A Colleague",
+              role: "Collaborator, Community Leadership Initiative",
             },
             {
               quote:
-                "Under Pastor Ismael's leadership, my two teenage girls have grown spiritually, emotionally, and personally. He has been a wonderful role model—teaching them the importance of faith, respect, kindness, and integrity.",
+                "Under the youth pastor's leadership, my two teenage girls have grown spiritually, emotionally, and personally. He has been a wonderful role model — teaching them the importance of faith, respect, kindness, and integrity.",
               name: "Lowata Rokowati",
-              role: "Parent, NW Church community",
+              role: "Parent, community member",
             },
           ].map(({ quote, name, role }) => (
             <div
@@ -713,7 +692,7 @@ export default function LeadershipPage() {
               {
                 n: "03",
                 title: "Real, Measurable Reach",
-                desc: "Through these integrated efforts—pastoral, technological, sporting—150+ young people are directly supported weekly. Through partnerships with Leataata Trust, Royal Road School, and other community organisations, the reach extends to hundreds more. The Preacher platform reaches thousands.",
+                desc: "Through these integrated efforts—pastoral, technological, sporting—150+ young people are directly supported weekly. Through partnerships with the community trust, a local school, and other community organisations, the reach extends to hundreds more. The digital platform reaches thousands.",
               },
             ].map(({ n, title, desc }) => (
               <div key={n} className="flex gap-8 items-start">
