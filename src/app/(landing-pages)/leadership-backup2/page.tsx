@@ -17,13 +17,12 @@ export const metadata: Metadata = {
 };
 
 const fontDmSans = "var(--font-geist-sans), system-ui, sans-serif";
-const fontPlayfair = fontDmSans;
-const fontDmMono = "var(--font-geist-mono), monospace";
+const fontPlayfair = "'Georgia', 'Times New Roman', serif";
+const fontDmMono = "var(--font-geist-mono), 'Courier New', monospace";
 
 export default function LeadershipPage() {
   return (
     <main
-      className=""
       style={{
         fontFamily: fontDmSans,
         backgroundColor: "#0A0A0F",
@@ -280,9 +279,9 @@ export default function LeadershipPage() {
                 style={{ color: "#cbd5e1" }}
               >
                 Built The Preacher — a bilingual (EN/PT) digital platform for
-                youth mentoring, spiritual formation, and peer support. Built
-                Built a digital fitness platform improving wellbeing in West
-                Auckland. One pastor can now support thousands.
+                youth mentoring, spiritual formation, and peer support. Built a
+                digital fitness platform improving wellbeing in West Auckland.
+                One pastor can now support thousands.
               </p>
               <div
                 className="mt-6 pt-5"

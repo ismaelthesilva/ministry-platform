@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/lib/prisma";
+import { auth } from "@/auth";
 import { revalidatePath } from "next/cache";
 
 export async function selectPlan(
@@ -8,6 +9,11 @@ export async function selectPlan(
   planSlug: string,
   language: string = "pt"
 ) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return { success: false, error: "Unauthorized" };
+  }
+
   try {
     const plan = await prisma.plan.findFirst({
       where: {
@@ -23,15 +29,9 @@ export async function selectPlan(
       };
     }
 
-    // Create or update user
-    await prisma.user.upsert({
+    await prisma.user.update({
       where: { id: userId },
-      update: {
-        selectedPlanId: plan.id,
-        preferredLanguage: language,
-      },
-      create: {
-        id: userId,
+      data: {
         selectedPlanId: plan.id,
         preferredLanguage: language,
       },
@@ -62,6 +62,11 @@ export async function updateUserProfile(
     preferredLanguage?: string;
   }
 ) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return { success: false, error: "Unauthorized" };
+  }
+
   try {
     await prisma.user.update({
       where: { id: userId },
@@ -77,6 +82,11 @@ export async function updateUserProfile(
 }
 
 export async function markReadingComplete(userId: string, readingId: string) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return { success: false, error: "Unauthorized" };
+  }
+
   try {
     await prisma.userProgress.upsert({
       where: {
@@ -105,6 +115,11 @@ export async function toggleReadingComplete(
   readingId: string,
   completed: boolean
 ) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return { success: false, error: "Unauthorized" };
+  }
+
   try {
     if (completed) {
       await prisma.userProgress.delete({
@@ -140,6 +155,11 @@ export async function toggleReadingComplete(
 }
 
 export async function clearUserPlan(userId: string) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return { success: false, error: "Unauthorized" };
+  }
+
   try {
     await prisma.user.update({
       where: { id: userId },
@@ -203,12 +223,11 @@ export async function getUserBibleTrackerData(userId: string) {
       };
     }
 
-    // Get current day of year
+    // Calculate day of year using UTC to avoid server-timezone drift
     const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = now.getTime() - start.getTime();
+    const startOfYear = Date.UTC(now.getUTCFullYear(), 0, 0);
     const oneDay = 1000 * 60 * 60 * 24;
-    const dayOfYear = Math.floor(diff / oneDay);
+    const dayOfYear = Math.floor((now.getTime() - startOfYear) / oneDay);
 
     const allReadings = await prisma.dailyReading.findMany({
       where: {
@@ -250,6 +269,11 @@ export async function getUserBibleTrackerData(userId: string) {
 }
 
 export async function resetMonthProgress(userId: string, readingIds: string[]) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return { success: false, error: "Unauthorized" };
+  }
+
   try {
     await prisma.userProgress.deleteMany({
       where: { userId, readingId: { in: readingIds } },
@@ -264,6 +288,11 @@ export async function resetMonthProgress(userId: string, readingIds: string[]) {
 }
 
 export async function restoreReadings(userId: string, readingIds: string[]) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return { success: false, error: "Unauthorized" };
+  }
+
   try {
     await prisma.userProgress.createMany({
       data: readingIds.map((readingId) => ({ userId, readingId })),
@@ -314,11 +343,11 @@ export async function getTrackerDataForPlan(
       };
     }
 
+    // Calculate day of year using UTC to avoid server-timezone drift
     const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = now.getTime() - start.getTime();
+    const startOfYear = Date.UTC(now.getUTCFullYear(), 0, 0);
     const oneDay = 1000 * 60 * 60 * 24;
-    const dayOfYear = Math.floor(diff / oneDay);
+    const dayOfYear = Math.floor((now.getTime() - startOfYear) / oneDay);
 
     const allReadings = await prisma.dailyReading.findMany({
       where: { planId: plan.id },

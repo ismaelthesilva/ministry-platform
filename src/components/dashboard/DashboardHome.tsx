@@ -94,7 +94,7 @@ function getMonthKeyFromDate(dateStr: string): string {
   return (alpha || "").toLowerCase().slice(0, 3);
 }
 
-export function DashboardHome({ data }: { data: TrackerData; userId: string }) {
+export function DashboardHome({ data }: { data: TrackerData }) {
   const { t, language } = useLanguage();
 
   const completedCount = data.completedReadingIds.length;

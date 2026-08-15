@@ -33,5 +33,5 @@ export default async function DashboardPage() {
   }
 
   // Show dashboard home with overview
-  return <DashboardHome data={data} userId={userId} />;
+  return <DashboardHome data={data} />;
 }

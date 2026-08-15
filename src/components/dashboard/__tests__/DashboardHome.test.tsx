@@ -38,29 +38,29 @@ const mockData = {
 
 describe("DashboardHome", () => {
   it("renders dashboard title", () => {
-    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} />);
     expect(screen.getByText("Dashboard")).toBeInTheDocument();
   });
 
   it("displays completion percentage", () => {
-    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} />);
     const matches = screen.getAllByText("10%");
     expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it("shows today's reading", () => {
-    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} />);
     expect(screen.getByText("Today's Reading")).toBeInTheDocument();
     expect(screen.getByText("Day 36")).toBeInTheDocument();
   });
 
   it("displays current plan title", () => {
-    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} />);
     expect(screen.getByText("Bible Only - English")).toBeInTheDocument();
   });
 
   it("shows completed readings count", () => {
-    renderWithProvider(<DashboardHome data={mockData} userId="test-user" />);
+    renderWithProvider(<DashboardHome data={mockData} />);
     const matches = screen.getAllByText(/3 \/ 30/);
     expect(matches.length).toBeGreaterThanOrEqual(1);
   });

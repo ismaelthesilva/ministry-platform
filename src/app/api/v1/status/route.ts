@@ -9,9 +9,6 @@ export async function GET() {
   try {
     const updatedAt = new Date().toISOString();
 
-    // Test database connection with a simple query
-    await prisma.$connect();
-
     // Get database version
     const versionResult = await prisma.$queryRaw<Array<{ version: string }>>`
       SELECT version();
@@ -34,8 +31,6 @@ export async function GET() {
     `;
     const openedConnections = Number(connectionsResult[0]?.count || 0);
 
-    const users = await prisma.user.findMany();
-
     return NextResponse.json({
       updated_at: updatedAt,
       dependencies: {
@@ -46,7 +41,6 @@ export async function GET() {
           opened_connections: openedConnections,
         },
       },
-      users,
     });
   } catch (error) {
     console.error("Database status check failed:", error);
@@ -57,7 +51,5 @@ export async function GET() {
       },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }
