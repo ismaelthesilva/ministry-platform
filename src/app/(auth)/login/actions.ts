@@ -68,22 +68,8 @@ export async function registerAccount(
   redirect("/dashboard");
 }
 
-// Kept for future re-activation:
-export async function sendMagicLink(
-  prevState: { error?: string; sent?: boolean } | undefined,
-  formData: FormData
-) {
-  const email = formData.get("email") as string;
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { error: "Please enter a valid email address." };
-  }
-  try {
-    await signIn("resend", { email, redirect: false });
-    return { sent: true };
-  } catch (error) {
-    if (error instanceof Error) {
-      return { error: "Something went wrong. Please try again." };
-    }
-    throw error;
-  }
+// Kept for future re-activation (requires enabling Resend provider in auth.ts first).
+// Restore the (prevState, formData) signature and body when re-enabling.
+export async function sendMagicLink() {
+  return { error: "Email login is not available yet." };
 }
