@@ -77,7 +77,7 @@ export const SDA_REGIONS: SDARegion[] = [
     "country",
     623276,
     611440,
-    "faithful",
+    "unknown",
     "Large 'missing' figure likely administrative, not real loss.",
     ["data-anomaly-2025"]
   ),
@@ -287,56 +287,22 @@ export const SDA_REGIONS: SDARegion[] = [
 
   // ── SOUTH AMERICAN DIVISION (SAD) ────────────────────────────────────────
   build(
-    "BR",
-    "Brazil",
+    "SA",
+    "Brazil — South America",
     "country",
-    1809247,
-    1819685,
+    4088316,
+    4104537,
     "mixed",
-    "8 Unions combined. 79,195 baptisms but 96,544 lost in 2025 alone — net evangelism negative.",
-    ["retention-crisis"]
-  ),
-  build("AR", "Argentina", "country", 123537, 123520, "mixed", null, [
-    "net-decline",
-  ]),
-  build(
-    "PE",
-    "Peru",
-    "country",
-    441913,
-    447739,
-    "faithful",
-    "North + South Peru Unions combined."
-  ),
-  build(
-    "BO",
-    "Bolivia",
-    "country",
-    137152,
-    130341,
-    "faithful",
-    "Large 'missing' likely administrative.",
-    ["data-anomaly-2025"]
-  ),
-  build("CL", "Chile", "country", 98142, 94616, "mixed", null, ["net-decline"]),
-  build(
-    "CO",
-    "Colombia",
-    "country",
-    272687,
-    273983,
-    "mixed",
-    "North + South Colombia Unions combined."
-  ),
-  build(
-    "VE",
-    "Venezuela",
-    "country",
-    337239,
-    321233,
-    "mixed",
-    "East + West Venezuela. Large losses partly emigration.",
-    ["net-decline", "emigration-affected"]
+    "South American Division — 7 countries combined (Brazil, Argentina, " +
+      "Peru, Bolivia, Chile, Colombia, Venezuela). " +
+      "Combined 2025: 169,006 baptisms vs 190,923 lost — net evangelism negative. " +
+      "Internal contrast: Peru +1.32% healthy; Brazil +0.58% retention crisis " +
+      "(79,195 baptisms but 96,544 lost in 2025 alone); Chile −3.59% declining; " +
+      "Venezuela −4.75% collapse driven by emigration; Argentina −0.01% stagnant; " +
+      "Bolivia −4.97% data anomaly. Leadership in São Paulo influenced by " +
+      "progressive theology. The block grows only because Peru and Brazil " +
+      "volume compensate for collapse elsewhere.",
+    ["retention-crisis", "mixed-internal"]
   ),
 
   // ── INTER-AMERICAN DIVISION (IAD) ────────────────────────────────────────
@@ -395,7 +361,7 @@ export const SDA_REGIONS: SDARegion[] = [
     "country",
     60970,
     60461,
-    "faithful",
+    "unknown",
     "Conservative but declining from emigration.",
     ["net-decline", "emigration-affected"]
   ),
@@ -419,7 +385,7 @@ export const SDA_REGIONS: SDARegion[] = [
     "country",
     6032,
     6008,
-    "faithful",
+    "unknown",
     "Conservative. Decline from emigration.",
     ["net-decline", "emigration-affected"]
   ),
@@ -431,7 +397,7 @@ export const SDA_REGIONS: SDARegion[] = [
     "country",
     53458,
     50293,
-    "faithful",
+    "unknown",
     "Decline from demographics and geopolitical pressure.",
     ["net-decline"]
   ),
@@ -441,7 +407,7 @@ export const SDA_REGIONS: SDARegion[] = [
     "country",
     38407,
     37092,
-    "faithful",
+    "unknown",
     "Decline from armed conflict and displacement.",
     ["conflict-affected", "net-decline"]
   ),
@@ -473,7 +439,7 @@ export const SDA_REGIONS: SDARegion[] = [
     "country",
     201123,
     195932,
-    "faithful",
+    "unknown",
     "East + West Indonesia Unions combined.",
     ["net-decline"]
   ),
