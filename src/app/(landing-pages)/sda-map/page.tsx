@@ -158,29 +158,21 @@ const PROFILE_LABEL: Record<TheologicalProfile, string> = {
   mixed: "Mixed *",
   unknown: "Unknown",
 };
-const PROFILE_BG: Record<TheologicalProfile, string> = {
-  faithful: "#dcfce7",
-  progressive: "#fee2e2",
-  legalist: "#fed7aa",
-  mixed: "#dbeafe",
-  unknown: "#f3f4f6",
-};
-const PROFILE_TEXT: Record<TheologicalProfile, string> = {
-  faithful: "#166534",
-  progressive: "#991b1b",
-  legalist: "#92400e",
-  mixed: "#1e40af",
-  unknown: "#374151",
+const PROFILE_COLOR: Record<TheologicalProfile, string> = {
+  faithful: "#1a7f4b",
+  progressive: "#e63946",
+  legalist: "#7b2d8b",
+  mixed: "#52b788",
+  unknown: "#e5e7eb",
 };
 
 // ─── Legend data ──────────────────────────────────────────────────────────────
 
-const GROWTH_LEGEND = [
-  { color: "#1a7f4b", label: "> 5% growth" },
-  { color: "#52b788", label: "2–5% growth" },
-  { color: "#b7e4c7", label: "0–2% growth" },
-  { color: "#ffd166", label: "Flat" },
-  { color: "#e63946", label: "Decline" },
+const LEGEND_ITEMS = [
+  { color: "#1a7f4b", label: "> 5% — Strong growth" },
+  { color: "#52b788", label: "2–5% — Moderate growth" },
+  { color: "#7b2d8b", label: "0–2% — Stagnation" },
+  { color: "#e63946", label: "< 0% — Decline" },
   { color: "#e5e7eb", label: "No data" },
 ];
 
@@ -194,27 +186,67 @@ const FLAG_LABELS: Record<string, string> = {
   "nz-mainland-only": "ℹ NZ mainland only",
 };
 
-// ─── Shared 3-column stats table ──────────────────────────────────────────────
+// ─── Omega Crisis ─────────────────────────────────────────────────────────────
+
+const OMEGA_CONFIRMED = new Set(["NZ"]);
+
+// ─── Shared 4-column stats table ──────────────────────────────────────────────
+
+function growthColor(pct: number): string {
+  if (pct > 5) return "#1a7f4b";
+  if (pct > 2) return "#52b788";
+  if (pct >= 0) return "#7b2d8b";
+  return "#e63946";
+}
 
 function StatsTable({ region }: { region: SDARegion }) {
   const g = region.growth.current;
-  const growthColor = g > 0 ? "#1a7f4b" : g < 0 ? "#e63946" : "#6b7280";
+  const gColor = growthColor(g);
   const growthSign = g > 0 ? "+" : "";
+  const isOmega = OMEGA_CONFIRMED.has(region.id);
 
   return (
     <div>
-      <table className="w-full text-[11px]">
+      <table
+        style={{ width: "100%", tableLayout: "fixed" }}
+        className="text-[11px]"
+      >
+        <colgroup>
+          <col style={{ width: 28 }} />
+          <col style={{ width: 100 }} />
+          <col style={{ width: 80 }} />
+          <col style={{ width: 110 }} />
+        </colgroup>
         <thead>
           <tr className="text-gray-400 uppercase text-[9px] tracking-wide">
-            <th className="text-left pb-1 font-medium">Members 2025</th>
+            <th
+              className="pb-1 font-bold text-center"
+              style={{ color: "#7b2d8b" }}
+            >
+              Ω
+            </th>
+            <th className="text-right pb-1 font-medium">Members 2025</th>
             <th className="text-right pb-1 font-medium">Growth</th>
             <th className="text-right pb-1 font-medium">Profile</th>
           </tr>
         </thead>
         <tbody>
           <tr className="text-gray-800 font-semibold">
-            <td className="py-0.5">{fmt(region.stats["2025"].members)}</td>
-            <td className="text-right" style={{ color: growthColor }}>
+            <td className="py-0.5 text-center">
+              {isOmega && (
+                <span
+                  className="font-bold"
+                  style={{ color: "#7b2d8b" }}
+                  title="Omega Crisis confirmed"
+                >
+                  Ω
+                </span>
+              )}
+            </td>
+            <td className="text-right py-0.5">
+              {fmt(region.stats["2025"].members)}
+            </td>
+            <td className="text-right" style={{ color: gColor }}>
               {growthSign}
               {g.toFixed(2)}%
             </td>
@@ -222,8 +254,11 @@ function StatsTable({ region }: { region: SDARegion }) {
               <span
                 className="px-1.5 py-0.5 rounded-full text-[10px] font-medium"
                 style={{
-                  backgroundColor: PROFILE_BG[region.theologicalProfile],
-                  color: PROFILE_TEXT[region.theologicalProfile],
+                  backgroundColor: PROFILE_COLOR[region.theologicalProfile],
+                  color:
+                    region.theologicalProfile === "unknown"
+                      ? "#374151"
+                      : "#ffffff",
                 }}
               >
                 {PROFILE_LABEL[region.theologicalProfile]}
@@ -350,7 +385,7 @@ function Legend() {
         1-yr growth (2025)
       </p>
       <div className="space-y-1.5">
-        {GROWTH_LEGEND.map((item) => (
+        {LEGEND_ITEMS.map((item) => (
           <div key={item.label} className="flex items-center gap-2">
             <span
               className="w-3.5 h-3.5 rounded-sm shrink-0"
@@ -601,17 +636,33 @@ export default function SDAMapPage() {
             </p>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-xs">
+            <table
+              style={{ width: "100%", tableLayout: "fixed" }}
+              className="text-xs"
+            >
+              <colgroup>
+                <col style={{ width: 160 }} />
+                <col style={{ width: 28 }} />
+                <col style={{ width: 100 }} />
+                <col style={{ width: 80 }} />
+                <col style={{ width: 110 }} />
+              </colgroup>
               <thead>
                 <tr className="bg-gray-50 text-gray-500 uppercase tracking-wide text-[10px]">
                   <th className="text-left px-4 py-2.5 font-medium">Region</th>
+                  <th
+                    className="py-2.5 font-bold text-center"
+                    style={{ color: "#7b2d8b" }}
+                  >
+                    Omega Crisis Ω**
+                  </th>
                   <th className="text-right px-4 py-2.5 font-medium">
                     Members 2025
                   </th>
                   <th className="text-right px-4 py-2.5 font-medium">
                     Growth %
                   </th>
-                  <th className="text-left px-4 py-2.5 font-medium hidden lg:table-cell">
+                  <th className="text-right px-4 py-2.5 font-medium hidden lg:table-cell">
                     Profile *
                   </th>
                 </tr>
@@ -623,7 +674,7 @@ export default function SDAMapPage() {
                   )
                   .map((r) => {
                     const g = r.growth.current;
-                    const growthColor = g > 0 ? getColorByGrowth(g) : "#e63946";
+                    const gColor = growthColor(g);
                     const hasFlag =
                       r.dataFlags &&
                       r.dataFlags.some((f) =>
@@ -640,11 +691,28 @@ export default function SDAMapPage() {
                         className="hover:bg-gray-50 cursor-pointer"
                         onClick={() => setSidebar(r)}
                       >
-                        <td className="px-4 py-2.5 font-medium text-gray-800">
+                        <td
+                          className="px-4 py-2.5 font-medium text-gray-800 truncate"
+                          style={{ maxWidth: 160 }}
+                        >
                           {r.name}
                           {hasFlag && (
                             <span className="ml-1 text-amber-500 text-[10px]">
                               ⚑
+                            </span>
+                          )}
+                        </td>
+                        <td
+                          className="py-2.5 text-center"
+                          style={{ width: 28, flexShrink: 0 }}
+                        >
+                          {OMEGA_CONFIRMED.has(r.id) && (
+                            <span
+                              className="font-bold"
+                              style={{ color: "#7b2d8b" }}
+                              title="Omega Crisis confirmed"
+                            >
+                              Ω
                             </span>
                           )}
                         </td>
@@ -653,17 +721,21 @@ export default function SDAMapPage() {
                         </td>
                         <td
                           className="px-4 py-2.5 text-right font-semibold"
-                          style={{ color: growthColor }}
+                          style={{ color: gColor }}
                         >
                           {g >= 0 ? "+" : ""}
                           {g.toFixed(2)}%
                         </td>
-                        <td className="px-4 py-2.5 hidden lg:table-cell">
+                        <td className="px-4 py-2.5 text-right hidden lg:table-cell">
                           <span
                             className="px-2 py-0.5 rounded-full text-[10px] font-medium"
                             style={{
-                              backgroundColor: PROFILE_BG[r.theologicalProfile],
-                              color: PROFILE_TEXT[r.theologicalProfile],
+                              backgroundColor:
+                                PROFILE_COLOR[r.theologicalProfile],
+                              color:
+                                r.theologicalProfile === "unknown"
+                                  ? "#374151"
+                                  : "#ffffff",
                             }}
                           >
                             {PROFILE_LABEL[r.theologicalProfile]}
@@ -700,10 +772,12 @@ export default function SDAMapPage() {
             records — not official SDA classifications.
           </p>
           <p>
-            <strong className="text-gray-500">NZ note:</strong> Figures cover
-            North NZ Conf + South NZ Conf only. Cook Islands, French Polynesia,
-            and New Caledonia are excluded — distinct churches with a different
-            profile.
+            <strong className="text-gray-500">**</strong> Omega Crisis indicates
+            that local leadership has unofficially abandoned core church beliefs
+            — embracing woke ideology, theological progressivism, and the
+            influence of Desmond Ford. In practice this means the rejection of
+            Ellen White&apos;s prophetic authority, the Three Angels&apos;
+            Messages, 1844 and the Sanctuary doctrine.
           </p>
         </div>
       </footer>

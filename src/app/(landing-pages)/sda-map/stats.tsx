@@ -524,10 +524,9 @@ export const SDA_REGIONS: SDARegion[] = [
 export const REGION_BY_ID = new Map(SDA_REGIONS.map((r) => [r.id, r]));
 
 export function getColorByGrowth(pct: number): string {
-  if (pct > 5) return "#1a7f4b"; // strong green
-  if (pct > 2) return "#52b788"; // moderate green
-  if (pct > 0) return "#b7e4c7"; // slow growth
-  if (pct === 0) return "#ffd166"; // flat
+  if (pct > 5) return "#1a7f4b"; // strong growth
+  if (pct > 2) return "#52b788"; // moderate growth
+  if (pct >= 0) return "#7b2d8b"; // stagnation
   return "#e63946"; // decline
 }
 
