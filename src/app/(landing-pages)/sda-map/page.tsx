@@ -58,13 +58,13 @@ const NUMERIC_TO_REGION: Record<number, string> = {
   24: "AO",
   124: "CA",
   840: "__USA__",
-  76: "BR",
-  32: "AR",
-  604: "PE",
-  68: "BO",
-  152: "CL",
-  170: "CO",
-  862: "VE",
+  76: "SA",
+  32: "SA",
+  604: "SA",
+  68: "SA",
+  152: "SA",
+  170: "SA",
+  862: "SA",
   484: "MX",
   388: "JM",
   332: "HT",
@@ -290,6 +290,71 @@ function StatsTable({ region }: { region: SDARegion }) {
   );
 }
 
+// ─── SA Country Breakdown ─────────────────────────────────────────────────────
+
+const SA_COUNTRIES: { name: string; members: number; growth: number }[] = [
+  { name: "Brazil", members: 1_819_685, growth: 0.58 },
+  { name: "Peru", members: 447_739, growth: 1.32 },
+  { name: "Colombia", members: 273_983, growth: 0.48 },
+  { name: "Venezuela", members: 321_233, growth: -4.75 },
+  { name: "Argentina", members: 123_520, growth: -0.01 },
+  { name: "Bolivia", members: 130_341, growth: -4.97 },
+  { name: "Chile", members: 94_616, growth: -3.59 },
+];
+
+function saGrowthColor(pct: number): string {
+  if (pct > 2) return "#52b788";
+  if (pct >= 0) return "#7b2d8b";
+  return "#e63946";
+}
+
+function saStatusEmoji(pct: number): string {
+  if (pct > 2) return "🟢";
+  if (pct >= 0) return "🟣";
+  return "🔴";
+}
+
+function SABreakdownTable() {
+  return (
+    <div className="mt-4">
+      <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-2">
+        Country breakdown — 2025
+      </p>
+      <table style={{ width: "100%" }} className="text-[11px]">
+        <thead>
+          <tr className="text-gray-400 uppercase text-[9px] tracking-wide">
+            <th className="text-left pb-1 font-medium">Country</th>
+            <th className="text-right pb-1 font-medium">Members</th>
+            <th className="text-right pb-1 font-medium">Growth</th>
+            <th className="text-center pb-1 font-medium">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {SA_COUNTRIES.map((c) => (
+            <tr key={c.name} className="border-t border-gray-100">
+              <td className="py-1 text-gray-800 font-medium">{c.name}</td>
+              <td className="py-1 text-right text-gray-700">
+                {fmt(c.members)}
+              </td>
+              <td
+                className="py-1 text-right font-semibold"
+                style={{ color: saGrowthColor(c.growth) }}
+              >
+                {c.growth >= 0 ? "+" : ""}
+                {c.growth.toFixed(2)}%
+              </td>
+              <td className="py-1 text-center">{saStatusEmoji(c.growth)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="text-[10px] text-gray-400 mt-2">
+        ⚠ Bolivia 2025 figure likely includes administrative reclassification.
+      </p>
+    </div>
+  );
+}
+
 // ─── Tooltip ──────────────────────────────────────────────────────────────────
 
 function Tooltip({
@@ -356,6 +421,7 @@ function Sidebar({
 
       <div className="p-5 flex-1">
         <StatsTable region={region} />
+        {region.id === "SA" && <SABreakdownTable />}
       </div>
 
       <div className="px-5 py-3 border-t border-gray-100 text-[10px] text-gray-400">
@@ -669,9 +735,7 @@ export default function SDAMapPage() {
               </thead>
               <tbody className="divide-y divide-gray-50">
                 {[...SDA_REGIONS]
-                  .sort(
-                    (a, b) => b.stats["2025"].members - a.stats["2025"].members
-                  )
+                  .sort((a, b) => a.growth.current - b.growth.current)
                   .map((r) => {
                     const g = r.growth.current;
                     const gColor = growthColor(g);
