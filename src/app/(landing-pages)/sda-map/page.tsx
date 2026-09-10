@@ -776,7 +776,7 @@ export default function SDAMapPage() {
                               style={{ color: "#7b2d8b" }}
                               title="Omega Crisis confirmed"
                             >
-                              Ω
+                              🚨
                             </span>
                           )}
                         </td>
