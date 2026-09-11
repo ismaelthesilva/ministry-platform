@@ -2,7 +2,7 @@
 // src/app/(landing-pages)/sda-map/page.tsx
 // Dependencies: react-simple-maps v5, world-atlas@2, us-atlas@3
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -519,6 +519,22 @@ function StatPill({
   );
 }
 
+// ─── Breakpoint hook ──────────────────────────────────────────────────────────
+
+function useBreakpoint(): "mobile" | "tablet" | "desktop" {
+  const [bp, setBp] = useState<"mobile" | "tablet" | "desktop">("desktop");
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setBp(w <= 480 ? "mobile" : w <= 768 ? "tablet" : "desktop");
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return bp;
+}
+
 // ─── Main page ────────────────────────────────────────────────────────────────
 
 export default function SDAMapPage() {
@@ -529,6 +545,16 @@ export default function SDAMapPage() {
   } | null>(null);
   const [sidebar, setSidebar] = useState<SDARegion | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
+
+  const bp = useBreakpoint();
+  const showMembers = bp === "desktop";
+  const showProfile = bp !== "mobile";
+  const gridCols =
+    bp === "desktop"
+      ? "1fr 28px 110px 80px 110px"
+      : bp === "tablet"
+      ? "1fr 28px 80px 110px"
+      : "1fr 28px 80px";
 
   // Resolve region from world-atlas numeric ID
   const worldRegion = useCallback(
@@ -711,10 +737,10 @@ export default function SDAMapPage() {
               {SDA_REGIONS.length} regions · click a row to inspect
             </p>
           </div>
-          {/* Header row — large screen only */}
+          {/* Header row — all breakpoints, columns driven by bp */}
           <div
-            className="hidden md:grid bg-gray-50 text-gray-500 uppercase tracking-wide text-[10px] px-4 py-2.5 border-b border-gray-100"
-            style={{ gridTemplateColumns: "1fr 28px 110px 80px 110px" }}
+            className="bg-gray-50 text-gray-500 uppercase tracking-wide text-[10px] px-4 py-2.5 border-b border-gray-100"
+            style={{ display: "grid", gridTemplateColumns: gridCols }}
           >
             <span className="font-medium">Region</span>
             <span
@@ -723,9 +749,13 @@ export default function SDAMapPage() {
             >
               Ω**
             </span>
-            <span className="text-right font-medium">Members 2025</span>
+            {showMembers && (
+              <span className="text-right font-medium">Members 2025</span>
+            )}
             <span className="text-right font-medium">Growth %</span>
-            <span className="text-right font-medium">Profile *</span>
+            {showProfile && (
+              <span className="text-right font-medium">Profile *</span>
+            )}
           </div>
 
           {/* Region rows */}
@@ -748,45 +778,42 @@ export default function SDAMapPage() {
                 return (
                   <div
                     key={r.id}
-                    className="px-4 cursor-pointer hover:bg-gray-50"
+                    className="px-4 py-2.5 cursor-pointer hover:bg-gray-50 items-center"
+                    style={{ display: "grid", gridTemplateColumns: gridCols }}
                     onClick={() => setSidebar(r)}
                   >
-                    {/* Large screen — single grid row */}
-                    <div
-                      className="hidden md:grid items-center py-2.5"
-                      style={{
-                        gridTemplateColumns: "1fr 28px 110px 80px 110px",
-                      }}
-                    >
-                      <span className="font-medium text-gray-800 text-xs truncate pr-2">
-                        {r.name}
-                        {hasFlag && (
-                          <span className="ml-1 text-amber-500 text-[10px]">
-                            ⚑
-                          </span>
-                        )}
-                      </span>
-                      <span className="text-center">
-                        {OMEGA_CONFIRMED.has(r.id) && (
-                          <span
-                            className="font-bold text-xs"
-                            style={{ color: "#7b2d8b" }}
-                            title="Omega Crisis confirmed"
-                          >
-                            🚨
-                          </span>
-                        )}
-                      </span>
+                    <span className="font-medium text-gray-800 text-xs truncate pr-2">
+                      {r.name}
+                      {hasFlag && (
+                        <span className="ml-1 text-amber-500 text-[10px]">
+                          ⚑
+                        </span>
+                      )}
+                    </span>
+                    <span className="text-center">
+                      {OMEGA_CONFIRMED.has(r.id) && (
+                        <span
+                          className="font-bold text-xs"
+                          style={{ color: "#7b2d8b" }}
+                          title="Omega Crisis confirmed"
+                        >
+                          🚨
+                        </span>
+                      )}
+                    </span>
+                    {showMembers && (
                       <span className="text-right text-xs text-gray-700 font-medium">
                         {abbrev(r.stats["2025"].members)}
                       </span>
-                      <span
-                        className="text-right text-xs font-semibold"
-                        style={{ color: gColor }}
-                      >
-                        {g >= 0 ? "+" : ""}
-                        {g.toFixed(2)}%
-                      </span>
+                    )}
+                    <span
+                      className="text-right text-xs font-semibold"
+                      style={{ color: gColor }}
+                    >
+                      {g >= 0 ? "+" : ""}
+                      {g.toFixed(2)}%
+                    </span>
+                    {showProfile && (
                       <span className="text-right">
                         <span
                           className="px-2 py-0.5 rounded-full text-[10px] font-medium"
@@ -802,63 +829,7 @@ export default function SDAMapPage() {
                           {PROFILE_LABEL[r.theologicalProfile]}
                         </span>
                       </span>
-                    </div>
-
-                    {/* Small screen — 2-row card */}
-                    <div className="md:hidden py-2.5">
-                      <div
-                        className="flex justify-between items-center"
-                        style={{ fontWeight: 500, fontSize: 14 }}
-                      >
-                        <span className="text-gray-800 truncate mr-2">
-                          {r.name}
-                          {hasFlag && (
-                            <span className="ml-1 text-amber-500 text-[10px]">
-                              ⚑
-                            </span>
-                          )}
-                        </span>
-                        {OMEGA_CONFIRMED.has(r.id) && (
-                          <span
-                            className="shrink-0"
-                            title="Omega Crisis confirmed"
-                          >
-                            🚨
-                          </span>
-                        )}
-                      </div>
-                      <div
-                        className="flex justify-between items-center mt-0.5"
-                        style={{ fontSize: 12 }}
-                      >
-                        <span className="text-gray-600 font-medium">
-                          {abbrev(r.stats["2025"].members)}
-                        </span>
-                        <span
-                          className="font-semibold"
-                          style={{ color: gColor }}
-                        >
-                          {g >= 0 ? "+" : ""}
-                          {g.toFixed(2)}%
-                        </span>
-                        <span
-                          className="font-medium"
-                          style={{
-                            backgroundColor:
-                              PROFILE_COLOR[r.theologicalProfile],
-                            color:
-                              r.theologicalProfile === "unknown"
-                                ? "#374151"
-                                : "#ffffff",
-                            fontSize: 11,
-                            padding: "1px 6px",
-                            borderRadius: 999,
-                          }}
-                        >
-                          {PROFILE_LABEL[r.theologicalProfile]}
-                        </span>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 );
               })}
