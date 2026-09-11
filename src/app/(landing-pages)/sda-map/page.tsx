@@ -366,21 +366,29 @@ function Tooltip({
   x: number;
   y: number;
 }) {
-  const left = Math.min(
-    x + 14,
-    typeof window !== "undefined" ? window.innerWidth - 320 : x + 14
-  );
-
-  return (
-    <div
-      style={{
+  const isSmall = typeof window !== "undefined" && window.innerWidth < 768;
+  const tooltipStyle: React.CSSProperties = isSmall
+    ? {
         position: "fixed",
-        left,
+        left: 16,
+        bottom: 16,
+        top: "auto",
+        zIndex: 60,
+        pointerEvents: "none",
+        maxWidth: "calc(100vw - 32px)",
+      }
+    : {
+        position: "fixed",
+        left: Math.min(x + 14, window.innerWidth - 320),
         top: y - 8,
         zIndex: 60,
         pointerEvents: "none",
         maxWidth: 310,
-      }}
+      };
+
+  return (
+    <div
+      style={tooltipStyle}
       className="bg-white border border-gray-200 rounded-xl shadow-2xl overflow-hidden"
     >
       <div className="px-4 pt-3 pb-2 bg-gray-50 border-b border-gray-100">
@@ -405,7 +413,7 @@ function Sidebar({
   onClose: () => void;
 }) {
   return (
-    <div className="fixed right-0 top-0 h-full w-[360px] bg-white border-l border-gray-200 shadow-2xl z-40 overflow-y-auto flex flex-col">
+    <div className="fixed bg-white shadow-2xl z-[50] overflow-y-auto flex flex-col bottom-0 left-0 w-screen h-[60vh] rounded-t-2xl border-t border-gray-200 md:bottom-auto md:left-auto md:right-0 md:top-0 md:h-full md:w-[360px] md:rounded-none md:border-t-0 md:border-l md:border-gray-200">
       <div className="sticky top-0 bg-white border-b border-gray-100 px-5 py-4 flex items-start justify-between gap-3 z-10">
         <h2 className="font-bold text-gray-900 text-base leading-tight">
           {region.name}
@@ -446,18 +454,20 @@ function Sidebar({
 
 function Legend() {
   return (
-    <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-gray-100 px-4 py-3">
-      <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-2">
+    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 md:left-4 md:translate-x-0 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-gray-100 px-3 md:px-4 py-2 md:py-3">
+      <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-1.5 md:mb-2">
         1-yr growth (2025)
       </p>
-      <div className="space-y-1.5">
+      <div className="flex flex-wrap gap-x-3 gap-y-1 md:flex-col md:gap-x-0 md:gap-y-1.5">
         {LEGEND_ITEMS.map((item) => (
-          <div key={item.label} className="flex items-center gap-2">
+          <div key={item.label} className="flex items-center gap-1.5 md:gap-2">
             <span
-              className="w-3.5 h-3.5 rounded-sm shrink-0"
+              className="w-2 h-2 md:w-3.5 md:h-3.5 rounded-sm shrink-0"
               style={{ backgroundColor: item.color }}
             />
-            <span className="text-[11px] text-gray-700">{item.label}</span>
+            <span className="text-[10px] md:text-[11px] text-gray-700">
+              {item.label}
+            </span>
           </div>
         ))}
       </div>
@@ -580,7 +590,7 @@ export default function SDAMapPage() {
           <h1 className="text-xl font-bold text-gray-900">
             SDA World Growth Map
           </h1>
-          <p className="text-xs text-gray-500 mt-0.5">
+          <p className="text-[10px] md:text-xs text-gray-500 mt-0.5">
             1-year membership growth · 2025 · ASR2026A
           </p>
         </div>
@@ -592,13 +602,13 @@ export default function SDAMapPage() {
       <main className="flex-1 flex relative">
         <div
           className={`relative flex-1 transition-all duration-200 ${
-            sidebar ? "mr-[360px]" : ""
+            sidebar ? "md:mr-[360px]" : ""
           }`}
         >
           {/* Map */}
           <div
-            style={{ width: "100%", height: "100vh" }}
-            className="bg-white overflow-hidden relative"
+            style={{ width: "100%" }}
+            className="h-[50vh] md:h-screen bg-white overflow-hidden relative"
           >
             <ComposableMap
               projection="geoNaturalEarth1"
@@ -701,115 +711,157 @@ export default function SDAMapPage() {
               {SDA_REGIONS.length} regions · click a row to inspect
             </p>
           </div>
-          <div className="overflow-x-auto">
-            <table
-              style={{ width: "100%", tableLayout: "fixed" }}
-              className="text-xs"
+          {/* Header row — large screen only */}
+          <div
+            className="hidden md:grid bg-gray-50 text-gray-500 uppercase tracking-wide text-[10px] px-4 py-2.5 border-b border-gray-100"
+            style={{ gridTemplateColumns: "1fr 28px 110px 80px 110px" }}
+          >
+            <span className="font-medium">Region</span>
+            <span
+              className="font-bold text-center"
+              style={{ color: "#7b2d8b" }}
             >
-              <colgroup>
-                <col style={{ width: 160 }} />
-                <col style={{ width: 28 }} />
-                <col style={{ width: 100 }} />
-                <col style={{ width: 80 }} />
-                <col style={{ width: 110 }} />
-              </colgroup>
-              <thead>
-                <tr className="bg-gray-50 text-gray-500 uppercase tracking-wide text-[10px]">
-                  <th className="text-left px-4 py-2.5 font-medium">Region</th>
-                  <th
-                    className="py-2.5 font-bold text-center"
-                    style={{ color: "#7b2d8b" }}
+              Ω**
+            </span>
+            <span className="text-right font-medium">Members 2025</span>
+            <span className="text-right font-medium">Growth %</span>
+            <span className="text-right font-medium">Profile *</span>
+          </div>
+
+          {/* Region rows */}
+          <div className="divide-y divide-gray-50">
+            {[...SDA_REGIONS]
+              .sort((a, b) => a.growth.current - b.growth.current)
+              .map((r) => {
+                const g = r.growth.current;
+                const gColor = growthColor(g);
+                const hasFlag =
+                  r.dataFlags &&
+                  r.dataFlags.some((f) =>
+                    [
+                      "data-anomaly-2025",
+                      "net-decline",
+                      "retention-crisis",
+                      "conflict-affected",
+                    ].includes(f)
+                  );
+                return (
+                  <div
+                    key={r.id}
+                    className="px-4 cursor-pointer hover:bg-gray-50"
+                    onClick={() => setSidebar(r)}
                   >
-                    Omega Crisis Ω**
-                  </th>
-                  <th className="text-right px-4 py-2.5 font-medium">
-                    Members 2025
-                  </th>
-                  <th className="text-right px-4 py-2.5 font-medium">
-                    Growth %
-                  </th>
-                  <th className="text-right px-4 py-2.5 font-medium hidden lg:table-cell">
-                    Profile *
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {[...SDA_REGIONS]
-                  .sort((a, b) => a.growth.current - b.growth.current)
-                  .map((r) => {
-                    const g = r.growth.current;
-                    const gColor = growthColor(g);
-                    const hasFlag =
-                      r.dataFlags &&
-                      r.dataFlags.some((f) =>
-                        [
-                          "data-anomaly-2025",
-                          "net-decline",
-                          "retention-crisis",
-                          "conflict-affected",
-                        ].includes(f)
-                      );
-                    return (
-                      <tr
-                        key={r.id}
-                        className="hover:bg-gray-50 cursor-pointer"
-                        onClick={() => setSidebar(r)}
+                    {/* Large screen — single grid row */}
+                    <div
+                      className="hidden md:grid items-center py-2.5"
+                      style={{
+                        gridTemplateColumns: "1fr 28px 110px 80px 110px",
+                      }}
+                    >
+                      <span className="font-medium text-gray-800 text-xs truncate pr-2">
+                        {r.name}
+                        {hasFlag && (
+                          <span className="ml-1 text-amber-500 text-[10px]">
+                            ⚑
+                          </span>
+                        )}
+                      </span>
+                      <span className="text-center">
+                        {OMEGA_CONFIRMED.has(r.id) && (
+                          <span
+                            className="font-bold text-xs"
+                            style={{ color: "#7b2d8b" }}
+                            title="Omega Crisis confirmed"
+                          >
+                            🚨
+                          </span>
+                        )}
+                      </span>
+                      <span className="text-right text-xs text-gray-700 font-medium">
+                        {abbrev(r.stats["2025"].members)}
+                      </span>
+                      <span
+                        className="text-right text-xs font-semibold"
+                        style={{ color: gColor }}
                       >
-                        <td
-                          className="px-4 py-2.5 font-medium text-gray-800 truncate"
-                          style={{ maxWidth: 160 }}
+                        {g >= 0 ? "+" : ""}
+                        {g.toFixed(2)}%
+                      </span>
+                      <span className="text-right">
+                        <span
+                          className="px-2 py-0.5 rounded-full text-[10px] font-medium"
+                          style={{
+                            backgroundColor:
+                              PROFILE_COLOR[r.theologicalProfile],
+                            color:
+                              r.theologicalProfile === "unknown"
+                                ? "#374151"
+                                : "#ffffff",
+                          }}
                         >
+                          {PROFILE_LABEL[r.theologicalProfile]}
+                        </span>
+                      </span>
+                    </div>
+
+                    {/* Small screen — 2-row card */}
+                    <div className="md:hidden py-2.5">
+                      <div
+                        className="flex justify-between items-center"
+                        style={{ fontWeight: 500, fontSize: 14 }}
+                      >
+                        <span className="text-gray-800 truncate mr-2">
                           {r.name}
                           {hasFlag && (
                             <span className="ml-1 text-amber-500 text-[10px]">
                               ⚑
                             </span>
                           )}
-                        </td>
-                        <td
-                          className="py-2.5 text-center"
-                          style={{ width: 28, flexShrink: 0 }}
-                        >
-                          {OMEGA_CONFIRMED.has(r.id) && (
-                            <span
-                              className="font-bold"
-                              style={{ color: "#7b2d8b" }}
-                              title="Omega Crisis confirmed"
-                            >
-                              🚨
-                            </span>
-                          )}
-                        </td>
-                        <td className="px-4 py-2.5 text-right text-gray-700 font-medium">
+                        </span>
+                        {OMEGA_CONFIRMED.has(r.id) && (
+                          <span
+                            className="shrink-0"
+                            title="Omega Crisis confirmed"
+                          >
+                            🚨
+                          </span>
+                        )}
+                      </div>
+                      <div
+                        className="flex justify-between items-center mt-0.5"
+                        style={{ fontSize: 12 }}
+                      >
+                        <span className="text-gray-600 font-medium">
                           {abbrev(r.stats["2025"].members)}
-                        </td>
-                        <td
-                          className="px-4 py-2.5 text-right font-semibold"
+                        </span>
+                        <span
+                          className="font-semibold"
                           style={{ color: gColor }}
                         >
                           {g >= 0 ? "+" : ""}
                           {g.toFixed(2)}%
-                        </td>
-                        <td className="px-4 py-2.5 text-right hidden lg:table-cell">
-                          <span
-                            className="px-2 py-0.5 rounded-full text-[10px] font-medium"
-                            style={{
-                              backgroundColor:
-                                PROFILE_COLOR[r.theologicalProfile],
-                              color:
-                                r.theologicalProfile === "unknown"
-                                  ? "#374151"
-                                  : "#ffffff",
-                            }}
-                          >
-                            {PROFILE_LABEL[r.theologicalProfile]}
-                          </span>
-                        </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
+                        </span>
+                        <span
+                          className="font-medium"
+                          style={{
+                            backgroundColor:
+                              PROFILE_COLOR[r.theologicalProfile],
+                            color:
+                              r.theologicalProfile === "unknown"
+                                ? "#374151"
+                                : "#ffffff",
+                            fontSize: 11,
+                            padding: "1px 6px",
+                            borderRadius: 999,
+                          }}
+                        >
+                          {PROFILE_LABEL[r.theologicalProfile]}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>
