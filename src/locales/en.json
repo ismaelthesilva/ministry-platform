@@ -243,6 +243,12 @@
       "viewAll": "View all",
       "done": "Done"
     },
+    "home": {
+      "noReadingToday": "No reading scheduled for today. Enjoy a day of reflection."
+    },
+    "plans": {
+      "switchError": "Failed to switch plan. Please try again."
+    },
     "quickActions": {
       "viewAll": "View All Readings",
       "viewAllDesc": "See your complete reading plan and track progress",
@@ -272,8 +278,10 @@
         "status": "Status"
       },
       "unableToUpdate": "Unable to update reading. Please try again.",
-      "markedComplete": "marked complete",
+      "markedComplete": "readings marked complete",
       "markedIncomplete": "marked incomplete",
+      "today": "today",
+      "completeMonth": "Complete month",
       "keyboardHint": "Use the arrow keys to move between months and press Enter to select.",
       "resetMonth": "Reset Month",
       "resetConfirm": "Confirm Reset",
@@ -291,6 +299,94 @@
       "updating": "Updating...",
       "completed": "Completed",
       "updatingStatus": "Updating reading status"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Manage your account settings and preferences",
+    "editProfile": "Edit Profile",
+    "personalInfo": "Personal Information",
+    "personalInfoDesc": "Your basic personal details",
+    "email": "Email",
+    "enterEmail": "Enter new email",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "gender": "Gender",
+    "selectGender": "Select gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "preferNotToSay": "Prefer not to say",
+    "age": "Age",
+    "agePlaceholder": "Enter your age",
+    "country": "Country",
+    "countryPlaceholder": "Enter your country",
+    "phone": "Phone",
+    "phonePlaceholder": "Enter your phone number",
+    "religion": "Religion",
+    "religionPlaceholder": "Enter your religion",
+    "biblePreferences": "Bible Preferences",
+    "biblePreferencesDesc": "Your favorite Bible passages and books",
+    "favBook": "Favorite Bible Book",
+    "favBookPlaceholder": "e.g., Psalms, John, Genesis",
+    "favVerse": "Favorite Bible Verse",
+    "favVersePlaceholder": "e.g., John 3:16, Psalms 23:1",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "save": "Save",
+    "accountActions": "Account Actions",
+    "accountActionsDesc": "Manage your account settings and security",
+    "signOut": "Sign Out"
+  },
+  "plans": {
+    "title": "Reading Plans",
+    "subtitle": "Three different plans to guide your daily Bible study. Each plan has 365 days and is available in Portuguese and English. You can switch plans and language anytime on the readings page.",
+    "selectThisPlan": "Select this plan",
+    "selecting": "Selecting…",
+    "goToReadings": "Go to Readings",
+    "includes": {
+      "label": "Includes",
+      "dailyBibleReading": "Daily Bible reading",
+      "complete365days": "Complete 365 days",
+      "oldAndNewTestament": "Old and New Testament",
+      "propheticCommentary": "Prophetic commentary",
+      "chapterTitles": "Chapter titles and themes",
+      "classicAuthors": "Classic Christian authors",
+      "referenceWorks": "Reference works and key themes"
+    },
+    "bible": {
+      "title": "Bible Only",
+      "description": "Read the entire Bible in one year with organized daily readings. Ideal for those who want to focus exclusively on God's Word."
+    },
+    "prophetic": {
+      "title": "Prophetic Reading",
+      "description": "Combine Bible reading with prophetic and devotional commentary. Deepen your spiritual understanding."
+    },
+    "classic": {
+      "title": "Classic Reading",
+      "description": "Bible readings paired with classical Christian literature. Discover the wisdom of great authors of the faith."
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "step1": {
+        "title": "Go to Readings",
+        "desc": "Go to the readings page to see the 12-month calendar with all yearly readings."
+      },
+      "step2": {
+        "title": "Choose plan and language",
+        "desc": "Use the switcher at the top to toggle between the 3 plans and 2 languages anytime."
+      },
+      "step3": {
+        "title": "Mark as read",
+        "desc": "Click the button for each day to record your progress. Progress is saved per plan."
+      },
+      "step4": {
+        "title": "Track your progress",
+        "desc": "See how many readings remain each month and in total. Keep going until you complete the year!"
+      }
     }
   },
   "contact": {

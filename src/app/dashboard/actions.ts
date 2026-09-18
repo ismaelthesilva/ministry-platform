@@ -175,13 +175,46 @@ export async function clearUserPlan(userId: string) {
 }
 
 export async function getUserBibleTrackerData(userId: string) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return {
+      user: null,
+      plan: null,
+      todayReading: null,
+      progress: [],
+      allReadings: [],
+      completedReadingIds: [],
+      completionPercentage: 0,
+    };
+  }
+
   try {
     const user = await prisma.user.findUnique({
       where: { id: userId },
-      include: {
+      select: {
+        id: true,
+        name: true,
+        firstName: true,
+        lastName: true,
+        email: true,
+        emailVerified: true,
+        image: true,
+        country: true,
+        phone: true,
+        gender: true,
+        religion: true,
+        age: true,
+        favBook: true,
+        favVerse: true,
+        selectedPlanId: true,
+        preferredLanguage: true,
+        createdAt: true,
+        updatedAt: true,
         progress: {
-          include: {
-            reading: true,
+          select: {
+            id: true,
+            readingId: true,
+            completedAt: true,
           },
         },
       },
@@ -328,6 +361,17 @@ export async function getTrackerDataForPlan(
   planSlug: string,
   planLanguage: string
 ) {
+  const session = await auth();
+  if (!session?.user?.id || session.user.id !== userId) {
+    return {
+      plan: null,
+      todayReading: null,
+      allReadings: [],
+      completedReadingIds: [],
+      completionPercentage: 0,
+    };
+  }
+
   try {
     const plan = await prisma.plan.findFirst({
       where: { slug: planSlug, language: planLanguage },
