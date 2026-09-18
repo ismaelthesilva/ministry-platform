@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
+import { sendContactEmail } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
@@ -38,23 +38,11 @@ export default function ContactPage() {
     setSuccess(false);
 
     try {
-      // Replace with your actual EmailJS public key
-      emailjs.init("33LlxQRSnDWVe7oCJ"); // You need to add your public key here
+      const result = await sendContactEmail(formData);
 
-      const result = await emailjs.send(
-        "service_vimorsl", // Your service ID
-        "template_o5pa1ug", // Your template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-          to_name: "Ismael Silva Ministry",
-        }
-      );
-
-      if (result.status === 200) {
+      if (result.error) {
+        setError(result.error);
+      } else {
         setSuccess(true);
         setFormData({
           name: "",
@@ -64,9 +52,8 @@ export default function ContactPage() {
           message: "",
         });
       }
-    } catch (err: unknown) {
+    } catch {
       setError(t("contact.error", "Failed to send message. Please try again."));
-      console.error("EmailJS Error:", err);
     } finally {
       setLoading(false);
     }
