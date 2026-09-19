@@ -17,7 +17,7 @@ import {
   getTrackerDataForPlan,
   selectPlan,
 } from "@/app/dashboard/actions";
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { cn } from "@/lib/utils";
 import { ReadingStatusButton } from "@/components/dashboard/ReadingStatusButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -110,9 +110,18 @@ export function ReadingsView({
 
   const handleSwitchPlan = (slug: string, lang: string) => {
     if (slug === activePlanSlug && lang === activePlanLang) return;
+    const prevSlug = activePlanSlug;
+    const prevLang = activePlanLang;
     setActivePlanSlug(slug);
     setActivePlanLang(lang);
     startSwitching(async () => {
+      const persist = await selectPlan(userId, slug, lang);
+      if (!persist.success) {
+        setActivePlanSlug(prevSlug);
+        setActivePlanLang(prevLang);
+        setAnnouncement(t("dashboard.plans.switchError"));
+        return;
+      }
       const result = await getTrackerDataForPlan(userId, slug, lang);
       if (result.plan) {
         setData({
@@ -124,9 +133,6 @@ export function ReadingsView({
           completionPercentage: result.completionPercentage,
         });
         setCompletedIds(result.completedReadingIds);
-        // Also persist the selection server-side
-        await selectPlan(userId, slug, lang);
-        // Update language context if changed
         if (lang !== language) {
           setLanguage(lang as "en" | "br");
         }
@@ -243,31 +249,41 @@ export function ReadingsView({
 
   // ─── Grouping ─────────────────────────────────────────────────────────────
 
-  const readingsByMonth = monthOptions.reduce(
-    (acc, m) => ({ ...acc, [m.key]: [] as DailyReading[] }),
-    {} as Record<string, DailyReading[]>
-  );
-  data.allReadings.forEach((r) => {
-    const k = getMonthKeyFromDate(r.date);
-    if (k && readingsByMonth[k]) readingsByMonth[k].push(r);
-  });
+  const readingsByMonth = useMemo(() => {
+    const map = monthOptions.reduce(
+      (acc, m) => ({ ...acc, [m.key]: [] as DailyReading[] }),
+      {} as Record<string, DailyReading[]>
+    );
+    data.allReadings.forEach((r) => {
+      const k = getMonthKeyFromDate(r.date);
+      if (k && map[k]) map[k].push(r);
+    });
+    return map;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.allReadings, isBr]);
 
-  const availableMonths = monthOptions.filter(
-    (m) => readingsByMonth[m.key]?.length
+  const availableMonths = useMemo(
+    () => monthOptions.filter((m) => readingsByMonth[m.key]?.length),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [readingsByMonth, isBr]
   );
 
-  const monthStats = availableMonths.reduce((acc, m) => {
-    const rds = readingsByMonth[m.key] ?? [];
-    const done = rds.filter((r) => completedIds.includes(r.id)).length;
-    acc[m.key] = {
-      total: rds.length,
-      completedCount: done,
-      completionPercentage: rds.length
-        ? Math.round((done / rds.length) * 100)
-        : 0,
-    };
-    return acc;
-  }, {} as Record<string, { total: number; completedCount: number; completionPercentage: number }>);
+  const monthStats = useMemo(
+    () =>
+      availableMonths.reduce((acc, m) => {
+        const rds = readingsByMonth[m.key] ?? [];
+        const done = rds.filter((r) => completedIds.includes(r.id)).length;
+        acc[m.key] = {
+          total: rds.length,
+          completedCount: done,
+          completionPercentage: rds.length
+            ? Math.round((done / rds.length) * 100)
+            : 0,
+        };
+        return acc;
+      }, {} as Record<string, { total: number; completedCount: number; completionPercentage: number }>),
+    [availableMonths, completedIds, readingsByMonth]
+  );
 
   const currentMonthKey = getMonthKeyFromDate(data.todayReading?.date ?? "");
   const defaultMonth =
@@ -402,9 +418,9 @@ export function ReadingsView({
       const label =
         availableMonths.find((m) => m.key === monthKey)?.label ?? monthKey;
       setAnnouncement(
-        `${label} — ${toComplete.length} ${
-          isBr ? "leituras marcadas" : "readings marked complete"
-        }`
+        `${label} — ${toComplete.length} ${t(
+          "dashboard.readings.markedComplete"
+        )}`
       );
     }
   };
@@ -670,7 +686,7 @@ export function ReadingsView({
                   </Badge>
                   {completedIds.includes(data.todayReading.id) && (
                     <Badge className="bg-emerald-500 text-white border-0 shrink-0">
-                      ✓ Done
+                      ✓ {t("dashboard.monthlyProgress.done")}
                     </Badge>
                   )}
                 </CardTitle>
@@ -911,7 +927,7 @@ export function ReadingsView({
                               onClick={() => handleCompleteMonth(monthKey)}
                             >
                               <CheckCheck className="h-3 w-3" />
-                              {isBr ? "Completar mês" : "Complete month"}
+                              {t("dashboard.readings.completeMonth")}
                             </Button>
                           )}
                           {/* Reset month */}
@@ -1001,7 +1017,7 @@ export function ReadingsView({
                                   reading.dayNumber}
                                 {isToday && (
                                   <span className="ml-1.5 text-[10px] text-blue-500 normal-case tracking-normal font-medium">
-                                    · today
+                                    · {t("dashboard.readings.today")}
                                   </span>
                                 )}
                               </p>

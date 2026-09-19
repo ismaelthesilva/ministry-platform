@@ -17,10 +17,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { User, Mail, LogOut, Save, Edit2, X, Fingerprint } from "lucide-react";
+import { User, Mail, LogOut, Save, Edit2, X } from "lucide-react";
 import { signOut } from "next-auth/react";
-import { signIn as signInWebAuthn } from "next-auth/webauthn";
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import {
   updateProfile,
   updateEmail,
@@ -47,6 +47,7 @@ interface ProfileViewProps {
 }
 
 export function ProfileView({ user }: ProfileViewProps) {
+  const { t } = useLanguage();
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -131,16 +132,14 @@ export function ProfileView({ user }: ProfileViewProps) {
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Profile
+            {t("profile.title")}
           </h1>
-          <p className="text-muted-foreground">
-            Manage your account settings and preferences
-          </p>
+          <p className="text-muted-foreground">{t("profile.subtitle")}</p>
         </div>
         {!isEditing && (
           <Button onClick={() => setIsEditing(true)} variant="outline">
             <Edit2 className="mr-2 h-4 w-4" />
-            Edit Profile
+            {t("profile.editProfile")}
           </Button>
         )}
       </div>
@@ -164,16 +163,16 @@ export function ProfileView({ user }: ProfileViewProps) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <User className="h-5 w-5" />
-              Personal Information
+              {t("profile.personalInfo")}
             </CardTitle>
-            <CardDescription>Your basic personal details</CardDescription>
+            <CardDescription>{t("profile.personalInfoDesc")}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Email */}
             <div className="space-y-2">
               <Label htmlFor="email" className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                Email
+                {t("profile.email")}
               </Label>
               {isEditingEmail ? (
                 <div className="space-y-2">
@@ -182,7 +181,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                     type="email"
                     value={newEmail}
                     onChange={(e) => setNewEmail(e.target.value)}
-                    placeholder="Enter new email"
+                    placeholder={t("profile.enterEmail")}
                     required
                     autoFocus
                     onKeyDown={(e) => {
@@ -211,7 +210,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                       onClick={() => handleEmailSubmit()}
                     >
                       <Save className="mr-1 h-3 w-3" />
-                      {emailLoading ? "Saving…" : "Save"}
+                      {emailLoading ? t("profile.saving") : t("profile.save")}
                     </Button>
                     <Button
                       type="button"
@@ -225,7 +224,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                       }}
                     >
                       <X className="mr-1 h-3 w-3" />
-                      Cancel
+                      {t("profile.cancel")}
                     </Button>
                   </div>
                 </div>
@@ -269,7 +268,7 @@ export function ProfileView({ user }: ProfileViewProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* First Name */}
               <div className="space-y-2">
-                <Label htmlFor="firstName">First Name</Label>
+                <Label htmlFor="firstName">{t("profile.firstName")}</Label>
                 {isEditing ? (
                   <Input
                     id="firstName"
@@ -277,7 +276,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, firstName: e.target.value })
                     }
-                    placeholder="Enter your first name"
+                    placeholder={t("profile.firstNamePlaceholder")}
                   />
                 ) : (
                   <p className="text-base p-2 rounded border bg-muted/50">
@@ -288,7 +287,7 @@ export function ProfileView({ user }: ProfileViewProps) {
 
               {/* Last Name */}
               <div className="space-y-2">
-                <Label htmlFor="lastName">Last Name</Label>
+                <Label htmlFor="lastName">{t("profile.lastName")}</Label>
                 {isEditing ? (
                   <Input
                     id="lastName"
@@ -296,7 +295,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, lastName: e.target.value })
                     }
-                    placeholder="Enter your last name"
+                    placeholder={t("profile.lastNamePlaceholder")}
                   />
                 ) : (
                   <p className="text-base p-2 rounded border bg-muted/50">
@@ -309,7 +308,7 @@ export function ProfileView({ user }: ProfileViewProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Gender */}
               <div className="space-y-2">
-                <Label htmlFor="gender">Gender</Label>
+                <Label htmlFor="gender">{t("profile.gender")}</Label>
                 {isEditing ? (
                   <Select
                     value={formData.gender}
@@ -318,14 +317,18 @@ export function ProfileView({ user }: ProfileViewProps) {
                     }
                   >
                     <SelectTrigger id="gender">
-                      <SelectValue placeholder="Select gender" />
+                      <SelectValue placeholder={t("profile.selectGender")} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="male">Male</SelectItem>
-                      <SelectItem value="female">Female</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="male">{t("profile.male")}</SelectItem>
+                      <SelectItem value="female">
+                        {t("profile.female")}
+                      </SelectItem>
+                      <SelectItem value="other">
+                        {t("profile.other")}
+                      </SelectItem>
                       <SelectItem value="prefer-not-to-say">
-                        Prefer not to say
+                        {t("profile.preferNotToSay")}
                       </SelectItem>
                     </SelectContent>
                   </Select>
@@ -338,7 +341,7 @@ export function ProfileView({ user }: ProfileViewProps) {
 
               {/* Age */}
               <div className="space-y-2">
-                <Label htmlFor="age">Age</Label>
+                <Label htmlFor="age">{t("profile.age")}</Label>
                 {isEditing ? (
                   <Input
                     id="age"
@@ -354,7 +357,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                           : undefined,
                       })
                     }
-                    placeholder="Enter your age"
+                    placeholder={t("profile.agePlaceholder")}
                   />
                 ) : (
                   <p className="text-base p-2 rounded border bg-muted/50">
@@ -367,7 +370,7 @@ export function ProfileView({ user }: ProfileViewProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Country */}
               <div className="space-y-2">
-                <Label htmlFor="country">Country</Label>
+                <Label htmlFor="country">{t("profile.country")}</Label>
                 {isEditing ? (
                   <Input
                     id="country"
@@ -375,7 +378,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, country: e.target.value })
                     }
-                    placeholder="Enter your country"
+                    placeholder={t("profile.countryPlaceholder")}
                   />
                 ) : (
                   <p className="text-base p-2 rounded border bg-muted/50">
@@ -386,7 +389,7 @@ export function ProfileView({ user }: ProfileViewProps) {
 
               {/* Phone */}
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone</Label>
+                <Label htmlFor="phone">{t("profile.phone")}</Label>
                 {isEditing ? (
                   <Input
                     id="phone"
@@ -395,7 +398,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
                     }
-                    placeholder="Enter your phone number"
+                    placeholder={t("profile.phonePlaceholder")}
                   />
                 ) : (
                   <p className="text-base p-2 rounded border bg-muted/50">
@@ -407,7 +410,7 @@ export function ProfileView({ user }: ProfileViewProps) {
 
             {/* Religion */}
             <div className="space-y-2">
-              <Label htmlFor="religion">Religion</Label>
+              <Label htmlFor="religion">{t("profile.religion")}</Label>
               {isEditing ? (
                 <Input
                   id="religion"
@@ -415,7 +418,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, religion: e.target.value })
                   }
-                  placeholder="Enter your religion"
+                  placeholder={t("profile.religionPlaceholder")}
                 />
               ) : (
                 <p className="text-base p-2 rounded border bg-muted/50">
@@ -429,15 +432,15 @@ export function ProfileView({ user }: ProfileViewProps) {
         {/* Bible Preferences Card */}
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle>Bible Preferences</CardTitle>
+            <CardTitle>{t("profile.biblePreferences")}</CardTitle>
             <CardDescription>
-              Your favorite Bible passages and books
+              {t("profile.biblePreferencesDesc")}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Favorite Book */}
             <div className="space-y-2">
-              <Label htmlFor="favBook">Favorite Bible Book</Label>
+              <Label htmlFor="favBook">{t("profile.favBook")}</Label>
               {isEditing ? (
                 <Input
                   id="favBook"
@@ -445,7 +448,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, favBook: e.target.value })
                   }
-                  placeholder="e.g., Psalms, John, Genesis"
+                  placeholder={t("profile.favBookPlaceholder")}
                 />
               ) : (
                 <p className="text-base p-2 rounded border bg-muted/50">
@@ -456,7 +459,7 @@ export function ProfileView({ user }: ProfileViewProps) {
 
             {/* Favorite Verse */}
             <div className="space-y-2">
-              <Label htmlFor="favVerse">Favorite Bible Verse</Label>
+              <Label htmlFor="favVerse">{t("profile.favVerse")}</Label>
               {isEditing ? (
                 <Input
                   id="favVerse"
@@ -464,7 +467,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, favVerse: e.target.value })
                   }
-                  placeholder="e.g., John 3:16, Psalms 23:1"
+                  placeholder={t("profile.favVersePlaceholder")}
                 />
               ) : (
                 <p className="text-base p-2 rounded border bg-muted/50">
@@ -482,7 +485,7 @@ export function ProfileView({ user }: ProfileViewProps) {
               <div className="flex gap-3">
                 <Button type="submit" disabled={loading} className="flex-1">
                   <Save className="mr-2 h-4 w-4" />
-                  {loading ? "Saving..." : "Save Changes"}
+                  {loading ? t("profile.saving") : t("profile.saveChanges")}
                 </Button>
                 <Button
                   type="button"
@@ -492,7 +495,7 @@ export function ProfileView({ user }: ProfileViewProps) {
                   className="flex-1"
                 >
                   <X className="mr-2 h-4 w-4" />
-                  Cancel
+                  {t("profile.cancel")}
                 </Button>
               </div>
             </CardContent>
@@ -500,39 +503,11 @@ export function ProfileView({ user }: ProfileViewProps) {
         )}
       </form>
 
-      {/* Security Card */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>Security</CardTitle>
-          <CardDescription>
-            Manage passkeys for biometric or hardware-key login
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex flex-col gap-1">
-            <p className="text-sm text-muted-foreground">
-              Register a Passkey (TouchID, FaceID, or hardware security key) so
-              you can sign in without a magic link.
-            </p>
-          </div>
-          <Button
-            variant="outline"
-            className="w-full justify-start gap-2"
-            onClick={() => signInWebAuthn("passkey", { action: "register" })}
-          >
-            <Fingerprint className="h-4 w-4 text-blue-500" />
-            Register new Passkey
-          </Button>
-        </CardContent>
-      </Card>
-
       {/* Account Actions Card */}
       <Card>
         <CardHeader>
-          <CardTitle>Account Actions</CardTitle>
-          <CardDescription>
-            Manage your account settings and security
-          </CardDescription>
+          <CardTitle>{t("profile.accountActions")}</CardTitle>
+          <CardDescription>{t("profile.accountActionsDesc")}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           <Button
@@ -541,7 +516,7 @@ export function ProfileView({ user }: ProfileViewProps) {
             onClick={() => signOut({ callbackUrl: "/login" })}
           >
             <LogOut className="mr-2 h-4 w-4" />
-            Sign Out
+            {t("profile.signOut")}
           </Button>
         </CardContent>
       </Card>
