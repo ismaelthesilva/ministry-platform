@@ -282,7 +282,7 @@ export function ReadingsView({
         };
         return acc;
       }, {} as Record<string, { total: number; completedCount: number; completionPercentage: number }>),
-    [availableMonths, completedIds]
+    [availableMonths, completedIds, readingsByMonth]
   );
 
   const currentMonthKey = getMonthKeyFromDate(data.todayReading?.date ?? "");
