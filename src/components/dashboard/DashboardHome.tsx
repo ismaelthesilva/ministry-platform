@@ -277,7 +277,7 @@ export function DashboardHome({ data }: { data: TrackerData }) {
       {/* Today's Reading + 7-day activity */}
       <div className="grid gap-4 md:grid-cols-2">
         {/* Today's Reading */}
-        {data.todayReading && (
+        {data.todayReading ? (
           <Card
             className={cn(
               "border-l-4",
@@ -338,6 +338,14 @@ export function DashboardHome({ data }: { data: TrackerData }) {
                   <p className="text-sm">{data.todayReading.author}</p>
                 </div>
               )}
+            </CardContent>
+          </Card>
+        ) : (
+          <Card className="border-l-4 border-l-muted">
+            <CardContent className="flex items-center justify-center py-8 text-center">
+              <p className="text-sm text-muted-foreground">
+                {t("dashboard.home.noReadingToday")}
+              </p>
             </CardContent>
           </Card>
         )}

@@ -9,5 +9,5 @@ export default async function PlansPage() {
     redirect("/login");
   }
 
-  return <PlansView />;
+  return <PlansView userId={session.user.id} />;
 }

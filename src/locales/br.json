@@ -243,6 +243,12 @@
       "viewAll": "Ver tudo",
       "done": "Feito"
     },
+    "home": {
+      "noReadingToday": "Nenhuma leitura programada para hoje. Aproveite um dia de reflexão."
+    },
+    "plans": {
+      "switchError": "Falha ao trocar plano. Tente novamente."
+    },
     "quickActions": {
       "viewAll": "Ver Todas as Leituras",
       "viewAllDesc": "Veja seu plano completo de leitura e acompanhe o progresso",
@@ -272,8 +278,10 @@
         "status": "Status"
       },
       "unableToUpdate": "Não foi possível atualizar a leitura. Tente novamente.",
-      "markedComplete": "marcado como concluído",
+      "markedComplete": "leituras marcadas como concluídas",
       "markedIncomplete": "marcado como pendente",
+      "today": "hoje",
+      "completeMonth": "Completar mês",
       "keyboardHint": "Use as setas para navegar pelos meses e pressione Enter para selecionar.",
       "resetMonth": "Resetar Mês",
       "resetConfirm": "Confirmar Reset",
@@ -291,6 +299,94 @@
       "updating": "Atualizando...",
       "completed": "Concluído",
       "updatingStatus": "Atualizando status da leitura"
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "subtitle": "Gerencie suas configurações e preferências",
+    "editProfile": "Editar Perfil",
+    "personalInfo": "Informações Pessoais",
+    "personalInfoDesc": "Seus dados pessoais básicos",
+    "email": "Email",
+    "enterEmail": "Digite o novo email",
+    "firstName": "Nome",
+    "firstNamePlaceholder": "Digite seu nome",
+    "lastName": "Sobrenome",
+    "lastNamePlaceholder": "Digite seu sobrenome",
+    "gender": "Gênero",
+    "selectGender": "Selecionar gênero",
+    "male": "Masculino",
+    "female": "Feminino",
+    "other": "Outro",
+    "preferNotToSay": "Prefiro não informar",
+    "age": "Idade",
+    "agePlaceholder": "Digite sua idade",
+    "country": "País",
+    "countryPlaceholder": "Digite seu país",
+    "phone": "Telefone",
+    "phonePlaceholder": "Digite seu número de telefone",
+    "religion": "Religião",
+    "religionPlaceholder": "Digite sua religião",
+    "biblePreferences": "Preferências Bíblicas",
+    "biblePreferencesDesc": "Suas passagens e livros favoritos da Bíblia",
+    "favBook": "Livro Bíblico Favorito",
+    "favBookPlaceholder": "ex: Salmos, João, Gênesis",
+    "favVerse": "Versículo Favorito",
+    "favVersePlaceholder": "ex: João 3:16, Salmos 23:1",
+    "saveChanges": "Salvar Alterações",
+    "saving": "Salvando...",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "accountActions": "Ações da Conta",
+    "accountActionsDesc": "Gerencie suas configurações e segurança",
+    "signOut": "Sair"
+  },
+  "plans": {
+    "title": "Planos de Leitura",
+    "subtitle": "Três planos diferentes para guiar seu estudo bíblico diário. Cada plano tem 365 dias e está disponível em Português e Inglês. Você pode trocar de plano e idioma a qualquer momento na página de leituras.",
+    "selectThisPlan": "Escolher este plano",
+    "selecting": "Selecionando…",
+    "goToReadings": "Ir para Leituras",
+    "includes": {
+      "label": "Inclui",
+      "dailyBibleReading": "Leitura bíblica diária",
+      "complete365days": "365 dias completos",
+      "oldAndNewTestament": "Antigo e Novo Testamento",
+      "propheticCommentary": "Comentários proféticos",
+      "chapterTitles": "Títulos e temas de cada capítulo",
+      "classicAuthors": "Autores cristãos clássicos",
+      "referenceWorks": "Obras de referência e temas-chave"
+    },
+    "bible": {
+      "title": "Só a Bíblia",
+      "description": "Leia a Bíblia inteira em um ano com leituras diárias organizadas. Ideal para quem quer focar exclusivamente na Palavra de Deus."
+    },
+    "prophetic": {
+      "title": "Leitura Profética",
+      "description": "Combine a leitura bíblica com comentários proféticos e devocionais inspirados. Aprofunde sua compreensão espiritual."
+    },
+    "classic": {
+      "title": "Leitura Clássica",
+      "description": "Leituras bíblicas combinadas com literatura cristã clássica. Descubra a sabedoria dos grandes autores da fé."
+    },
+    "howItWorks": {
+      "title": "Como funciona",
+      "step1": {
+        "title": "Vá para Leituras",
+        "desc": "Acesse a página de leituras para ver o calendário de 12 meses com todas as leituras do ano."
+      },
+      "step2": {
+        "title": "Escolha plano e idioma",
+        "desc": "Use o seletor no topo para alternar entre os 3 planos e os 2 idiomas a qualquer momento."
+      },
+      "step3": {
+        "title": "Marque como lido",
+        "desc": "Clique no botão de cada dia para registrar seu progresso. O progresso é salvo por plano."
+      },
+      "step4": {
+        "title": "Acompanhe seu progresso",
+        "desc": "Veja quantas leituras faltam em cada mês e no total. Continue até completar o ano!"
+      }
     }
   },
   "contact": {
