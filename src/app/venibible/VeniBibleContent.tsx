@@ -163,6 +163,12 @@ export default function VeniBibleContent() {
           border: none;
           margin: 0;
         }
+        .vbt-brand-full { display: inline; }
+        .vbt-brand-short { display: none; }
+        @media (max-width: 480px) {
+          .vbt-brand-full { display: none; }
+          .vbt-brand-short { display: inline; }
+        }
       `}</style>
 
       {/* ── Fixed Header ── */}
@@ -193,7 +199,7 @@ export default function VeniBibleContent() {
           {/* Left: mini logo + VBT */}
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <Image
-              src="/ministry-images/vbt-logo-star-v3-text.jpeg"
+              src="/ministry-images/vbt-logo-star-v3-nobg.png"
               alt={c.logoMiniAlt}
               width={714}
               height={508}
@@ -208,7 +214,10 @@ export default function VeniBibleContent() {
                 letterSpacing: "0.08em",
               }}
             >
-              Veni Bible Translation (VBT)
+              <span className="vbt-brand-full">
+                Veni Bible Translation (VBT)
+              </span>
+              <span className="vbt-brand-short">VBT</span>
             </span>
           </div>
 
@@ -300,7 +309,7 @@ export default function VeniBibleContent() {
           {/* Full logo */}
           <div className="vbt-animate" style={{ marginBottom: "2rem" }}>
             <Image
-              src="/ministry-images/vbt-logo-star-v3-premium-web.jpg"
+              src="/ministry-images/vbt-logo-star-v3-premium-nobg.png"
               alt={c.logoAlt}
               width={2048}
               height={2048}
