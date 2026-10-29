@@ -17,7 +17,7 @@ export async function generateMetadata({
       type: "website" as const,
       images: [
         {
-          url: "/ministry-images/vbt-logo.jpeg",
+          url: "/ministry-images/vbt-logo-star-v3-premium-web.jpg",
           width: 2048,
           height: 2048,
           alt: isEn ? "VBT seal" : "Selo da Veni Bible Translation",

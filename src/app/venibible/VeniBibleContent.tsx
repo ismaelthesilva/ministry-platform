@@ -193,7 +193,7 @@ export default function VeniBibleContent() {
           {/* Left: mini logo + VBT */}
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <Image
-              src="/ministry-images/vbt-logo-mini3.png"
+              src="/ministry-images/vbt-logo-star-v3-text.jpeg"
               alt={c.logoMiniAlt}
               width={714}
               height={508}
@@ -265,7 +265,7 @@ export default function VeniBibleContent() {
       {/* ── Hero ── */}
       <section
         style={{
-          background: `linear-gradient(160deg, ${NAVY} 0%, ${BLUE} 100%)`,
+          background: "#142b46",
           paddingTop: "100px",
           paddingBottom: "80px",
           textAlign: "center",
@@ -300,7 +300,7 @@ export default function VeniBibleContent() {
           {/* Full logo */}
           <div className="vbt-animate" style={{ marginBottom: "2rem" }}>
             <Image
-              src="/ministry-images/vbt-logo.jpeg"
+              src="/ministry-images/vbt-logo-star-v3-premium-web.jpg"
               alt={c.logoAlt}
               width={2048}
               height={2048}
@@ -894,7 +894,7 @@ export default function VeniBibleContent() {
       >
         <div style={{ maxWidth: "720px", margin: "0 auto" }}>
           <Image
-            src="/ministry-images/vbt-logo-mini3.png"
+            src="/ministry-images/vbt-logo-star-v3-nobg.png"
             alt={c.logoMiniAlt}
             width={714}
             height={508}
@@ -954,7 +954,7 @@ export default function VeniBibleContent() {
               }}
             >
               <Image
-                src="/ministry-images/vbt-logo-mini3.png"
+                src="/ministry-images/vbt-logo-star-v3-nobg.png"
                 alt={c.logoMiniAlt}
                 width={714}
                 height={508}
