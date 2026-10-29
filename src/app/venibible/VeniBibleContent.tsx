@@ -432,7 +432,16 @@ export default function VeniBibleContent() {
           >
             {c.aboutP1}
           </p>
-          <p style={{ fontSize: "1.05rem", lineHeight: "1.8" }}>{c.aboutP2}</p>
+          <p
+            style={{
+              fontSize: "1.05rem",
+              lineHeight: "1.8",
+              marginBottom: "1.25rem",
+            }}
+          >
+            {c.aboutP2}
+          </p>
+          <p style={{ fontSize: "1.05rem", lineHeight: "1.8" }}>{c.aboutP3}</p>
         </div>
       </section>
 

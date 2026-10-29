@@ -27,6 +27,7 @@ export interface VeniCopy {
   aboutTitle: string;
   aboutP1: string;
   aboutP2: string;
+  aboutP3: string;
 
   metodoTitle: string;
   cards: CardItem[];
@@ -82,9 +83,11 @@ const content: Record<Lang, VeniCopy> = {
 
     aboutTitle: "O que é a VBT",
     aboutP1:
-      'A Veni Bible Translation nasceu de um desejo simples: ler a Palavra o mais perto possível do original, em português e inglês que sejam fiéis, fluentes e memoráveis. O nome vem da última oração da Bíblia, "Veni, Domine Iesu", "Vem, Senhor Jesus".',
+      "A VBT nasceu de uma frustração que muitos conhecem. Ao preparar um devocional, usei 404 versículos de uma tradução existente — mais da metade do limite permitido. Para continuar, precisaria pagar uma licença e aceitar restrições que limitariam o alcance do material. Em inglês, existem traduções livres e de qualidade. Em português, não há uma sequer que seja ao mesmo tempo fiel ao original, fluente e verdadeiramente livre para usar.",
     aboutP2:
-      "O trabalho começa pelo Apocalipse e seguirá, livro a livro, por toda a Escritura. Cada livro será acompanhado de notas que mostram as escolhas feitas.",
+      "Esse obstáculo se tornou um chamado. A Veni Bible Translation nasceu do desejo de ler a Palavra o mais perto possível do original — em português e inglês que sejam fiéis, fluentes e memoráveis. O nome vem da última oração da Bíblia: Veni, Domine Iesu. Vem, Senhor Jesus.",
+    aboutP3:
+      "O trabalho começa pelo Apocalipse e seguirá, livro a livro, por toda a Escritura. Cada livro vem acompanhado de notas que mostram as escolhas feitas. E a tradução é — e sempre será — gratuita para qualquer pessoa, em qualquer lugar.",
 
     metodoTitle: "Como traduzimos",
     cards: [
@@ -106,11 +109,11 @@ const content: Record<Lang, VeniCopy> = {
       },
     ],
 
-    transparenciaTitle: "Uma tradução declarada",
+    transparenciaTitle: "Uma tradução transparente",
     transparenciaP1:
       "A VBT é uma tradução independente do grego e do hebraico, sem vínculo com qualquer denominação, editora ou sociedade bíblica. Quando o original permite mais de uma leitura legítima, a escolha do tradutor é registrada e a alternativa aparece em nota de rodapé — para que qualquer pessoa possa conferir.",
     transparenciaP2:
-      "O projeto é independente: não está vinculado a nenhuma denominação, editora ou sociedade bíblica.",
+      "O objetivo é fidelidade ao texto original, não a qualquer tradição interpretativa.",
 
     amostraTitle: "Amostra · Apocalipse 1:1–8",
     sampleSubheading1: "Revelação de Jesus Cristo",
@@ -177,9 +180,11 @@ const content: Record<Lang, VeniCopy> = {
 
     aboutTitle: "What VBT is",
     aboutP1:
-      'The Veni Bible Translation began with a simple desire: to read the Word as close to the original as possible, in Portuguese and English that are faithful, fluent and memorable. The name comes from the last prayer of the Bible, "Veni, Domine Iesu", "Come, Lord Jesus."',
+      "The VBT was born from a frustration many people know. While preparing a devotional, I used 404 verses from an existing translation — more than half the permitted limit. To continue, I would have needed to pay for a license and accept restrictions that would limit how far the material could reach. In English, there are free, high-quality translations. In Portuguese, there is not a single one that is faithful to the original, fluent, and truly free to use.",
     aboutP2:
-      "The work begins with Revelation and will follow, book by book, through the whole of Scripture. Each book comes with notes that show the choices made.",
+      "That obstacle became a calling. The Veni Bible Translation began with a simple desire: to read the Word as close to the original as possible — in Portuguese and English that are faithful, fluent and memorable. The name comes from the last prayer of the Bible: Veni, Domine Iesu. Come, Lord Jesus.",
+    aboutP3:
+      "The work begins with Revelation and will follow, book by book, through the whole of Scripture. Each book comes with notes that show the choices made. And the translation is — and always will be — free for anyone, anywhere.",
 
     metodoTitle: "How we translate",
     cards: [
@@ -201,11 +206,11 @@ const content: Record<Lang, VeniCopy> = {
       },
     ],
 
-    transparenciaTitle: "A declared translation",
+    transparenciaTitle: "A transparent translation",
     transparenciaP1:
       "The VBT is an independent translation from the Greek and Hebrew, with no ties to any denomination, publisher or Bible society. Where the original allows more than one legitimate reading, the translator's choice is recorded and the alternative appears in a footnote — so anyone can verify it.",
     transparenciaP2:
-      "The project is independent: it is not tied to any denomination, publisher or Bible society.",
+      "The goal is faithfulness to the original text, not to any interpretive tradition.",
 
     amostraTitle: "Sample · Revelation 1:1–8",
     sampleSubheading1: "",
