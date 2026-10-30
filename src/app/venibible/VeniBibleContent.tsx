@@ -372,9 +372,7 @@ export default function VeniBibleContent() {
             }}
           >
             <a
-              href="https://github.com/veni-bible"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/venibible/apocalipse/1"
               className="vbt-btn"
               style={{
                 backgroundColor: GOLD,
@@ -384,6 +382,25 @@ export default function VeniBibleContent() {
                 fontWeight: "700",
                 textDecoration: "none",
                 fontSize: "0.95rem",
+                display: "inline-block",
+              }}
+            >
+              {c.btnRead}
+            </a>
+            <a
+              href="https://github.com/veni-bible"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vbt-btn"
+              style={{
+                backgroundColor: "transparent",
+                color: "#ffffff",
+                padding: "0.75rem 1.75rem",
+                borderRadius: "6px",
+                fontWeight: "500",
+                textDecoration: "none",
+                fontSize: "0.95rem",
+                border: `1px solid ${SKY}`,
                 display: "inline-block",
               }}
             >
