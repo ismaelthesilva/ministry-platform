@@ -254,7 +254,7 @@ export default function VeniBibleContent() {
               ))}
             </div>
             <a
-              href="https://github.com/veni-bible"
+              href="https://github.com/ismaelthesilva/veni-bible"
               target="_blank"
               rel="noopener noreferrer"
               className="vbt-nav-link"
@@ -388,7 +388,7 @@ export default function VeniBibleContent() {
               {c.btnRead}
             </a>
             <a
-              href="https://github.com/veni-bible"
+              href="https://github.com/ismaelthesilva/veni-bible"
               target="_blank"
               rel="noopener noreferrer"
               className="vbt-btn"
@@ -946,7 +946,7 @@ export default function VeniBibleContent() {
             Veni, Domine Iesu
           </p>
           <a
-            href="https://github.com/veni-bible"
+            href="https://github.com/ismaelthesilva/veni-bible"
             target="_blank"
             rel="noopener noreferrer"
             className="vbt-btn"
@@ -1069,7 +1069,7 @@ export default function VeniBibleContent() {
                 label: "ismaelsilva.org",
               },
               {
-                href: "https://github.com/veni-bible",
+                href: "https://github.com/ismaelthesilva/veni-bible",
                 label: "GitHub",
               },
               {
