@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Ubuntu } from "next/font/google";
 import { useLanguage } from "../../context/LanguageContext";
 import content, { type Lang } from "./content";
@@ -371,7 +372,7 @@ export default function VeniBibleContent() {
               flexWrap: "wrap",
             }}
           >
-            <a
+            <Link
               href="/venibible/apocalipse/1"
               className="vbt-btn"
               style={{
@@ -386,7 +387,7 @@ export default function VeniBibleContent() {
               }}
             >
               {c.btnRead}
-            </a>
+            </Link>
             <a
               href="https://github.com/ismaelthesilva/veni-bible"
               target="_blank"

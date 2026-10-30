@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { vbtStrings } from "@/lib/vbt/strings";
 
 export type FontSize = "S" | "M" | "L";
@@ -17,27 +17,26 @@ export function ReaderSettings({
   onSizeChange: (size: FontSize) => void;
   onNotesChange: (show: boolean) => void;
 }) {
-  const [size, setSize] = useState<FontSize>("M");
-  const [showNotes, setShowNotes] = useState(true);
-
-  const stableOnSizeChange = useCallback(onSizeChange, []);
-  const stableOnNotesChange = useCallback(onNotesChange, []);
-
-  useEffect(() => {
+  const [size, setSize] = useState<FontSize>(() => {
     try {
       const s = localStorage.getItem("vbt-font-size") as FontSize | null;
-      const n = localStorage.getItem("vbt-show-notes");
-      if (s && ["S", "M", "L"].includes(s)) {
-        setSize(s);
-        stableOnSizeChange(s);
-      }
-      if (n !== null) {
-        const show = n !== "false";
-        setShowNotes(show);
-        stableOnNotesChange(show);
-      }
+      if (s && (["S", "M", "L"] as string[]).includes(s)) return s;
     } catch {}
-  }, [stableOnSizeChange, stableOnNotesChange]);
+    return "M";
+  });
+
+  const [showNotes, setShowNotes] = useState<boolean>(() => {
+    try {
+      const n = localStorage.getItem("vbt-show-notes");
+      if (n !== null) return n !== "false";
+    } catch {}
+    return true;
+  });
+
+  useEffect(() => {
+    onSizeChange(size);
+    onNotesChange(showNotes);
+  }, [size, showNotes, onSizeChange, onNotesChange]);
 
   function handleSize(s: FontSize) {
     setSize(s);
