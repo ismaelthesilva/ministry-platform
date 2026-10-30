@@ -23,6 +23,7 @@ export interface VeniCopy {
   subtitle: string;
   btnGithub: string;
   btnSample: string;
+  btnRead: string;
 
   aboutTitle: string;
   aboutP1: string;
@@ -80,6 +81,7 @@ const content: Record<Lang, VeniCopy> = {
       "Uma tradução independente da Bíblia, feita a partir do grego e do hebraico, em português e inglês. Começando pelo Apocalipse.",
     btnGithub: "Ler no GitHub",
     btnSample: "Ver amostra",
+    btnRead: "Ler o Apocalipse",
 
     aboutTitle: "O que é a VBT",
     aboutP1:
@@ -177,6 +179,7 @@ const content: Record<Lang, VeniCopy> = {
       "An independent translation of the Bible from the Greek and Hebrew, in Portuguese and English. Starting with Revelation.",
     btnGithub: "Read on GitHub",
     btnSample: "See a sample",
+    btnRead: "Read Revelation",
 
     aboutTitle: "What VBT is",
     aboutP1:

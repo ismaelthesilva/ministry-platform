@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Ubuntu } from "next/font/google";
 import { useLanguage } from "../../context/LanguageContext";
 import content, { type Lang } from "./content";
@@ -254,7 +255,7 @@ export default function VeniBibleContent() {
               ))}
             </div>
             <a
-              href="https://github.com/veni-bible"
+              href="https://github.com/ismaelthesilva/veni-bible"
               target="_blank"
               rel="noopener noreferrer"
               className="vbt-nav-link"
@@ -371,10 +372,8 @@ export default function VeniBibleContent() {
               flexWrap: "wrap",
             }}
           >
-            <a
-              href="https://github.com/veni-bible"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/venibible/apocalipse/1"
               className="vbt-btn"
               style={{
                 backgroundColor: GOLD,
@@ -384,6 +383,25 @@ export default function VeniBibleContent() {
                 fontWeight: "700",
                 textDecoration: "none",
                 fontSize: "0.95rem",
+                display: "inline-block",
+              }}
+            >
+              {c.btnRead}
+            </Link>
+            <a
+              href="https://github.com/ismaelthesilva/veni-bible"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vbt-btn"
+              style={{
+                backgroundColor: "transparent",
+                color: "#ffffff",
+                padding: "0.75rem 1.75rem",
+                borderRadius: "6px",
+                fontWeight: "500",
+                textDecoration: "none",
+                fontSize: "0.95rem",
+                border: `1px solid ${SKY}`,
                 display: "inline-block",
               }}
             >
@@ -929,7 +947,7 @@ export default function VeniBibleContent() {
             Veni, Domine Iesu
           </p>
           <a
-            href="https://github.com/veni-bible"
+            href="https://github.com/ismaelthesilva/veni-bible"
             target="_blank"
             rel="noopener noreferrer"
             className="vbt-btn"
@@ -1052,7 +1070,7 @@ export default function VeniBibleContent() {
                 label: "ismaelsilva.org",
               },
               {
-                href: "https://github.com/veni-bible",
+                href: "https://github.com/ismaelthesilva/veni-bible",
                 label: "GitHub",
               },
               {

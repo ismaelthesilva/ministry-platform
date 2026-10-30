@@ -51,5 +51,22 @@ export async function generateMetadata({
 }
 
 export default function VeniBiblePage() {
-  return <VeniBibleContent />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: "Veni Bible Translation",
+    inLanguage: "pt-BR",
+    author: { "@type": "Person", name: "Ismael Silva" },
+    license: "https://creativecommons.org/licenses/by-nd/4.0/",
+    url: "https://ismaelsilva.org/venibible",
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <VeniBibleContent />
+    </>
+  );
 }

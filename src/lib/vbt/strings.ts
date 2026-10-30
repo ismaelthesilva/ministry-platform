@@ -1,0 +1,27 @@
+export const vbtStrings = {
+  skipToText: "Ir para o texto",
+  chapterTitle: (n: number) => `Apocalipse ${n}`,
+  chapterIndexTitle: "Apocalipse — Índice",
+  prevChapter: "← Anterior",
+  nextChapter: "Próximo →",
+  indexLink: "Índice",
+  copyVerse: "Copiar versículo",
+  copyLink: "Copiar link",
+  copied: "Copiado!",
+  showNotes: "Mostrar notas",
+  hideNotes: "Ocultar notas",
+  fontSizeLabel: "Tamanho da fonte",
+  searchPlaceholder: "Buscar ou Ap 1:1…",
+  searchLabel: "Buscar no Apocalipse",
+  searchResults: (n: number) => `${n} resultado${n !== 1 ? "s" : ""}`,
+  noResults: "Nenhum resultado.",
+  notesTitle: "Notas",
+  backToVerse: "↩ voltar ao versículo",
+  readRevelation: "Ler o Apocalipse",
+  viewOnGitHub: "Ver no GitHub",
+  attribution: (version: string) =>
+    `Veni Bible Translation (VBT) v${version} · © 2026 Ismael Silva · CC BY-ND 4.0`,
+  sblgntAttribution:
+    "Novo Testamento traduzido do SBL Greek New Testament (SBLGNT), © 2010 Society of Biblical Literature e Logos Bible Software, CC BY 4.0.",
+  licenseUrl: "https://creativecommons.org/licenses/by-nd/4.0/",
+};
