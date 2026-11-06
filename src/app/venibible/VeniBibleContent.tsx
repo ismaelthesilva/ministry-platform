@@ -373,7 +373,9 @@ export default function VeniBibleContent() {
             }}
           >
             <Link
-              href="/venibible/apocalipse/1"
+              href={
+                isEn ? "/venibible/revelation/1" : "/venibible/apocalipse/1"
+              }
               className="vbt-btn"
               style={{
                 backgroundColor: GOLD,
@@ -584,44 +586,126 @@ export default function VeniBibleContent() {
           <SectionHeading>{c.amostraTitle}</SectionHeading>
 
           {isEn ? (
-            /* ── EN: no sample available yet ── */
-            <div
-              style={{
-                backgroundColor: "#ffffff",
-                borderRadius: "8px",
-                padding: "2rem",
-                borderLeft: `4px solid ${ACCENT}`,
-                marginBottom: "1.5rem",
-              }}
-            >
+            /* ── EN: English sample ── */
+            <>
+              {/* Sub-heading 1 */}
               <p
                 style={{
-                  fontSize: "1rem",
-                  lineHeight: "1.75",
-                  marginBottom: "1.5rem",
-                  color: INK,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  fontSize: "0.75rem",
+                  color: ACCENT,
+                  fontWeight: "500",
+                  marginBottom: "1.25rem",
                 }}
               >
-                {c.sampleEnCardText}
+                {c.sampleSubheading1}
               </p>
-              <button
-                className="vbt-btn"
-                onClick={() => handleSetLanguage("br")}
+
+              {/* Prose: vv. 1–3, chapter drop cap */}
+              <p
                 style={{
-                  backgroundColor: BLUE,
-                  color: "#fff",
-                  padding: "0.65rem 1.5rem",
-                  borderRadius: "6px",
-                  fontWeight: "600",
-                  fontSize: "0.9rem",
-                  border: "none",
-                  cursor: "pointer",
-                  display: "inline-block",
+                  fontFamily: "Georgia, 'Times New Roman', serif",
+                  fontSize: "1.05rem",
+                  lineHeight: "1.85",
+                  color: INK,
+                  marginBottom: "0.25rem",
                 }}
               >
-                {c.sampleEnCardBtn}
-              </button>
-            </div>
+                <span className="vbt-drop-cap" aria-hidden="true">
+                  1
+                </span>
+                The revelation of Jesus Christ, which God gave Him to show His
+                servants the things that must soon happen; and He made it known
+                by signs, sending it through His angel to His servant John,{" "}
+                <VerseNum n={2} />
+                who testified to the Word of God and the Testimony of Jesus
+                Christ, all that he saw. <VerseNum n={3} />
+                Blessed is the one who reads, and those who hear the words of
+                the prophecy and keep what is written in it, for the time is
+                near.
+              </p>
+              <div className="vbt-prose-clear" />
+
+              <div style={{ height: "1.75rem" }} />
+
+              {/* Sub-heading 2 */}
+              <p
+                style={{
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  fontSize: "0.75rem",
+                  color: ACCENT,
+                  fontWeight: "500",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                {c.sampleSubheading2}
+              </p>
+
+              {/* Poetry */}
+              <div
+                style={{
+                  fontFamily: "Georgia, 'Times New Roman', serif",
+                  fontSize: "1.05rem",
+                  lineHeight: "1.95",
+                  color: INK,
+                  paddingLeft: "clamp(1rem, 4vw, 2.5rem)",
+                  borderLeft: `2px solid ${SKY}`,
+                }}
+              >
+                <p style={{ marginBottom: 0 }}>
+                  <VerseNum n={4} />
+                  John, to the seven churches that are in Asia:
+                </p>
+                <p style={{ marginBottom: 0 }}>Grace to you and peace</p>
+                <p style={{ marginBottom: 0 }}>
+                  from Him Who Is, and Who Was, and Who Is Coming,
+                </p>
+                <p style={{ marginBottom: "1.25rem" }}>
+                  and from the Seven Spirits who are before His throne,
+                </p>
+                <p style={{ marginBottom: 0 }}>
+                  <VerseNum n={5} />
+                  and from Jesus Christ, the faithful Witness, the Firstborn of
+                  the dead, and the Ruler of the kings of the earth.
+                </p>
+
+                <div style={{ height: "1.25rem" }} />
+
+                <p style={{ marginBottom: 0 }}>To Him who loves us</p>
+                <p style={{ marginBottom: 0 }}>
+                  and freed us from our sins by His blood,
+                </p>
+                <p style={{ marginBottom: "1.25rem" }}>
+                  <VerseNum n={6} />
+                  and made us a kingdom, priests to His God and Father,
+                  <br />
+                  to Him be the glory and the dominion forever and ever. Amen.
+                </p>
+
+                <p style={{ marginBottom: 0 }}>
+                  <VerseNum n={7} />
+                  Behold, He is coming with the clouds,
+                </p>
+                <p style={{ marginBottom: 0 }}>and every eye will see Him,</p>
+                <p style={{ marginBottom: 0 }}>
+                  and also those who pierced Him;
+                </p>
+                <p style={{ marginBottom: 0 }}>
+                  and all the tribes of the earth will mourn over Him.
+                </p>
+                <p style={{ marginBottom: "1.25rem" }}>Yes, amen.</p>
+
+                <p style={{ marginBottom: 0 }}>
+                  <VerseNum n={8} />I am the Alpha and the Omega, says the Lord
+                  God,
+                </p>
+                <p style={{ marginBottom: 0 }}>
+                  He Who Is, and Who Was, and Who Is Coming, the Almighty.
+                </p>
+              </div>
+            </>
           ) : (
             /* ── PT: full Portuguese sample ── */
             <>

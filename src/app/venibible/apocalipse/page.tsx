@@ -12,7 +12,10 @@ export const metadata: Metadata = {
     "Índice dos 22 capítulos do Apocalipse na Veni Bible Translation.",
   alternates: {
     canonical: "https://ismaelsilva.org/venibible/apocalipse",
-    languages: { "pt-BR": "https://ismaelsilva.org/venibible/apocalipse" },
+    languages: {
+      "pt-BR": "https://ismaelsilva.org/venibible/apocalipse",
+      en: "https://ismaelsilva.org/venibible/revelation",
+    },
   },
 };
 
@@ -20,7 +23,7 @@ export default async function ApocalipseIndexPage() {
   const book = await getRevelation();
 
   return (
-    <main id="main-content">
+    <main id="main-content" lang="pt-BR">
       <a
         href="#main-content"
         style={{
@@ -41,12 +44,27 @@ export default async function ApocalipseIndexPage() {
           padding: "2rem 1rem",
         }}
       >
-        <div style={{ marginBottom: "1rem" }}>
+        <div
+          style={{
+            marginBottom: "1rem",
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "0.5rem",
+          }}
+        >
           <Link
-            href="/venibible"
+            href="/venibible?lang=pt"
             style={{ color: "#1D4E89", fontSize: "0.9rem" }}
           >
             ← Veni Bible Translation
+          </Link>
+          <Link
+            href="/venibible/revelation"
+            hrefLang="en"
+            style={{ color: "#1D4E89", fontSize: "0.9rem" }}
+          >
+            {vbtStrings.otherLanguage}
           </Link>
         </div>
 

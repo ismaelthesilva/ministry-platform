@@ -16,4 +16,14 @@ describe("cite", () => {
       "https://ismaelsilva.org/venibible/apocalipse/22#v20"
     );
   });
+
+  it("cite(22, 20, 'en') returns (Rev 22:20, VBT)", () => {
+    expect(cite(22, 20, "en")).toBe("(Rev 22:20, VBT)");
+  });
+
+  it("verseUrl for English points to /venibible/revelation", () => {
+    expect(verseUrl(22, 20, "en")).toBe(
+      "https://ismaelsilva.org/venibible/revelation/22#v20"
+    );
+  });
 });

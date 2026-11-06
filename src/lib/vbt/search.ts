@@ -44,7 +44,11 @@ export function searchVerses(
 export function parseVerseRef(
   query: string
 ): { chapter: number; verse: number } | null {
-  const match = query.trim().match(/^(?:ap\s*)?(\d{1,2}):(\d{1,3})$/i);
+  const match = query
+    .trim()
+    .match(
+      /^(?:(?:ap|apoc|rev|revelation|apocalipse)\.?\s*)?(\d{1,2}):(\d{1,3})$/i
+    );
   if (!match) return null;
   return { chapter: parseInt(match[1]), verse: parseInt(match[2]) };
 }

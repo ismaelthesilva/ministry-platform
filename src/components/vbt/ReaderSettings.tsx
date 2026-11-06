@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { vbtStrings } from "@/lib/vbt/strings";
+import { getVbtStrings } from "@/lib/vbt/strings";
+import type { VbtLang } from "@/lib/vbt/lang";
 
 export type FontSize = "S" | "M" | "L";
 
@@ -13,10 +14,13 @@ export const FONT_SIZE_MAP: Record<FontSize, string> = {
 export function ReaderSettings({
   onSizeChange,
   onNotesChange,
+  lang = "pt",
 }: {
   onSizeChange: (size: FontSize) => void;
   onNotesChange: (show: boolean) => void;
+  lang?: VbtLang;
 }) {
+  const vbtStrings = getVbtStrings(lang);
   const [size, setSize] = useState<FontSize>(() => {
     try {
       const s = localStorage.getItem("vbt-font-size") as FontSize | null;

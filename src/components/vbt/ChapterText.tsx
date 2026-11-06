@@ -1,6 +1,7 @@
 import type { VbtBlock, VbtChapter, VbtSegment } from "@/lib/vbt/types";
 import { VerseNumber } from "./VerseNumber";
 import { NoteMarker } from "./NoteMarker";
+import type { VbtLang } from "@/lib/vbt/lang";
 
 type BlockGroup =
   | { type: "heading"; blocks: [Extract<VbtBlock, { type: "heading" }>] }
@@ -18,7 +19,13 @@ function isLastSegmentOfVerse(
   return true;
 }
 
-export function ChapterText({ chapter }: { chapter: VbtChapter }) {
+export function ChapterText({
+  chapter,
+  lang = "pt",
+}: {
+  chapter: VbtChapter;
+  lang?: VbtLang;
+}) {
   const versesWithNotes = new Set(
     chapter.verses.filter((v) => v.note).map((v) => v.verse)
   );
@@ -56,11 +63,11 @@ export function ChapterText({ chapter }: { chapter: VbtChapter }) {
             <p key={gi} className="verse-paragraph">
               {segments.map((seg, si) => (
                 <span key={si}>
-                  {seg.startsVerse && <VerseNumber n={seg.verse} />}
+                  {seg.startsVerse && <VerseNumber n={seg.verse} lang={lang} />}
                   {seg.text}
                   {versesWithNotes.has(seg.verse) &&
                     isLastSegmentOfVerse(segments, si, seg.verse) && (
-                      <NoteMarker verse={seg.verse} />
+                      <NoteMarker verse={seg.verse} lang={lang} />
                     )}
                 </span>
               ))}
@@ -77,11 +84,13 @@ export function ChapterText({ chapter }: { chapter: VbtChapter }) {
                 <span key={bi} className="poetry-line">
                   {segments.map((seg, si) => (
                     <span key={si}>
-                      {seg.startsVerse && <VerseNumber n={seg.verse} />}
+                      {seg.startsVerse && (
+                        <VerseNumber n={seg.verse} lang={lang} />
+                      )}
                       {seg.text}
                       {versesWithNotes.has(seg.verse) &&
                         isLastSegmentOfVerse(segments, si, seg.verse) && (
-                          <NoteMarker verse={seg.verse} />
+                          <NoteMarker verse={seg.verse} lang={lang} />
                         )}
                     </span>
                   ))}

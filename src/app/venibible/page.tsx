@@ -55,7 +55,7 @@ export default function VeniBiblePage() {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: "Veni Bible Translation",
-    inLanguage: "pt-BR",
+    inLanguage: ["pt-BR", "en"],
     author: { "@type": "Person", name: "Ismael Silva" },
     license: "https://creativecommons.org/licenses/by-nd/4.0/",
     url: "https://ismaelsilva.org/venibible",

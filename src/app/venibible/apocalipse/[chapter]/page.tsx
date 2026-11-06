@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `https://ismaelsilva.org/venibible/apocalipse/${n}`,
       languages: {
         "pt-BR": `https://ismaelsilva.org/venibible/apocalipse/${n}`,
+        en: `https://ismaelsilva.org/venibible/revelation/${n}`,
       },
     },
     openGraph: {

@@ -33,6 +33,10 @@ describe("parseVerseRef", () => {
     expect(parseVerseRef("Ap 13:3")).toEqual({ chapter: 13, verse: 3 });
   });
 
+  it("parses 'Rev 13:3'", () => {
+    expect(parseVerseRef("Rev 13:3")).toEqual({ chapter: 13, verse: 3 });
+  });
+
   it("returns null for plain text", () => {
     expect(parseVerseRef("Senhor")).toBeNull();
   });
