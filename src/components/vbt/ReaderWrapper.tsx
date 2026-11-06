@@ -1,19 +1,26 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import type { VbtBook, VbtChapter } from "@/lib/vbt/types";
 import { ChapterText } from "./ChapterText";
 import { ChapterNav } from "./ChapterNav";
 import { NotesList } from "./NotesList";
 import { ReaderSettings, FONT_SIZE_MAP, type FontSize } from "./ReaderSettings";
-import { vbtStrings } from "@/lib/vbt/strings";
+import { getVbtStrings } from "@/lib/vbt/strings";
+import { vbtLang, type VbtLang } from "@/lib/vbt/lang";
 
 export function ReaderWrapper({
   book,
   chapter,
+  lang = "pt",
 }: {
   book: VbtBook;
   chapter: VbtChapter;
+  lang?: VbtLang;
 }) {
+  const vbtStrings = getVbtStrings(lang);
+  const { htmlLang } = vbtLang(lang);
+  const other = vbtLang(lang === "en" ? "pt" : "en");
   const [fontSize, setFontSize] = useState<FontSize>("M");
   const [showNotes, setShowNotes] = useState(true);
 
@@ -30,7 +37,7 @@ export function ReaderWrapper({
   return (
     <main
       id="main-content"
-      lang="pt-BR"
+      lang={htmlLang}
       style={{ fontSize: FONT_SIZE_MAP[fontSize] }}
     >
       <a
@@ -57,10 +64,11 @@ export function ReaderWrapper({
       </a>
 
       <div className="reader-header">
-        <ChapterNav chapter={chapter.chapter} total={22} />
+        <ChapterNav chapter={chapter.chapter} total={22} lang={lang} />
         <ReaderSettings
           onSizeChange={setFontSize}
           onNotesChange={setShowNotes}
+          lang={lang}
         />
       </div>
 
@@ -68,15 +76,27 @@ export function ReaderWrapper({
         <h1 style={{ marginBottom: "2rem" }}>
           {vbtStrings.chapterTitle(chapter.chapter)}
         </h1>
-        <ChapterText chapter={chapter} />
+        <ChapterText chapter={chapter} lang={lang} />
         {showNotes && (
-          <NotesList chapter={chapter.chapter} verses={chapter.verses} />
+          <NotesList
+            chapter={chapter.chapter}
+            verses={chapter.verses}
+            lang={lang}
+          />
         )}
       </article>
 
-      <ChapterNav chapter={chapter.chapter} total={22} />
+      <ChapterNav chapter={chapter.chapter} total={22} lang={lang} />
 
       <footer className="reader-footer">
+        <p>
+          <Link
+            href={`${other.basePath}/${chapter.chapter}`}
+            hrefLang={other.htmlLang}
+          >
+            {vbtStrings.otherLanguage}
+          </Link>
+        </p>
         <p>{vbtStrings.attribution(book.version)}</p>
         <p>{vbtStrings.sblgntAttribution}</p>
         <p>

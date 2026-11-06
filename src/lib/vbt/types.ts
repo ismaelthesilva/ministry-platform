@@ -21,7 +21,7 @@ export type VbtChapter = {
 export type VbtBook = {
   translation: "Veni Bible Translation";
   abbreviation: "VBT";
-  language: "pt-BR";
+  language: "pt-BR" | "en";
   book: "REV";
   bookName: string;
   version: string;

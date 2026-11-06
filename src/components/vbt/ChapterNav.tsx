@@ -1,27 +1,28 @@
 import Link from "next/link";
-import { vbtStrings } from "@/lib/vbt/strings";
+import { getVbtStrings } from "@/lib/vbt/strings";
+import { vbtLang, type VbtLang } from "@/lib/vbt/lang";
 
 export function ChapterNav({
   chapter,
   total,
+  lang = "pt",
 }: {
   chapter: number;
   total: number;
+  lang?: VbtLang;
 }) {
+  const s = getVbtStrings(lang);
+  const base = vbtLang(lang).basePath;
   return (
-    <nav aria-label="Navegação entre capítulos" className="chapter-nav">
+    <nav aria-label={s.chapterNavLabel} className="chapter-nav">
       {chapter > 1 ? (
-        <Link href={`/venibible/apocalipse/${chapter - 1}`}>
-          {vbtStrings.prevChapter}
-        </Link>
+        <Link href={`${base}/${chapter - 1}`}>{s.prevChapter}</Link>
       ) : (
         <span />
       )}
-      <Link href="/venibible/apocalipse">{vbtStrings.indexLink}</Link>
+      <Link href={base}>{s.indexLink}</Link>
       {chapter < total ? (
-        <Link href={`/venibible/apocalipse/${chapter + 1}`}>
-          {vbtStrings.nextChapter}
-        </Link>
+        <Link href={`${base}/${chapter + 1}`}>{s.nextChapter}</Link>
       ) : (
         <span />
       )}

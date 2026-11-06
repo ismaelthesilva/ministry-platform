@@ -1,13 +1,17 @@
 import type { VbtVerse } from "@/lib/vbt/types";
-import { vbtStrings } from "@/lib/vbt/strings";
+import { getVbtStrings } from "@/lib/vbt/strings";
+import type { VbtLang } from "@/lib/vbt/lang";
 
 export function NotesList({
   chapter,
   verses,
+  lang = "pt",
 }: {
   chapter: number;
   verses: VbtVerse[];
+  lang?: VbtLang;
 }) {
+  const vbtStrings = getVbtStrings(lang);
   const notedVerses = verses.filter((v) => v.note);
   if (notedVerses.length === 0) return null;
   return (

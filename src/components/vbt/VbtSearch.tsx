@@ -3,7 +3,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { searchVerses, parseVerseRef } from "@/lib/vbt/search";
 import type { VbtBook } from "@/lib/vbt/types";
-import { vbtStrings } from "@/lib/vbt/strings";
+import { getVbtStrings } from "@/lib/vbt/strings";
+import { vbtLang, type VbtLang } from "@/lib/vbt/lang";
 
 function normalize(s: string) {
   return s
@@ -26,16 +27,22 @@ function highlight(text: string, query: string): React.ReactNode {
   );
 }
 
-export function VbtSearch({ book }: { book: VbtBook }) {
+export function VbtSearch({
+  book,
+  lang = "pt",
+}: {
+  book: VbtBook;
+  lang?: VbtLang;
+}) {
+  const vbtStrings = getVbtStrings(lang);
+  const { basePath, abbr } = vbtLang(lang);
   const [query, setQuery] = useState("");
   const [includeNotes, setIncludeNotes] = useState(false);
 
   const ref = query.trim() ? parseVerseRef(query) : null;
   const results =
     !ref && query.trim() ? searchVerses(book, query, includeNotes) : [];
-  const redirectHref = ref
-    ? `/venibible/apocalipse/${ref.chapter}#v${ref.verse}`
-    : null;
+  const redirectHref = ref ? `${basePath}/${ref.chapter}#v${ref.verse}` : null;
 
   return (
     <div
@@ -64,11 +71,11 @@ export function VbtSearch({ book }: { book: VbtBook }) {
           checked={includeNotes}
           onChange={(e) => setIncludeNotes(e.target.checked)}
         />
-        {vbtStrings.showNotes}
+        {vbtStrings.includeNotes}
       </label>
       {redirectHref && (
         <p style={{ marginTop: "0.5rem" }}>
-          <Link href={redirectHref}>Ir para {query.trim()}</Link>
+          <Link href={redirectHref}>{vbtStrings.goTo(query.trim())}</Link>
         </p>
       )}
       {query.trim() && !redirectHref && (
@@ -87,9 +94,9 @@ export function VbtSearch({ book }: { book: VbtBook }) {
       >
         {results.map((r) => (
           <li key={`${r.chapter}:${r.verse}`}>
-            <Link href={`/venibible/apocalipse/${r.chapter}#v${r.verse}`}>
+            <Link href={`${basePath}/${r.chapter}#v${r.verse}`}>
               <strong>
-                Ap {r.chapter}:{r.verse}
+                {abbr} {r.chapter}:{r.verse}
               </strong>{" "}
               <span>{highlight(r.text, query)}</span>
             </Link>

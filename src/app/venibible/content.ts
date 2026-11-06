@@ -120,7 +120,8 @@ const content: Record<Lang, VeniCopy> = {
     amostraTitle: "Amostra · Apocalipse 1:1–8",
     sampleSubheading1: "Revelação de Jesus Cristo",
     sampleSubheading2: "Graça e paz às sete igrejas",
-    samplePtNote: "A versão em inglês está em preparação.",
+    samplePtNote:
+      "O Apocalipse completo está disponível em português e em inglês (versão 25).",
     sampleEnCardText: "",
     sampleEnCardBtn: "",
     amostraNote:
@@ -130,8 +131,8 @@ const content: Record<Lang, VeniCopy> = {
     progress: [
       {
         name: "Apocalipse",
-        badge: "Em andamento",
-        desc: "Capítulo 1 traduzido; seguindo para as sete cartas (capítulos 2–3).",
+        badge: "Concluído · v25",
+        desc: "Os 22 capítulos traduzidos em português e em inglês: 404 versículos e 387 notas em cada idioma.",
       },
       {
         name: "Gênesis",
@@ -216,21 +217,20 @@ const content: Record<Lang, VeniCopy> = {
       "The goal is faithfulness to the original text, not to any interpretive tradition.",
 
     amostraTitle: "Sample · Revelation 1:1–8",
-    sampleSubheading1: "",
-    sampleSubheading2: "",
+    sampleSubheading1: "The revelation of Jesus Christ",
+    sampleSubheading2: "Grace and peace to the seven churches",
     samplePtNote: "",
-    sampleEnCardText:
-      "The English edition of Revelation is in preparation. The Portuguese edition of Revelation 1 is already available.",
-    sampleEnCardBtn: "Read the Portuguese sample",
+    sampleEnCardText: "",
+    sampleEnCardBtn: "",
     amostraNote:
-      'Notes: "Yes, amen" renders ναί + ἀμήν (Greek and Hebrew). "The One Who Is" keeps the divine name as in Exodus 3:14 (ἀπὸ ὁ ὤν).',
+      'Notes: "Yes, amen" renders ναί + ἀμήν (Greek and Hebrew). "Him Who Is" keeps the divine name as in Exodus 3:14 (ἀπὸ ὁ ὤν).',
 
     andamentoTitle: "In progress",
     progress: [
       {
         name: "Revelation",
-        badge: "In progress",
-        desc: "Chapter 1 translated; moving on to the seven letters (chapters 2–3).",
+        badge: "Complete · v25",
+        desc: "All 22 chapters translated in English and Portuguese: 404 verses and 387 notes in each language.",
       },
       {
         name: "Genesis",

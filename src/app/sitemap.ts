@@ -3,12 +3,13 @@ import type { MetadataRoute } from "next";
 const SITE_URL = "https://ismaelsilva.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const chapters = Array.from({ length: 22 }, (_, i) => ({
-    url: `${SITE_URL}/venibible/apocalipse/${i + 1}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const chapters = (base: string) =>
+    Array.from({ length: 22 }, (_, i) => ({
+      url: `${SITE_URL}/venibible/${base}/${i + 1}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    }));
 
   return [
     {
@@ -23,6 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
-    ...chapters,
+    {
+      url: `${SITE_URL}/venibible/revelation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    ...chapters("apocalipse"),
+    ...chapters("revelation"),
   ];
 }

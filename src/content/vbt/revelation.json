@@ -4,7 +4,7 @@
   "language": "pt-BR",
   "book": "REV",
   "bookName": "Apocalipse",
-  "version": "24.4",
+  "version": "25",
   "license": "CC BY-ND 4.0",
   "copyright": "© 2026 Ismael Silva",
   "url": "https://github.com/ismaelthesilva/veni-bible",
@@ -45,7 +45,7 @@
         {
           "verse": 4,
           "text": "João, às sete igrejas que estão na Ásia: graça a vós e paz da parte Daquele Que É, e Daquele Que Era, e Daquele Que Vem, e da parte dos Sete Espíritos que estão diante do Seu trono,",
-          "note": "Gr. ἀπὸ ὁ ὤν: o nome divino permanece no nominativo após a preposição, como nome indeclinável (cf. Êx 3:14). “Que Vem”: presente (ὁ ἐρχόμενος). “Sete Espíritos”: a maiúscula indica a leitura como o Espírito Santo em sua plenitude."
+          "note": "Gr. ἀπὸ ὁ ὤν: o nome divino permanece no nominativo após a preposição, como nome indeclinável (cf. Êx 3:14). “Que Vem”: presente (ὁ ἐρχόμενος), o mesmo verbo de “Ele vem” em 1:7. “Sete Espíritos”: a maiúscula segue o lugar que ocupam na saudação, entre Aquele Que É e Jesus Cristo, como fonte da graça e da paz; leitura alternativa: sete espíritos angélicos (cf. 8:2)."
         },
         {
           "verse": 5,
@@ -65,7 +65,7 @@
         {
           "verse": 8,
           "text": "Eu sou o Alfa e o Ômega, diz o Senhor Deus, Aquele Que É, e Aquele Que Era, e Aquele Que Vem, o Todo-Poderoso.",
-          "note": "“Todo-Poderoso”: gr. παντοκράτωρ, que na Septuaginta traduz “Senhor dos Exércitos”."
+          "note": "“Todo-Poderoso”: gr. παντοκράτωρ, que na Septuaginta traduz geralmente “Senhor dos Exércitos” (p. ex. Am 4:13) e, em Jó, “Shaddai”. Variante: o Textus Receptus acrescenta “o Princípio e o Fim” e lê “diz o Senhor”, sem “Deus”."
         },
         {
           "verse": 9,
@@ -80,7 +80,7 @@
         {
           "verse": 11,
           "text": "que dizia: O que vês, escreve-o num livro e envia-o às sete igrejas: a Éfeso, e a Esmirna, e a Pérgamo, e a Tiatira, e a Sardes, e a Filadélfia, e a Laodiceia.",
-          "note": "Gr. βιβλίον, um rolo; “livro” mantido por concordância com 5:1ss."
+          "note": "Gr. βιβλίον, um rolo; “livro” mantido por concordância com 5:1ss. Variante: o Textus Receptus inicia a fala com “Eu sou o Alfa e o Ômega, o Primeiro e o Último” e acrescenta “que estão na Ásia”."
         },
         {
           "verse": 12,
@@ -90,7 +90,7 @@
         {
           "verse": 13,
           "text": "e no meio dos candelabros, Alguém semelhante a um Filho de Homem, vestido com uma túnica que descia até os pés e cingido à altura do peito com um cinto de ouro.",
-          "note": "Cf. Dn 7:13. “Túnica que descia até os pés”: gr. ποδήρη, termo das vestes do sumo sacerdote na Septuaginta (Êx 28:4, 31)."
+          "note": "Cf. Dn 7:13; “um Filho de Homem”: gr. υἱὸν ἀνθρώπου, sem artigo, como em Daniel. “Túnica que descia até os pés”: gr. ποδήρη, termo das vestes do sumo sacerdote na Septuaginta (Êx 28:4; 28:31 [LXX 28:27]; cf. Zc 3:4). A maiúscula segue a autoidentificação de 1:17–18. Variante: o texto bizantino e o Textus Receptus leem “os sete candelabros”."
         },
         {
           "verse": 14,
@@ -110,12 +110,12 @@
         {
           "verse": 17,
           "text": "Quando O vi, caí aos Seus pés como morto. Então Ele pôs sobre mim a Sua destra, dizendo: Não temas; Eu sou o Primeiro e o Último,",
-          "note": "“Destra”: gr. τὴν δεξιάν, sem a palavra “mão” (também em 1:20); em 1:16 o grego traz “mão direita”. Cf. Is 44:6; 48:12."
+          "note": "“Destra”: gr. τὴν δεξιάν, sem a palavra “mão” (também em 1:20); em 1:16 o grego traz “mão direita”. Variante: o Textus Receptus acrescenta “mão” aqui. Cf. Is 44:6; 48:12."
         },
         {
           "verse": 18,
           "text": "e o Vivente. Estive morto, e eis que estou vivo pelos séculos dos séculos, e tenho as chaves da morte e da sepultura.",
-          "note": "“Sepultura”: gr. hades, equivalente ao heb. sheol (cf. Os 13:14; 1Co 15:55)."
+          "note": "“Sepultura”: gr. hades, equivalente ao heb. sheol (cf. Os 13:14). Variante: o texto bizantino e o Textus Receptus acrescentam “Amém” após “pelos séculos dos séculos”; o Textus Receptus lê “da sepultura e da morte”."
         },
         {
           "verse": 19,
@@ -477,12 +477,12 @@
         {
           "verse": 1,
           "text": "Ao anjo da igreja em Éfeso escreve: Isto diz Aquele que segura as sete estrelas na Sua destra, Aquele que anda no meio dos sete candelabros de ouro:",
-          "note": "Gr. ἄγγελος, ou “mensageiro” (cf. 1:20). “Isto diz”: gr. τάδε λέγει, fórmula profética da Septuaginta, repetida nas sete cartas. “Segura”: gr. κρατῶν, “segurar com firmeza”."
+          "note": "“Anjo”: gr. ἄγγελος, ou “mensageiro” (cf. 1:20). “Isto diz”: gr. τάδε λέγει, fórmula profética da Septuaginta, repetida nas sete cartas. “Segura”: gr. κρατῶν, de κρατέω, “segurar com firmeza”."
         },
         {
           "verse": 2,
           "text": "Conheço as tuas obras, o teu labor e a tua perseverança, e que não podes suportar os maus; puseste à prova os que se dizem apóstolos, e não são, e os achaste mentirosos;",
-          "note": "Gr. κόπος, “trabalho que cansa”; o verbo correspondente aparece em 2:3 (“não te cansaste”)."
+          "note": "“Labor”: gr. κόπος, “trabalho que cansa”; o verbo correspondente aparece em 2:3 (“não te cansaste”)."
         },
         {
           "verse": 3,
@@ -495,7 +495,7 @@
         {
           "verse": 5,
           "text": "Lembra-te, portanto, de onde caíste, e arrepende-te, e pratica as primeiras obras; e, se não, venho a ti e moverei o teu candelabro do seu lugar, se não te arrependeres.",
-          "note": "Gr. κινήσω, “mover, tirar do lugar”; o candelabro é a igreja (1:20). “Caíste”: perfeito (πέπτωκας), estado de queda que permanece."
+          "note": "Gr. κινήσω, “mover, tirar do lugar”; o candelabro é a igreja (1:20). “Caíste”: perfeito (πέπτωκας), estado de queda que permanece. Variante: o texto bizantino e o Textus Receptus acrescentam “em breve” após “venho a ti”."
         },
         {
           "verse": 6,
@@ -505,7 +505,7 @@
         {
           "verse": 7,
           "text": "O que tem ouvido, ouça o que o Espírito diz às igrejas. Ao que vence, dar-lhe-ei de comer da árvore da vida, a qual está no paraíso de Deus.",
-          "note": "“Ao que vence” (νικῶντι): νικάω = “vencer” nas sete cartas. Gr. ξύλον, “madeira, árvore”, o termo de Gn 2:9 (Septuaginta), usado no Novo Testamento também para a cruz (At 5:30); cf. 22:2, 22:14."
+          "note": "“Ao que vence” (νικῶντι): νικάω = “vencer” nas sete cartas. Gr. ξύλον, “madeira, árvore”, o termo de Gn 2:9 (Septuaginta), usado no Novo Testamento também para a cruz (At 5:30); cf. 22:2, 22:14. Variante: o texto bizantino lê “o paraíso do Meu Deus”; o Textus Receptus, “no meio do paraíso de Deus”."
         },
         {
           "verse": 8,
@@ -515,11 +515,11 @@
         {
           "verse": 9,
           "text": "Conheço a tua tribulação e a tua pobreza (mas tu és rico), e a blasfêmia dos que se dizem judeus, e não são, mas são sinagoga de Satanás.",
-          "note": "Ou “calúnia” (gr. βλασφημία). A expressão não se refere ao povo judeu como tal, mas aos que, segundo o próprio texto, “se dizem judeus, e não são” (cf. 3:9; Rm 2:28–29)."
+          "note": "Ou “calúnia” (gr. βλασφημία). A expressão não se refere ao povo judeu como tal, mas aos que, segundo o próprio texto, “se dizem judeus, e não são” (cf. 3:9; Rm 2:28–29). Variante: o texto bizantino e o Textus Receptus começam com “Conheço as tuas obras, e a tua tribulação”."
         },
         {
           "verse": 10,
-          "text": "Não temas nada do que estás para sofrer. Eis que o Diabo está para lançar alguns de vós na prisão, para que sejais provados, e tereis tribulação de dez dias. Sê fiel até a morte, e te darei a coroa da vida.",
+          "text": "Não temas nada do que estás para sofrer. Eis que o diabo está para lançar alguns de vós na prisão, para que sejais provados, e tereis tribulação de dez dias. Sê fiel até a morte, e te darei a coroa da vida.",
           "note": "“Provados”: gr. πειρασθῆτε, o mesmo verbo de 2:2 (“puseste à prova”). “Dez dias”: cf. Dn 1:12, 14. “Coroa”: gr. στέφανος, a coroa do vencedor, distinta de διάδημα, “diadema” (12:3; 13:1; 19:12)."
         },
         {
@@ -539,11 +539,12 @@
         {
           "verse": 14,
           "text": "Mas tenho contra ti algumas coisas: tens aí os que retêm o ensino de Balaão, que ensinava Balaque a lançar uma pedra de tropeço diante dos filhos de Israel, para que comessem coisas sacrificadas aos ídolos e se prostituíssem.",
-          "note": "Cf. Nm 25:1–3; 31:16. “Ensino… ensinava”: gr. διδαχή / ἐδίδασκεν. “Pedra de tropeço”: gr. σκάνδαλον. “Se prostituíssem”: gr. πορνεύω; em Nm 25:1 o hebraico usa זָנָה, “prostituir-se”, ligado à idolatria; no Apocalipse o termo une infidelidade sexual e espiritual (cf. 17:1–2)."
+          "note": "Cf. Nm 25:1–3; 31:16. “Ensino… ensinava”: gr. διδαχή / ἐδίδασκεν. “Pedra de tropeço”: gr. σκάνδαλον. “Se prostituíssem”: gr. πορνεύω; em Nm 25:1 o hebraico usa זָנָה‎, “prostituir-se”, ligado à idolatria; no Apocalipse o termo une infidelidade sexual e espiritual (cf. 17:1–2)."
         },
         {
           "verse": 15,
-          "text": "Assim também tu tens os que, do mesmo modo, retêm o ensino dos nicolaítas."
+          "text": "Assim também tu tens os que, do mesmo modo, retêm o ensino dos nicolaítas.",
+          "note": "Variante: o Textus Receptus lê “o que Eu odeio” em lugar de “do mesmo modo”."
         },
         {
           "verse": 16,
@@ -568,7 +569,7 @@
         {
           "verse": 20,
           "text": "Mas tenho contra ti que toleras a mulher Jezabel, que se diz profetisa, e ensina e engana os Meus servos a se prostituírem e comerem coisas sacrificadas aos ídolos.",
-          "note": "“Toleras”: gr. ἀφεῖς, o mesmo verbo de 2:4 (“deixaste”). Variante: alguns manuscritos leem “a tua mulher Jezabel”. “Engana”: gr. πλανάω (cf. 12:9; 13:14; 20:3, 8, 10). Cf. 1Rs 16:31."
+          "note": "“Toleras”: gr. ἀφεῖς, o mesmo verbo de 2:4 (“deixaste”). “Mulher”: gr. γυνή, também “esposa”; variante: o texto bizantino lê “a tua mulher Jezabel”, e o Textus Receptus, “tenho contra ti algumas coisas”. “Engana”: gr. πλανάω (cf. 12:9; 13:14; 20:3, 8, 10). Cf. 1Rs 16:31."
         },
         {
           "verse": 21,
@@ -582,7 +583,7 @@
         {
           "verse": 23,
           "text": "e matarei os seus filhos com peste; e todas as igrejas saberão que Eu sou Aquele que sonda o íntimo e os corações, e darei a cada um de vós segundo as vossas obras.",
-          "note": "“Com peste”: gr. ἐν θανάτῳ, lit. “com morte”, expressão hebraica; na Septuaginta θάνατος traduz o hebraico דֶּבֶר‎, “peste” (cf. 6:8; 18:8; Ez 5:12; 33:27). “O íntimo”: gr. νεφροί, lit. “rins”, no pensamento hebraico a sede das emoções e da consciência (Jr 17:10, heb. כְּלָיוֹת)."
+          "note": "“Com peste”: gr. ἐν θανάτῳ, lit. “com morte”; na Septuaginta θάνατος traduz frequentemente o hebraico דֶּבֶר‎, “peste” (cf. 6:8; 18:8; Ez 5:12; 33:27). “O íntimo”: gr. νεφροί, lit. “rins”, no pensamento hebraico a sede das emoções e da consciência (Jr 17:10, heb. כְּלָיוֹת)."
         },
         {
           "verse": 24,
@@ -601,7 +602,7 @@
         {
           "verse": 27,
           "text": "e ele as apascentará com vara de ferro, como se despedaçam os vasos de barro,",
-          "note": "Cf. Sl 2:8–9. “Apascentará”: gr. ποιμαίνω, “pastorear”, como na Septuaginta de Sl 2:9; o hebraico lê “quebrarás” (תְּרֹעֵם). Cf. 7:17; 12:5; 19:15."
+          "note": "Cf. Sl 2:8–9. “Apascentará”: gr. ποιμαίνω, “pastorear”, como na Septuaginta de Sl 2:9; o hebraico lê “quebrarás” (תְּרֹעֵם‎). Cf. 7:17; 12:5; 19:15."
         },
         {
           "verse": 28,
@@ -732,7 +733,7 @@
             },
             {
               "verse": 10,
-              "text": "Não temas nada do que estás para sofrer. Eis que o Diabo está para lançar alguns de vós na prisão, para que sejais provados, e tereis tribulação de dez dias. Sê fiel até a morte, e te darei a coroa da vida.",
+              "text": "Não temas nada do que estás para sofrer. Eis que o diabo está para lançar alguns de vós na prisão, para que sejais provados, e tereis tribulação de dez dias. Sê fiel até a morte, e te darei a coroa da vida.",
               "startsVerse": true
             }
           ]
@@ -947,12 +948,12 @@
         {
           "verse": 2,
           "text": "Sê vigilante, e fortalece as coisas que restam, que estavam para morrer; pois não achei as tuas obras completas diante do Meu Deus.",
-          "note": "“Sê vigilante”: gr. γίνου γρηγορῶν, como “Sê fiel” (2:10); γρηγορέω = “vigiar” (3:3; 16:15). “As coisas que restam”: gr. τὰ λοιπά (plural); o Textus Receptus lê o verbo no singular (μέλλει)."
+          "note": "“Sê vigilante”: gr. γίνου γρηγορῶν, como “Sê fiel” (2:10); γρηγορέω = “vigiar” (3:3; 16:15). “As coisas que restam”: gr. τὰ λοιπά (plural). Variante: o texto bizantino lê “que estavas para lançar fora” (ἔμελλες ἀποβάλλειν); o Textus Receptus, “que está para morrer” (μέλλει, singular e presente) e “diante de Deus”, sem “Meu”."
         },
         {
           "verse": 3,
           "text": "Lembra-te, portanto, de como recebeste e ouviste, e guarda, e arrepende-te. Se, portanto, não vigiares, virei como ladrão, e de modo algum saberás a que hora virei sobre ti.",
-          "note": "“Como ladrão”: cf. 16:15; Mt 24:43; 1Ts 5:2. “Virei”: gr. ἥξω, como em 2:25 (“até que Eu venha”). Gr. οὐ μή, negação enfática."
+          "note": "“Como ladrão”: cf. 16:15; Mt 24:43; 1Ts 5:2. “Virei”: gr. ἥξω, como em 2:25 (“até que Eu venha”). “De modo algum”: gr. οὐ μή, negação enfática. Variante: o texto bizantino e o Textus Receptus leem “virei sobre ti como ladrão”."
         },
         {
           "verse": 4,
@@ -962,7 +963,7 @@
         {
           "verse": 5,
           "text": "O que vence será assim envolto em vestes brancas, e de modo algum apagarei o seu nome do livro da vida, e confessarei o seu nome diante de Meu Pai e diante dos Seus anjos.",
-          "note": "“Livro da vida”: cf. Êx 32:32–33; Dn 12:1; Fp 4:3; Ap 13:8; 20:12, 15. “Apagarei”: gr. ἐξαλείφω, o mesmo verbo de 7:17 e 21:4 (“enxugará”). Cf. Mt 10:32."
+          "note": "“Livro da vida”: cf. Êx 32:32–33; Dn 12:1; Fp 4:3; Ap 13:8; 20:12, 15. “Apagarei”: gr. ἐξαλείφω, o mesmo verbo de 7:17 e 21:4 (“enxugará”). Cf. Mt 10:32. Variante: o texto bizantino e o Textus Receptus leem “este será envolto” (οὗτος) em lugar de “será assim envolto” (οὕτως)."
         },
         {
           "verse": 6,
@@ -971,7 +972,7 @@
         {
           "verse": 7,
           "text": "E ao anjo da igreja em Filadélfia escreve: Isto diz o Santo, o Verdadeiro, Aquele que tem a chave de Davi, que abre, e ninguém fechará, e fecha, e ninguém abre:",
-          "note": "Cf. Is 22:22. “Verdadeiro”: gr. ἀληθινός (cf. 3:14; 19:11). Variante: o Textus Receptus lê “e ninguém fecha, e fecha” (κλείει, nos dois casos)."
+          "note": "Cf. Is 22:22. “Verdadeiro”: gr. ἀληθινός (cf. 3:14; 19:11). Variante: o Textus Receptus lê “e ninguém fecha, e fecha, e ninguém abre” (κλείει, presente, nos dois casos); o texto bizantino, “e ninguém a fechará, senão aquele que abre, e ninguém abrirá”."
         },
         {
           "verse": 8,
@@ -981,7 +982,7 @@
         {
           "verse": 9,
           "text": "Eis que entrego alguns da sinagoga de Satanás, dos que se dizem judeus, e não são, mas mentem; eis que os farei vir e curvar-se diante dos teus pés, e saber que Eu te amei.",
-          "note": "“Entrego”: gr. διδῶ, lit. “dou”; a frase grega se interrompe e recomeça (“eis que os farei…”). “Curvar-se”: gr. προσκυνέω, o verbo traduzido “adorar” quando o objeto é Deus (cf. 4:10; 14:7); aqui, homenagem (cf. Is 60:14). Sobre “sinagoga de Satanás”, cf. 2:9."
+          "note": "“Entrego”: gr. διδῶ, lit. “dou”; a frase grega se interrompe e recomeça (“eis que os farei…”). “Curvar-se”: gr. προσκυνέω, o verbo traduzido “adorar” quando o objeto é Deus (cf. 4:10; 14:7); aqui, homenagem (cf. Is 60:14 heb.; 45:14; 49:23). Sobre “sinagoga de Satanás”, cf. 2:9."
         },
         {
           "verse": 10,
@@ -991,7 +992,7 @@
         {
           "verse": 11,
           "text": "Venho em breve; retém o que tens, para que ninguém tome a tua coroa.",
-          "note": "“Em breve”: gr. ταχύ (cf. 2:16). “Retém”: gr. κρατέω (cf. 2:25). “Coroa”: gr. στέφανος (cf. 2:10)."
+          "note": "“Em breve”: gr. ταχύ (cf. 2:16). “Retém”: gr. κρατέω (cf. 2:25). “Coroa”: gr. στέφανος (cf. 2:10). Variante: o Textus Receptus começa com “Eis que venho em breve”."
         },
         {
           "verse": 12,
@@ -1005,7 +1006,7 @@
         {
           "verse": 14,
           "text": "E ao anjo da igreja em Laodiceia escreve: Isto diz o Amém, a Testemunha fiel e verdadeira, o Princípio da criação de Deus:",
-          "note": "“O Amém”: cf. Is 65:16 (heb. “o Deus do amém”). “Princípio”: gr. ἀρχή, “princípio, origem”; o mesmo termo usado como título em 21:6 e 22:13 (“o Princípio e o Fim”). Cf. Jo 1:3; Cl 1:15–18."
+          "note": "“O Amém”: cf. Is 65:16 (heb. “o Deus do amém”; Septuaginta “o Deus verdadeiro”). “Princípio”: gr. ἀρχή, “princípio, origem” ou “governante”; o mesmo termo usado como título em 21:6 e 22:13 (“o Princípio e o Fim”). Cf. Jo 1:3; Cl 1:15–18."
         },
         {
           "verse": 15,
@@ -1030,7 +1031,7 @@
         {
           "verse": 19,
           "text": "Eu, a quantos amo, repreendo e disciplino; sê zeloso, portanto, e arrepende-te.",
-          "note": "“Amo”: gr. φιλέω. Cf. Pv 3:12."
+          "note": "“Amo”: gr. φιλέω. Cf. Pv 3:12 (Septuaginta, com o mesmo verbo “repreender”)."
         },
         {
           "verse": 20,
@@ -1324,7 +1325,7 @@
         {
           "verse": 1,
           "text": "Depois destas coisas vi, e eis uma porta aberta no céu, e a primeira voz que ouvi, como de trombeta, falando comigo, dizia: Sobe aqui, e te mostrarei as coisas que devem acontecer depois destas.",
-          "note": "“Depois destas coisas”: gr. μετὰ ταῦτα, como em 1:19; “as coisas que devem acontecer” retoma 1:1. “Como de trombeta”: cf. 1:10; Êx 19:16–20."
+          "note": "“Depois destas coisas”: gr. μετὰ ταῦτα, como em 1:19; “as coisas que devem acontecer” retoma 1:1. O SBLGNT pontua o segundo “depois destas” como início de 4:2 (“Depois destas coisas, imediatamente estive no Espírito”); segue-se aqui a pontuação do texto bizantino e do Textus Receptus (sem o seu “e” no início de 4:2). “Como de trombeta”: cf. 1:10; Êx 19:16–20."
         },
         {
           "verse": 2,
@@ -1334,7 +1335,7 @@
         {
           "verse": 3,
           "text": "e Aquele que estava sentado era semelhante, no aspecto, a uma pedra de jaspe e a um sárdio; e ao redor do trono havia um arco-íris semelhante, no aspecto, a uma esmeralda.",
-          "note": "Gr. ἴασπις e σάρδιον, pedras de identificação incerta (cf. 21:11, 19–20). “Arco-íris”: cf. Gn 9:13; Ez 1:28."
+          "note": "“Jaspe… sárdio”: gr. ἴασπις e σάρδιον, pedras de identificação incerta (cf. 21:11, 19–20). “Arco-íris”: cf. Gn 9:13; Ez 1:28. Variante: o texto bizantino omite “e Aquele que estava sentado”."
         },
         {
           "verse": 4,
@@ -1344,7 +1345,7 @@
         {
           "verse": 5,
           "text": "Do trono saem relâmpagos, e vozes, e trovões; e sete tochas de fogo ardem diante do trono, as quais são os Sete Espíritos de Deus;",
-          "note": "“Vozes”: gr. φωναί, também “estrondos” (cf. Êx 19:16, heb. קֹלֹת‎; Ap 8:5; 11:19; 16:18). “Tochas”: gr. λαμπάδες (cf. 8:10; Ez 1:13; Zc 4:2). “Sete Espíritos”: cf. 1:4."
+          "note": "“Vozes”: gr. φωναί, também “estrondos” (cf. Êx 19:16, heb. קֹלֹת‎; Ap 8:5; 11:19; 16:18). “Tochas”: gr. λαμπάδες (cf. 8:10; Ez 1:13; cf. as sete lâmpadas de Zc 4:2). “Sete Espíritos”: cf. 1:4."
         },
         {
           "verse": 6,
@@ -1364,7 +1365,7 @@
         {
           "verse": 9,
           "text": "Sempre que os seres viventes derem glória, e honra, e ação de graças Àquele que está sentado sobre o trono, Àquele que vive pelos séculos dos séculos,",
-          "note": "“Sempre que… derem”: gr. ὅταν com futuro, ação que se repete. “Aquele que vive pelos séculos dos séculos”: cf. 1:18; 10:6; 15:7; Dn 4:34 (heb. 4:31); 12:7."
+          "note": "“Sempre que… derem”: gr. ὅταν com futuro, ação que se repete. “Aquele que vive pelos séculos dos séculos”: cf. 1:18; 10:6; 15:7; Dn 4:34 (aram. 4:31); 12:7."
         },
         {
           "verse": 10,
@@ -1374,7 +1375,7 @@
         {
           "verse": 11,
           "text": "Digno és, Senhor e Deus nosso, de receber a glória, e a honra, e o poder, porque Tu criaste todas as coisas, e por causa da Tua vontade existiam e foram criadas.",
-          "note": "“Criaste”: gr. κτίζω (cf. “criação”, 3:14). “Por causa da Tua vontade”: gr. διὰ τὸ θέλημά σου. Variante: o Textus Receptus lê “Digno és, Senhor” (sem “e Deus nosso”) e “são e foram criadas”."
+          "note": "“Criaste”: gr. κτίζω (cf. “criação”, 3:14). “Por causa da Tua vontade”: gr. διὰ τὸ θέλημά σου. Variante: o Textus Receptus lê “Digno és, Senhor” (sem “e Deus nosso”) e “são e foram criadas”; o texto bizantino acrescenta “o Santo” após “Senhor e Deus nosso”."
         }
       ],
       "blocks": [
@@ -1540,7 +1541,7 @@
         {
           "verse": 1,
           "text": "E vi, na destra Daquele que está sentado sobre o trono, um livro escrito por dentro e no verso, selado com sete selos.",
-          "note": "“Na destra”: gr. ἐπὶ τὴν δεξιάν, lit. “sobre a destra”. “No verso”: gr. ὄπισθεν, lit. “por trás”; cf. Ez 2:9–10. “Selado com sete selos”: cf. Is 29:11; Dn 12:4."
+          "note": "“Na destra”: gr. ἐπὶ τὴν δεξιάν, lit. “sobre a destra”. “No verso”: gr. ὄπισθεν, lit. “por trás”; cf. Ez 2:9–10. “Selado com sete selos”: cf. Is 29:11; Dn 12:4. Variante: o texto bizantino lê “por fora” (ἔξωθεν)."
         },
         {
           "verse": 2,
@@ -1553,22 +1554,23 @@
         },
         {
           "verse": 4,
-          "text": "Eu chorava muito, porque ninguém foi achado digno de abrir o livro, nem de olhar para ele."
+          "text": "Eu chorava muito, porque ninguém foi achado digno de abrir o livro, nem de olhar para ele.",
+          "note": "Variante: o Textus Receptus lê “abrir e ler o livro”."
         },
         {
           "verse": 5,
           "text": "Então um dos anciãos me diz: Não chores; eis que venceu o Leão da tribo de Judá, a Raiz de Davi, para abrir o livro e os seus sete selos.",
-          "note": "“O Leão da tribo de Judá”: cf. Gn 49:9–10. “A Raiz de Davi”: cf. Is 11:1, 10; Ap 22:16. “Venceu”: gr. νικάω (cf. 3:21)."
+          "note": "“O Leão da tribo de Judá”: cf. Gn 49:9–10. “A Raiz de Davi”: cf. Is 11:1, 10; Ap 22:16. “Venceu”: gr. νικάω (cf. 3:21). Variante: o texto bizantino lê “Aquele que abre o livro”; o Textus Receptus, “para abrir o livro e soltar os seus sete selos”."
         },
         {
           "verse": 6,
           "text": "E vi, no meio do trono e dos quatro seres viventes, e no meio dos anciãos, um Cordeiro de pé, como que imolado, que tinha sete chifres e sete olhos, os quais são os Sete Espíritos de Deus, enviados por toda a terra.",
-          "note": "“Cordeiro”: gr. ἀρνίον, título de Cristo no livro (exceto 13:11). “Imolado”: gr. σφάζω, abater em sacrifício (cf. Is 53:7). “Chifres”: símbolo de poder (cf. Dt 33:17; Sl 89:17). “Sete olhos… enviados por toda a terra”: cf. Zc 4:10."
+          "note": "“Cordeiro”: gr. ἀρνίον, título de Cristo no livro (exceto 13:11). “Imolado”: gr. σφάζω, abater em sacrifício (cf. Is 53:7, Septuaginta σφαγή; Jr 11:19). “Chifres”: símbolo de poder (cf. Dt 33:17; Sl 89:17). “Sete olhos… enviados por toda a terra”: cf. Zc 4:10."
         },
         {
           "verse": 7,
           "text": "Ele veio e tomou-o da destra Daquele que está sentado sobre o trono.",
-          "note": "“Tomou-o”: perfeito dramático (εἴληφεν); o objeto, o livro, fica subentendido. O Textus Receptus o explicita (“tomou o livro”)."
+          "note": "“Tomou-o”: perfeito dramático (εἴληφεν), traduzido como passado; o objeto, o livro, fica subentendido. O Textus Receptus o explicita (“tomou o livro”)."
         },
         {
           "verse": 8,
@@ -1578,12 +1580,12 @@
         {
           "verse": 9,
           "text": "Cantam um cântico novo, dizendo: Digno és de tomar o livro e de abrir os seus selos, porque foste imolado e compraste para Deus, pelo Teu sangue, pessoas de toda tribo, e língua, e povo, e nação;",
-          "note": "“Cântico novo”: cf. Sl 96:1; Is 42:10; Ap 14:3. “Compraste”: gr. ἀγοράζω (cf. 14:3–4). “Pessoas de”: o grego diz apenas “dentre” (ἐκ), sem objeto expresso. Variante: o Códice Sinaítico, a maioria dos manuscritos e o Textus Receptus leem “nos compraste” (ἡμᾶς); o SBLGNT segue o Códice Alexandrino, que omite. “Tribo, e língua, e povo, e nação”: fórmula que se repete no livro (cf. 7:9; 14:6)."
+          "note": "“Cântico novo”: cf. Sl 96:1; Is 42:10; Ap 14:3. “Compraste”: gr. ἀγοράζω (cf. 14:3–4). “Pessoas de”: o grego diz apenas “dentre” (ἐκ), sem objeto expresso. Variante: o Códice Sinaítico, o texto bizantino, a maioria dos manuscritos e o Textus Receptus leem “nos compraste” (ἡμᾶς); o SBLGNT segue o Códice Alexandrino, que omite. “Tribo, e língua, e povo, e nação”: fórmula que se repete no livro (cf. 7:9; 14:6)."
         },
         {
           "verse": 10,
           "text": "e fizeste deles, para o nosso Deus, um reino e sacerdotes; e reinarão sobre a terra.",
-          "note": "Cf. 1:6; Êx 19:6. “Reinarão”: segue a leitura βασιλεύσουσιν, do Códice Sinaítico e de outros manuscritos (também no texto bizantino de Robinson-Pierpont e no Nestle 1904); o SBLGNT segue o Códice Alexandrino, que lê βασιλεύουσιν, “reinam”. Cf. 20:4, 6; 22:5. Variante: o Textus Receptus lê “nos fizeste reis e sacerdotes… e reinaremos”."
+          "note": "Cf. 1:6; Êx 19:6. “Reinarão”: segue a leitura βασιλεύσουσιν, do Códice Sinaítico e de outros manuscritos (também no texto bizantino de Robinson-Pierpont e no Nestle 1904); o SBLGNT segue o Códice Alexandrino, que lê βασιλεύουσιν, “reinam”. Cf. 20:4, 6; 22:5. Variante: o texto bizantino lê “reis e sacerdotes”; o Textus Receptus, “nos fizeste reis e sacerdotes… e reinaremos”."
         },
         {
           "verse": 11,
@@ -1593,7 +1595,7 @@
         {
           "verse": 12,
           "text": "dizendo com grande voz: Digno é o Cordeiro imolado de receber o poder, e riqueza, e sabedoria, e força, e honra, e glória, e bênção.",
-          "note": "“Imolado”: particípio perfeito (ἐσφαγμένον), o Cordeiro permanece como o que foi imolado. Sete atributos, regidos por um só artigo no grego. “Bênção”: gr. εὐλογία (cf. 5:13; 7:12)."
+          "note": "“Imolado”: particípio perfeito (ἐσφαγμένον), o Cordeiro permanece como o que foi imolado. Sete atributos, regidos por um só artigo no SBLGNT. “Bênção”: gr. εὐλογία (cf. 5:13; 7:12)."
         },
         {
           "verse": 13,
@@ -1872,7 +1874,7 @@
         {
           "verse": 1,
           "text": "E vi quando o Cordeiro abriu um dos sete selos, e ouvi um dos quatro seres viventes dizendo, como com voz de trovão: Vem!",
-          "note": "“Vem”: gr. ἔρχου. Variante: o Textus Receptus acrescenta “e vê” (καὶ βλέπε) em 6:1, 3, 5 e 7; o Códice Sinaítico e o texto bizantino têm acréscimo semelhante (καὶ ἴδε) em parte desses versículos."
+          "note": "“Vem”: gr. ἔρχου. Variante: o Textus Receptus acrescenta “e vê” (καὶ βλέπε) em 6:1, 3, 5 e 7; o Códice Sinaítico e o texto bizantino têm acréscimo semelhante (καὶ ἴδε); no texto bizantino, em 6:1, 5 e 7."
         },
         {
           "verse": 2,
@@ -1896,7 +1898,7 @@
         {
           "verse": 6,
           "text": "E ouvi como que uma voz no meio dos quatro seres viventes, dizendo: Uma medida de trigo por um denário, e três medidas de cevada por um denário; e não causes dano ao azeite e ao vinho.",
-          "note": "“Medida”: gr. χοῖνιξ, pouco mais de um litro. “Denário”: moeda romana de prata (cf. Mt 20:2). “Não causes dano”: gr. ἀδικέω (cf. 2:11; 7:2–3; 9:4)."
+          "note": "“Medida”: gr. χοῖνιξ, pouco mais de um litro. “Denário”: moeda romana de prata (cf. Mt 20:2). “Não causes dano”: gr. ἀδικέω (cf. 2:11; 7:2–3; 9:4). Variante: o texto bizantino e o Textus Receptus leem “uma voz”, sem “como que”."
         },
         {
           "verse": 7,
@@ -1905,12 +1907,12 @@
         {
           "verse": 8,
           "text": "E vi, e eis um cavalo pálido, e o que estava montado sobre ele tinha por nome Morte, e a sepultura o seguia. Foi-lhes dada autoridade sobre a quarta parte da terra, para matar com espada, e com fome, e com peste, e pelas feras da terra.",
-          "note": "“Pálido”: gr. χλωρός, lit. “verde-pálido” (cf. 8:7; 9:4, “verde”). “Sepultura”: gr. ᾅδης (cf. 1:18). “Espada”: aqui gr. ῥομφαία (cf. 1:16). “Peste”: gr. θάνατος, lit. “morte”; a LXX usa a mesma palavra para “peste” em Ez 14:21. Espada, fome, peste e feras: cf. Ez 14:21; Lv 26:22–26. Variante: o texto bizantino lê “foi-lhe dada” (singular)."
+          "note": "“Pálido”: gr. χλωρός, lit. “verde-pálido” (cf. 8:7; 9:4, “verde”). “Sepultura”: gr. ᾅδης (cf. 1:18). “Espada”: aqui gr. ῥομφαία (cf. 1:16). “Peste”: gr. θάνατος, lit. “morte”; a LXX usa a mesma palavra para “peste” em Ez 14:21. Espada, fome, peste e feras: cf. Ez 14:21; Lv 26:22–26. Variante: o texto bizantino lê “foi-lhe dada” (singular); o Textus Receptus, como o SBLGNT, tem o plural."
         },
         {
           "verse": 9,
           "text": "E, quando abriu o quinto selo, vi debaixo do altar as almas dos que tinham sido imolados por causa da Palavra de Deus e por causa do testemunho que tinham.",
-          "note": "“Altar”: gr. θυσιαστήριον. “Almas”: gr. ψυχαί, também “vidas” (cf. Lv 4:7; 17:11). “Imolados”: gr. σφάζω (cf. 5:6). “Palavra de Deus… testemunho”: cf. 1:2, 9."
+          "note": "“Altar”: gr. θυσιαστήριον. “Almas”: gr. ψυχαί, também “vidas” (cf. Lv 4:7; 17:11). “Imolados”: gr. σφάζω (cf. 5:6). “Palavra de Deus… testemunho”: cf. 1:2, 9. Variante: o texto bizantino lê “o testemunho do Cordeiro”."
         },
         {
           "verse": 10,
@@ -1920,12 +1922,12 @@
         {
           "verse": 11,
           "text": "Então foi dada a cada um deles uma veste branca, e foi-lhes dito que repousassem ainda um pouco de tempo, até que se completasse também o número dos seus conservos e dos seus irmãos, que estavam para ser mortos como também eles.",
-          "note": "“Veste”: gr. στολή, veste longa (cf. 7:9, 13–14; 22:14). “O número”: o grego diz apenas “até que se completassem também os seus conservos”. “Conservos”: gr. σύνδουλοι (cf. 19:10; 22:9). Variante: o Textus Receptus lê “foram dadas a cada um vestes brancas”."
+          "note": "“Veste”: gr. στολή, veste longa (cf. 7:9, 13–14; 22:14). “O número”: o grego diz apenas “até que se completassem também os seus conservos e os seus irmãos”. Variante: o texto bizantino lê “até que completem [a sua carreira]” (πληρώσωσιν). “Conservos”: gr. σύνδουλοι (cf. 19:10; 22:9). Variante: o Textus Receptus lê “foram dadas a cada um vestes brancas”."
         },
         {
           "verse": 12,
           "text": "E vi quando abriu o sexto selo, e houve um grande terremoto, e o sol se tornou preto como saco de pelos, e a lua inteira se tornou como sangue,",
-          "note": "“Terremoto”: gr. σεισμός (cf. 8:5; 11:13, 19; 16:18). “Saco de pelos”: gr. σάκκος τρίχινος, tecido escuro de pelos, geralmente de cabra. Sol, lua e estrelas: cf. Jl 2:10, 31; Is 13:10; Mt 24:29. Variante: o Textus Receptus lê “e eis que houve” e omite “inteira”."
+          "note": "“Terremoto”: gr. σεισμός (cf. 8:5; 11:13, 19; 16:18). “Saco de pelos”: gr. σάκκος τρίχινος, tecido escuro de pelos, geralmente de cabra. Sol, lua e estrelas: cf. Jl 2:10, 31 (heb. 3:4); Is 13:10; Mt 24:29. Variante: o Textus Receptus lê “e eis que houve” e omite “inteira”."
         },
         {
           "verse": 13,
@@ -1935,7 +1937,7 @@
         {
           "verse": 14,
           "text": "e o céu se retirou como um pergaminho que se enrola, e todo monte e ilha foram removidos dos seus lugares.",
-          "note": "“Pergaminho”: gr. βιβλίον, “livro”, aqui o rolo que se enrola (cf. 5:1; Is 34:4)."
+          "note": "“Pergaminho”: gr. βιβλίον, “livro”, aqui o rolo que se enrola (cf. 5:1; Is 34:4). “Foram removidos”: plural no grego."
         },
         {
           "verse": 15,
@@ -1950,7 +1952,7 @@
         {
           "verse": 17,
           "text": "porque chegou o grande dia da ira Deles, e quem pode ficar de pé?",
-          "note": "“Deles”: Daquele que está sentado sobre o trono e do Cordeiro (6:16). Variante: o Códice Alexandrino, o texto bizantino e o Textus Receptus leem “da Sua ira”; segue-se o SBLGNT, com o Códice Sinaítico e o de Efrém. “Ficar de pé”: gr. σταθῆναι (cf. 5:6, o Cordeiro “de pé”; Na 1:6; Ml 3:2). “O grande dia”: cf. Jl 2:11; Sf 1:14."
+          "note": "“Deles”: Daquele que está sentado sobre o trono e do Cordeiro (6:16). Variante: o Códice Alexandrino, o texto bizantino de Robinson-Pierpont e o Textus Receptus leem “da Sua ira”; segue-se o SBLGNT, com o Códice Sinaítico e o de Efrém. “Ficar de pé”: gr. σταθῆναι (cf. 5:6, o Cordeiro “de pé”; Na 1:6; Ml 3:2). “O grande dia”: cf. Jl 2:11; Sf 1:14."
         }
       ],
       "blocks": [
@@ -2104,7 +2106,7 @@
         {
           "verse": 1,
           "text": "Depois disto vi quatro anjos de pé sobre os quatro cantos da terra, segurando os quatro ventos da terra, para que nenhum vento soprasse sobre a terra, nem sobre o mar, nem sobre árvore alguma.",
-          "note": "“Depois disto”: gr. μετὰ τοῦτο (singular); em 7:9, μετὰ ταῦτα, “depois destas coisas” (cf. 4:1). Variante: o Textus Receptus lê “E depois destas coisas”. “Segurando”: gr. κρατέω (cf. 2:1). “Quatro cantos… quatro ventos”: cf. Is 11:12; Jr 49:36; Dn 7:2; Zc 6:5."
+          "note": "“Depois disto”: gr. μετὰ τοῦτο (singular); em 7:9, μετὰ ταῦτα, “depois destas coisas” (cf. 4:1). Variante: o texto bizantino lê “E depois disto”; o Textus Receptus, “E depois destas coisas”. “Segurando”: gr. κρατέω (cf. 2:1). “Quatro cantos… quatro ventos”: cf. Is 11:12; Jr 49:36; Dn 7:2; Zc 6:5."
         },
         {
           "verse": 2,
@@ -2114,7 +2116,7 @@
         {
           "verse": 3,
           "text": "dizendo: Não causeis dano à terra, nem ao mar, nem às árvores, até que tenhamos selado os servos do nosso Deus sobre as suas testas.",
-          "note": "“Selado”: gr. σφραγίζω (cf. 5:1). “Testas”: cf. 9:4; 14:1; 22:4; Ez 9:4; Êx 28:36–38."
+          "note": "“Selado”: gr. σφραγίζω (cf. 10:4; 22:10). “Testas”: cf. 9:4; 14:1; 22:4; Ez 9:4; Êx 28:36–38."
         },
         {
           "verse": 4,
@@ -2145,7 +2147,7 @@
         {
           "verse": 10,
           "text": "e clamam com grande voz, dizendo: A salvação ao nosso Deus, que está sentado sobre o trono, e ao Cordeiro.",
-          "note": "“A salvação ao nosso Deus”: o grego não tem verbo (cf. 5:13; 19:1)."
+          "note": "“A salvação ao nosso Deus”: o grego não tem verbo (cf. 5:13; 19:1). Variante: o Textus Receptus lê “clamando”."
         },
         {
           "verse": 11,
@@ -2165,7 +2167,7 @@
         {
           "verse": 14,
           "text": "Eu lhe disse: Meu senhor, tu o sabes. E ele me disse: Estes são os que vieram da grande tribulação, e lavaram as suas vestes e as branquearam no sangue do Cordeiro.",
-          "note": "“Disse”: gr. εἴρηκα, perfeito. “Meu senhor”: dirigido ao ancião; o Textus Receptus omite “meu”. “Vieram”: gr. οἱ ἐρχόμενοι, particípio presente, lit. “os que vêm”; traduzido no passado, em harmonia com “lavaram… branquearam”. “A grande tribulação”: gr. θλῖψις (cf. 1:9; 2:22; Dn 12:1; Mt 24:21). “Lavaram… branquearam”: cf. 22:14; Gn 49:11; Is 1:18; Dn 11:35; 12:10."
+          "note": "“Disse”: gr. εἴρηκα, perfeito. “Meu senhor”: dirigido ao ancião; o Textus Receptus omite “meu”. “Vieram”: gr. οἱ ἐρχόμενοι, particípio presente, lit. “os que vêm”; traduzido no passado, em harmonia com “lavaram… branquearam”. “A grande tribulação”: gr. θλῖψις (cf. 1:9; 2:22; Dn 12:1; Mt 24:21). “Lavaram… branquearam”: cf. 22:14; Gn 49:11; Is 1:18; Dn 11:35; 12:10 (heb.)."
         },
         {
           "verse": 15,
@@ -2485,7 +2487,7 @@
         {
           "verse": 1,
           "text": "E, quando abriu o sétimo selo, houve silêncio no céu cerca de meia hora.",
-          "note": "Cf. Hc 2:20; Sf 1:7; Zc 2:13."
+          "note": "Cf. Hc 2:20; Sf 1:7; Zc 2:13 (heb. 2:17)."
         },
         {
           "verse": 2,
@@ -2515,12 +2517,12 @@
         {
           "verse": 7,
           "text": "E o primeiro tocou a trombeta: houve saraiva e fogo misturados com sangue, que foram lançados sobre a terra. E a terça parte da terra foi queimada, e a terça parte das árvores foi queimada, e toda erva verde foi queimada.",
-          "note": "“Saraiva e fogo”: cf. Êx 9:23–25. “Verde”: gr. χλωρός, o mesmo termo traduzido “pálido” em 6:8. Variante: o Textus Receptus lê “o primeiro anjo” e omite “e a terça parte da terra foi queimada”."
+          "note": "“Saraiva e fogo”: cf. Êx 9:23–25. “Foram lançados”: gr. ἐβλήθη, singular. “Verde”: gr. χλωρός, o mesmo termo traduzido “pálido” em 6:8. Variante: o Textus Receptus lê “o primeiro anjo” e omite “e a terça parte da terra foi queimada”."
         },
         {
           "verse": 8,
           "text": "E o segundo anjo tocou a trombeta: como que um grande monte ardendo em fogo foi lançado no mar, e a terça parte do mar se tornou sangue,",
-          "note": "“Como que um grande monte”: gr. ὡς ὄρος μέγα. Cf. Jr 51:25. “Se tornou sangue”: cf. Êx 7:20–21."
+          "note": "“Como que um grande monte”: gr. ὡς ὄρος μέγα. Cf. Jr 51:25. “Se tornou sangue”: cf. Êx 7:20–21. Variante: o texto bizantino omite “em fogo”; o Textus Receptus o tem."
         },
         {
           "verse": 9,
@@ -2535,7 +2537,7 @@
         {
           "verse": 11,
           "text": "A estrela se chama Absinto. A terça parte das águas se tornou absinto, e muitos dos homens morreram por causa das águas, porque se tornaram amargas.",
-          "note": "“A estrela se chama Absinto”: lit. “o nome da estrela é dito: o Absinto”. “Absinto”: gr. ἄψινθος, planta de sabor amargo. Cf. Jr 9:15; 23:15; Am 5:7; Êx 15:23."
+          "note": "“A estrela se chama Absinto”: lit. “o nome da estrela é dito: o Absinto”. “Absinto”: gr. ἄψινθος, planta de sabor amargo. Cf. Jr 9:15 (heb. 9:14); 23:15; Am 5:7; Êx 15:23."
         },
         {
           "verse": 12,
@@ -2675,7 +2677,7 @@
         {
           "verse": 2,
           "text": "Abriu o poço do abismo, e subiu fumaça do poço como fumaça de uma grande fornalha, e o sol e o ar foram escurecidos pela fumaça do poço.",
-          "note": "“Fornalha”: cf. Gn 19:28; Êx 19:18. “Foram escurecidos”: cf. Jl 2:10."
+          "note": "“Fornalha”: cf. Gn 19:28; Êx 19:18. “Foram escurecidos”: cf. Jl 2:10. Variante: o texto bizantino lê “uma fornalha ardente”."
         },
         {
           "verse": 3,
@@ -2685,7 +2687,7 @@
         {
           "verse": 4,
           "text": "Foi-lhes dito que não causassem dano à erva da terra, nem a nenhuma planta verde, nem a nenhuma árvore, senão aos homens que não têm o selo de Deus sobre as testas.",
-          "note": "“Planta verde”: gr. χλωρόν, lit. “coisa verde” (cf. 8:7). “Senão”: gr. εἰ μή. “O selo de Deus sobre as testas”: cf. 7:2–3; Ez 9:4, 6. Variante: o Textus Receptus lê “somente aos homens”."
+          "note": "“Planta verde”: gr. χλωρόν, lit. “coisa verde” (cf. 8:7). “Senão”: gr. εἰ μή. “O selo de Deus sobre as testas”: cf. 7:2–3; Ez 9:4, 6. Variante: o texto bizantino e o Textus Receptus leem “sobre as suas testas”; o Textus Receptus também lê “somente aos homens”."
         },
         {
           "verse": 5,
@@ -2695,7 +2697,7 @@
         {
           "verse": 6,
           "text": "Naqueles dias os homens buscarão a morte e de modo algum a acharão; e desejarão morrer, e a morte foge deles.",
-          "note": "“De modo algum”: gr. οὐ μή. “Foge”: presente no grego; o texto bizantino e o Textus Receptus leem “fugirá”. Cf. Jó 3:21; Jr 8:3."
+          "note": "“De modo algum”: gr. οὐ μή; o Textus Receptus lê “não acharão”. “Foge”: presente no grego; o texto bizantino e o Textus Receptus leem “fugirá”. Cf. Jó 3:21; Jr 8:3."
         },
         {
           "verse": 7,
@@ -2715,12 +2717,12 @@
         {
           "verse": 10,
           "text": "Têm caudas semelhantes a escorpiões, e ferrões; e nas suas caudas está a sua autoridade de causar dano aos homens cinco meses.",
-          "note": "“Ferrões”: gr. κέντρα."
+          "note": "“Ferrões”: gr. κέντρα. Variante: o Textus Receptus lê “e havia ferrões nas suas caudas”; o texto bizantino, “e têm autoridade de causar dano”."
         },
         {
           "verse": 11,
           "text": "Têm sobre si como rei o anjo do abismo; o seu nome em hebraico é Abadom, e em grego tem o nome de Apoliom.",
-          "note": "“Abadom”: heb. אֲבַדּוֹן‎, “destruição” (cf. Jó 26:6; 28:22; Sl 88:11; Pv 15:11). “Apoliom”: gr. Ἀπολλύων, “destruidor”."
+          "note": "“Abadom”: heb. אֲבַדּוֹן‎, “destruição” (cf. Jó 26:6; 28:22; Sl 88:11 (heb. 88:12); Pv 15:11). “Apoliom”: gr. Ἀπολλύων, “destruidor”."
         },
         {
           "verse": 12,
@@ -2730,7 +2732,7 @@
         {
           "verse": 13,
           "text": "E o sexto anjo tocou a trombeta: ouvi uma voz que vinha dos quatro chifres do altar de ouro que está diante de Deus,",
-          "note": "“Uma voz”: gr. φωνὴν μίαν, lit. “uma só voz”. “Chifres do altar”: cf. Êx 30:1–3; Ap 8:3. “Quatro”: gr. τεσσάρων, conforme o texto bizantino e o Textus Receptus; o SBLGNT segue o papiro 47 e o Códice Alexandrino, que omitem “quatro”."
+          "note": "“Uma voz”: gr. φωνὴν μίαν, lit. “uma só voz”. “Chifres do altar de ouro”: cf. Êx 30:1–3; Ap 8:3. “Quatro”: gr. τεσσάρων, conforme o texto bizantino e o Textus Receptus; o SBLGNT segue o papiro 47 e o Códice Alexandrino, que omitem “quatro”."
         },
         {
           "verse": 14,
@@ -2740,7 +2742,7 @@
         {
           "verse": 15,
           "text": "Então foram soltos os quatro anjos que tinham sido preparados para a hora, e dia, e mês, e ano, para que matassem a terça parte dos homens.",
-          "note": "“Para a hora, e dia, e mês, e ano”: um só artigo para os quatro termos, que podem indicar um momento marcado. Leitura alternativa: um período formado pela soma dos quatro termos (cf. Nm 14:34; Ez 4:6, um dia por um ano)."
+          "note": "“Para a hora, e dia, e mês, e ano”: um só artigo para os quatro termos, que podem indicar um momento marcado. Leitura alternativa: um período formado pela soma dos quatro termos (cf. Nm 14:34; Ez 4:6, um dia por um ano). Variante: o texto bizantino lê “para a hora e para o dia”."
         },
         {
           "verse": 16,
@@ -2755,11 +2757,12 @@
         {
           "verse": 18,
           "text": "Por estas três pragas foi morta a terça parte dos homens: pelo fogo, e pela fumaça, e pelo enxofre que saía das suas bocas.",
-          "note": "“Pragas”: gr. πληγαί (cf. 15:1; 16:9)."
+          "note": "“Pragas”: gr. πληγαί (cf. 15:1; 16:9). Variante: o Textus Receptus omite “pragas”."
         },
         {
           "verse": 19,
-          "text": "Porque a autoridade dos cavalos está na sua boca e nas suas caudas; pois as suas caudas são semelhantes a serpentes, tendo cabeças, e com elas causam dano."
+          "text": "Porque a autoridade dos cavalos está na sua boca e nas suas caudas; pois as suas caudas são semelhantes a serpentes, tendo cabeças, e com elas causam dano.",
+          "note": "Variante: o Textus Receptus lê “a sua autoridade” em lugar de “a autoridade dos cavalos”."
         },
         {
           "verse": 20,
@@ -2935,7 +2938,7 @@
         {
           "verse": 1,
           "text": "E vi outro Anjo forte descendo do céu, envolto numa nuvem, e o arco-íris sobre a Sua cabeça, e o Seu rosto como o sol, e os Seus pés como colunas de fogo,",
-          "note": "“Anjo”: a maiúscula identifica este Anjo com Cristo; no livro, o arco-íris, o rosto como o sol e os pés de fogo estão ligados a Ele (cf. 1:15–16; 4:3; Dn 10:5–6; 12:7). Outra leitura vê aqui um anjo poderoso (cf. 5:2; 18:21). “Envolto numa nuvem”: gr. περιβάλλω (cf. 3:5). “O arco-íris”: gr. ἡ ἶρις (cf. 4:3). “O seu rosto… como o sol”: cf. 1:16. “Colunas de fogo”: cf. Êx 13:21."
+          "note": "“Anjo”: a maiúscula identifica este Anjo com Cristo; o arco-íris, o rosto como o sol e os pés como colunas de fogo lembram as figuras divinas de 1:15–16 e 4:3 e o homem vestido de linho de Dn 10:5–6; 12:7. Outra leitura vê aqui um anjo poderoso (cf. 5:2; 18:21). “Envolto numa nuvem”: gr. περιβάλλω (cf. 3:5). “O arco-íris”: gr. ἡ ἶρις (cf. 4:3). “O Seu rosto… como o sol”: cf. 1:16. “Colunas de fogo”: cf. Êx 13:21. Variante: o texto bizantino omite “outro”."
         },
         {
           "verse": 2,
@@ -2955,7 +2958,7 @@
         {
           "verse": 5,
           "text": "Então o Anjo que vi de pé sobre o mar e sobre a terra levantou a Sua mão direita para o céu,",
-          "note": "“Levantou a Sua mão direita para o céu”: cf. Dn 12:7; Dt 32:40."
+          "note": "“Levantou a Sua mão direita para o céu”: cf. Dn 12:7; Dt 32:40. Variante: o Textus Receptus omite “direita”."
         },
         {
           "verse": 6,
@@ -2965,7 +2968,7 @@
         {
           "verse": 7,
           "text": "mas, nos dias da voz do sétimo anjo, quando ele estiver para tocar a trombeta, se consumará o mistério de Deus, conforme Ele anunciou as boas-novas aos Seus servos, os profetas.",
-          "note": "“Se consumará”: gr. ἐτελέσθη, aoristo, lit. “e se consumou”, com sentido de futuro (cf. 15:1); o Textus Receptus lê τελεσθῇ, “se consumar”. “Mistério”: gr. μυστήριον (cf. 1:20; 17:5, 7). “Anunciou as boas-novas”: gr. εὐηγγέλισεν (cf. 14:6; Am 3:7)."
+          "note": "“Se consumará”: gr. καὶ ἐτελέσθη, aoristo, lit. “e se consumou”, com sentido de futuro (cf. 15:1); o Textus Receptus lê τελεσθῇ, “se consumar”. “Mistério”: gr. μυστήριον (cf. 1:20; 17:5, 7). “Anunciou as boas-novas”: gr. εὐηγγέλισεν (cf. 14:6; Am 3:7)."
         },
         {
           "verse": 8,
@@ -2975,17 +2978,17 @@
         {
           "verse": 9,
           "text": "Fui ao Anjo, dizendo-Lhe que me desse o livrinho. E Ele me diz: Toma e devora-o; e amargará o teu ventre, mas na tua boca será doce como mel.",
-          "note": "“Devora-o”: gr. κατάφαγε, forma intensiva de “comer”. Variante: o Textus Receptus lê “dizendo-lhe: Dá-me o livrinho”. “Ventre”: gr. κοιλία. Cf. Ez 2:8–3:3; Jr 15:16; Sl 119:103."
+          "note": "“Devora-o”: gr. κατάφαγε, forma intensiva de “comer”. Variante: o Textus Receptus lê “dizendo-lhe: Dá-me o livrinho”. “Ventre”: gr. κοιλία. Cf. Ez 2:8–3:3; Jr 15:16 (heb.); Sl 119:103."
         },
         {
           "verse": 10,
           "text": "Tomei o livrinho da mão do Anjo e o devorei; na minha boca era doce como mel, mas, quando o comi, o meu ventre se tornou amargo.",
-          "note": "“Se tornou amargo”: gr. ἐπικράνθη (cf. 8:11). Variante: o texto bizantino lê “livro”."
+          "note": "“Se tornou amargo”: gr. ἐπικράνθη (cf. 8:11). Variante: o texto bizantino lê βιβλίον, “livro”, em lugar de “livrinho”."
         },
         {
           "verse": 11,
-          "text": "E dizem-me: É necessário que profetizes outra vez sobre povos, e nações, e línguas, e muitos reis.",
-          "note": "“Dizem-me”: plural no grego; o Textus Receptus lê “diz-me”. “Sobre”: gr. ἐπί, também “a respeito de”. “Muitos reis”: gr. βασιλεῦσιν πολλοῖς; “muitos” pode valer para todos os termos. “Povos, e nações, e línguas, e muitos reis”: cf. 5:9; 7:9; 17:15."
+          "text": "E dizem-me: É necessário que profetizes outra vez sobre muitos povos, e nações, e línguas, e reis.",
+          "note": "“Dizem-me”: plural no grego; o Textus Receptus lê “diz-me”. “Sobre”: gr. ἐπί com dativo, “a respeito de”; também “diante de” ou “contra”. “Muitos”: no grego vem depois de “reis” (βασιλεῦσιν πολλοῖς), mas pode valer para todos os termos. “Povos, e nações, e línguas, e reis”: cf. 5:9; 7:9; 17:15."
         }
       ],
       "blocks": [
@@ -3058,7 +3061,7 @@
             },
             {
               "verse": 11,
-              "text": "E dizem-me: É necessário que profetizes outra vez sobre povos, e nações, e línguas, e muitos reis.",
+              "text": "E dizem-me: É necessário que profetizes outra vez sobre muitos povos, e nações, e línguas, e reis.",
               "startsVerse": true
             }
           ]
@@ -3085,7 +3088,7 @@
         {
           "verse": 1,
           "text": "Foi-me dada uma cana semelhante a uma vara, e me foi dito: Levanta-te e mede o santuário de Deus, e o altar, e os que nele adoram.",
-          "note": "“Cana”: gr. κάλαμος, vara de medir (cf. 21:15–16; Ez 40:3–5). “E me foi dito”: gr. λέγων, lit. “dizendo”, sem sujeito expresso; o Textus Receptus lê “e o anjo estava de pé, dizendo”. “Santuário”: gr. ναός (cf. 3:12; 7:15). “Mede”: cf. Ez 40–42; Zc 2:1–2."
+          "note": "“Cana”: gr. κάλαμος, “cana, junco”, usada como vara de medir; a de Ezequiel tinha seis côvados longos, cerca de 3 metros (10 pés) (Ez 40:3–5; cf. 21:15–16). “Semelhante a uma vara”: gr. ὅμοιος ῥάβδῳ; ῥάβδος é “vara, bastão”, a mesma palavra de 2:27; 12:5; 19:15 (“vara de ferro”). “E me foi dito”: gr. λέγων, lit. “dizendo”, sem sujeito expresso; o Textus Receptus lê “e o anjo estava de pé, dizendo”. “Santuário”: gr. ναός (cf. 3:12; 7:15). “Mede”: cf. Ez 40–42; Zc 2:1–2 (heb. 2:5–6)."
         },
         {
           "verse": 2,
@@ -3120,22 +3123,22 @@
         {
           "verse": 8,
           "text": "O cadáver delas estará na praça da grande cidade, que espiritualmente se chama Sodoma e Egito, onde também o Senhor delas foi crucificado.",
-          "note": "“O cadáver”: gr. τὸ πτῶμα, singular, também em 11:9a; plural em 11:9b. Variantes: o Textus Receptus lê “os cadáveres” e “o nosso Senhor”. “Estará”: o grego não tem verbo. “Espiritualmente”: gr. πνευματικῶς. “Sodoma e Egito”: cf. Is 1:9–10; Ez 16:46–49."
+          "note": "“O cadáver”: gr. τὸ πτῶμα, singular, também em 11:9a; plural em 11:9b. Variantes: o Textus Receptus lê “os cadáveres” (também em 11:9a) e “o nosso Senhor”. “Estará”: o grego não tem verbo. “Espiritualmente”: gr. πνευματικῶς. “Sodoma e Egito”: cf. Is 1:9–10; Ez 16:46–49."
         },
         {
           "verse": 9,
-          "text": "Pessoas dos povos, e tribos, e línguas, e nações veem o cadáver delas três dias e meio, e não permitem que os cadáveres delas sejam postos em sepulcro.",
-          "note": "“Pessoas dos”: gr. ἐκ τῶν, lit. “dentre os” (cf. 5:9). “Povos, e tribos, e línguas, e nações”: cf. 5:9; 7:9; 10:11. “Sepulcro”: gr. μνῆμα."
+          "text": "Alguns dentre os povos, e tribos, e línguas, e nações veem o cadáver delas três dias e meio, e não permitem que os cadáveres delas sejam postos em sepulcro.",
+          "note": "“Alguns dentre”: gr. ἐκ τῶν, lit. “dentre os” (cf. 5:9). “Povos, e tribos, e línguas, e nações”: cf. 5:9; 7:9; 10:11. “Sepulcro”: gr. μνῆμα."
         },
         {
           "verse": 10,
           "text": "Os que habitam sobre a terra se alegram por causa delas, e se regozijam, e enviarão presentes uns aos outros, porque estes dois profetas atormentaram os que habitam sobre a terra.",
-          "note": "“Atormentaram”: gr. βασανίζω (cf. 9:5)."
+          "note": "“Atormentaram”: gr. βασανίζω (cf. 9:5). Variante: o texto bizantino e o Textus Receptus leem “não permitirão” (11:9) e “se regozijarão”; o Textus Receptus também lê “verão” (11:9)."
         },
         {
           "verse": 11,
           "text": "Depois dos três dias e meio, um fôlego de vida da parte de Deus entrou nelas, e puseram-se de pé, e grande temor caiu sobre os que as viam.",
-          "note": "“Fôlego de vida”: gr. πνεῦμα ζωῆς, “espírito, sopro de vida” (cf. Gn 2:7; Ez 37:5, 10); a LXX usa πνεῦμα ζωῆς em Gn 7:15 e Ez 37:5. “Puseram-se de pé”: lit. “puseram-se sobre os seus pés” (cf. Ez 37:10)."
+          "note": "“Fôlego de vida”: gr. πνεῦμα ζωῆς, “espírito, sopro de vida” (cf. Gn 2:7, Septuaginta πνοή; Ez 37:5, 10); a LXX usa πνεῦμα ζωῆς em Gn 7:15 e Ez 37:5. “Puseram-se de pé”: lit. “puseram-se sobre os seus pés” (cf. Ez 37:10)."
         },
         {
           "verse": 12,
@@ -3159,7 +3162,8 @@
         },
         {
           "verse": 16,
-          "text": "Então os vinte e quatro anciãos, que estão sentados diante de Deus sobre os seus tronos, se prostraram sobre os seus rostos e adoraram a Deus,"
+          "text": "Então os vinte e quatro anciãos, que estão sentados diante de Deus sobre os seus tronos, se prostraram sobre os seus rostos e adoraram a Deus,",
+          "note": "“Diante de Deus”: o texto bizantino lê “diante do trono de Deus”."
         },
         {
           "verse": 17,
@@ -3169,7 +3173,7 @@
         {
           "verse": 18,
           "text": "E as nações se iraram, e veio a Tua ira, e o tempo de os mortos serem julgados, e de dares o galardão aos Teus servos, os profetas, e aos santos, e aos que temem o Teu nome, os pequenos e os grandes, e de destruíres os que destroem a terra.",
-          "note": "“As nações se iraram”: cf. Sl 2:1–5; 99:1. “O tempo de os mortos serem julgados”: gr. ὁ καιρὸς τῶν νεκρῶν κριθῆναι; καιρός = “tempo” (cf. 1:3; Dn 7:10, 22). “Galardão”: gr. μισθός (cf. 22:12). “Os pequenos e os grandes”: cf. 13:16; 19:5; 20:12; Sl 115:13. “Destruíres os que destroem”: gr. διαφθεῖραι… διαφθείροντας, também “corromper”."
+          "note": "“As nações se iraram”: cf. Sl 2:1–5; 99:1 [LXX 98:1]. “O tempo de os mortos serem julgados”: gr. ὁ καιρὸς τῶν νεκρῶν κριθῆναι; καιρός = “tempo” (cf. 1:3; Dn 7:10, 22). “Galardão”: gr. μισθός (cf. 22:12). “Os pequenos e os grandes”: cf. 13:16; 19:5; 20:12; Sl 115:13 [LXX 113:21]. “Destruíres os que destroem”: gr. διαφθεῖραι… διαφθείροντας, também “corromper”."
         },
         {
           "verse": 19,
@@ -3241,7 +3245,7 @@
             },
             {
               "verse": 9,
-              "text": "Pessoas dos povos, e tribos, e línguas, e nações veem o cadáver delas três dias e meio, e não permitem que os cadáveres delas sejam postos em sepulcro.",
+              "text": "Alguns dentre os povos, e tribos, e línguas, e nações veem o cadáver delas três dias e meio, e não permitem que os cadáveres delas sejam postos em sepulcro.",
               "startsVerse": true
             },
             {
@@ -3482,7 +3486,7 @@
         {
           "verse": 2,
           "text": "e está grávida; e clama, com dores de parto e atormentada para dar à luz.",
-          "note": "“Clama”: presente no grego. “Dores de parto”: gr. ὠδίνω (cf. Is 26:17; 66:7–8; Mq 4:10). “Atormentada”: gr. βασανίζω (cf. 9:5)."
+          "note": "“Clama”: presente no grego, como no Textus Receptus; o texto bizantino lê “clamava”. “Dores de parto”: gr. ὠδίνω (cf. Is 26:17; 66:7–8; Mq 4:10). “Atormentada”: gr. βασανίζω (cf. 9:5)."
         },
         {
           "verse": 3,
@@ -3492,12 +3496,12 @@
         {
           "verse": 4,
           "text": "A sua cauda arrasta a terça parte das estrelas do céu, e as lançou sobre a terra. O dragão estava de pé diante da mulher que estava para dar à luz, para que, quando ela desse à luz, devorasse o Filho dela.",
-          "note": "“Arrasta”: presente no grego. “A terça parte das estrelas”: cf. Dn 8:10. “Estava de pé”: gr. ἕστηκεν, perfeito. “Devorasse”: gr. καταφάγῃ (cf. 10:9). “Filho”: gr. τέκνον, “criança”."
+          "note": "“Arrasta”: presente no grego. “A terça parte das estrelas”: cf. Dn 8:10. “Estava de pé”: gr. ἕστηκεν, perfeito. “Devorasse”: gr. καταφάγῃ (cf. 10:9). “Filho”: gr. τέκνον, “criança”; para a maiúscula, cf. 12:5."
         },
         {
           "verse": 5,
           "text": "Ela deu à luz um Filho, um Varão, que está para apascentar todas as nações com vara de ferro; e o seu Filho foi arrebatado para Deus e para o Seu trono.",
-          "note": "“Um Filho, um Varão”: gr. υἱὸν ἄρσεν (cf. Is 66:7); a maiúscula segue a identificação dada no próprio versículo (cf. Sl 2:9; Ap 19:15). “Está para”: gr. μέλλει (cf. 1:19). “Apascentar… com vara de ferro”: cf. 2:27; 19:15; Sl 2:9. “Arrebatado”: gr. ἡρπάσθη, “levado à força”."
+          "note": "“Um Filho, um Varão”: gr. υἱὸν ἄρσεν (cf. Is 66:7); a maiúscula segue a identificação dada no próprio versículo, a vara de ferro de Sl 2:9. “Está para”: gr. μέλλει (cf. 1:19). “Apascentar… com vara de ferro”: cf. 2:27; 19:15; Sl 2:9. “Arrebatado”: gr. ἡρπάσθη, “levado à força”."
         },
         {
           "verse": 6,
@@ -3507,17 +3511,17 @@
         {
           "verse": 7,
           "text": "E houve guerra no céu: Miguel e os Seus anjos fizeram guerra contra o dragão. E o dragão e os seus anjos fizeram guerra,",
-          "note": "“Miguel”: cf. Dn 10:13, 21; 12:1; Jd 9. “Seus”: a maiúscula identifica Miguel com Cristo, o “grande príncipe” que se levanta em favor do Seu povo (Dn 12:1; cf. 1Ts 4:16); outra leitura vê aqui um arcanjo (Jd 9). “Fizeram guerra”: lit. “Miguel e os seus anjos para fazer guerra”, infinitivo no grego (τοῦ πολεμῆσαι)."
+          "note": "“Miguel”: cf. Dn 10:13, 21; 12:1; Jd 9. “Seus”: a maiúscula identifica Miguel com Cristo: o “grande príncipe” que se levanta a favor dos “filhos do teu povo” (Dn 12:1), o arcanjo (Jd 9) cuja voz acompanha a descida do Senhor (1Ts 4:16). Outra leitura vê aqui um arcanjo criado, distinto de Cristo. “Fizeram guerra”: lit. “Miguel e os seus anjos para fazer guerra”, infinitivo no grego (τοῦ πολεμῆσαι); o Textus Receptus tem o verbo finito (ἐπολέμησαν)."
         },
         {
           "verse": 8,
           "text": "e não prevaleceu, nem se achou mais lugar para eles no céu.",
-          "note": "“Não prevaleceu”: singular no grego (o dragão), conforme o Códice Alexandrino; o papiro 47, o Códice Sinaítico, muitos manuscritos e o Textus Receptus leem o plural, “não prevaleceram”."
+          "note": "“Não prevaleceu”: singular no grego (o dragão), conforme o Códice Alexandrino e o texto bizantino; o Códice Sinaítico e o Textus Receptus leem o plural, “não prevaleceram”. O texto bizantino também lê “para ele” em lugar de “para eles”."
         },
         {
           "verse": 9,
-          "text": "E foi lançado o grande dragão, a antiga serpente, chamada Diabo e Satanás, que engana o mundo inteiro; foi lançado sobre a terra, e os seus anjos foram lançados com ele.",
-          "note": "“A antiga serpente”: cf. 20:2; Gn 3:1, 14. “Diabo”: gr. διάβολος, “acusador, caluniador”. “Satanás”: heb. “adversário” (cf. Jó 1:6; Zc 3:1). “Engana”: gr. πλανάω (cf. 2:20). “O mundo inteiro”: cf. 3:10."
+          "text": "E foi lançado o grande dragão, a antiga serpente, chamada diabo e Satanás, que engana o mundo inteiro; foi lançado sobre a terra, e os seus anjos foram lançados com ele.",
+          "note": "“A antiga serpente”: cf. 20:2; Gn 3:1, 14. “diabo”: gr. διάβολος, “acusador, caluniador”. “Satanás”: heb. “adversário” (cf. Jó 1:6; Zc 3:1). “Engana”: gr. πλανάω (cf. 2:20). “O mundo inteiro”: cf. 3:10."
         },
         {
           "verse": 10,
@@ -3531,8 +3535,8 @@
         },
         {
           "verse": 12,
-          "text": "Por isso regozijai-vos, ó céus, e vós que neles tendes o vosso tabernáculo. Ai da terra e do mar, porque o Diabo desceu até vós, tendo grande furor, sabendo que tem pouco tempo.",
-          "note": "“Regozijai-vos”: gr. εὐφραίνω (cf. 11:10). “Tendes o vosso tabernáculo”: gr. σκηνοῦντες, “habitar em tenda” (cf. 7:15; 13:6), em contraste com “os que habitam sobre a terra” (κατοικέω). “Ai”: gr. οὐαί (cf. 8:13). “Furor”: gr. θυμός (cf. 14:8, 10; 16:19). “Pouco tempo”: gr. ὀλίγον καιρόν. Variante: o Textus Receptus lê “Ai dos que habitam a terra e o mar”."
+          "text": "Por isso regozijai-vos, ó céus, e vós que neles tendes o vosso tabernáculo. Ai da terra e do mar, porque o diabo desceu até vós, tendo grande furor, sabendo que tem pouco tempo.",
+          "note": "“Regozijai-vos”: gr. εὐφραίνω (cf. 11:10). “Tendes o vosso tabernáculo”: gr. σκηνοῦντες, “habitando em tenda” (cf. 7:15; 13:6), em contraste com “os que habitam sobre a terra” (κατοικέω). “Ai”: gr. οὐαί (cf. 8:13). “Furor”: gr. θυμός (cf. 14:8, 10; 16:19). “Pouco tempo”: gr. ὀλίγον καιρόν. Variante: o Textus Receptus lê “Ai dos que habitam a terra e o mar”."
         },
         {
           "verse": 13,
@@ -3542,12 +3546,12 @@
         {
           "verse": 14,
           "text": "Foram dadas à mulher as duas asas da grande águia, para que voasse para o deserto, para o seu lugar, onde é sustentada por um tempo, e tempos, e metade de um tempo, longe da face da serpente.",
-          "note": "“Grande águia”: cf. Êx 19:4; Dt 32:11; Is 40:31. “Um tempo, e tempos, e metade de um tempo”: gr. καιρὸν καὶ καιροὺς καὶ ἥμισυ καιροῦ (cf. 12:6; Dn 7:25; 12:7). “Longe da face”: gr. ἀπὸ προσώπου."
+          "note": "“Grande águia”: cf. Êx 19:4; Dt 32:11; Is 40:31. “Um tempo, e tempos, e metade de um tempo”: gr. καιρὸν καὶ καιροὺς καὶ ἥμισυ καιροῦ (cf. 12:6; Dn 7:25; 12:7). “Longe da face”: gr. ἀπὸ προσώπου. Variante: o texto bizantino lê “para que seja sustentada”."
         },
         {
           "verse": 15,
           "text": "Então a serpente lançou da sua boca, atrás da mulher, água como um rio, para que ela fosse levada pelo rio.",
-          "note": "“Levada pelo rio”: gr. ποταμοφόρητον. Cf. Sl 18:4; 124:4; Is 43:2."
+          "note": "“Levada pelo rio”: gr. ποταμοφόρητον. Cf. Sl 18:4 (heb. 18:5); 124:4; Is 43:2."
         },
         {
           "verse": 16,
@@ -3557,7 +3561,7 @@
         {
           "verse": 17,
           "text": "Então o dragão se irou contra a mulher, e foi fazer guerra contra o remanescente da sua descendência, os que guardam os mandamentos de Deus e têm o Testemunho de Jesus. E ele ficou de pé sobre a areia do mar.",
-          "note": "“Remanescente”: gr. οἱ λοιποί (cf. 2:24). “Descendência”: gr. σπέρμα, lit. “semente” (cf. Gn 3:15). “Guardam os mandamentos de Deus”: cf. 14:12. “O Testemunho de Jesus”: cf. 1:2, 9; 19:10. Variante: o Textus Receptus lê “o Testemunho de Jesus Cristo”. “E ele ficou de pé”: o dragão. Nas edições críticas do grego esta frase é o v. 18; aqui segue a numeração tradicional. O texto segue o SBLGNT, com o papiro 47 e os códices Sinaítico e Alexandrino. Variante: o texto bizantino e o Textus Receptus leem “E eu me pus de pé” e põem a frase no começo de 13:1."
+          "note": "“Remanescente”: gr. οἱ λοιποί (cf. 2:24). “Descendência”: gr. σπέρμα, lit. “semente” (cf. Gn 3:15). “Guardam os mandamentos de Deus”: cf. 14:12. “O Testemunho de Jesus”: cf. 1:2, 9; 19:10. Variante: o Textus Receptus lê “o Testemunho de Jesus Cristo”. “E ele ficou de pé”: o dragão. Nas edições críticas do grego esta frase é o v. 18; aqui se mantém a contagem tradicional de versículos, e a frase se une ao v. 17. O texto segue o SBLGNT, com o papiro 47 e os códices Sinaítico e Alexandrino. Variante: o texto bizantino e o Textus Receptus leem “E eu me pus de pé” e põem a frase no começo de 13:1."
         }
       ],
       "blocks": [
@@ -3624,7 +3628,7 @@
             },
             {
               "verse": 9,
-              "text": "E foi lançado o grande dragão, a antiga serpente, chamada Diabo e Satanás, que engana o mundo inteiro; foi lançado sobre a terra, e os seus anjos foram lançados com ele.",
+              "text": "E foi lançado o grande dragão, a antiga serpente, chamada diabo e Satanás, que engana o mundo inteiro; foi lançado sobre a terra, e os seus anjos foram lançados com ele.",
               "startsVerse": true
             }
           ]
@@ -3754,7 +3758,7 @@
           "segments": [
             {
               "verse": 12,
-              "text": "porque o Diabo desceu até vós,",
+              "text": "porque o diabo desceu até vós,",
               "startsVerse": false
             }
           ]
@@ -3831,7 +3835,7 @@
         {
           "verse": 1,
           "text": "E vi uma besta subindo do mar, que tinha dez chifres e sete cabeças, e sobre os seus chifres dez diademas, e sobre as suas cabeças nomes de blasfêmia.",
-          "note": "“Subindo do mar”: cf. Dn 7:3. “Dez chifres e sete cabeças”: cf. 12:3; 17:3, 7, 12; Dn 7:7, 24. “Nomes de blasfêmia”: o Textus Receptus lê “nome”. Variante: o texto bizantino e o Textus Receptus começam o versículo com “E eu me pus de pé sobre a areia do mar” (cf. 12:17)."
+          "note": "“Subindo do mar”: cf. Dn 7:3. “Dez chifres e sete cabeças”: cf. 12:3; 17:3, 7, 12; Dn 7:7, 24; o Textus Receptus inverte a ordem (“sete cabeças e dez chifres”). “Nomes de blasfêmia”: o Textus Receptus lê “nome”. Variante: o texto bizantino e o Textus Receptus começam o versículo com “E eu me pus de pé sobre a areia do mar” (cf. 12:17)."
         },
         {
           "verse": 2,
@@ -3841,22 +3845,22 @@
         {
           "verse": 3,
           "text": "E uma das suas cabeças estava como que ferida de morte, e a sua ferida de morte foi curada. E a terra inteira se maravilhou, seguindo a besta,",
-          "note": "“E uma das suas cabeças estava”: lit. “e uma das suas cabeças”, sem verbo; o Textus Receptus lê “E vi uma das suas cabeças”. “Como que ferida de morte”: gr. ὡς ἐσφαγμένην εἰς θάνατον, lit. “como que imolada para a morte”, a mesma expressão usada para o Cordeiro (5:6, no neutro). “Ferida de morte”: gr. ἡ πληγὴ τοῦ θανάτου, lit. “a ferida da sua morte”; πληγή, também “praga” (cf. 9:18). “Seguindo a besta”: lit. “após a besta”."
+          "note": "“E uma das suas cabeças estava”: lit. “e uma das suas cabeças”, sem verbo; o Textus Receptus lê “E vi uma das suas cabeças”. “Como que ferida de morte”: gr. ὡς ἐσφαγμένην εἰς θάνατον, lit. “como que imolada para a morte”, o mesmo particípio usado para o Cordeiro (5:6, “como que imolado”, no neutro). “Ferida de morte”: gr. ἡ πληγὴ τοῦ θανάτου, lit. “a ferida da sua morte”; πληγή, também “praga” (cf. 9:18). “Seguindo a besta”: lit. “após a besta”."
         },
         {
           "verse": 4,
           "text": "e adoraram o dragão, porque deu a autoridade à besta; e adoraram a besta, dizendo: Quem é semelhante à besta? E quem pode fazer guerra contra ela?",
-          "note": "“Quem é semelhante”: cf. Êx 15:11; Sl 35:10; 89:6–8; Mq 7:18."
+          "note": "“Quem é semelhante”: cf. Êx 15:11; Sl 35:10 [LXX 34:10]; 89:6–8 (heb. 89:7–9) [LXX 88:7–9]; Mq 7:18."
         },
         {
           "verse": 5,
           "text": "Foi-lhe dada uma boca que falava grandes coisas e blasfêmias, e foi-lhe dada autoridade para agir quarenta e dois meses.",
-          "note": "“Grandes coisas e blasfêmias”: cf. Dn 7:8, 11, 20, 25. “Agir”: gr. ποιῆσαι, “fazer, atuar”; leitura alternativa: “continuar”. Variante: o texto bizantino lê “fazer guerra”. “Quarenta e dois meses”: cf. 11:2; 12:6, 14."
+          "note": "“Grandes coisas e blasfêmias”: cf. Dn 7:8, 11, 20, 25. “Agir”: gr. ποιῆσαι, “fazer, atuar”; leitura alternativa: “continuar”. Variante: o texto bizantino lê “blasfêmia” (singular) e “fazer guerra”. “Quarenta e dois meses”: cf. 11:2; 12:6, 14."
         },
         {
           "verse": 6,
           "text": "Abriu a sua boca em blasfêmias contra Deus, para blasfemar o Seu nome e o Seu tabernáculo, os que no céu têm o seu tabernáculo.",
-          "note": "“Tabernáculo… os que no céu têm o seu tabernáculo”: gr. σκηνή… σκηνοῦντας (cf. 7:15; 12:12; 21:3); o Textus Receptus lê “e os que”. Cf. Dn 8:10–11; 11:36."
+          "note": "“Tabernáculo… os que no céu têm o seu tabernáculo”: gr. σκηνή… σκηνοῦντας (cf. 7:15; 12:12; 21:3); o Textus Receptus lê “e os que”; o texto bizantino e o Textus Receptus leem “blasfêmia”, singular. Cf. Dn 8:10–11; 11:36."
         },
         {
           "verse": 7,
@@ -3866,7 +3870,7 @@
         {
           "verse": 8,
           "text": "E a adorarão todos os que habitam sobre a terra, cujo nome não está escrito no livro da vida do Cordeiro imolado desde a fundação do mundo.",
-          "note": "“A adorarão”: gr. αὐτόν, masculino. “Livro da vida”: cf. 3:5; 17:8; 20:12, 15; 21:27. Variante: o Textus Receptus lê “cujos nomes”. “Desde a fundação do mundo”: leitura alternativa: liga-se a “escrito”, “cujo nome não está escrito desde a fundação do mundo” (cf. 17:8)."
+          "note": "“A adorarão”: gr. αὐτόν, masculino. “Livro da vida”: cf. 3:5; 17:8; 20:12, 15; 21:27. Variante: o texto bizantino e o Textus Receptus leem ὧν, “de todos cujo nome” (o Textus Receptus, “cujos nomes”). “Desde a fundação do mundo”: leitura alternativa: liga-se a “escrito”, “cujo nome não está escrito desde a fundação do mundo” (cf. 17:8)."
         },
         {
           "verse": 9,
@@ -3876,7 +3880,7 @@
         {
           "verse": 10,
           "text": "Se alguém é para o cativeiro, para o cativeiro vai; se alguém é para ser morto à espada, à espada há de ser morto. Aqui está a perseverança e a fé dos santos.",
-          "note": "Lit. “se alguém para cativeiro, para cativeiro vai; se alguém à espada ser morto, ele à espada ser morto”. Cf. Jr 15:2; 43:11. Segue-se o SBLGNT, com o Códice Alexandrino. Variantes: os códices Sinaítico e de Efrém, muitos manuscritos e o Textus Receptus leem “se alguém matar à espada, é necessário que à espada seja morto”; na primeira frase, o Textus Receptus lê “se alguém ajunta cativeiro, para o cativeiro vai”, e o texto bizantino, “se alguém tem cativeiro, vai”. “Perseverança”: gr. ὑπομονή (cf. 1:9; 14:12)."
+          "note": "Lit. “se alguém para cativeiro, para cativeiro vai; se alguém à espada ser morto, ele à espada ser morto”. Cf. Jr 15:2; 43:11 [LXX 50:11]. Segue-se o SBLGNT, com o Códice Alexandrino. Variantes: os códices Sinaítico e de Efrém, o texto bizantino e o Textus Receptus leem “se alguém matar à espada, é necessário que à espada seja morto”; na primeira frase, o Textus Receptus lê “se alguém ajunta cativos, para o cativeiro vai”, e o texto bizantino, “se alguém tem cativeiro, vai”. “Perseverança”: gr. ὑπομονή (cf. 1:9; 14:12)."
         },
         {
           "verse": 11,
@@ -3916,7 +3920,7 @@
         {
           "verse": 18,
           "text": "Aqui está a sabedoria. O que tem entendimento calcule o número da besta, pois é número de homem; e o seu número é seiscentos e sessenta e seis.",
-          "note": "“Entendimento”: gr. νοῦς (cf. 17:9). “Calcule”: gr. ψηφισάτω, “conte, calcule”. “Número de homem”: gr. ἀριθμὸς ἀνθρώπου, sem artigo; também “número de um homem”. “Seiscentos e sessenta e seis”: assim o papiro 47 e os códices Sinaítico e Alexandrino."
+          "note": "“Entendimento”: gr. νοῦς (cf. 17:9). “Calcule”: gr. ψηφισάτω, “conte, calcule”. “Número de homem”: gr. ἀριθμὸς ἀνθρώπου, sem artigo; também “número de um homem”. “Seiscentos e sessenta e seis”: assim o papiro 47 e os códices Sinaítico e Alexandrino. Variante: o Códice de Efrém e o papiro 115 leem “seiscentos e dezesseis”."
         }
       ],
       "blocks": [
@@ -4100,7 +4104,7 @@
         {
           "verse": 1,
           "text": "E vi, e eis o Cordeiro de pé sobre o monte Sião, e com Ele cento e quarenta e quatro mil, que tinham o Seu nome e o nome de Seu Pai escritos sobre as suas testas.",
-          "note": "“Monte Sião”: cf. Sl 2:6; Is 24:23; Jl 2:32; Hb 12:22. “O Seu nome e o nome de Seu Pai”: cf. 3:12; 7:3; 22:4; o Textus Receptus omite “o Seu nome e”."
+          "note": "“Monte Sião”: cf. Sl 2:6; Is 24:23; Jl 2:32 (heb. 3:5); Hb 12:22. “O Seu nome e o nome de Seu Pai”: cf. 3:12; 7:3; 22:4; o Textus Receptus omite “o Seu nome e”. Variante: o texto bizantino lê “um número de cento e quarenta e quatro mil”; o Textus Receptus lê “um Cordeiro”."
         },
         {
           "verse": 2,
@@ -4115,7 +4119,7 @@
         {
           "verse": 4,
           "text": "Estes são os que não se contaminaram com mulheres, porque são virgens. Estes são os que seguem o Cordeiro aonde quer que Ele vá. Estes foram comprados dentre os homens como primícias para Deus e para o Cordeiro,",
-          "note": "“Virgens”: gr. παρθένοι, aqui aplicado a homens (οὗτοι) (cf. 2Co 11:2). “Seguem o Cordeiro”: cf. Jo 10:4, 27. “Primícias”: gr. ἀπαρχή (cf. Jr 2:3; Tg 1:18)."
+          "note": "“Virgens”: gr. παρθένοι, aqui aplicado a homens (οὗτοι) (cf. 2Co 11:2). “Seguem o Cordeiro”: cf. Jo 10:4, 27. “Primícias”: gr. ἀπαρχή (cf. Jr 2:3; Tg 1:18). Variante: o texto bizantino lê “estes foram comprados por Jesus”."
         },
         {
           "verse": 5,
@@ -4125,17 +4129,17 @@
         {
           "verse": 6,
           "text": "E vi outro anjo voando pelo meio do céu, tendo o evangelho eterno para anunciar aos que estão sentados sobre a terra, e a toda nação, e tribo, e língua, e povo,",
-          "note": "“Voando pelo meio do céu”: cf. 8:13. “O evangelho eterno”: gr. εὐαγγέλιον αἰώνιον, sem artigo no grego. “Anunciar”: gr. εὐαγγελίσαι, “anunciar as boas-novas” (cf. 10:7), aqui com “evangelho” como objeto. “Assentados”: gr. καθημένους, lit. “sentados”; o papiro 115, o Códice Alexandrino e o Textus Receptus leem “habitam”. “Toda nação, e tribo, e língua, e povo”: cf. 5:9; 13:7."
+          "note": "“Voando pelo meio do céu”: cf. 8:13. “O evangelho eterno”: gr. εὐαγγέλιον αἰώνιον, sem artigo no grego. “Anunciar”: gr. εὐαγγελίσαι, “anunciar as boas-novas” (cf. 10:7), aqui com “evangelho” como objeto. “Estão sentados”: gr. καθημένους; o papiro 115, o Códice Alexandrino e o Textus Receptus leem “habitam”. “Toda nação, e tribo, e língua, e povo”: cf. 5:9; 13:7. Variante: o texto bizantino omite “outro”."
         },
         {
           "verse": 7,
           "text": "dizendo com grande voz: Temei a Deus e dai-Lhe glória, porque chegou a hora do Seu juízo; e adorai Aquele que fez o céu, e a terra, e o mar, e as fontes das águas.",
-          "note": "“Temei a Deus e dai-Lhe glória”: cf. 11:13; 15:4; Ec 12:13; Jr 13:16; o texto bizantino lê “Temei o Senhor”. “Juízo”: gr. κρίσις (cf. 16:7; 18:10; 19:2; Dn 7:10, 22, 26). “Aquele que fez o céu, e a terra, e o mar, e as fontes das águas”: cf. Êx 20:11; Sl 146:6; At 14:15; Ap 10:6; o SBLGNT não tem artigo antes de “mar” e “fontes”; o texto bizantino e o Textus Receptus leem “o mar”."
+          "note": "“Temei a Deus e dai-Lhe glória”: cf. 11:13; 15:4; Ec 12:13; Jr 13:16; o texto bizantino lê “Temei o Senhor”. “Juízo”: gr. κρίσις (cf. 16:7; 18:10; 19:2; Dn 7:10, 22, 26). “Aquele que fez o céu, e a terra, e o mar, e as fontes das águas”: cf. Êx 20:11; Sl 146:6 [LXX 145:6]; At 14:15; Ap 10:6; o SBLGNT não tem artigo antes de “mar” e “fontes”; o texto bizantino e o Textus Receptus leem “o mar”."
         },
         {
           "verse": 8,
           "text": "E outro anjo, um segundo, veio em seguida, dizendo: Caiu, caiu Babilônia, a grande, que deu a beber a todas as nações do vinho do furor da sua prostituição.",
-          "note": "“Outro anjo, um segundo”: gr. ἄλλος δεύτερος ἄγγελος. “Caiu, caiu Babilônia, a grande”: cf. 18:2; Is 21:9; Jr 51:7–8; Dn 4:30. “Furor”: gr. θυμός, também “paixão” (cf. 12:12; 18:3). “Deu a beber”: gr. πεπότικεν, perfeito. Variantes: o Textus Receptus omite “um segundo” e lê “Babilônia, a cidade, a grande, porque deu a beber”; o texto bizantino traz um só “caiu”."
+          "note": "“Outro anjo, um segundo”: gr. ἄλλος δεύτερος ἄγγελος. “Caiu, caiu Babilônia, a grande”: cf. 18:2; Is 21:9; Jr 51:7–8 [LXX 28:7–8]; Dn 4:30 (heb. 4:27). “Furor”: gr. θυμός, também “paixão” (cf. 12:12; 18:3). “Deu a beber”: gr. πεπότικεν, perfeito. Variantes: o Textus Receptus omite “um segundo” e lê “Babilônia, a cidade, a grande, porque deu a beber”; o texto bizantino traz um só “caiu”."
         },
         {
           "verse": 9,
@@ -4145,7 +4149,7 @@
         {
           "verse": 10,
           "text": "também ele beberá do vinho do furor de Deus, preparado sem mistura no cálice da Sua ira; e será atormentado com fogo e enxofre diante de santos anjos e diante do Cordeiro.",
-          "note": "“Preparado sem mistura”: gr. κεκερασμένου ἀκράτου, lit. “misturado não diluído”. “Santos anjos”: sem artigo; o texto bizantino e o Textus Receptus leem “dos santos anjos”. “Cálice da Sua ira”: cf. 16:19; Sl 75:8; Is 51:17; Jr 25:15. “Fogo e enxofre”: cf. 19:20; 20:10; 21:8; Gn 19:24."
+          "note": "“Preparado sem mistura”: gr. κεκερασμένου ἀκράτου, lit. “misturado não diluído”. “Santos anjos”: sem artigo; o texto bizantino e o Textus Receptus leem “dos santos anjos”. “Cálice da Sua ira”: cf. 16:19; Sl 75:8 (heb. 75:9) [LXX 74:9]; Is 51:17; Jr 25:15 [LXX 32:1]. “Fogo e enxofre”: cf. 19:20; 20:10; 21:8; Gn 19:24."
         },
         {
           "verse": 11,
@@ -4165,12 +4169,12 @@
         {
           "verse": 14,
           "text": "E vi, e eis uma nuvem branca, e sobre a nuvem Alguém sentado, semelhante a um Filho de Homem, tendo sobre a Sua cabeça uma coroa de ouro e na Sua mão uma foice afiada.",
-          "note": "“Nuvem branca”: cf. 1:7; Dn 7:13; Mt 24:30. “Alguém… semelhante a um Filho de Homem”: gr. ὅμοιον υἱὸν ἀνθρώπου (cf. 1:13; Dn 7:13). “Coroa”: gr. στέφανος. “Foice”: gr. δρέπανον."
+          "note": "“Nuvem branca”: cf. 1:7; Mt 24:30. “Alguém… semelhante a um Filho de Homem”: gr. ὅμοιον υἱὸν ἀνθρώπου (cf. 1:13; Dn 7:13). A maiúscula identifica a figura com o “semelhante a um Filho de Homem” de 1:13, que vem “com as nuvens” (1:7); aqui Ele traz também uma coroa de ouro. Outra leitura vê aqui um anjo, pois a ordem de ceifar vem de “outro anjo” (14:15). “Coroa”: gr. στέφανος. “Foice”: gr. δρέπανον."
         },
         {
           "verse": 15,
           "text": "E outro anjo saiu do santuário, clamando com grande voz Àquele que estava sentado sobre a nuvem: Lança a Tua foice e ceifa, porque chegou a hora de ceifar, porque a seara da terra está madura.",
-          "note": "“Santuário”: gr. ναός (cf. 11:19). “Lança”: gr. πέμψον, lit. “envia”. “Seara… está madura”: gr. ἐξηράνθη, lit. “secou”. Cf. Jl 3:13; Mt 13:30, 39; Mc 4:29."
+          "note": "“Santuário”: gr. ναός (cf. 11:19). “Lança”: gr. πέμψον, lit. “envia”. “Seara… está madura”: gr. ἐξηράνθη, lit. “secou”. Cf. Jl 3:13 (heb. 4:13); Mt 13:30, 39; Mc 4:29. Variante: o Textus Receptus lê “chegou para Ti a hora”."
         },
         {
           "verse": 16,
@@ -4184,7 +4188,7 @@
         {
           "verse": 18,
           "text": "E outro anjo, o que tinha autoridade sobre o fogo, saiu do altar e clamou com grande voz ao que tinha a foice afiada, dizendo: Lança a tua foice afiada e vindima os cachos da videira da terra, porque as suas uvas estão maduras.",
-          "note": "“Saiu do altar”: o verbo está implícito no SBLGNT (cf. 14:17); o texto bizantino e o Textus Receptus têm ἐξῆλθεν e leem “com grande clamor”. “Autoridade sobre o fogo”: cf. 8:3–5. “Vindima”: gr. τρύγησον. Cf. Jl 3:13."
+          "note": "“Saiu do altar”: o verbo está implícito no SBLGNT (cf. 14:17); o texto bizantino e o Textus Receptus têm ἐξῆλθεν e leem “com grande clamor”. “Autoridade sobre o fogo”: cf. 8:3–5. “Vindima”: gr. τρύγησον. Cf. Jl 3:13 (heb. 4:13)."
         },
         {
           "verse": 19,
@@ -4194,7 +4198,7 @@
         {
           "verse": 20,
           "text": "O lagar foi pisado fora da cidade, e saiu sangue do lagar até os freios dos cavalos, por mil e seiscentos estádios.",
-          "note": "Cf. Jl 3:12–14. “Mil e seiscentos estádios”: cerca de trezentos quilômetros; um estádio, cerca de cento e oitenta e cinco metros."
+          "note": "Cf. Jl 3:12–14 (heb. 4:12–14). “Mil e seiscentos estádios”: cerca de trezentos quilômetros (cerca de cento e oitenta e cinco milhas); um estádio, cerca de cento e oitenta e cinco metros (seiscentos e sete pés)."
         }
       ],
       "blocks": [
@@ -4478,17 +4482,17 @@
         {
           "verse": 3,
           "text": "Cantam o cântico de Moisés, o servo de Deus, e o cântico do Cordeiro, dizendo: Grandes e maravilhosas são as Tuas obras, ó Senhor Deus, o Todo-Poderoso; justos e verdadeiros são os Teus caminhos, ó Rei das nações.",
-          "note": "“O cântico de Moisés”: cf. Êx 15:1–18; Dt 31:30–32:43. “Servo de Deus”: cf. Nm 12:7; Js 1:2. “Grandes e maravilhosas são as Tuas obras”: cf. Sl 111:2; 139:14. “Justos e verdadeiros são os Teus caminhos”: cf. Dt 32:4; Sl 145:17. “Rei das nações”: gr. ὁ βασιλεὺς τῶν ἐθνῶν, conforme o Códice Alexandrino e o texto bizantino (cf. 15:4; Jr 10:7); o SBLGNT segue o papiro 47, o texto original do Códice Sinaítico e o Códice de Efrém, que leem “Rei dos séculos” (cf. 1Tm 1:17). Variante: o Textus Receptus lê “Rei dos santos”."
+          "note": "“O cântico de Moisés”: cf. Êx 15:1–18; Dt 31:30–32:43. “Servo de Deus”: cf. Nm 12:7; Js 1:2. “Grandes e maravilhosas são as Tuas obras”: cf. Sl 111:2 [LXX 110:2]; 139:14 [LXX 138:14]. “Justos e verdadeiros são os Teus caminhos”: cf. Dt 32:4; Sl 145:17 [LXX 144:17]. “Rei das nações”: gr. ὁ βασιλεὺς τῶν ἐθνῶν, conforme o Códice Alexandrino e o texto bizantino (cf. 15:4; Jr 10:7); o SBLGNT segue o papiro 47, o texto original do Códice Sinaítico e o Códice de Efrém, que leem “Rei dos séculos” (cf. 1Tm 1:17). Variante: o Textus Receptus lê “Rei dos santos”."
         },
         {
           "verse": 4,
           "text": "Quem não Te temerá, ó Senhor, e não glorificará o Teu nome? Porque só Tu és santo; porque todas as nações virão e adorarão diante de Ti, porque os Teus atos de justiça se manifestaram.",
-          "note": "“Quem não Te temerá”: gr. οὐ μή, negação enfática, que rege também “glorificará” (cf. Jr 10:7); “Te” não está no SBLGNT; o texto bizantino e o Textus Receptus leem σε. “Santo”: gr. ὅσιος (cf. 16:5); o texto bizantino lê ἅγιος. “Todas as nações virão e adorarão”: cf. Sl 86:9; Is 2:2–3; 66:23. “Atos de justiça”: gr. δικαιώματα (cf. 19:8). “Se manifestaram”: gr. ἐφανερώθησαν."
+          "note": "“Quem não Te temerá”: gr. οὐ μή, negação enfática, que rege também “glorificará”; cf. Jr 10:7 (ausente da LXX). “Te” não está no SBLGNT; o texto bizantino e o Textus Receptus leem σε. “Santo”: gr. ὅσιος (cf. 16:5); o texto bizantino lê ἅγιος. “Todas as nações virão e adorarão”: cf. Sl 86:9 [LXX 85:9]; Is 2:2–3; 66:23. “Atos de justiça”: gr. δικαιώματα (cf. 19:8). “Se manifestaram”: gr. ἐφανερώθησαν."
         },
         {
           "verse": 5,
           "text": "E depois destas coisas vi, e abriu-se no céu o santuário do tabernáculo do testemunho,",
-          "note": "“O santuário do tabernáculo do testemunho”: gr. ὁ ναὸς τῆς σκηνῆς τοῦ μαρτυρίου (cf. 11:19; Êx 38:21; Nm 1:50; At 7:44). Variante: o Textus Receptus acrescenta “e eis”."
+          "note": "“O santuário do tabernáculo do testemunho”: gr. ὁ ναὸς τῆς σκηνῆς τοῦ μαρτυρίου (cf. 11:19; Êx 38:21 [LXX 37:19]; Nm 1:50; At 7:44). Variante: o Textus Receptus acrescenta “e eis”."
         },
         {
           "verse": 6,
@@ -4498,12 +4502,12 @@
         {
           "verse": 7,
           "text": "Então um dos quatro seres viventes deu aos sete anjos sete taças de ouro cheias do furor de Deus, que vive pelos séculos dos séculos.",
-          "note": "“Taças”: gr. φιάλη (cf. 5:8; 16:1). “Que vive pelos séculos dos séculos”: cf. 4:9–10; 10:6."
+          "note": "“Taças”: gr. φιάλας (cf. 5:8; 16:1). “Que vive pelos séculos dos séculos”: cf. 4:9–10; 10:6."
         },
         {
           "verse": 8,
           "text": "O santuário se encheu de fumaça, vinda da glória de Deus e do Seu poder; e ninguém podia entrar no santuário até que se consumassem as sete pragas dos sete anjos.",
-          "note": "“Vinda da glória”: gr. ἐκ τῆς δόξης, lit. “da glória”. “O santuário se encheu de fumaça”: cf. Êx 40:34–35; 1Rs 8:10–11; 2Cr 5:13–14; Is 6:4. “Se consumassem”: gr. τελεσθῶσιν (cf. 15:1)."
+          "note": "“Vinda da glória”: gr. ἐκ τῆς δόξης, lit. “da glória”. “O santuário se encheu de fumaça”: cf. Êx 40:34–35 [LXX 40:28–29]; 1Rs 8:10–11; 2Cr 5:13–14; Is 6:4. “Se consumassem”: gr. τελεσθῶσιν (cf. 15:1)."
         }
       ],
       "blocks": [
@@ -4694,12 +4698,12 @@
         {
           "verse": 4,
           "text": "E o terceiro derramou a sua taça nos rios e nas fontes das águas: tornaram-se sangue.",
-          "note": "“Tornaram-se sangue”: lit. “houve sangue” (cf. Êx 7:19–21; Sl 78:44)."
+          "note": "“Tornaram-se sangue”: lit. “houve sangue” (cf. Êx 7:19–21; Sl 78:44 [LXX 77:44])."
         },
         {
           "verse": 5,
           "text": "E ouvi o anjo das águas dizendo: Justo és Tu, Aquele Que É, e Aquele Que Era, o Santo, porque julgaste estas coisas;",
-          "note": "“O anjo das águas”: cf. 7:1; 14:18. “Justo és Tu”: cf. 15:3; Dt 32:4; Sl 119:137. “Aquele Que É, e Aquele Que Era”: cf. 1:4, 8; 11:17. “O Santo”: gr. ὁ ὅσιος (cf. 15:4); o Textus Receptus lê “Justo és, ó Senhor, que és, e que eras, e que hás de ser”."
+          "note": "“O anjo das águas”: cf. 7:1; 14:18. “Justo és Tu”: cf. 15:3; Dt 32:4; Sl 119:137 [LXX 118:137]. “Aquele Que É, e Aquele Que Era”: cf. 1:4, 8; 11:17. “O Santo”: gr. ὁ ὅσιος (cf. 15:4); o Textus Receptus lê “Justo és, ó Senhor, que és, e que eras, e que hás de ser”."
         },
         {
           "verse": 6,
@@ -4724,7 +4728,7 @@
         {
           "verse": 10,
           "text": "E o quinto derramou a sua taça sobre o trono da besta: o seu reino ficou em trevas, e mordiam as suas línguas por causa da dor,",
-          "note": "“O trono da besta”: cf. 2:13; 13:2. “Ficou em trevas”: gr. ἐσκοτωμένη, particípio perfeito (cf. Êx 10:21–23; Jl 2:31)."
+          "note": "“O trono da besta”: cf. 2:13; 13:2. “Ficou em trevas”: gr. ἐσκοτωμένη, particípio perfeito (cf. Êx 10:21–23; Jl 2:31 (heb. 3:4))."
         },
         {
           "verse": 11,
@@ -4734,22 +4738,22 @@
         {
           "verse": 12,
           "text": "E o sexto derramou a sua taça sobre o grande rio Eufrates: a sua água secou, para que se preparasse o caminho dos reis que vêm do nascente do sol.",
-          "note": "“O grande rio Eufrates”: cf. 9:14. “A sua água secou”: cf. Is 11:15; 44:27; Jr 50:38; 51:36. “Os reis que vêm do nascente do sol”: lit. “os reis desde o nascente do sol” (cf. 7:2; Is 41:2, 25; 46:11); o Textus Receptus lê “do nascente” no plural."
+          "note": "“O grande rio Eufrates”: cf. 9:14. “A sua água secou”: cf. Is 11:15; 44:27; Jr 50:38 [LXX 27:38]; 51:36 [LXX 28:36]. “Os reis que vêm do nascente do sol”: lit. “os reis desde o nascente do sol” (cf. 7:2; Is 41:2, 25; 46:11); o Textus Receptus lê “do nascente” no plural."
         },
         {
           "verse": 13,
           "text": "E vi sair da boca do dragão, e da boca da besta, e da boca do falso profeta três espíritos imundos, como rãs;",
-          "note": "“O falso profeta”: gr. ψευδοπροφήτης (cf. 13:11–14; 19:20; 20:10). “Vi sair da boca”: lit. “vi da boca”. “Espíritos imundos”: gr. πνεύματα ἀκάθαρτα. “Como rãs”: gr. ὡς βάτραχοι (cf. Êx 8:2–7); o Textus Receptus lê ὅμοια βατράχοις, “semelhantes a rãs”."
+          "note": "“O falso profeta”: gr. ψευδοπροφήτης (cf. 13:11–14; 19:20; 20:10). “Vi sair da boca”: lit. “vi da boca”. “Espíritos imundos”: gr. πνεύματα ἀκάθαρτα. “Como rãs”: gr. ὡς βάτραχοι (cf. Êx 8:2–7 (heb. 7:27–8:3)); o Textus Receptus lê ὅμοια βατράχοις, “semelhantes a rãs”."
         },
         {
           "verse": 14,
           "text": "pois são espíritos de demônios, que fazem sinais, os quais vão aos reis do mundo inteiro, a fim de ajuntá-los para a guerra do grande dia de Deus, o Todo-Poderoso —",
-          "note": "“Demônios”: gr. δαιμόνια (cf. 9:20). “Sinais”: gr. σημεῖα (cf. 13:13–14; 19:20). “Mundo inteiro”: gr. οἰκουμένη ὅλη (cf. 3:10; 12:9). “Ajuntá-los para a guerra”: cf. 19:19; 20:8. “O grande dia de Deus”: cf. 6:17; Jl 2:11, 31; Sf 1:14. Variantes: o Textus Receptus lê “os reis da terra e do mundo inteiro”; o texto bizantino e o Textus Receptus leem “daquele grande dia”. O travessão marca o parêntese do v. 15, como no grego."
+          "note": "“Demônios”: gr. δαιμόνια (cf. 9:20). “Sinais”: gr. σημεῖα (cf. 13:13–14; 19:20). “Mundo inteiro”: gr. οἰκουμένη ὅλη (cf. 3:10; 12:9). “Ajuntá-los para a guerra”: cf. 19:19; 20:8. “O grande dia de Deus”: cf. 6:17; Jl 2:11; 2:31 (heb. 3:4); Sf 1:14. Variantes: o Textus Receptus lê “os reis da terra e do mundo inteiro”; o texto bizantino e o Textus Receptus leem “daquele grande dia”. O travessão marca o parêntese do v. 15, como no grego."
         },
         {
           "verse": 15,
           "text": "Eis que venho como ladrão. Bem-aventurado o que vigia e guarda as suas vestes, para que não ande nu e não vejam a sua vergonha —",
-          "note": "“Eis que venho como ladrão”: cf. 3:3; Mt 24:43; 1Ts 5:2; 2Pe 3:10; Lc 12:39). “Bem-aventurado”: cf. 1:3; 14:13. “Vigia”: gr. γρηγορέω (cf. 3:2–3). “Vestes”: gr. ἱμάτια (cf. 3:4–5, 18). “Vergonha”: gr. ἀσχημοσύνη, lit. “indecência”, a nudez exposta (cf. 3:18, onde “vergonha” traduz αἰσχύνη)."
+          "note": "“Eis que venho como ladrão”: cf. 3:3; Mt 24:43; Lc 12:39; 1Ts 5:2; 2Pe 3:10. “Bem-aventurado”: cf. 1:3; 14:13. “Vigia”: gr. γρηγορέω (cf. 3:2–3). “Vestes”: gr. ἱμάτια (cf. 3:4–5, 18). “Vergonha”: gr. ἀσχημοσύνη, lit. “indecência”, a nudez exposta (cf. 3:18, onde “vergonha” traduz αἰσχύνη)."
         },
         {
           "verse": 16,
@@ -4769,7 +4773,7 @@
         {
           "verse": 19,
           "text": "E a grande cidade se dividiu em três partes, e as cidades das nações caíram; e Babilônia, a grande, foi lembrada diante de Deus, para lhe dar o cálice do vinho do furor da Sua ira.",
-          "note": "“A grande cidade”: cf. 11:8; 17:18; 18:10. “Se dividiu em três partes”: lit. “veio a ser em três partes”. “Foi lembrada diante de Deus”: gr. ἐμνήσθη ἐνώπιον τοῦ θεοῦ (cf. 18:5). “O cálice do vinho do furor da Sua ira”: cf. 14:8, 10; 18:3; Jr 25:15."
+          "note": "“A grande cidade”: cf. 11:8; 17:18; 18:10. “Se dividiu em três partes”: lit. “veio a ser em três partes”. “Foi lembrada diante de Deus”: gr. ἐμνήσθη ἐνώπιον τοῦ θεοῦ (cf. 18:5). “O cálice do vinho do furor da Sua ira”: cf. 14:8, 10; 18:3; Jr 25:15 [LXX 32:1]."
         },
         {
           "verse": 20,
@@ -4950,12 +4954,12 @@
         {
           "verse": 1,
           "text": "E veio um dos sete anjos que tinham as sete taças, e falou comigo, dizendo: Vem, mostrar-te-ei o julgamento da grande prostituta que está sentada sobre muitas águas,",
-          "note": "“Um dos sete anjos que tinham as sete taças”: cf. 15:7; 21:9. “Vem”: gr. δεῦρο. “Julgamento”: gr. κρίμα (cf. 18:20; 20:4). “Prostituta”: gr. πόρνη (cf. 17:15–16; 19:2). “Sentada sobre muitas águas”: cf. 17:15; Jr 51:13."
+          "note": "“Um dos sete anjos que tinham as sete taças”: cf. 15:7; 21:9. “Vem”: gr. δεῦρο. “Julgamento”: gr. κρίμα (cf. 18:20; 20:4). “Prostituta”: gr. πόρνη (cf. 17:15–16; 19:2). “Sentada sobre muitas águas”: cf. 17:15; Jr 51:13 [LXX 28:13]."
         },
         {
           "verse": 2,
           "text": "com a qual os reis da terra se prostituíram, e os que habitam a terra se embriagaram com o vinho da sua prostituição.",
-          "note": "“Se prostituíram”: gr. πορνεύω (cf. 2:14, 20; 18:3, 9). “Se embriagaram com o vinho da sua prostituição”: cf. 14:8; 18:3; Jr 51:7."
+          "note": "“Se prostituíram”: gr. πορνεύω (cf. 2:14, 20; 18:3, 9). “Se embriagaram com o vinho da sua prostituição”: cf. 14:8; 18:3; Jr 51:7 [LXX 28:7]."
         },
         {
           "verse": 3,
@@ -4965,12 +4969,12 @@
         {
           "verse": 4,
           "text": "A mulher estava envolta em púrpura e escarlate, e adornada com ouro, e pedras preciosas, e pérolas, tendo na sua mão um cálice de ouro cheio de abominações e das impurezas da sua prostituição,",
-          "note": "“Envolta”: gr. περιβάλλω (cf. 3:5). “Púrpura e escarlate”: cf. 18:16; Êx 28:5–6. “Adornada com ouro”: lit. “dourada com ouro”. “Cálice de ouro”: cf. Jr 51:7. “Abominações”: gr. βδελύγματα (cf. 17:5; 21:27; Dn 9:27; 11:31). “Impurezas”: gr. τὰ ἀκάθαρτα; o Textus Receptus lê “da impureza”."
+          "note": "“Envolta”: gr. περιβάλλω (cf. 3:5). “Púrpura e escarlate”: cf. 18:16; Êx 28:5–6. “Adornada com ouro”: lit. “dourada com ouro”. “Cálice de ouro”: cf. Jr 51:7 [LXX 28:7]. “Abominações”: gr. βδελύγματα (cf. 17:5; 21:27; Dn 9:27; 11:31). “Impurezas”: gr. τὰ ἀκάθαρτα; o Textus Receptus lê “da impureza”."
         },
         {
           "verse": 5,
           "text": "e sobre a sua testa um nome escrito: Mistério, Babilônia, a grande, a mãe das prostitutas e das abominações da terra.",
-          "note": "“Sobre a sua testa um nome escrito”: cf. 13:16; 14:1, 9; 22:4. “Mistério”: gr. μυστήριον, parte do nome ou descrição dele (cf. 17:7). “Babilônia, a grande”: cf. 14:8; 16:19; 18:2; Dn 4:30. “A mãe das prostitutas”: cf. Ez 16:44–45."
+          "note": "“Sobre a sua testa um nome escrito”: cf. 13:16; 14:1, 9; 22:4. “Mistério”: gr. μυστήριον, parte do nome ou descrição dele (cf. 17:7). “Babilônia, a grande”: cf. 14:8; 16:19; 18:2; Dn 4:30 (heb. 4:27). “A mãe das prostitutas”: cf. Ez 16:44–45."
         },
         {
           "verse": 6,
@@ -5198,37 +5202,37 @@
         {
           "verse": 2,
           "text": "Clamou com voz forte, dizendo: Caiu, caiu Babilônia, a grande, e se tornou morada de demônios, e prisão de todo espírito imundo, e prisão de toda ave imunda, e prisão de toda fera imunda e odiada,",
-          "note": "“Caiu, caiu Babilônia, a grande”: cf. 14:8; Is 21:9; Jr 51:8. “Morada de demônios… prisão”: gr. φυλακή, também “guarida, covil” (cf. Is 13:21–22; 34:11–15; Jr 50:39; 51:37). “Fera”: gr. θηρίον, aqui o animal selvagem (cf. 6:8). “Odiada”: gr. μεμισημένου, particípio. “E prisão de toda fera imunda”: o texto bizantino e o Textus Receptus omitem. Variante: o texto bizantino traz um só “caiu”."
+          "note": "“Caiu, caiu Babilônia, a grande”: cf. 14:8; Is 21:9; Jr 51:8 [LXX 28:8]. “Morada de demônios… prisão”: gr. φυλακή, também “guarida, covil” (cf. Is 13:21–22; 34:11–15; Jr 50:39 [LXX 27:39]; 51:37 [LXX 28:37]). “Voz forte”: gr. ἰσχυρᾷ φωνῇ; o Textus Receptus lê “fortemente, com grande voz”. “Fera”: gr. θηρίον, aqui o animal selvagem (cf. 6:8). “Odiada”: gr. μεμισημένου, particípio. “E prisão de toda fera imunda e odiada”: o texto bizantino e o Textus Receptus omitem “prisão de toda fera imunda”, lendo “toda ave imunda e odiada”. Variante: o texto bizantino traz um só “caiu”."
         },
         {
           "verse": 3,
           "text": "porque todas as nações beberam do vinho do furor da sua prostituição, e os reis da terra se prostituíram com ela, e os mercadores da terra se enriqueceram com o poder do seu luxo.",
-          "note": "“Beberam”: gr. πέπωκαν, conforme a Vulgata latina, alguns manuscritos e o Textus Receptus (cf. 14:8; 17:2); o SBLGNT segue os códices Sinaítico, Alexandrino e de Efrém e o texto bizantino, que leem πέπτωκαν, “caíram”. “Mercadores”: gr. ἔμποροι (cf. Ez 27:12–36). “Luxo”: gr. στρῆνος, “luxúria, opulência sensual”."
+          "note": "“Beberam”: gr. πέπωκαν (o Textus Receptus πέπωκε), conforme a Vulgata latina, alguns manuscritos e o Textus Receptus (cf. 14:8; 17:2); o SBLGNT segue os códices Sinaítico, Alexandrino e de Efrém, que leem πέπτωκαν, e o texto bizantino, que lê πεπτώκασιν, ambos “caíram”. “Mercadores”: gr. ἔμποροι (cf. Ez 27:12–36). “Luxo”: gr. στρῆνος, “luxúria, opulência sensual”."
         },
         {
           "verse": 4,
           "text": "E ouvi outra voz do céu, dizendo: Sai dela, povo Meu, para que não participes dos seus pecados e para que não recebas das suas pragas;",
-          "note": "“Sai dela, povo Meu… participes… recebas”: no grego, todos os verbos estão no plural (ἐξέλθατε… συγκοινωνήσητε… λάβητε); o singular concorda com “povo”. O Códice de Efrém e o texto bizantino leem ἔξελθε, singular (cf. Is 48:20; 52:11; Jr 50:8; 51:6, 45; 2Co 6:17)."
+          "note": "“Sai dela, povo Meu… participes… recebas”: no grego, todos os verbos estão no plural (ἐξέλθατε… συγκοινωνήσητε… λάβητε); o singular concorda com “povo”. O Códice de Efrém e o texto bizantino leem ἔξελθε, singular (cf. Is 48:20; 52:11; Jr 50:8 [LXX 27:8]; 51:6 [LXX 28:6]; 51:45 (ausente da LXX); 2Co 6:17)."
         },
         {
           "verse": 5,
           "text": "porque os seus pecados se acumularam até o céu, e Deus se lembrou das suas iniquidades.",
-          "note": "“Se acumularam”: gr. ἐκολλήθησαν, lit. “se colaram, se juntaram” (cf. Gn 18:20; Jr 51:9). “Se lembrou”: cf. 16:19."
+          "note": "“Se acumularam”: gr. ἐκολλήθησαν, lit. “se colaram, se juntaram” (cf. Gn 18:20; Jr 51:9 [LXX 28:9]). “Se lembrou”: cf. 16:19."
         },
         {
           "verse": 6,
           "text": "Retribuí-lhe como também ela retribuiu, e dai-lhe o dobro segundo as suas obras; no cálice em que ela misturou, misturai-lhe o dobro.",
-          "note": "“Retribuí-lhe como também ela retribuiu”: cf. Sl 137:8; Jr 50:15, 29. “Dai-lhe o dobro”: gr. διπλώσατε τὰ διπλᾶ, lit. “dobrai o dobro” (cf. Is 40:2; Jr 16:18); o texto bizantino e o Textus Receptus acrescentam “a ela”. “Misturou… misturai”: gr. κεράννυμι (cf. 14:10, “preparado”)."
+          "note": "“Retribuí-lhe como também ela retribuiu”: cf. Sl 137:8 [LXX 136:8]; Jr 50:15, 29 [LXX 27:15, 29]. “Dai-lhe o dobro”: gr. διπλώσατε τὰ διπλᾶ, lit. “dobrai o dobro” (cf. Is 40:2; Jr 16:18); o texto bizantino e o Textus Receptus leem “dobrai-lhe o dobro”. “Misturou… misturai”: gr. κεράννυμι (cf. 14:10, “preparado”). Variante: o Textus Receptus lê “como ela vos retribuiu”."
         },
         {
           "verse": 7,
           "text": "Quanto ela se glorificou e viveu no luxo, tanto lhe dai de tormento e de luto; porque diz no seu coração: Estou sentada como rainha, e viúva não sou, e de modo algum verei luto.",
-          "note": "“Viveu no luxo”: gr. στρηνιάω (cf. 18:3, 9). “Luto”: gr. πένθος. “Estou sentada como rainha, e viúva não sou”: cf. Is 47:7–9; Sf 2:15."
+          "note": "“Viveu no luxo”: gr. στρηνιάω (cf. 18:3, 9). “Luto”: gr. πένθος. “Estou sentada como rainha, e viúva não sou”: cf. Is 47:7–9; Sf 2:15 [LXX 3:1]."
         },
         {
           "verse": 8,
           "text": "Por isso, num só dia virão as suas pragas: peste, e luto, e fome; e será queimada com fogo, porque forte é o Senhor Deus, que a julgou.",
-          "note": "“Peste”: gr. θάνατος, lit. “morte” (cf. 6:8). “Num só dia”: cf. Is 47:9. “Será queimada com fogo”: cf. 17:16. “Forte é o Senhor Deus”: cf. Jr 50:34."
+          "note": "“Peste”: gr. θάνατος, lit. “morte” (cf. 6:8). “Num só dia”: cf. Is 47:9. “Será queimada com fogo”: cf. 17:16. “Forte é o Senhor Deus”: cf. Jr 50:34 [LXX 27:34]."
         },
         {
           "verse": 9,
@@ -5293,7 +5297,7 @@
         {
           "verse": 21,
           "text": "Então um anjo forte levantou uma pedra como uma grande mó e lançou-a no mar, dizendo: Assim, com ímpeto, será lançada Babilônia, a grande cidade, e de modo algum será mais achada.",
-          "note": "“Anjo forte”: cf. 5:2; 10:1. “Como uma grande mó”: gr. ὡς μύλινον μέγαν. “Com ímpeto”: gr. ὁρμήματι. Cf. Jr 51:63–64."
+          "note": "“Anjo forte”: cf. 5:2; 10:1. “Como uma grande mó”: gr. ὡς μύλινον μέγαν. “Com ímpeto”: gr. ὁρμήματι. Cf. Jr 51:63–64 [LXX 28:63–64]."
         },
         {
           "verse": 22,
@@ -5580,12 +5584,12 @@
         {
           "verse": 1,
           "text": "Depois destas coisas ouvi como que uma grande voz de uma grande multidão no céu, dizendo: Aleluia! A salvação, e a glória, e o poder são do nosso Deus,",
-          "note": "“Como que uma grande voz de uma grande multidão”: cf. 7:9–10; 19:6. “Aleluia”: gr. ἁλληλουϊά, do hebraico, “louvai a Yah” (cf. Sl 104:35; 106:1, 48). “São do nosso Deus”: o grego não tem verbo (cf. 7:10; também 12:10). Variante: o Textus Receptus acrescenta “e a honra” e lê “ao Senhor, nosso Deus”."
+          "note": "“Como que uma grande voz de uma grande multidão”: cf. 7:9–10; 19:6. “Aleluia”: gr. ἁλληλουϊά, do hebraico, “louvai a Yah” (cf. Sl 104:35 [LXX 103:35]; 106:1, 48 [LXX 105:1, 48]). “São do nosso Deus”: o grego não tem verbo (cf. 7:10; também 12:10). Variante: o Textus Receptus acrescenta “e a honra” e lê “ao Senhor, nosso Deus”."
         },
         {
           "verse": 2,
           "text": "porque verdadeiros e justos são os Seus juízos; porque julgou a grande prostituta, que corrompeu a terra com a sua prostituição, e vingou o sangue dos Seus servos da mão dela.",
-          "note": "“Verdadeiros e justos são os Seus juízos”: cf. 15:3; 16:7. “Corrompeu”: gr. ἔφθειρεν (cf. 11:18, διαφθείρω). “Vingou o sangue dos Seus servos”: cf. 6:10; Dt 32:43; 2Rs 9:7. “Da mão dela”: isto é, cobrando-o dela (cf. 2Rs 9:7; Ap 18:20)."
+          "note": "“Verdadeiros e justos são os Seus juízos”: cf. 15:3; 16:7. “Corrompeu”: gr. ἔφθειρεν (cf. 11:18, διαφθείρω); o texto bizantino lê διέφθειρεν. “Vingou o sangue dos Seus servos”: cf. 6:10; Dt 32:43; 2Rs 9:7. “Da mão dela”: isto é, cobrando-o dela (cf. 2Rs 9:7; Ap 18:20)."
         },
         {
           "verse": 3,
@@ -5595,22 +5599,22 @@
         {
           "verse": 4,
           "text": "E os vinte e quatro anciãos e os quatro seres viventes se prostraram e adoraram a Deus, que está sentado sobre o trono, dizendo: Amém! Aleluia!",
-          "note": "“Se prostraram e adoraram”: cf. 4:10; 5:14; 11:16. “Amém! Aleluia!”: cf. Sl 106:48."
+          "note": "“Se prostraram e adoraram”: cf. 4:10; 5:14; 11:16. “Amém! Aleluia!”: cf. Sl 106:48 [LXX 105:48]."
         },
         {
           "verse": 5,
           "text": "E saiu do trono uma voz, dizendo: Louvai o nosso Deus, todos os Seus servos, e os que O temeis, os pequenos e os grandes.",
-          "note": "“Louvai o nosso Deus”: gr. αἰνεῖτε τῷ θεῷ ἡμῶν (cf. Sl 134:1; 135:1, 20). “Os pequenos e os grandes”: cf. 11:18; 13:16; Sl 115:13."
+          "note": "“Louvai o nosso Deus”: gr. αἰνεῖτε τῷ θεῷ ἡμῶν (cf. Sl 134:1 [LXX 133:1]; 135:1, 20 [LXX 134:1, 20]). “Os pequenos e os grandes”: cf. 11:18; 13:16; Sl 115:13 [LXX 113:21]."
         },
         {
           "verse": 6,
           "text": "E ouvi como que a voz de uma grande multidão, e como que a voz de muitas águas, e como que a voz de fortes trovões, dizendo: Aleluia! Porque começou a reinar o Senhor Deus, o Todo-Poderoso.",
-          "note": "“Voz de muitas águas… de fortes trovões”: cf. 1:15; 14:2. “Começou a reinar”: gr. ἐβασίλευσεν, aoristo (cf. 11:17; Sl 93:1; 97:1; 99:1). “O Senhor Deus”: o texto bizantino lê “o Senhor, o nosso Deus”."
+          "note": "“Voz de muitas águas… de fortes trovões”: cf. 1:15; 14:2. “Começou a reinar”: gr. ἐβασίλευσεν, aoristo (cf. 11:17; Sl 93:1 [LXX 92:1]; 97:1 [LXX 96:1]; 99:1 [LXX 98:1]). “O Senhor Deus”: o texto bizantino lê “o Senhor, o nosso Deus”."
         },
         {
           "verse": 7,
           "text": "Alegremo-nos, e exultemos, e Lhe daremos a glória, porque chegaram as bodas do Cordeiro, e a Sua esposa se preparou;",
-          "note": "“Alegremo-nos, e exultemos”: cf. Sl 118:24; Mt 5:12. “E Lhe daremos”: gr. δώσομεν, futuro; o texto bizantino e o Textus Receptus leem “demos”. “Bodas”: gr. γάμος (cf. 19:9; Mt 22:2–14). “A Sua esposa”: gr. ἡ γυνὴ αὐτοῦ (cf. 21:2, 9; Is 54:5–6; Os 2:19–20)."
+          "note": "“Alegremo-nos, e exultemos”: cf. Sl 118:24 [LXX 117:24]; Mt 5:12. “E Lhe daremos”: gr. δώσομεν, futuro; o texto bizantino e o Textus Receptus leem “demos”. “Bodas”: gr. γάμος (cf. 19:9; Mt 22:2–14). “A Sua esposa”: gr. ἡ γυνὴ αὐτοῦ (cf. 21:2, 9; Is 54:5–6; Os 2:19–20 (heb. 2:21–22))."
         },
         {
           "verse": 8,
@@ -5630,7 +5634,7 @@
         {
           "verse": 11,
           "text": "E vi o céu aberto, e eis um cavalo branco, e Aquele que estava montado nele é chamado Fiel e Verdadeiro, e com justiça julga e faz guerra.",
-          "note": "“Aquele”: a maiúscula segue a identificação do próprio texto: “Fiel e Verdadeiro” (3:14), “a Palavra de Deus” (19:13), “Rei dos reis e Senhor dos senhores” (19:16; cf. 17:14). “É chamado”: gr. καλούμενος, particípio. “O céu aberto”: cf. 4:1; Ez 1:1. “Cavalo branco”: cf. 6:2. “Fiel e Verdadeiro”: cf. 1:5; 3:7, 14. “Com justiça julga”: cf. Sl 96:13; Is 11:4."
+          "note": "“Aquele”: a maiúscula segue a identificação do próprio texto: “Fiel e Verdadeiro” (3:14), “a Palavra de Deus” (19:13), “Rei dos reis e Senhor dos senhores” (19:16; cf. 17:14). “É chamado”: gr. καλούμενος, particípio. “O céu aberto”: cf. 4:1; Ez 1:1. “Cavalo branco”: cf. 6:2. “Fiel e Verdadeiro”: cf. 1:5; 3:7, 14. “Com justiça julga”: cf. Sl 96:13 [LXX 95:13]; Is 11:4."
         },
         {
           "verse": 12,
@@ -5650,7 +5654,7 @@
         {
           "verse": 15,
           "text": "Da Sua boca sai uma espada afiada, para com ela ferir as nações; e Ele as apascentará com vara de ferro; e Ele pisa o lagar do vinho do furor da ira de Deus, o Todo-Poderoso.",
-          "note": "“Espada afiada”: gr. ῥομφαία ὀξεῖα (cf. 1:16; 2:12, 16; Is 11:4; 49:2); o texto bizantino acrescenta “de dois gumes”; o Textus Receptus lê “do furor e da ira”. “Ferir”: gr. πατάσσω (cf. 11:6). “Apascentará com vara de ferro”: cf. 2:27; 12:5; Sl 2:9. “Pisa o lagar”: cf. 14:19–20; Is 63:3."
+          "note": "“Espada afiada”: gr. ῥομφαία ὀξεῖα (cf. 1:16; 2:12, 16; Is 11:4; 49:2); o texto bizantino acrescenta “de dois gumes”. “Ferir”: gr. πατάσσω (cf. 11:6). “Apascentará com vara de ferro”: cf. 2:27; 12:5; Sl 2:9. “Pisa o lagar”: cf. 14:19–20; Is 63:3; Jl 3:13 (heb. 4:13); o Textus Receptus lê “do furor e da ira”."
         },
         {
           "verse": 16,
@@ -6037,18 +6041,18 @@
         },
         {
           "verse": 2,
-          "text": "Agarrou o dragão, a antiga serpente, que é o Diabo e Satanás, e amarrou-o mil anos,",
-          "note": "“Agarrou”: gr. ἐκράτησεν. “A antiga serpente, que é o Diabo e Satanás”: cf. 12:9; Gn 3:1. “Mil anos”: gr. χίλια ἔτη (cf. 20:3–7). “Amarrou-o”: cf. Is 24:21–22; Mt 12:29. Variante: o texto bizantino acrescenta “que engana o mundo inteiro”."
+          "text": "Agarrou o dragão, a antiga serpente, que é o diabo e Satanás, e amarrou-o mil anos,",
+          "note": "“Agarrou”: gr. ἐκράτησεν. “A antiga serpente, que é o diabo e Satanás”: cf. 12:9; Gn 3:1. “Mil anos”: gr. χίλια ἔτη (cf. 20:3–7). “Amarrou-o”: cf. Is 24:21–22; Mt 12:29. Variante: o texto bizantino acrescenta “que engana o mundo inteiro”."
         },
         {
           "verse": 3,
           "text": "e lançou-o no abismo, e fechou e selou por cima dele, para que não enganasse mais as nações, até que se cumprissem os mil anos; depois destas coisas, é necessário que seja solto por um pouco de tempo.",
-          "note": "“Fechou e selou por cima dele”: gr. ἔκλεισεν καὶ ἐσφράγισεν ἐπάνω αὐτοῦ, isto é, o abismo (cf. Dn 6:17; Mt 27:66); o Textus Receptus lê “fechou-o”. “Enganasse”: gr. πλανάω (cf. 12:9; 20:8, 10). “Se cumprissem”: gr. τελεσθῇ (cf. 17:17; 20:5, 7). “Um pouco de tempo”: gr. μικρὸν χρόνον (cf. 6:11)."
+          "note": "“Fechou e selou por cima dele”: gr. ἔκλεισεν καὶ ἐσφράγισεν ἐπάνω αὐτοῦ, isto é, o abismo (cf. Dn 6:17 (heb. 6:18); Mt 27:66); o Textus Receptus lê “fechou-o”. “Enganasse”: gr. πλανάω (cf. 12:9; 20:8, 10). “Se cumprissem”: gr. τελεσθῇ (cf. 17:17; 20:5, 7). “Um pouco de tempo”: gr. μικρὸν χρόνον (cf. 6:11)."
         },
         {
           "verse": 4,
           "text": "E vi tronos, e sentaram-se sobre eles, e foi-lhes dado o julgamento; e vi as almas dos que tinham sido decapitados por causa do Testemunho de Jesus e por causa da Palavra de Deus, e os que não adoraram a besta nem a sua imagem, e não receberam a marca sobre a testa e sobre a sua mão; e reviveram e reinaram com Cristo mil anos.",
-          "note": "“Tronos… julgamento”: gr. κρίμα (cf. Dn 7:9, 22, 26; Mt 19:28; 1Co 6:2–3). “E vi as almas”: “vi” subentendido no grego. “As almas”: gr. ψυχαί (cf. 6:9). “Decapitados”: gr. πεπελεκισμένων, lit. “decapitados a machado”. “O Testemunho de Jesus… a Palavra de Deus”: cf. 1:2, 9; 6:9; 12:17. “Marca”: cf. 13:16–17; 14:9. “Reviveram”: gr. ἔζησαν, lit. “viveram”, aoristo ingressivo, “passaram a viver” (cf. 2:8; 13:14; Ez 37:10). “Cristo”: gr. τοῦ χριστοῦ, com artigo, “o Cristo”."
+          "note": "“Tronos… julgamento”: gr. κρίμα (cf. Dn 7:9, 22, 26; Mt 19:28; 1Co 6:2–3). “E vi as almas”: “vi” subentendido no grego. “As almas”: gr. ψυχαί (cf. 6:9). “Decapitados”: gr. πεπελεκισμένων, lit. “decapitados a machado”. “O Testemunho de Jesus… a Palavra de Deus”: cf. 1:2, 9; 6:9; 12:17. “Marca”: cf. 13:16–17; 14:9. “Reviveram”: gr. ἔζησαν, lit. “viveram”, aoristo ingressivo, “passaram a viver” (cf. 2:8; 13:14; Ez 37:10). “Cristo”: gr. τοῦ χριστοῦ, com artigo, “o Cristo”; o Textus Receptus omite o artigo."
         },
         {
           "verse": 5,
@@ -6068,27 +6072,27 @@
         {
           "verse": 8,
           "text": "e sairá para enganar as nações que estão nos quatro cantos da terra, Gogue e Magogue, a fim de ajuntá-las para a guerra; o número delas é como a areia do mar.",
-          "note": "“Os quatro cantos da terra”: cf. 7:1. “Gogue e Magogue”: cf. Ez 38–39. “Para a guerra”: gr. τὸν πόλεμον (cf. 16:14; 19:19). “Como a areia do mar”: cf. Gn 22:17; Js 11:4."
+          "note": "“Os quatro cantos da terra”: cf. 7:1. “Gogue e Magogue”: cf. Ez 38–39. “Para a guerra”: gr. τὸν πόλεμον (cf. 16:14; 19:19); o Textus Receptus omite o artigo. “Como a areia do mar”: cf. Gn 22:17; Js 11:4."
         },
         {
           "verse": 9,
           "text": "Subiram pela largura da terra, e cercaram o acampamento dos santos e a cidade amada; e desceu fogo do céu e os devorou.",
-          "note": "“A largura da terra”: gr. τὸ πλάτος τῆς γῆς (cf. Hc 1:6). “Pela largura da terra”: lit. “sobre a largura da terra”. “Acampamento”: gr. παρεμβολή. “A cidade amada”: cf. Sl 87:2; Jr 11:15. “Desceu fogo do céu”: cf. 2Rs 1:10–12; Ez 38:22; 39:6; o texto bizantino e o Textus Receptus acrescentam “da parte de Deus”."
+          "note": "“A largura da terra”: gr. τὸ πλάτος τῆς γῆς (cf. Hc 1:6). “Pela largura da terra”: lit. “sobre a largura da terra”. “Acampamento”: gr. παρεμβολή. “A cidade amada”: cf. Sl 87:2 [LXX 86:2]; Jr 11:15. “Desceu fogo do céu”: cf. 2Rs 1:10–12; Ez 38:22; 39:6; o texto bizantino e o Textus Receptus acrescentam “da parte de Deus”."
         },
         {
           "verse": 10,
-          "text": "O Diabo, que os enganava, foi lançado no lago de fogo e enxofre, onde estão também a besta e o falso profeta; e serão atormentados dia e noite pelos séculos dos séculos.",
+          "text": "O diabo, que os enganava, foi lançado no lago de fogo e enxofre, onde estão também a besta e o falso profeta; e serão atormentados dia e noite pelos séculos dos séculos.",
           "note": "“O lago de fogo e enxofre”: cf. 19:20; 21:8. “Serão atormentados”: gr. βασανίζω (cf. 14:10–11). “Pelos séculos dos séculos”: cf. 14:11; Is 34:9–10; Jd 7."
         },
         {
           "verse": 11,
           "text": "E vi um grande trono branco e Aquele que estava sentado sobre ele, de cuja face fugiram a terra e o céu, e não se achou lugar para eles.",
-          "note": "“Grande trono branco”: cf. Dn 7:9–10. “De cuja face fugiram a terra e o céu”: cf. 6:14; 16:20; 21:1; Sl 102:25–26; 2Pe 3:10."
+          "note": "“Grande trono branco”: cf. Dn 7:9–10. “De cuja face fugiram a terra e o céu”: cf. 6:14; 16:20; 21:1; Sl 102:25–26 (heb. 102:26–27) [LXX 101:26–27]; 2Pe 3:10."
         },
         {
           "verse": 12,
           "text": "E vi os mortos, os grandes e os pequenos, de pé diante do trono; e livros foram abertos; e foi aberto outro livro, que é o da vida; e os mortos foram julgados pelas coisas que estavam escritas nos livros, segundo as suas obras.",
-          "note": "“Os grandes e os pequenos”: cf. 11:18; 19:5. “Livros foram abertos”: cf. Dn 7:10; 12:1; Ml 3:16. “O da vida”: cf. 3:5; 13:8; 17:8; 21:27. “Segundo as suas obras”: cf. 2:23; 22:12; Sl 62:12; Rm 2:6. Variante: o Textus Receptus lê “diante de Deus”."
+          "note": "“Os grandes e os pequenos”: cf. 11:18; 19:5. “Livros foram abertos”: cf. Dn 7:10; 12:1; Ml 3:16. “O da vida”: cf. 3:5; 13:8; 17:8; 21:27. “Segundo as suas obras”: cf. 2:23; 22:12; Sl 62:12 (heb. 62:13) [LXX 61:13]; Rm 2:6. Variante: o Textus Receptus lê “diante de Deus” em lugar de “diante do trono”, e “os pequenos e os grandes”."
         },
         {
           "verse": 13,
@@ -6121,7 +6125,7 @@
             },
             {
               "verse": 2,
-              "text": "Agarrou o dragão, a antiga serpente, que é o Diabo e Satanás, e amarrou-o mil anos,",
+              "text": "Agarrou o dragão, a antiga serpente, que é o diabo e Satanás, e amarrou-o mil anos,",
               "startsVerse": true
             },
             {
@@ -6175,7 +6179,7 @@
             },
             {
               "verse": 10,
-              "text": "O Diabo, que os enganava, foi lançado no lago de fogo e enxofre, onde estão também a besta e o falso profeta; e serão atormentados dia e noite pelos séculos dos séculos.",
+              "text": "O diabo, que os enganava, foi lançado no lago de fogo e enxofre, onde estão também a besta e o falso profeta; e serão atormentados dia e noite pelos séculos dos séculos.",
               "startsVerse": true
             }
           ]
@@ -6242,7 +6246,7 @@
         {
           "verse": 3,
           "text": "E ouvi uma grande voz, vinda do trono, dizendo: Eis o tabernáculo de Deus com os homens, e Ele terá o Seu tabernáculo com eles, e eles serão os Seus povos, e o próprio Deus estará com eles,",
-          "note": "“Vinda do trono”: o texto bizantino e o Textus Receptus leem “do céu”. “Tabernáculo… terá o Seu tabernáculo”: gr. σκηνή… σκηνώσει (cf. 7:15; 12:12; 13:6; Jo 1:14); eco de Lv 26:11–12 e Ez 37:27. “Os Seus povos”: gr. λαοί, plural (cf. Zc 2:11); o texto bizantino lê o singular, “o Seu povo”. Variante: o Códice Alexandrino e o Textus Receptus acrescentam “como o seu Deus” no fim do versículo."
+          "note": "“Vinda do trono”: o texto bizantino e o Textus Receptus leem “do céu”. “Tabernáculo… terá o Seu tabernáculo”: gr. σκηνή… σκηνώσει (cf. 7:15; 12:12; 13:6; Jo 1:14); eco de Lv 26:11–12 e Ez 37:27. “Os Seus povos”: gr. λαοί, plural (cf. Zc 2:11 (heb. 2:15)); o texto bizantino lê o singular, “o Seu povo”. Variante: o Códice Alexandrino e o Textus Receptus acrescentam “seu Deus” no fim do versículo."
         },
         {
           "verse": 4,
@@ -6252,7 +6256,7 @@
         {
           "verse": 5,
           "text": "E Aquele que está sentado sobre o trono disse: Eis que faço novas todas as coisas. E diz: Escreve, porque estas palavras são fiéis e verdadeiras.",
-          "note": "“Eis que faço novas todas as coisas”: gr. καινὰ ποιῶ πάντα (cf. Is 43:19). “E diz”: o texto bizantino e o Textus Receptus acrescentam “-me”. “Fiéis e verdadeiras”: cf. 3:14; 19:9, 11; 22:6."
+          "note": "“Eis que faço novas todas as coisas”: gr. καινὰ ποιῶ πάντα (cf. Is 43:19). “E diz”: o texto bizantino e o Textus Receptus acrescentam “-me”. “Fiéis e verdadeiras”: cf. 3:14; 19:9, 11; 22:6; o texto bizantino e o Textus Receptus leem “verdadeiras e fiéis”."
         },
         {
           "verse": 6,
@@ -6262,7 +6266,7 @@
         {
           "verse": 7,
           "text": "O que vence herdará estas coisas, e Eu serei o seu Deus, e ele será Meu filho.",
-          "note": "“O que vence”: cf. 2:7, 11, 17, 26; 3:5, 12, 21. “Herdará estas coisas”: o Textus Receptus lê “herdará todas as coisas”. “Eu serei o seu Deus, e ele será Meu filho”: lit. “Eu lhe serei Deus, e ele Me será filho” (cf. 2Sm 7:14; Sl 89:26–27; Jr 31:33)."
+          "note": "“O que vence”: cf. 2:7, 11, 17, 26; 3:5, 12, 21. “Herdará estas coisas”: o Textus Receptus lê “herdará todas as coisas”. “Eu serei o seu Deus, e ele será Meu filho”: lit. “Eu lhe serei Deus, e ele Me será filho” (cf. 2Sm 7:14; Sl 89:26–27 (heb. 89:27–28) [LXX 88:27–28]; Jr 31:33 [LXX 38:33])."
         },
         {
           "verse": 8,
@@ -6302,17 +6306,17 @@
         {
           "verse": 15,
           "text": "Aquele que falava comigo tinha como medida uma cana de ouro, para medir a cidade, e as suas portas, e o seu muro.",
-          "note": "“Cana”: gr. κάλαμος, vara de medir (cf. 11:1; Ez 40:3, 5; Zc 2:1–2). “Como medida”: gr. μέτρον; o Textus Receptus omite."
+          "note": "“Cana”: gr. κάλαμος, cana de medir (cf. 11:1; Ez 40:3, 5; Zc 2:1–2 (heb. 2:5–6)). “Como medida”: gr. μέτρον; o Textus Receptus omite."
         },
         {
           "verse": 16,
           "text": "A cidade está disposta em quadrado, e o seu comprimento é tanto quanto a largura. E mediu a cidade com a cana: doze mil estádios; o comprimento, e a largura, e a altura dela são iguais.",
-          "note": "“Disposta em quadrado”: gr. τετράγωνος κεῖται (cf. Ez 43:16; 48:16–20); igual em comprimento, largura e altura, como o Lugar Santíssimo (1Rs 6:20). “Doze mil estádios”: cerca de dois mil e duzentos quilômetros (mil e trezentas e oitenta milhas); um estádio, cerca de cento e oitenta e cinco metros (cf. 14:20). O número 12 × 1.000 retoma 7:4–8."
+          "note": "“Disposta em quadrado”: gr. τετράγωνος κεῖται (cf. Ez 43:16; 48:16–20); igual em comprimento, largura e altura, como o Lugar Santíssimo (1Rs 6:20). “Doze mil estádios”: cerca de dois mil duzentos e vinte quilômetros (mil e trezentas e oitenta milhas); um estádio, cerca de cento e oitenta e cinco metros (seiscentos e sete pés) (cf. 14:20). O número 12 × 1.000 retoma 7:4–8."
         },
         {
           "verse": 17,
           "text": "E mediu o seu muro: cento e quarenta e quatro côvados, medida de homem, que é a do anjo.",
-          "note": "“Cento e quarenta e quatro côvados”: cerca de sessenta e cinco metros (duzentos e dezesseis pés); um côvado, cerca de quarenta e cinco centímetros. O número 12 × 12 retoma 7:4; 14:1. Não se diz se a medida é a altura ou a espessura do muro. “Medida de homem, que é a do anjo”: isto é, o anjo usou a medida humana comum."
+          "note": "“Cento e quarenta e quatro côvados”: cerca de sessenta e cinco metros (duzentos e dezesseis pés); um côvado, cerca de quarenta e cinco centímetros (dezoito polegadas). O número 12 × 12 retoma 7:4; 14:1. Não se diz se a medida é a altura ou a espessura do muro. “Medida de homem, que é a do anjo”: isto é, o anjo usou a medida humana comum."
         },
         {
           "verse": 18,
@@ -6322,7 +6326,7 @@
         {
           "verse": 19,
           "text": "Os fundamentos do muro da cidade estavam adornados com toda espécie de pedras preciosas: o primeiro fundamento, jaspe; o segundo, safira; o terceiro, calcedônia; o quarto, esmeralda;",
-          "note": "“Adornados”: gr. κοσμέω (cf. 21:2). “Toda espécie de pedras preciosas”: gr. παντὶ λίθῳ τιμίῳ, lit. “toda pedra preciosa”: cf. Êx 28:17–20; Is 54:11–12; Ez 28:13. As doze pedras correspondem, de modo geral, às do peitoral do sumo sacerdote. “Safira”: gr. σάπφιρος, provavelmente o lápis-lazúli."
+          "note": "“Adornados”: gr. κοσμέω (cf. 21:2). “Toda espécie de pedras preciosas”: gr. παντὶ λίθῳ τιμίῳ, lit. “toda pedra preciosa”; cf. Êx 28:17–20; Is 54:11–12; Ez 28:13. As doze pedras correspondem, de modo geral, às do peitoral do sumo sacerdote. “Safira”: gr. σάπφιρος, provavelmente o lápis-lazúli."
         },
         {
           "verse": 20,
@@ -6627,7 +6631,7 @@
         {
           "verse": 1,
           "text": "E mostrou-me um rio de água da vida, resplandecente como cristal, saindo do trono de Deus e do Cordeiro,",
-          "note": "“Rio de água da vida”: cf. 7:17; 21:6; Ez 47:1–12; Zc 14:8; Sl 46:4; Jo 7:38. “Resplandecente”: gr. λαμπρός (cf. 15:6; 19:8). “Saindo”: gr. ἐκπορεύομαι. Variante: o texto bizantino e o Textus Receptus leem “um rio puro de água da vida”."
+          "note": "“Rio de água da vida”: cf. 7:17; 21:6; Ez 47:1–12; Zc 14:8; Sl 46:4 (heb. 46:5) [LXX 45:5]; Jo 7:38. “Resplandecente”: gr. λαμπρός (cf. 15:6; 19:8). “Saindo”: gr. ἐκπορεύομαι. Variante: o texto bizantino e o Textus Receptus leem “um rio puro de água da vida”."
         },
         {
           "verse": 2,
@@ -6642,7 +6646,7 @@
         {
           "verse": 4,
           "text": "e verão a Sua face, e o Seu nome estará sobre as suas testas.",
-          "note": "“Verão a Sua face”: cf. Êx 33:20, 23; Sl 17:15; Mt 5:8; 1Co 13:12; 1Jo 3:2. “O Seu nome… sobre as suas testas”: cf. 3:12; 7:3; 14:1, em contraste com 13:16–17."
+          "note": "“Verão a Sua face”: cf. Êx 33:20, 23; Sl 17:15 [LXX 16:15]; Mt 5:8; 1Co 13:12; 1Jo 3:2. “O Seu nome… sobre as suas testas”: cf. 3:12; 7:3; 14:1, em contraste com 13:16–17."
         },
         {
           "verse": 5,
@@ -6682,7 +6686,7 @@
         {
           "verse": 12,
           "text": "Eis que venho em breve, e o Meu galardão está comigo, para retribuir a cada um conforme a sua obra.",
-          "note": "“Galardão”: gr. μισθός (cf. 11:18; Is 40:10; 62:11). “Retribuir a cada um conforme a sua obra”: lit. “conforme é a sua obra” (cf. 2:23; 20:12–13; Sl 62:12; Pv 24:12; Mt 16:27; Rm 2:6). Variante: o texto bizantino e o Textus Receptus leem “conforme for a sua obra”."
+          "note": "“Galardão”: gr. μισθός (cf. 11:18; Is 40:10; 62:11). “Retribuir a cada um conforme a sua obra”: lit. “conforme é a sua obra” (cf. 2:23; 20:12–13; Sl 62:12 (heb. 62:13) [LXX 61:13]; Pv 24:12; Mt 16:27; Rm 2:6). Variante: o texto bizantino e o Textus Receptus leem “conforme for a sua obra”."
         },
         {
           "verse": 13,
@@ -6692,12 +6696,12 @@
         {
           "verse": 14,
           "text": "Bem-aventurados os que lavam as suas vestes, para que tenham direito à árvore da vida e entrem na cidade pelas portas.",
-          "note": "“Bem-aventurados”: a sétima das sete bem-aventuranças do livro (cf. 1:3; 14:13; 16:15; 19:9; 20:6; 22:7). “Os que lavam as suas vestes”: gr. οἱ πλύνοντες τὰς στολὰς αὐτῶν (cf. 7:14; 3:4–5; 19:8); leitura do Códice Sinaítico e do Códice Alexandrino. Variante: o texto bizantino e o Textus Receptus leem “os que praticam os Seus mandamentos”, gr. οἱ ποιοῦντες τὰς ἐντολὰς αὐτοῦ (cf. 12:17; 14:12; Jo 14:15; 1Jo 5:3). Em letras maiúsculas gregas as duas leituras são muito parecidas. “Direito”: gr. ἐξουσία, “autoridade, direito” (cf. 2:7; 22:2, 19). “Pelas portas”: cf. 21:12, 25, 27; Sl 118:19–20; Gn 3:24."
+          "note": "“Bem-aventurados”: a sétima das sete bem-aventuranças do livro (cf. 1:3; 14:13; 16:15; 19:9; 20:6; 22:7). “Os que lavam as suas vestes”: gr. οἱ πλύνοντες τὰς στολὰς αὐτῶν (cf. 7:14; 3:4–5; 19:8); leitura do Códice Sinaítico e do Códice Alexandrino. Variante: o texto bizantino e o Textus Receptus leem “os que praticam os Seus mandamentos”, gr. οἱ ποιοῦντες τὰς ἐντολὰς αὐτοῦ (cf. 12:17; 14:12; Jo 14:15; 1Jo 5:3). Em letras maiúsculas gregas as duas leituras são muito parecidas. “Direito”: gr. ἐξουσία, “autoridade, direito” (cf. 2:7; 22:2, 19). “Pelas portas”: cf. 21:12, 25, 27; Sl 118:19–20 [LXX 117:19–20]; Gn 3:24."
         },
         {
           "verse": 15,
           "text": "Fora ficam os cães, e os feiticeiros, e os imorais, e os homicidas, e os idólatras, e todo aquele que ama e pratica a mentira.",
-          "note": "“Fora”: cf. 21:8, 27; Mt 8:12. “Cães”: imagem dos impuros (cf. Dt 23:18; Fp 3:2). “Feiticeiros… imorais… homicidas… idólatras”: cf. 21:8. “Que ama e pratica a mentira”: cf. 14:5; 21:27; 2Ts 2:10–12."
+          "note": "“Fora”: cf. 21:8, 27; Mt 8:12. “Cães”: imagem dos impuros (cf. Dt 23:18 (heb. 23:19); Fp 3:2). “Feiticeiros… imorais… homicidas… idólatras”: cf. 21:8. “Que ama e pratica a mentira”: cf. 14:5; 21:27; 2Ts 2:10–12."
         },
         {
           "verse": 16,
@@ -6712,7 +6716,7 @@
         {
           "verse": 18,
           "text": "Eu testemunho a todo aquele que ouve as palavras da profecia deste livro: se alguém lhes acrescentar alguma coisa, Deus lhe acrescentará as pragas que estão escritas neste livro;",
-          "note": "“Eu testemunho”: gr. μαρτυρῶ (cf. 1:2); o Textus Receptus lê “Pois testemunho juntamente”. “Se alguém lhes acrescentar”: cf. Dt 4:2; 12:32; Pv 30:6. “As pragas”: cf. 15:1, 6; 16:1–21; Dt 29:20."
+          "note": "“Eu testemunho”: gr. μαρτυρῶ (cf. 1:2); o Textus Receptus lê “Pois testemunho juntamente”. “Se alguém lhes acrescentar”: cf. Dt 4:2; 12:32 (heb. 13:1); Pv 30:6 [LXX 24:29]. “As pragas”: cf. 15:1, 6; 16:1–21; Dt 29:20 (heb. 29:19). Variante: o texto bizantino lê “acrescente-lhe Deus” (e, no v. 19, “tire Deus”)."
         },
         {
           "verse": 19,
