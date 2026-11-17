@@ -4,9 +4,11 @@
   "language": "pt-BR",
   "book": "REV",
   "bookName": "Apocalipse",
-  "version": "25",
+  "version": "27",
   "license": "CC BY-ND 4.0",
   "copyright": "© 2026 Ismael Silva",
+  "translator": "Ismael Silva",
+  "website": "https://ismaelsilva.org/venibible",
   "url": "https://github.com/ismaelthesilva/veni-bible",
   "sourceText": "SBL Greek New Testament (SBLGNT), © 2010 Society of Biblical Literature and Logos Bible Software, CC BY 4.0",
   "chapters": [
@@ -1541,7 +1543,7 @@
         {
           "verse": 1,
           "text": "E vi, na destra Daquele que está sentado sobre o trono, um livro escrito por dentro e no verso, selado com sete selos.",
-          "note": "“Na destra”: gr. ἐπὶ τὴν δεξιάν, lit. “sobre a destra”. “No verso”: gr. ὄπισθεν, lit. “por trás”; cf. Ez 2:9–10. “Selado com sete selos”: cf. Is 29:11; Dn 12:4. Variante: o texto bizantino lê “por fora” (ἔξωθεν)."
+          "note": "“Na destra”: gr. ἐπὶ τὴν δεξιάν, lit. “sobre a destra”. “Livro”: gr. βιβλίον, um rolo escrito dos dois lados e selado na borda, de modo que cada selo se abria por vez; “livro” é mantido em todo o livro para a mesma palavra grega (cf. 1:11; 6:14; 22:7). “No verso”: gr. ὄπισθεν, lit. “por trás”; cf. Ez 2:9–10. “Selado com sete selos”: cf. Is 29:11; Dn 12:4. Variante: o texto bizantino lê “por fora” (ἔξωθεν)."
         },
         {
           "verse": 2,
@@ -2938,7 +2940,7 @@
         {
           "verse": 1,
           "text": "E vi outro Anjo forte descendo do céu, envolto numa nuvem, e o arco-íris sobre a Sua cabeça, e o Seu rosto como o sol, e os Seus pés como colunas de fogo,",
-          "note": "“Anjo”: a maiúscula identifica este Anjo com Cristo; o arco-íris, o rosto como o sol e os pés como colunas de fogo lembram as figuras divinas de 1:15–16 e 4:3 e o homem vestido de linho de Dn 10:5–6; 12:7. Outra leitura vê aqui um anjo poderoso (cf. 5:2; 18:21). “Envolto numa nuvem”: gr. περιβάλλω (cf. 3:5). “O arco-íris”: gr. ἡ ἶρις (cf. 4:3). “O Seu rosto… como o sol”: cf. 1:16. “Colunas de fogo”: cf. Êx 13:21. Variante: o texto bizantino omite “outro”."
+          "note": "“Anjo”: a maiúscula identifica este Anjo com Cristo; o arco-íris, o rosto como o sol e os pés como colunas de fogo lembram as figuras divinas de 1:15–16 e 4:3 e o homem vestido de linho de Dn 10:5–6; 12:7. Outra leitura vê aqui um anjo forte (cf. 5:2; 18:21). “Envolto numa nuvem”: gr. περιβάλλω (cf. 3:5). “O arco-íris”: gr. ἡ ἶρις (cf. 4:3). “O Seu rosto… como o sol”: cf. 1:16. “Colunas de fogo”: cf. Êx 13:21. Variante: o texto bizantino omite “outro”."
         },
         {
           "verse": 2,

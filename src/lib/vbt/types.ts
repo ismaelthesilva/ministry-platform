@@ -27,6 +27,8 @@ export type VbtBook = {
   version: string;
   license: string;
   copyright: string;
+  translator?: string;
+  website?: string;
   url: string;
   sourceText: string;
   chapters: VbtChapter[];
