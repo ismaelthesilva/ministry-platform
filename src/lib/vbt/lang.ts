@@ -23,7 +23,7 @@ export const VBT_LANGS: Record<VbtLang, VbtLangConfig> = {
     bookName: "Apocalipse",
     abbr: "Ap",
     basePath: "/venibible/apocalipse",
-    repoJsonPath: "pt-BR/revelation/json/revelation.json",
+    repoJsonPath: "pt-BR/revelation/json/vbt-pt-br-apocalipse.json",
     localJsonPath: "src/content/vbt/revelation.json",
   },
   en: {
@@ -32,7 +32,7 @@ export const VBT_LANGS: Record<VbtLang, VbtLangConfig> = {
     bookName: "Revelation",
     abbr: "Rev",
     basePath: "/venibible/revelation",
-    repoJsonPath: "en/revelation/json/revelation.json",
+    repoJsonPath: "en/revelation/json/vbt-en-revelation.json",
     localJsonPath: "src/content/vbt/revelation.en.json",
   },
 };

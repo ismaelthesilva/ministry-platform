@@ -4,9 +4,11 @@
   "language": "en",
   "book": "REV",
   "bookName": "Revelation",
-  "version": "25",
+  "version": "27",
   "license": "CC BY-ND 4.0",
   "copyright": "© 2026 Ismael Silva",
+  "translator": "Ismael Silva",
+  "website": "https://ismaelsilva.org/venibible",
   "url": "https://github.com/ismaelthesilva/veni-bible",
   "sourceText": "SBL Greek New Testament (SBLGNT), © 2010 Society of Biblical Literature and Logos Bible Software, CC BY 4.0",
   "chapters": [
@@ -1541,12 +1543,12 @@
         {
           "verse": 1,
           "text": "And I saw in the right hand of Him who is seated on the throne a book written inside and on the back, sealed with seven seals.",
-          "note": "“In the right hand”: Gr. ἐπὶ τὴν δεξιάν, lit. “on the right hand”. “On the back”: Gr. ὄπισθεν, lit. “behind”; cf. Ezek 2:9–10. “Sealed with seven seals”: cf. Isa 29:11; Dan 12:4. Variant: the Byzantine text reads “outside” (ἔξωθεν)."
+          "note": "“In the right hand”: Gr. ἐπὶ τὴν δεξιάν, lit. “on the right hand”. “Book”: Gr. βιβλίον, a scroll written on both sides and sealed along its edge, so that each seal opened in turn; “book” is kept throughout for the one Greek word (cf. 1:11; 6:14; 22:7). “On the back”: Gr. ὄπισθεν, lit. “behind”; cf. Ezek 2:9–10. “Sealed with seven seals”: cf. Isa 29:11; Dan 12:4. Variant: the Byzantine text reads “outside” (ἔξωθεν)."
         },
         {
           "verse": 2,
-          "text": "And I saw a strong angel proclaiming with a loud voice: Who is worthy to open the book and to break its seals?",
-          "note": "“Strong”: Gr. ἰσχυρός (cf. ἰσχύς, “strength”, 5:12). “Break”: Gr. λῦσαι, lit. “loose”, the same verb as in 1:5 (“freed”)."
+          "text": "And I saw a mighty angel proclaiming with a loud voice: Who is worthy to open the book and to break its seals?",
+          "note": "“Mighty”: Gr. ἰσχυρός (cf. ἰσχύς, “strength”, 5:12). “Break”: Gr. λῦσαι, lit. “loose”, the same verb as in 1:5 (“freed”)."
         },
         {
           "verse": 3,
@@ -1628,7 +1630,7 @@
           "segments": [
             {
               "verse": 2,
-              "text": "And I saw a strong angel proclaiming with a loud voice: Who is worthy to open the book and to break its seals?",
+              "text": "And I saw a mighty angel proclaiming with a loud voice: Who is worthy to open the book and to break its seals?",
               "startsVerse": true
             },
             {
@@ -2937,7 +2939,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And I saw another strong Angel coming down from heaven, clothed in a cloud, and the rainbow on His head, and His face like the sun, and His feet like pillars of fire,",
+          "text": "And I saw another mighty Angel coming down from heaven, clothed in a cloud, and the rainbow on His head, and His face like the sun, and His feet like pillars of fire,",
           "note": "“Angel”: the capital identifies this Angel with Christ; the rainbow, the face like the sun and the feet like pillars of fire recall the divine figures of 1:15–16 and 4:3 and the man clothed in linen of Dan 10:5–6; 12:7. Another reading sees here a mighty angel (cf. 5:2; 18:21). “Clothed in a cloud”: Gr. περιβάλλω (cf. 3:5). “The rainbow”: Gr. ἡ ἶρις (cf. 4:3). “His face like the sun”: cf. 1:16. “Pillars of fire”: cf. Ex 13:21. Variant: the Byzantine text omits “another”."
         },
         {
@@ -3001,7 +3003,7 @@
           "segments": [
             {
               "verse": 1,
-              "text": "And I saw another strong Angel coming down from heaven, clothed in a cloud, and the rainbow on His head, and His face like the sun, and His feet like pillars of fire,",
+              "text": "And I saw another mighty Angel coming down from heaven, clothed in a cloud, and the rainbow on His head, and His face like the sun, and His feet like pillars of fire,",
               "startsVerse": true
             },
             {
@@ -5231,8 +5233,8 @@
         },
         {
           "verse": 8,
-          "text": "Therefore in one day her plagues will come: pestilence, and mourning, and famine; and she will be burned with fire, for strong is the Lord God who judged her.",
-          "note": "“Pestilence”: Gr. θάνατος, lit. “death” (cf. 6:8). “In one day”: cf. Isa 47:9. “She will be burned with fire”: cf. 17:16. “Strong is the Lord God”: cf. Jer 50:34 [LXX 27:34]."
+          "text": "Therefore in one day her plagues will come: pestilence, and mourning, and famine; and she will be burned with fire, for mighty is the Lord God who judged her.",
+          "note": "“Pestilence”: Gr. θάνατος, lit. “death” (cf. 6:8). “In one day”: cf. Isa 47:9. “She will be burned with fire”: cf. 17:16. “Mighty is the Lord God”: cf. Jer 50:34 [LXX 27:34]."
         },
         {
           "verse": 9,
@@ -5241,7 +5243,7 @@
         },
         {
           "verse": 10,
-          "text": "standing far off because of the fear of her torment, saying: Woe, woe, the great city, Babylon, the strong city, because in one hour your judgment has come!",
+          "text": "standing far off because of the fear of her torment, saying: Woe, woe, the great city, Babylon, the mighty city, because in one hour your judgment has come!",
           "note": "“Woe, woe”: Gr. οὐαὶ οὐαί (cf. 18:16, 19). “In one hour”: cf. 17:12; 18:17, 19. “Judgment”: Gr. κρίσις (cf. 14:7)."
         },
         {
@@ -5296,8 +5298,8 @@
         },
         {
           "verse": 21,
-          "text": "Then a strong angel took up a stone like a great millstone and cast it into the sea, saying: Thus with force Babylon, the great city, will be cast down, and will never be found again.",
-          "note": "“Strong angel”: cf. 5:2; 10:1. “Like a great millstone”: Gr. ὡς μύλινον μέγαν. “With force”: Gr. ὁρμήματι. Cf. Jer 51:63–64 [LXX 28:63–64]."
+          "text": "Then a mighty angel took up a stone like a great millstone and cast it into the sea, saying: Thus with force Babylon, the great city, will be cast down, and will never be found again.",
+          "note": "“Mighty angel”: cf. 5:2; 10:1. “Like a great millstone”: Gr. ὡς μύλινον μέγαν. “With force”: Gr. ὁρμήματι. Cf. Jer 51:63–64 [LXX 28:63–64]."
         },
         {
           "verse": 22,
@@ -5444,7 +5446,7 @@
             },
             {
               "verse": 8,
-              "text": "Therefore in one day her plagues will come: pestilence, and mourning, and famine; and she will be burned with fire, for strong is the Lord God who judged her.",
+              "text": "Therefore in one day her plagues will come: pestilence, and mourning, and famine; and she will be burned with fire, for mighty is the Lord God who judged her.",
               "startsVerse": true
             }
           ]
@@ -5463,7 +5465,7 @@
             },
             {
               "verse": 10,
-              "text": "standing far off because of the fear of her torment, saying: Woe, woe, the great city, Babylon, the strong city, because in one hour your judgment has come!",
+              "text": "standing far off because of the fear of her torment, saying: Woe, woe, the great city, Babylon, the mighty city, because in one hour your judgment has come!",
               "startsVerse": true
             }
           ]
@@ -5542,7 +5544,7 @@
           "segments": [
             {
               "verse": 21,
-              "text": "Then a strong angel took up a stone like a great millstone and cast it into the sea, saying: Thus with force Babylon, the great city, will be cast down, and will never be found again.",
+              "text": "Then a mighty angel took up a stone like a great millstone and cast it into the sea, saying: Thus with force Babylon, the great city, will be cast down, and will never be found again.",
               "startsVerse": true
             },
             {
