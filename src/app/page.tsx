@@ -70,7 +70,7 @@ export default function Page() {
     description: t(`home.messages.videos.${i}.description`),
   }));
 
-  const books: Book[] = Array.from({ length: 2 }, (_, i) => ({
+  const books: Book[] = Array.from({ length: 3 }, (_, i) => ({
     title: t(`home.books.items.${i}.title`),
     subtitle: t(`home.books.items.${i}.subtitle`),
     image: t(`home.books.items.${i}.image`),

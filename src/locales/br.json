@@ -88,17 +88,24 @@
       "label": "Livros",
       "items": [
         {
-          "title": "eBook & Livro Físico",
+          "title": "Kindle · Capa Comum · Capa Dura",
           "subtitle": "Edição em Português",
           "image": "/ministry-images/livro-rei.jpg",
           "link": "https://www.amazon.com.br/dp/B082J64R4X",
           "buttonText": "Comprar na Amazon"
         },
         {
-          "title": "eBook",
+          "title": "Kindle · Capa Comum · Capa Dura",
           "subtitle": "Edição em Português",
+          "image": "/ministry-images/book-br-encontros7.webp",
+          "link": "https://www.amazon.com.br/dp/B0HS75DX4B",
+          "buttonText": "Comprar na Amazon"
+        },
+        {
+          "title": "Kindle · Capa Comum · Capa Dura",
+          "subtitle": "Edição em Inglês",
           "image": "/ministry-images/cover-God-church7-web.jpeg",
-          "link": "https://www.amazon.com/dp/B0H6TZXKZB",
+          "link": "https://www.amazon.com/Love-God-Hate-Church-Heartbreak-ebook/dp/B0H6TZXKZB",
           "buttonText": "Comprar na Amazon"
         }
       ]

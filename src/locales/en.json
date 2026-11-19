@@ -88,17 +88,24 @@
       "label": "Original Books",
       "items": [
         {
-          "title": "eBook",
+          "title": "Kindle · Paperback · Hardcover",
           "subtitle": "English Edition",
           "image": "/ministry-images/book-king.jpg",
           "link": "https://www.amazon.com/dp/B082LX6ZWZ",
           "buttonText": "Buy on Amazon Kindle"
         },
         {
-          "title": "eBook",
+          "title": "Kindle · Paperback · Hardcover",
+          "subtitle": "English Edition",
+          "image": "/ministry-images/book-en-encounters7.webp",
+          "link": "https://www.amazon.com/dp/B0HS3GCHK7",
+          "buttonText": "Buy on Amazon Kindle"
+        },
+        {
+          "title": "Kindle · Paperback · Hardcover",
           "subtitle": "English Edition",
           "image": "/ministry-images/cover-God-church7-web.jpeg",
-          "link": "https://www.amazon.com/dp/B0H6TZXKZB",
+          "link": "https://www.amazon.com/Love-God-Hate-Church-Heartbreak-ebook/dp/B0H6TZXKZB",
           "buttonText": "Buy on Amazon Kindle"
         }
       ]
