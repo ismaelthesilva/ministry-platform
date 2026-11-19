@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { Disc3, Music, Sparkles, Hammer, Lightbulb, Play } from "lucide-react";
+import { Disc3, Music, Sparkles, Hammer, Lightbulb } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 type Status = "comingSoon" | "inProduction" | "future";
@@ -37,7 +37,6 @@ const STATUS_STYLE: Record<
 export default function Albums() {
   const { t, tObj } = useLanguage();
   const albums = (tObj("home.albums.items", []) as Album[]) || [];
-  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section
@@ -73,7 +72,6 @@ export default function Albums() {
           {albums.map((album, i) => {
             const s = STATUS_STYLE[album.status];
             const Icon = s.icon;
-            const isOpen = open === i;
             return (
               <article
                 key={i}
@@ -82,13 +80,7 @@ export default function Albums() {
                 <div
                   className={`absolute -inset-1 bg-gradient-to-br ${s.glow} opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`}
                 />
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  aria-expanded={isOpen}
-                  aria-controls={`album-tracks-${i}`}
-                  className="relative text-left flex flex-col flex-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-300 rounded-2xl"
-                >
+                <div className="relative flex flex-col flex-1">
                   <div className="relative aspect-square overflow-hidden">
                     <Image
                       src={album.cover}
@@ -103,12 +95,6 @@ export default function Albums() {
                       <Icon className="h-3.5 w-3.5" />
                       {t(`home.albums.status.${album.status}`)}
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                      <span className="inline-flex items-center gap-2 text-white text-sm font-semibold">
-                        <Play className="h-4 w-4" />
-                        {t("home.albums.tracks")}
-                      </span>
-                    </div>
                   </div>
 
                   <div className="p-5">
@@ -120,28 +106,19 @@ export default function Albums() {
                       {album.tracks.length} {t("home.albums.songs")}
                     </p>
                   </div>
-                </button>
 
-                <div
-                  id={`album-tracks-${i}`}
-                  className={`grid transition-all duration-500 ease-out ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
-                >
-                  <ol className="overflow-hidden px-5 text-gray-700">
-                    <div className={isOpen ? "pb-5" : ""}>
-                      {album.tracks.map((track, n) => (
-                        <li
-                          key={n}
-                          className="flex items-center gap-3 py-2 border-t border-purple-100 text-sm"
-                        >
-                          <span className="w-5 text-right text-purple-400 font-semibold">
-                            {n + 1}
-                          </span>
-                          {track}
-                        </li>
-                      ))}
-                    </div>
+                  <ol className="px-5 pb-5 text-gray-700">
+                    {album.tracks.map((track, n) => (
+                      <li
+                        key={n}
+                        className="flex items-center gap-3 py-2 border-t border-purple-100 text-sm"
+                      >
+                        <span className="w-5 text-right text-purple-400 font-semibold">
+                          {n + 1}
+                        </span>
+                        {track}
+                      </li>
+                    ))}
                   </ol>
                 </div>
               </article>
