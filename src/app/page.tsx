@@ -25,6 +25,7 @@ import { DeveloperFooter as Footer } from "@/components/Footer";
 import Messages from "@/components/home/Messages";
 import Books from "@/components/home/Books";
 import Songs from "@/components/home/Songs";
+import Albums from "@/components/home/Albums";
 import HeroSection from "@/components/home/HeroSection";
 import DailyInspiration from "@/components/home/DailyInspiration";
 import FeaturesGrid from "@/components/home/FeaturesGrid";
@@ -70,7 +71,7 @@ export default function Page() {
     description: t(`home.messages.videos.${i}.description`),
   }));
 
-  const books: Book[] = Array.from({ length: 3 }, (_, i) => ({
+  const books: Book[] = Array.from({ length: 4 }, (_, i) => ({
     title: t(`home.books.items.${i}.title`),
     subtitle: t(`home.books.items.${i}.subtitle`),
     image: t(`home.books.items.${i}.image`),
@@ -146,6 +147,8 @@ export default function Page() {
       <Messages messages={messages} getYouTubeVideoId={getYouTubeVideoId} />
 
       <Songs songs={songs} getYouTubeVideoId={getYouTubeVideoId} />
+
+      <Albums />
 
       <Books books={books} />
 

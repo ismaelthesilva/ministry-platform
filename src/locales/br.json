@@ -107,6 +107,13 @@
           "image": "/ministry-images/cover-God-church7-web.jpeg",
           "link": "https://www.amazon.com/Love-God-Hate-Church-Heartbreak-ebook/dp/B0H6TZXKZB",
           "buttonText": "Comprar na Amazon"
+        },
+        {
+          "title": "Tradução da Bíblia por Ismael Silva",
+          "subtitle": "Edição em Português",
+          "image": "/ministry-images/vbt-logo-star-v3-premium-web.jpg",
+          "link": "/venibible",
+          "buttonText": "Ler Grátis"
         }
       ]
     },
@@ -129,6 +136,55 @@
           "id": "mtK__QsG0bk",
           "title": "O Teu Amor me salvou",
           "description": "Canção Original"
+        }
+      ]
+    },
+    "albums": {
+      "title": "ÁLBUNS MUSICAIS ORIGINAIS",
+      "subtitle": "Quatro álbuns a caminho — um vislumbre das canções que Deus tem colocado em meu coração",
+      "tracks": "Faixas",
+      "songs": "músicas",
+      "status": {
+        "comingSoon": "Em Breve",
+        "inProduction": "Em Produção",
+        "future": "Projeto Futuro"
+      },
+      "items": [
+        {
+          "title": "A Noite em que o Natal Começou",
+          "status": "comingSoon",
+          "tracks": ["A Noite em que o Natal Começou"],
+          "cover": "/ministry-images/cover-album-xmas.webp"
+        },
+        {
+          "title": "Mulher Virtuosa",
+          "status": "inProduction",
+          "tracks": [
+            "Mulher Virtuosa",
+            "Vaso de Alabastro",
+            "Um Toque que Cura",
+            "Amor na Montanha"
+          ],
+          "cover": "/ministry-images/cover-album-virtuous.webp"
+        },
+        {
+          "title": "O Maior Mandamento",
+          "status": "future",
+          "tracks": [
+            "Ele É",
+            "Vamos Louvar",
+            "O Maior Mandamento",
+            "O Amém de Deus",
+            "Deus e Salvador",
+            "O Teu Amor Me Salvou"
+          ],
+          "cover": "/ministry-images/cover-album-love.webp"
+        },
+        {
+          "title": "Salmos ao Cordeiro",
+          "status": "inProduction",
+          "tracks": ["Louvado Seja o Cordeiro", "Em Breve Eu Te Verei"],
+          "cover": "/ministry-images/cover-album-lamb.webp"
         }
       ]
     },

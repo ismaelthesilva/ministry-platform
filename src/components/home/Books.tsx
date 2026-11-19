@@ -52,7 +52,7 @@ export default function Books({ books }: Props) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {books.map((book: Book, index: number) => (
             <Card
               key={index}
@@ -65,8 +65,12 @@ export default function Books({ books }: Props) {
                   <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-purple-400/30 rounded-2xl blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                   <a
                     href={book.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={book.link.startsWith("/") ? undefined : "_blank"}
+                    rel={
+                      book.link.startsWith("/")
+                        ? undefined
+                        : "noopener noreferrer"
+                    }
                     className="relative block transform transition-transform duration-500 hover:scale-110"
                   >
                     <Image
@@ -101,8 +105,12 @@ export default function Books({ books }: Props) {
                 >
                   <a
                     href={book.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={book.link.startsWith("/") ? undefined : "_blank"}
+                    rel={
+                      book.link.startsWith("/")
+                        ? undefined
+                        : "noopener noreferrer"
+                    }
                     className="flex items-center"
                   >
                     <Download className="h-5 w-5 mr-2" />

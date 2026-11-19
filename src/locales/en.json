@@ -107,6 +107,13 @@
           "image": "/ministry-images/cover-God-church7-web.jpeg",
           "link": "https://www.amazon.com/Love-God-Hate-Church-Heartbreak-ebook/dp/B0H6TZXKZB",
           "buttonText": "Buy on Amazon Kindle"
+        },
+        {
+          "title": "Bible translation by Ismael Silva",
+          "subtitle": "English Edition",
+          "image": "/ministry-images/vbt-logo-star-v3-premium-web.jpg",
+          "link": "/venibible",
+          "buttonText": "Read Free"
         }
       ]
     },
@@ -129,6 +136,55 @@
           "id": "mtK__QsG0bk",
           "title": "Your Love Saved Me",
           "description": "Original Song"
+        }
+      ]
+    },
+    "albums": {
+      "title": "ORIGINAL MUSICAL ALBUMS",
+      "subtitle": "Four albums in the making — a glimpse of the songs God is putting in my heart",
+      "tracks": "Tracklist",
+      "songs": "songs",
+      "status": {
+        "comingSoon": "Coming Soon",
+        "inProduction": "In Production",
+        "future": "Future Project"
+      },
+      "items": [
+        {
+          "title": "The Night Christmas Began",
+          "status": "comingSoon",
+          "tracks": ["The Night Christmas Began"],
+          "cover": "/ministry-images/cover-album-xmas.webp"
+        },
+        {
+          "title": "Virtuous Woman",
+          "status": "inProduction",
+          "tracks": [
+            "Virtuous Woman",
+            "Alabaster Jar",
+            "A Touch That Cures",
+            "Love on a Mountain"
+          ],
+          "cover": "/ministry-images/cover-album-virtuous.webp"
+        },
+        {
+          "title": "The Greatest Commandment",
+          "status": "future",
+          "tracks": [
+            "He Is",
+            "Let's Praise",
+            "The Greatest Commandment",
+            "The Amen of God",
+            "God and Savior",
+            "Your Love Saved Me"
+          ],
+          "cover": "/ministry-images/cover-album-love.webp"
+        },
+        {
+          "title": "Psalms to the Lamb",
+          "status": "inProduction",
+          "tracks": ["To the Lamb Be Praised", "Very Soon I’ll See You"],
+          "cover": "/ministry-images/cover-album-lamb.webp"
         }
       ]
     },
