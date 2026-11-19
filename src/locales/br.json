@@ -3,6 +3,7 @@
     "home": "Início",
     "messages": "Mensagens",
     "songs": "Canções",
+    "albums": "Álbuns",
     "books": "Livros",
     "revelation": "Apocalipse",
     "about": "Sobre",
@@ -40,25 +41,6 @@
           "reference": "Filipenses 4:13"
         }
       ]
-    },
-    "features": {
-      "title": "Recursos do Ministério",
-      "subtitle": "Explore nossos recursos para crescer em sua jornada espiritual",
-      "explore": "Explorar",
-      "items": {
-        "bibleYear": {
-          "title": "Ano Bíblico",
-          "description": "Leia a Bíblia completa em um ano com planos guiados e comentários inspiradores."
-        },
-        "messages": {
-          "title": "Sermões",
-          "description": "Assista mensagens poderosas que transformam vidas e fortalecem a fé."
-        },
-        "songs": {
-          "title": "Músicas",
-          "description": "Ouça canções originais de adoração disponíveis em todas as plataformas."
-        }
-      }
     },
     "messages": {
       "title": "MENSAGENS",

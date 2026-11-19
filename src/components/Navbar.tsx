@@ -11,6 +11,7 @@ import {
   Menu,
   Book,
   Music,
+  Disc3,
   MessageSquare,
   Heart,
   User,
@@ -96,6 +97,11 @@ const Navbar: React.FC = () => {
       icon: <Music className="h-4 w-4" />,
     },
     {
+      name: t("navbar.albums", "Albums"),
+      href: "/#albums",
+      icon: <Disc3 className="h-4 w-4" />,
+    },
+    {
       name: t("navbar.books", "Books"),
       href: "/#books",
       icon: <Book className="h-4 w-4" />,
@@ -126,6 +132,11 @@ const Navbar: React.FC = () => {
       name: t("navbar.songs", "Songs"),
       href: "/#songs",
       icon: <Music className="h-4 w-4" />,
+    },
+    {
+      name: t("navbar.albums", "Albums"),
+      href: "/#albums",
+      icon: <Disc3 className="h-4 w-4" />,
     },
     {
       name: t("navbar.books", "Books"),
@@ -164,7 +175,7 @@ const Navbar: React.FC = () => {
     if (typeof window === "undefined") return;
     if (pathname !== "/") return;
 
-    const ids = ["messages", "songs", "books", "about"];
+    const ids = ["messages", "songs", "albums", "books", "about"];
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];

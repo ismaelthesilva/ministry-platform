@@ -3,6 +3,7 @@
     "home": "Home",
     "messages": "Messages",
     "songs": "Songs",
+    "albums": "Albums",
     "books": "Books",
     "revelation": "Revelation",
     "about": "About",
@@ -40,25 +41,6 @@
           "reference": "Philippians 4:13"
         }
       ]
-    },
-    "features": {
-      "title": "Ministry Resources",
-      "subtitle": "Explore our resources to grow in your spiritual journey",
-      "explore": "Explore",
-      "items": {
-        "bibleYear": {
-          "title": "Reading Year",
-          "description": "Read the entire Bible in a year with guided plans and inspiring commentaries."
-        },
-        "messages": {
-          "title": "Sermons",
-          "description": "Watch powerful messages that transform lives and strengthen faith."
-        },
-        "songs": {
-          "title": "Songs",
-          "description": "Listen to original songs available on all platforms."
-        }
-      }
     },
     "messages": {
       "title": "MESSAGES",

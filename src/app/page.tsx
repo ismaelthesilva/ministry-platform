@@ -28,7 +28,6 @@ import Songs from "@/components/home/Songs";
 import Albums from "@/components/home/Albums";
 import HeroSection from "@/components/home/HeroSection";
 import DailyInspiration from "@/components/home/DailyInspiration";
-import FeaturesGrid from "@/components/home/FeaturesGrid";
 
 interface Video {
   link: string;
@@ -139,9 +138,6 @@ export default function Page() {
 
       {/* New Daily Inspiration Section */}
       <DailyInspiration />
-
-      {/* New Features Grid */}
-      <FeaturesGrid />
 
       {/* Existing Sections */}
       <Messages messages={messages} getYouTubeVideoId={getYouTubeVideoId} />
