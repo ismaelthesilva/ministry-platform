@@ -21,7 +21,7 @@ export default function HeroSection() {
   const [showVideo, setShowVideo] = useState(false);
 
   // Video IDs: EN and BR
-  const videoId = language === "br" ? "jf9Kogw6FU4" : "Gk1NMp3g_b0";
+  const videoId = language === "br" ? "jf9Kogw6FU4" : "0poBKtRqp8o";
 
   return (
     <section className="relative h-screen overflow-hidden">

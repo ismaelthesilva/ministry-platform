@@ -48,6 +48,11 @@
       "label": "Message",
       "videos": [
         {
+          "id": "0poBKtRqp8o",
+          "title": "Love is What Love Does",
+          "description": "Love is not just a feeling — it is something we do. Discover what real, biblical love looks like in action and how it transforms our lives and everyone around us."
+        },
+        {
           "id": "Gk1NMp3g_b0",
           "title": "The Incomparable Christ",
           "description": "Who is Jesus Christ? How important is Jesus to my life today? Our world is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
@@ -56,11 +61,6 @@
           "id": "EZ4LBnEZPlg",
           "title": "The Way to Happiness",
           "description": "Do you want to be happy? So, what is happiness from a biblical perspective? Discover the path to true and lasting happiness."
-        },
-        {
-          "id": "jf9Kogw6FU4",
-          "title": "The Incomparable Christ (Portuguese)",
-          "description": "Who is Jesus Christ? What is the importance of Jesus in my life today? Our world is full of challenges and problems, what is the advantage that faith in Jesus can bring to you today?"
         }
       ]
     },
@@ -127,6 +127,7 @@
       "tracks": "Tracklist",
       "songs": "songs",
       "status": {
+        "available": "Available Now",
         "comingSoon": "Coming Soon",
         "inProduction": "In Production",
         "future": "Future Project"
@@ -134,9 +135,10 @@
       "items": [
         {
           "title": "The Night Christmas Began",
-          "status": "comingSoon",
+          "status": "available",
           "tracks": ["The Night Christmas Began"],
-          "cover": "/ministry-images/cover-album-xmas.webp"
+          "cover": "/ministry-images/cover-album-xmas.webp",
+          "link": "https://open.spotify.com/track/5HlTm32xNQFtotX8vVljEs"
         },
         {
           "title": "Virtuous Woman",
@@ -168,7 +170,8 @@
           "tracks": ["To the Lamb Be Praised", "Very Soon I’ll See You"],
           "cover": "/ministry-images/cover-album-lamb.webp"
         }
-      ]
+      ],
+      "listen": "Listen on Spotify"
     },
     "about": {
       "title": "HEART OF GRACE",

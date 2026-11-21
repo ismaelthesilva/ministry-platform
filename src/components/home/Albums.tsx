@@ -1,15 +1,23 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Disc3, Music, Sparkles, Hammer, Lightbulb } from "lucide-react";
+import {
+  Disc3,
+  Headphones,
+  Music,
+  Sparkles,
+  Hammer,
+  Lightbulb,
+} from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-type Status = "comingSoon" | "inProduction" | "future";
+type Status = "available" | "comingSoon" | "inProduction" | "future";
 
 interface Album {
   title: string;
   cover: string;
   status: Status;
+  link?: string;
   tracks: string[];
 }
 
@@ -17,6 +25,11 @@ const STATUS_STYLE: Record<
   Status,
   { badge: string; icon: React.ElementType; glow: string }
 > = {
+  available: {
+    badge: "from-emerald-500 to-green-600",
+    icon: Headphones,
+    glow: "from-emerald-300/40 to-green-300/40",
+  },
   comingSoon: {
     badge: "from-amber-400 to-orange-500",
     icon: Sparkles,
@@ -120,6 +133,20 @@ export default function Albums() {
                       </li>
                     ))}
                   </ol>
+
+                  {album.link && (
+                    <div className="px-5 pb-5">
+                      <a
+                        href={album.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+                      >
+                        <Headphones className="h-5 w-5" />
+                        {t("home.albums.listen")}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </article>
             );

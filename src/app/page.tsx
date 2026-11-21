@@ -44,7 +44,7 @@ interface Book {
 }
 
 export default function Page() {
-  const { t } = useLanguage();
+  const { t, tObj } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -62,13 +62,16 @@ export default function Page() {
 
   // Build arrays from locale — IDs come from the JSON so switching language
   // picks up the correct video set automatically.
-  const messages: Video[] = Array.from({ length: 3 }, (_, i) => ({
-    link: `https://www.youtube.com/watch?v=${t(
-      `home.messages.videos.${i}.id`
-    )}`,
-    title: t(`home.messages.videos.${i}.title`),
-    description: t(`home.messages.videos.${i}.description`),
-  }));
+  const messages: Video[] = Array.from(
+    { length: (tObj("home.messages.videos", []) as unknown[]).length },
+    (_, i) => ({
+      link: `https://www.youtube.com/watch?v=${t(
+        `home.messages.videos.${i}.id`
+      )}`,
+      title: t(`home.messages.videos.${i}.title`),
+      description: t(`home.messages.videos.${i}.description`),
+    })
+  );
 
   const books: Book[] = Array.from({ length: 4 }, (_, i) => ({
     title: t(`home.books.items.${i}.title`),

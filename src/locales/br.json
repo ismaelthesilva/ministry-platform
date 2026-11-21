@@ -48,19 +48,19 @@
       "label": "Mensagem Divina",
       "videos": [
         {
-          "id": "Gk1NMp3g_b0",
-          "title": "O Incomparável Cristo",
-          "description": "Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje? A nossa vida é cheia de desafios e problemas, qual a vantagem que a fé em Jesus pode trazer para você hoje?"
-        },
-        {
-          "id": "EZ4LBnEZPlg",
-          "title": "O Caminho para a Felicidade",
-          "description": "Você quer ser feliz? Então, o que é felicidade segundo uma perspectiva bíblica? Descubra o caminho para a verdadeira e duradoura felicidade."
-        },
-        {
           "id": "jf9Kogw6FU4",
           "title": "O Incomparável Cristo",
           "description": "Quem é Jesus Cristo? Qual a importância de Jesus na minha vida hoje? A nossa vida é cheia de desafios e problemas, qual a vantagem que a fé em Jesus pode trazer para você hoje?"
+        },
+        {
+          "id": "WnvqV8VpE1k",
+          "title": "O Caminho da Felicidade",
+          "description": "Você quer ser feliz? Então, o que é felicidade segundo uma perspectiva bíblica? Descubra o caminho para a verdadeira e duradoura felicidade."
+        },
+        {
+          "id": "TIzBgBpHADw",
+          "title": "O Maior Homem que Já Existiu",
+          "description": "Quem foi o maior homem que já viveu neste mundo? Descubra por que a vida, as palavras e o amor de Jesus Cristo mudaram a história e podem transformar a sua vida hoje."
         }
       ]
     },
@@ -127,6 +127,7 @@
       "tracks": "Faixas",
       "songs": "músicas",
       "status": {
+        "available": "Disponível",
         "comingSoon": "Em Breve",
         "inProduction": "Em Produção",
         "future": "Projeto Futuro"
@@ -134,9 +135,10 @@
       "items": [
         {
           "title": "A Noite em que o Natal Começou",
-          "status": "comingSoon",
+          "status": "available",
           "tracks": ["A Noite em que o Natal Começou"],
-          "cover": "/ministry-images/cover-album-xmas.webp"
+          "cover": "/ministry-images/cover-album-xmas.webp",
+          "link": "https://open.spotify.com/track/5HlTm32xNQFtotX8vVljEs"
         },
         {
           "title": "Mulher Virtuosa",
@@ -168,7 +170,8 @@
           "tracks": ["Louvado Seja o Cordeiro", "Em Breve Eu Te Verei"],
           "cover": "/ministry-images/cover-album-lamb.webp"
         }
-      ]
+      ],
+      "listen": "Ouvir no Spotify"
     },
     "about": {
       "title": "CORAÇÃO DE GRAÇA",
